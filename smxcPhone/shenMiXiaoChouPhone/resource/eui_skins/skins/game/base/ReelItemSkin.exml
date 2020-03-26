@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ReelItemSkin" width="214" height="148" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="icon" horizontalCenter="0" verticalCenter="0" source="bicon_M2_0_png"/>
+</e:Skin>

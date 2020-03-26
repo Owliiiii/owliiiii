@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="AutoPlayUISkin" width="1200" height="912" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect left="-1" right="1" top="-2" bottom="2" fillAlpha="0.6"/>
+	<e:Group horizontalCenter="0" verticalCenter="0" width="593" height="646">
+		<e:Image source="videoslot_popup_texture0_level1_03_png" anchorOffsetX="0" width="540.92" anchorOffsetY="0" height="592.97" horizontalCenter="0" verticalCenter="0"/>
+		<e:Label text="自动游戏" y="66.37" fontFamily="Microsoft YaHei" size="22" horizontalCenter="0.5" textColor="0xe5ad22"/>
+		<e:Group y="99.76" horizontalCenter="0" scaleX="0.81" scaleY="0.81">
+			<ns1:MosueRadioButton id="rb0" label="10" x="-1" scaleX="1.5" scaleY="1.5" verticalCenter="0">
+				<ns1:skinName>
+				<e:Skin states="up,down,rollOver,disabled,upAndSelected,downAndSelected,rollOverAndSelected">
+					<e:Image width="100%" height="100%" source="videoslot_popup_texture0_level1_34-14_png" source.down="hui_l_png" source.rollOver="hui_l_png" source.upAndSelected="videoslot_popup_texture0_level1_34_png" source.downAndSelected="yelows_l_png" source.rollOverAndSelected="yelows_l_png"/>
+	<e:BitmapLabel id="labelDisplay" font="f5_fnt" horizontalCenter="0" verticalCenter="0" scaleX="0.6" scaleY="0.6"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MosueRadioButton>
+			<ns1:MosueRadioButton id="rb1" label="20" x="94" scaleX="1.5" scaleY="1.5" verticalCenter="0">
+				<ns1:skinName>
+				<e:Skin states="up,down,rollOver,disabled,upAndSelected,downAndSelected,rollOverAndSelected">
+					<e:Image width="100%" height="100%" source="videoslot_popup_texture0_level1_34-14_png" source.down="hui_l_png" source.rollOver="hui_l_png" source.upAndSelected="videoslot_popup_texture0_level1_34_png" source.downAndSelected="yelows_l_png" source.rollOverAndSelected="yelows_l_png"/>
+	<e:BitmapLabel id="labelDisplay" scaleX="0.6" scaleY="0.6" font="f5_fnt" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MosueRadioButton>
+			<ns1:MosueRadioButton id="rb2" label="50" x="190" scaleX="1.5" scaleY="1.5" verticalCenter="0">
+				<ns1:skinName>
+				<e:Skin states="up,down,rollOver,disabled,upAndSelected,downAndSelected,rollOverAndSelected">
+					<e:Image width="100%" height="100%" source="videoslot_popup_texture0_level1_34-14_png" source.down="hui_l_png" source.rollOver="hui_l_png" source.upAndSelected="videoslot_popup_texture0_level1_34_png" source.downAndSelected="yelows_l_png" source.rollOverAndSelected="yelows_l_png"/>
+	<e:BitmapLabel id="labelDisplay" horizontalCenter="0" verticalCenter="0" font="f5_fnt" scaleX="0.6" scaleY="0.6"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MosueRadioButton>
+			<ns1:MosueRadioButton id="rb3" label="75" x="288" scaleX="1.5" scaleY="1.5" verticalCenter="0">
+				<ns1:skinName>
+				<e:Skin states="up,down,rollOver,disabled,upAndSelected,downAndSelected,rollOverAndSelected">
+					<e:Image width="100%" height="100%" source="videoslot_popup_texture0_level1_34-14_png" source.down="hui_l_png" source.rollOver="hui_l_png" source.upAndSelected="videoslot_popup_texture0_level1_34_png" source.downAndSelected="yelows_l_png" source.rollOverAndSelected="yelows_l_png"/>
+	<e:BitmapLabel id="labelDisplay" scaleX="0.6" scaleY="0.6" horizontalCenter="0" verticalCenter="0" font="f5_fnt"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MosueRadioButton>
+			<ns1:MosueRadioButton id="rb4" label="100" x="394" scaleX="1.5" scaleY="1.5" verticalCenter="0">
+				<ns1:skinName>
+				<e:Skin states="up,down,rollOver,disabled,upAndSelected,downAndSelected,rollOverAndSelected">
+					<e:Image width="100%" height="100%" source="videoslot_popup_texture0_level1_34-14_png" source.down="hui_l_png" source.rollOver="hui_l_png" source.upAndSelected="videoslot_popup_texture0_level1_34_png" source.downAndSelected="yelows_l_png" source.rollOverAndSelected="yelows_l_png"/>
+	<e:BitmapLabel id="labelDisplay" font="f5_fnt" horizontalCenter="0" verticalCenter="0" scaleX="0.6" scaleY="0.6"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MosueRadioButton>
+			<e:layout>
+				<e:HorizontalLayout gap="30"/>
+			</e:layout>
+		</e:Group>
+		<e:Label text="停止自动游戏" y="161.72" fontFamily="Microsoft YaHei" size="16" horizontalCenter="-162.5" textColor="0xffffff"/>
+		<e:Label text="出现任何获胜" y="187.44" fontFamily="Microsoft YaHei" size="16" horizontalCenter="-112.5" textColor="0xFFFFFF" height="30" verticalAlign="middle" textAlign="center"/>
+		<ns1:STogleButton id="btn0" label="" x="87.35" y="185.52" skinName="MyTogleButtonSkin" scaleX="1.2" scaleY="1.2"/>
+		<ns1:STogleButton id="btn1" label="" x="303.05" y="185.54" skinName="MyTogleButtonSkin" scaleX="1.2" scaleY="1.2" enabled="true"/>
+		<e:Label text="如果赢取免费旋转" y="187.42" fontFamily="Microsoft YaHei" size="16" horizontalCenter="116.5" textColor="0xFFFFFF" height="30" verticalAlign="middle" textAlign="center"/>
+		<ns1:MouseButton id="closeBtn" label="取消" x="121.15" y="528.34" scaleX="1.2" scaleY="1.2">
+			<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver" xmlns:w="http://ns.egret.com/wing">
+				<e:Image width="100%" height="100%" source="red_0_png" source.down="red_2_png" source.disabled="red_0_png" source.rollOver="red_1_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="16" fontFamily="NSimSun" strokeColor="0xffffff"/>
+			</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+		<ns1:MouseButton id="okBtn" label="确认" y="529.86" horizontalCenter="109.5" scaleX="1.2" scaleY="1.2">
+			<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver" xmlns:w="http://ns.egret.com/wing">
+				<e:Image width="100%" height="100%" source="grn_0_png" source.down="grn_2_png" source.disabled="grn_0_png" source.rollOver="grn_1_png"/>
+				<e:Label id="labelDisplay" size="16" fontFamily="NSimSun" horizontalCenter.up="0" verticalCenter.disabled="5.5" horizontalCenter.disabled="0" horizontalCenter.rollOver="0" horizontalCenter.down="0" verticalCenter.up="0" verticalCenter.down="0" verticalCenter.rollOver="0"/>
+			</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+		<e:Group y="282.97" horizontalCenter="-4.5">
+			<ns1:MyHslider id="slider0" x="0" skinName="skins.HSliderSkin" verticalCenter="0.5" anchorOffsetX="0" width="322.42"/>
+			<e:Image source="videoslot_popup_texture0_level1_38-16_png" x="326" y="0" scaleX="1.4" scaleY="1.4" anchorOffsetX="0" width="66.34"/>
+			<e:Label id="numLabel0" text="4000.00" fontFamily="Microsoft YaHei" size="18" x="331.66" verticalCenter="0.5" width="130" verticalAlign="middle" textAlign="center" textColor="0xe5ad22" scaleX="0.7"/>
+		</e:Group>
+		<e:Label text="如果单次获胜超过" y="317.12" fontFamily="Microsoft YaHei" size="15" textColor="0xFFFFFF" left="90"/>
+		<e:Label text="CNY" y="300.22" fontFamily="Microsoft YaHei" size="12" textColor="0xFFFFFF" left="504" scaleX="0.7"/>
+		<e:Group y="336.39" horizontalCenter="-5">
+			<ns1:MyHslider id="slider1" x="0" skinName="skins.HSliderSkin" verticalCenter="0"/>
+			<e:Image source="videoslot_popup_texture0_level1_38-16_png" x="326" y="0" scaleX="1.4" scaleY="1.4" width="66.34"/>
+			<e:Label id="numLabel1" text="4000.00" fontFamily="Microsoft YaHei" size="18" x="331.66" verticalCenter="0.5" width="130" verticalAlign="middle" textAlign="center" textColor="0xe5ad22" scaleX="0.7"/>
+		</e:Group>
+		<e:Label text="如果余额增加了" y="370.9" fontFamily="Microsoft YaHei" size="15" textColor="0xFFFFFF" left="92"/>
+		<e:Label text="CNY" y="354.08" fontFamily="Microsoft YaHei" size="12" textColor="0xFFFFFF" left="503" scaleX="0.7"/>
+		<e:Group y="391.76" horizontalCenter="-5">
+			<ns1:MyHslider id="slider2" x="0" skinName="skins.HSliderSkin" verticalCenter="0"/>
+			<e:Image source="videoslot_popup_texture0_level1_38-16_png" x="326" y="0" scaleX="1.4" scaleY="1.4" width="66.34"/>
+			<e:Label id="numLabel2" text="4000.00" fontFamily="Microsoft YaHei" size="18" x="331.66" verticalCenter="0.5" width="130" verticalAlign="middle" textAlign="center" textColor="0xe5ad22" scaleX="0.7"/>
+		</e:Group>
+		<e:Label text="如果余额减少了" y="428.29" fontFamily="Microsoft YaHei" size="15" textColor="0xFFFFFF" left="92"/>
+		<e:Label text="CNY" y="408.43" fontFamily="Microsoft YaHei" size="12" textColor="0xFFFFFF" left="503" scaleX="0.7"/>
+	</e:Group>
+	<e:Image source="微信图片_20190524115039_png" scaleX="1.5" scaleY="1.5" horizontalCenter="0" verticalCenter="0" alpha="0.5" visible="false"/>
+</e:Skin>

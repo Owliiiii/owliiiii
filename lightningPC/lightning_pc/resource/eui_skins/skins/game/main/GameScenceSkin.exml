@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GameScenceSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" xmlns:tween="egret.tween.*" width="1400">
+	<w:Declarations>
+	</w:Declarations>
+	<e:Image source="reel_png" horizontalCenter="0" verticalCenter="0" scaleX="0.98" scaleY="0.98"/>
+
+
+
+
+
+
+
+
+
+	<e:Group id="reelGroup" horizontalCenter="0" verticalCenter="0">
+		<ns1:Reel id="reel0" skinName="ReelSkin" y="3" x="1" scaleX="0.99" scaleY="0.99"/>
+		<ns1:Reel id="reel1" skinName="ReelSkin" x="232.45" y="3" scaleX="0.99" scaleY="0.99"/>
+		<ns1:Reel id="reel2" skinName="ReelSkin" y="3" x="463.86" scaleX="0.99" scaleY="0.99"/>
+		<ns1:Reel id="reel3" skinName="ReelSkin" x="694.86" scaleX="0.99" scaleY="0.99" y="3"/>
+		<ns1:Reel id="reel4" skinName="ReelSkin" x="925.86" y="3" scaleX="0.99" scaleY="0.99"/>
+		<ns1:Reel id="reel5" skinName="ReelSkin" x="1158.86" y="3" scaleX="0.99" scaleY="0.99"/>
+	</e:Group>
+	<e:Group id="shandian" visible="false"/>
+	<ns1:GamePentCompoment id="pent" skinName="GamePentSkin" horizontalCenter="-2" verticalCenter="3" visible="false"/>
+
+
+	<e:Group id="freeGroup" left="8" right="8" top="8" bottom="8" visible="false">
+		<e:Rect id="freeRect" scaleX="1" scaleY="1" left="0" right="0" top="0" bottom="0" fillColor="0x030f3d"/>
+		<e:Image source="free_bg_png" top="0" horizontalCenter="0"/>
+
+		<e:Button id="goBtn" label="" horizontalCenter="0" y="614" anchorOffsetX="140" anchorOffsetY="73">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="goBtn_N_png" source.down="goBtn_H_png" source.disabled="goBtn_D_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+
+		</e:Button>
+		<e:Label id="total" text="" x="434" y="104" size="100" strokeColor="0xffbb11" stroke="5" bold="true" textColor="0xdb1802"/>
+	</e:Group>
+	<e:Group id="logo" y="-79" left="0" right="0">
+		<e:Image x="1124" y="-1" source="4096_png" scaleX="1" scaleY="1"/>
+		<e:Image x="20" y="-16" source="logo_png" scaleX="1" scaleY="1"/>
+	</e:Group>
+	<e:Group id="freeDataGroup" y="-92" left="0" right="0" visible="false">
+		<e:Group id="freeLogo" y="-30" left="0" right="0">
+			<e:Image id="leftImg" y="25" x="410" source=""/>
+			<e:Image id="rightImg" y="25" x="770" source=""/>
+			<e:Group id="DiamondsGroup" horizontalCenter="0" scaleX="0" scaleY="0">
+			</e:Group>
+			<e:Image id="DiamondsYanhua" x="680" y="150" source="yanhua_png" anchorOffsetX="175" anchorOffsetY="175" scaleX="1.5" scaleY="1.5" alpha="0"/>
+
+
+
+
+		</e:Group>
+		<e:Image id="startLight" horizontalCenter="0" y="-50" source="startLight1_png"/>
+		<e:Group id="leftData" x="35" alpha="0">
+			<e:Image source="ticker_bg_png"/>
+			<e:Image id="addCount" source="yanhua_png" scaleX="0" scaleY="0" horizontalCenter="0" anchorOffsetX="175" anchorOffsetY="175" y="50"/>
+			<e:Label text="剩余次数" horizontalCenter="0" y="10" size="25" bold="true" textColor="0x588ef0"/>
+			<e:Label id="freeNum" text="12" y="35" bold="true" size="40" horizontalCenter="0" fontFamily="Microsoft JhengHei"/>
+		</e:Group>
+		<e:Group id="rightData" x="1126" alpha="0">
+			<e:Image source="ticker_bg_png"/>
+			<e:Label text="免费游戏奖金" horizontalCenter="0" y="10" size="25" textColor="0x588ef0" bold="true"/>
+			<e:Label id="freeTotal" text="" y="40" bold="true" size="40" horizontalCenter="0"/>
+		</e:Group>
+	</e:Group>
+	<e:Group id="freeDeal" left="8" right="8" top="8" bottom="8" visible="false">
+		<e:Rect scaleX="1" scaleY="1" left="0" right="0" top="0" bottom="0" fillColor="0x030f3d"/>
+		<e:Image top="0" horizontalCenter="0" source="pcFree_png"/>
+		<e:Button id="backSlotBtn" label="" horizontalCenter="0" y="614" anchorOffsetX="140" anchorOffsetY="73">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="goBtn_N_png" source.down="goBtn_H_png" source.disabled="goBtn_D_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Label id="bcakSlotWinLab" text="￥0.00" y="301" size="190" horizontalCenter="0" textColor="0xdb1802" fontFamily="Microsoft YaHei" bold="true" strokeColor="0xffbb11" stroke="5"/>
+
+	</e:Group>
+	<e:Group id="freeDeal1" left="8" right="8" top="8" bottom="8" visible="false">
+		<e:Rect scaleX="1" scaleY="1" left="0" right="0" top="0" bottom="0" fillColor="0x130e3a"/>
+		<e:Image top="0" horizontalCenter="0" source="freeDealBg_png"/>
+		<e:Button id="backSlotBtn0" label="" horizontalCenter="0" y="614" anchorOffsetX="140" anchorOffsetY="73">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="goBtn_N_png" source.down="goBtn_H_png" source.disabled="goBtn_D_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Group y="140" horizontalCenter="-334">
+			<e:Label id="dealContent0" text="0.10" strokeColor="0xffbb11" stroke="3" size="80" bold="true" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" verticalAlign="middle" textColor="0xbe0000"/>
+		</e:Group>
+		<e:Group y="140" horizontalCenter="328">
+			<e:Label id="dealContent1" text="30.00" backgroundColor="0x000000" strokeColor="0xffbb11" stroke="3" size="80" fontFamily="Microsoft YaHei" bold="true" scaleX="1" scaleY="1" verticalAlign="middle" textColor="0xbe0000"/>
+		</e:Group>
+		<e:Group y="425" horizontalCenter="5">
+			<e:Label id="dealContent2" text="00.00" size="130" fontFamily="Microsoft YaHei" bold="true" strokeColor="0xFFBB11" stroke="3" textColor="0xbe0000" scaleX="1" scaleY="1"/>
+		</e:Group>
+	</e:Group>
+	<e:Group id="moreGroup" left="8" right="8" top="8" bottom="8" visible="false">
+		<e:Rect fillColor="0x030f3d" left="0" right="0" top="0" bottom="0"/>
+		<e:Image source="moreNum_png"/>
+		<e:Image id="winTexiao" source="startLight2_png" x="333" y="262"/>
+
+		<e:Image id="yanhua" x="267" source="yanhua_png" anchorOffsetX="175" anchorOffsetY="175" y="317" scaleX="0" scaleY="0"/>
+		<e:Group id="numGroup" width="200" height="200" x="167" y="217">
+			<e:Label id="noMoveLab" text="8" textColor="0xdb1802" size="80" strokeColor="0xffbb11" stroke="5" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0"/>
+			<e:Label id="moveLab" text="8" textColor="0xdb1802" size="80" strokeColor="0xffbb11" stroke="5" scaleX="1" scaleY="1" y="-300" x="-49"/>
+		</e:Group>
+	</e:Group>
+	<e:Group id="freeShandian" left="0" right="0" top="0" bottom="0" visible="false"/>
+
+
+
+
+
+
+
+
+</e:Skin>

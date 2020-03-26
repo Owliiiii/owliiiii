@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GameScenceSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" xmlns:tween="egret.tween.*" width="1200">
+	<w:Declarations>
+	</w:Declarations>
+	<e:Image source="reel_png" horizontalCenter="0" verticalCenter="0"/>
+
+
+
+
+
+
+
+
+
+	<e:Group horizontalCenter="0" verticalCenter="0">
+		<ns1:Reel id="reel0" anchorOffsetY="0" anchorOffsetX="0" skinName="ReelSkin" y="0" x="0"/>
+		<ns1:Reel id="reel1" skinName="ReelSkin" x="213.45" y="2.71"/>
+		<ns1:Reel id="reel2" skinName="ReelSkin" y="1.36" x="433.86"/>
+		<ns1:Reel id="reel3" skinName="ReelSkin" y="1.35" x="648.86"/>
+		<ns1:Reel id="reel4" skinName="ReelSkin" y="0.02" x="862.86"/>
+	</e:Group>
+	<ns1:GamePentCompoment id="pent" skinName="GamePentSkin"/>
+
+
+
+
+
+
+
+</e:Skin>

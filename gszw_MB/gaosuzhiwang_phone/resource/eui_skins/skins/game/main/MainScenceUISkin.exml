@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MainScenceUISkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" states="hor,ver"  width.ver="750" height.ver="1334" width.hor="1334" height.hor="750">
+	<e:Image id="bg" source="BG_png" scaleX="1" scaleY="1" left.hor="0" right.hor="0" top.hor="0" bottom.hor="0" source.ver="BG1_png" left.ver="0" right.ver="0" bottom.ver="0" top.ver="0"/>
+	<e:Group id="mainGroup" scrollEnabled="false" left="0" right="0" top="0" bottom="0" left.hor="0" right.hor="0" top.hor="0" bottom.hor="0" left.ver="0" right.ver="0" top.ver="0" bottom.ver="0">
+		<e:Group x.ver="0" y="0" horizontalCenter.ver="0.5" verticalCenter.ver="-123.5" scaleX.hor="0.87" scaleY.hor="0.87" horizontalCenter.hor="0" verticalCenter.hor="-37.5" scaleX.ver="0.58" scaleY.ver="0.58">
+			<ns1:GameScence id="gameScence" skinName="GameScenceSkin" x.hor="362" y.hor="142" horizontalCenter.ver="-1.5" verticalCenter.ver="68.5" y="140" horizontalCenter="0" horizontalCenter.hor="0.5"/>
+			<e:Group y="0" anchorOffsetX="0" width="1225" horizontalCenter="0">
+				<e:Image source="rightTruck_png" x.ver="0" bottom="0" horizontalCenter="428.5"/>
+				<e:Image source="leftTruck_png" bottom="0" horizontalCenter="-418"/>
+				<e:Image source="logo1_png" x.ver="0" bottom="0" horizontalCenter="0"/>
+			</e:Group>
+			<e:Group id="mcGroup" left="0" right="0" top="0" bottom="0" visible="false"/>
+			<e:Group id="tipGroup" horizontalCenter.ver="0.5" verticalCenter.ver="80.5" x.hor="277.6470588235294" y.hor="297.6470588235294" scaleX.hor="1.1764705882352942" scaleY.hor="1.1764705882352942" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0" horizontalCenter.hor="5" verticalCenter.hor="76.5" anchorOffsetX="285" anchorOffsetY="105.5" visible="false">
+				<e:Image source="bigreward_png" x="0" y="0"/>
+				<e:Label id="tipLabel" text="5个一样的" verticalAlign="middle" textAlign="center" size="80" height="160" horizontalCenter="0.5" verticalCenter="-11.5" bold="true" stroke="1" strokeColor="0x701313"/>
+			</e:Group>
+		</e:Group>
+	</e:Group>
+	<ns1:SetUI id="setUI" left="0" right="0" top.hor="0" bottom.hor="0" currentState.hor="hor" currentState.ver="ver" skinName="SetUISkin" left.ver="0" right.ver="0" bottom.ver="0" top.ver="0" left.hor="-2" right.hor="2"/>
+</e:Skin>

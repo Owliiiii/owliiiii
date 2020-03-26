@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="StipSkin" width="1600" height="990" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect id="bg" fillAlpha="0.6" left="0" right="0" top="0" bottom="0"/>
+	<e:Group id="mainGroup" horizontalCenter="0" verticalCenter="0">
+		<e:Image id="img" source="nomalbg_png" scale9Grid="50,95,300,17" anchorOffsetY="0" horizontalCenter="0" verticalCenter="0"/>
+		<e:Label id="desLabel" text="自动游戏已停止。\n您想重复自动游戏吗？" fontFamily="Microsoft JhengHei" textAlign="center" verticalAlign="middle" size="20" anchorOffsetY="0" width="380" lineSpacing="5" textColor="0xffffff" x="36" top="70"/>
+		<e:Label id="titleLabel" text="" fontFamily="Microsoft JhengHei" textAlign="center" verticalAlign="middle" size="20" anchorOffsetY="0" width="430" lineSpacing="4" textColor="0xffffff" multiline="true" anchorOffsetX="0" height="44" top="70" horizontalCenter="0"/>
+		<ns1:MouseButton id="okBtn" label="是" horizontalCenter="-90" bottom="23">
+			<e:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="btn_green_png" source.rollOver="btn_green_png" source.down="btn_green_pressed_png"/>
+				<e:Label id="labelDisplay" fontFamily="Microsoft JhengHei" verticalCenter="-4" horizontalCenter="0" size="20"/>
+				</e:Skin>
+			</e:skinName>
+		</ns1:MouseButton>
+		<ns1:MouseButton id="cancleBtn" label="否" horizontalCenter="88.5" bottom="23">
+			<e:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="btn_red_png"  source.rollOver="btn_red_png" source.down="btn_red_pressed_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="-4" size="20" fontFamily="Microsoft JhengHei"/>
+				</e:Skin>
+			</e:skinName>
+		</ns1:MouseButton>
+		<ns1:MouseButton id="confirBtn" label="确定" horizontalCenter="0" bottom="23">
+			<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="btn_green_png" source.rollOver="btn_green_png" source.down="btn_green_pressed_png"/>
+				<e:Label id="labelDisplay" fontFamily="Microsoft JhengHei" verticalCenter="-4" horizontalCenter="0" size="20"/>
+			</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+	</e:Group>
+</e:Skin>

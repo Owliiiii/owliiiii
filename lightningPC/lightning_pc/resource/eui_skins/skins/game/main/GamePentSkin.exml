@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GamePentSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" height="700">
+	<e:Group id="maskGroup" left="0" right="0" top="0" bottom="0">
+		<e:Rect width="232" x="2" top="0" bottom="0" fillAlpha="0.6"/>
+		<e:Rect width="232" x="232.45" top="0" bottom="0" fillAlpha="0.6"/>
+		<e:Rect fillAlpha="0.6" width="232" x="463.86" top="0" bottom="0"/>
+		<e:Rect fillAlpha="0.6" width="232" x="694.86" top="0" bottom="0"/>
+		<e:Rect fillAlpha="0.6" width="232" x="925.86" top="0" bottom="0"/>
+		<e:Rect fillAlpha="0.6" width="232" x="1158" top="0" bottom="0"/>
+	</e:Group>
+	<e:Group id="kuangGroup" width="1389" horizontalCenter="0" verticalCenter="0" scaleY="0.98">
+		<e:Group x="2" y="3" scaleX="0.99" scaleY="1" width="232">
+		<ns1:ReelResult y="0" skinName="ReelResultSkin" horizontalCenter="0"/>
+		<ns1:ReelResult y="176" horizontalCenter="0" skinName="ReelResultSkin"/>
+		<ns1:ReelResult y="352" horizontalCenter="0" skinName="ReelResultSkin"/>
+		<ns1:ReelResult y="528" horizontalCenter="0" skinName="ReelResultSkin"/>
+		</e:Group>
+		<e:Group x="232.45" y="3" scaleX="0.99" scaleY="1" width="232">
+		<ns1:ReelResult skinName="ReelResultSkin" horizontalCenter="0" y="0"/>
+		<ns1:ReelResult y="176" horizontalCenter="0" skinName="ReelResultSkin"/>
+		<ns1:ReelResult y="352" horizontalCenter="0" skinName="ReelResultSkin"/>
+		<ns1:ReelResult y="528" horizontalCenter="0" skinName="ReelResultSkin"/>
+		</e:Group>
+		<e:Group x="463.86" y="3" scaleX="0.99" scaleY="1" width="232">
+		<ns1:ReelResult skinName="ReelResultSkin" horizontalCenter="0" y="0"/>
+		<ns1:ReelResult y="176" skinName="ReelResultSkin" horizontalCenter="0"/>
+		<ns1:ReelResult y="352" skinName="ReelResultSkin" horizontalCenter="0"/>
+		<ns1:ReelResult y="528" skinName="ReelResultSkin" horizontalCenter="0"/>
+		</e:Group>
+		<e:Group x="694.86" y="3" scaleX="0.99" scaleY="1" width="232">
+		<ns1:ReelResult y="0" skinName="ReelResultSkin" horizontalCenter="0"/>
+		<ns1:ReelResult y="176" skinName="ReelResultSkin" horizontalCenter="0"/>
+		<ns1:ReelResult y="352" skinName="ReelResultSkin" horizontalCenter="0"/>
+		<ns1:ReelResult y="528" skinName="ReelResultSkin" horizontalCenter="0"/>
+		</e:Group>
+		<e:Group x="925.86" y="3" scaleX="0.99" scaleY="1" width="232">
+		<ns1:ReelResult y="0" skinName="ReelResultSkin" horizontalCenter="0"/>
+		<ns1:ReelResult y="176" skinName="ReelResultSkin" horizontalCenter="0"/>
+		<ns1:ReelResult y="352" skinName="ReelResultSkin" horizontalCenter="0"/>
+		<ns1:ReelResult y="528" skinName="ReelResultSkin" horizontalCenter="0"/>
+		</e:Group>
+		<e:Group x="1158" y="3" scaleX="0.99" scaleY="1" width="232">
+		<ns1:ReelResult y="0" skinName="ReelResultSkin" horizontalCenter="0"/>
+		<ns1:ReelResult y="176" skinName="ReelResultSkin" horizontalCenter="0"/>
+		<ns1:ReelResult y="352" skinName="ReelResultSkin" horizontalCenter="0"/>
+		<ns1:ReelResult y="528" skinName="ReelResultSkin" horizontalCenter="0"/>
+		</e:Group>
+	</e:Group>
+	<e:Group id="showAllKuang" width="1389" horizontalCenter="0" verticalCenter="0" scaleY="0.97">
+		<e:Group x="2" y="3" scaleX="0.99" scaleY="1" width="232">
+			<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" y="0"/>
+			<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" y="176"/>
+			<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" y="352"/>
+			<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" y="528"/>
+		</e:Group>
+		<e:Group x="232.45" y="3" scaleX="0.99" scaleY="1" width="232">
+			<ns1:ReelItem skinName="ReelItemSkin" y="0" horizontalCenter="0"/>
+			<ns1:ReelItem skinName="ReelItemSkin" y="176" horizontalCenter="0"/>
+			<ns1:ReelItem skinName="ReelItemSkin" y="352" horizontalCenter="0"/>
+			<ns1:ReelItem skinName="ReelItemSkin" y="528" horizontalCenter="0"/>
+		</e:Group>
+		<e:Group x="463.86" y="3" scaleX="0.99" scaleY="1" width="232">
+			<ns1:ReelItem skinName="ReelItemSkin" y="0" horizontalCenter="0"/>
+			<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" y="176"/>
+			<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" y="352"/>
+			<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" y="528"/>
+		</e:Group>
+		<e:Group x="694.86" y="3" scaleX="0.99" scaleY="1" width="232">
+			<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" y="0"/>
+			<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" y="176"/>
+			<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" y="352"/>
+			<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" y="528"/>
+		</e:Group>
+		<e:Group x="925.86" y="3" scaleX="0.99" scaleY="1" width="232">
+			<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" y="0"/>
+			<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" y="176"/>
+			<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" y="352"/>
+			<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" y="528"/>
+		</e:Group>
+		<e:Group x="1158" y="3" scaleX="0.99" scaleY="1" width="232">
+			<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" y="0"/>
+			<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" y="176"/>
+			<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" y="352"/>
+			<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" y="528"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

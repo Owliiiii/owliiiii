@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="netcloseSkin" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" states="hor,ver"  width.hor="750" height.hor="1334" width.ver="1334" height.ver="750">
+	<e:Rect left="0" right="0" top="0" bottom="0" alpha="0.9"/>
+	<e:Group horizontalCenter.hor="0" verticalCenter.hor="0" horizontalCenter.ver="0" verticalCenter.ver="0" horizontalCenter="0" verticalCenter="0">
+		<e:Image x="0" y="0" source="quickstart_bg_png" width="600" height="296"/>
+		<e:Label id="desLabel" text="连接断开，正在重新连接" fontFamily="Microsoft JhengHei" size="26" verticalCenter="-38" horizontalCenter="0"/>
+		<e:Label text="确定" y="220.15" fontFamily="Microsoft JhengHei" size="34" horizontalCenter="1"/>
+		<e:Rect id="okRect" width="550" height="69.82" x="26" y="201.71" anchorOffsetX="0" anchorOffsetY="0" alpha="0"/>
+	</e:Group>
+</e:Skin>

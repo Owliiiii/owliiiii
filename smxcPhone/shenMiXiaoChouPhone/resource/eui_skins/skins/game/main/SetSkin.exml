@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SetSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" xmlns:tween="egret.tween.*" width="720" height="1280" width.up="1280" height.up="720" states="up,down"  height.down="1063">
+	<w:Declarations>
+	</w:Declarations>
+	<e:Rect id="diTuRect" fillColor="0xffffff" anchorOffsetX="0" anchorOffsetY="0" left.up="0" right.up="0" top.up="0" bottom.up="0" left="0" right="0" top="0" bottom="0"/>
+	<e:Image id="pfBg" scaleX.up="1" scaleY.up="1.5" touchEnabled.up="false" height.up="857.666667" source.up="shuBlue_png" touchEnabled.down="false" width.up="1280" x.up="0" y.down="-330" height.down="1770" y.up="-269" source.down="shuBlue_png" anchorOffsetX.down="0" width.down="720" x.down="0" visible.up="false" source="peifubg_png" visible.down="false"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<e:Scroller id="touZhuScroller" anchorOffsetY="0" enabled="true" touchEnabled="true" touchChildren="true" scrollPolicyH="off" scrollPolicyV="on" bounces="false" bottom.up="37" bottom.down="164" top.up="60" top.down="82" width.up="1280" x.up="0" width.down="720">
+		<e:Group id="touZhuGroup" width="720" y="-1" y.up="0" scaleY="0.9" anchorOffsetY.down="0" height.down="1145.93" scaleX="0.9" scaleX.up="0.9" scaleY.up="0.9" scaleX.down="0.9" scaleY.down="0.9" touchEnabled.up="true" y.down="-18">
+			<e:Rect id="upRect" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" fillColor="0x605d5d" width="2" horizontalCenter="0" top="0" bottom="0" visible.up="false" includeIn="up" visible="false"/>
+			<e:Group id="touZhu" anchorOffsetY="0" height="142" scaleX="1" scaleY="1" y.up="60.74" height.up="212.67" y="0" y.down="65.43" scaleX.up="0.9" scaleY.up="0.9" left.up="0" left.down="20" right.down="20" left="0" anchorOffsetX.up="0" width.up="762.19">
+				<e:Image y="89.63999999999999" scaleX="0.6" scaleY="0.6" x.up="35.05" y.up="90.43" left.down="2" left="0" left.up="49" scaleX.up="0.66" scaleY.up="0.66" source="touzhuCNY_png" source.up="tou2_png"/>
+				<e:Image x="22.439999999999998" y="36.97" scaleX="0.6" scaleY="0.6" source="" source.up="(CNY)_png" y.up="163.81" x.up="50.93" scaleX.up="0.66" scaleY.up="0.66" source.down="autoGame_png" x.down="2.45"/>
+				<ns1:MyHslider id="shiZhi1" name="sheZhi1" x="298.08" y="21.75" scaleX="0.7" scaleY="0.7" y.up="59.28" x.up="324.87" maximum="28" enabled="true" minimum="0" horizontalCenter.down="90.5" skinName="skins.TouZhuHSliderSkin" y.down="22.32" scaleX.up="0.7" scaleY.up="0.7" enabled.down="true"/>
+
+
+
+
+				<e:Label id="touZhu2" text="1000.00" x="537.77" y.down="89.7" textColor="0x5e5e5e" bold.up="true" fontFamily="PMingLiU" scaleX="0.8" size="40" right.up="1.1900000000000546" bottom.up="52.66999999999999" right.down="46" size.down="35" fontFamily.down="Arial" size.up="35" fontFamily.up="Arial" textColor.down="0x9b9b9b" textColor.up="0x9b9b9b" bold.down="true"/>
+				<e:Label id="touZhu1" text="1.00" y.down="90.44" textColor="0x5E5E5E" bold.up="true" fontFamily="PMingLiU" scaleX="0.8" size="40" left.up="258" bottom.up="51.66999999999999" left.down="244" size.down="35" fontFamily.down="Arial" size.up="35" fontFamily.up="Arial" textColor.down="0x9b9b9b" textColor.up="0x9b9b9b" bold.down="true"/>
+				<e:Image source="heiSeDiTu_png" includeIn="down" y="178" height="0.7" alpha="0.5" width="780" horizontalCenter="0"/>
+
+				
+			</e:Group>
+			<e:Group id="ziDongYouXi" anchorOffsetY="0" height="266" scaleX="1" scaleY="1" y.down="287.87" scaleX.up="0.9" scaleY.up="0.9" left.down="20" right.down="20" anchorOffsetX.up="0" right.up="2.2222222222221717" width.up="791" y.up="22.36">
+				<e:Image y="38" scaleX="0.6" scaleY="0.6" y.up="42.71" left.down="0" left.up="40" scaleX.up="0.68" scaleY.up="0.68" y.down="28.5" source.up="autoGame_png" source.down="stopAuto_png" source="autoGame_png"/>
+				<ns1:MyHslider id="shiZhi2" name="sheZhi2" x="46.64" y="96.15" scaleX="0.7" scaleY="0.7" skinName="skins.ZiDongYouXiHSliderSkin" x.up="91.71" scaleX.up="0.68" scaleY.up="0.68" y.up="125.03" maximum="4" horizontalCenter.down="-98.5" maximum.down="4" y.down="82.56" skinName.up="skins.ZiDongYouXiHSliderSkin"/>
+
+
+
+
+
+				<e:Image id="autoPlay" source="uiElements_03-062_png" scaleX.down="0.58" scaleY.down="0.58" right.down="2" bottom.down="35" x.up="604" y.up="86" scaleY.up="0.7" scaleX.up="0.7" source.down="uiElements_03-062_png" source.up="uiElements_03-062_png"/>
+				<e:Image id="stopAuto" source="uiElements_03-16_png" x="605" y="89" scaleX="1.65" scaleY="1.65" x.down="610.36" y.down="85.81" scaleX.down="1.3" scaleY.down="1.3" y.up="86" x.up="604" visible.up="false" visible.down="false"/>
+				<e:Label id="autoNumBer" text="10" textColor="0x000000" anchorOffsetX="0" anchorOffsetY="0" height="40" verticalAlign="middle" textAlign="center" scaleX="1" scaleY="1" x.up="516" y.up="141.1" touchEnabled="true" right="41" bottom="90" right.up="45" bottom.up="59" right.down="36" bottom.down="83" touchEnabled.up="false" size.down="40" text.down="10" size.up="40" text.up="10" scaleY.up="1.5" width.down="85" touchEnabled.down="false" fontFamily.up="Arial" width.up="104" bold.up="true" fontFamily.down="Arial" scaleY.down="1.3" bold.down="true"/>
+
+
+				<e:Image y="321" scaleX.down="0.6" scaleY="0.6" y.up="360.27" y.down="301.86" left.down="-4" scaleY.up="0.7" x.up="30.12" scaleX.up="0.7" source.up="stopAuto_png" source="stopAuto_png"/>
+				<e:Label id="ziDong2" text="10" x="537.77" y="86" textColor="0x5E5E5E" bold.up="true" fontFamily="PMingLiU" scaleX="0.8" size="40" text.up="100" right.up="189" y.up="190.77" text.down="100" y.down="153.28" x.down="515.93" size.down="35" fontFamily.down="Arial" size.up="35" fontFamily.up="Arial" textColor.down="0x9b9b9b" textColor.up="0x9b9b9b" bold.down="true"/>
+				<e:Label id="ziDong1" text="100" y="86" textColor="0x5E5E5E" bold.up="true" fontFamily="PMingLiU" scaleX="0.8" size="40" y.up="189.77" left.up="41" text.up="10" size.down="35" text.down="10" left.down="2" y.down="152.09" fontFamily.down="Arial" size.up="35" fontFamily.up="Arial" textColor.down="0x9b9b9b" textColor.up="0x9b9b9b" bold.down="true"/>
+				
+			</e:Group>
+			<e:Group id="danCi" y="641" scaleX="1" scaleY="1" y.up="474.17" y.down="698.35" anchorOffsetX.up="0" scaleX.up="0.9" scaleY.up="0.9" left.down="12" right.down="28" right.up="6.222222222222172" width.up="791">
+				<e:Image y="25" scaleX="0.6" scaleY="0.6" y.up="-7.52" left.down="0" scaleX.down="0.62" scaleX.up="0.68" scaleY.up="0.66" x.up="38.37" y.down="0" source="ruguo_png"/>
+				<e:Image source="(CNY)_png" y="25" scaleX="0.6" scaleY="0.6" x.up="342" y.up="-8.73" x.down="351" left="367" left.up="431" left.down="367" y.down="-0.23" scaleX.up="0.66" scaleY.up="0.66"/>
+				<ns1:MyHslider id="shiZhi3" name="sheZhi3" x.down="63.8" skinName="skins.DanCiHSliderSkin" scaleX.up="0.63" scaleY.up="0.63" y.up="83.77" maximum="4000" horizontalCenter.down="-31.5" scaleX="0.7" scaleY="0.7" horizontalCenter.up="-40.5" bottom.down="-15"/>
+
+
+
+
+				<e:Label id="danCi2" text="0.00" x="537.77" y.down="121.6" textColor="0x5E5E5E" bold.up="true" fontFamily="PMingLiU" scaleX="0.8" size="40" size.up="35" right.up="29" bottom.up="14" size.down="35" text.down="2000.00" text.up="2000.00" fontFamily.down="Arial" fontFamily.up="Arial" textColor.up="0x9b9b9b" verticalAlign.down="justify" x.down="625.98" textColor.down="0x9b9b9b" bold.down="true"/>
+				<e:Label id="danCi1" text="4000.00" x="240" y.down="121.08" textColor="0x5E5E5E" bold.up="true" fontFamily="PMingLiU" scaleX="0.8" size="40" text.up="0.00" size.up="35" bottom.up="13" text.down="0.00" left.down="0" size.down="35" x.up="30.92" fontFamily.down="Arial" fontFamily.up="Arial" textColor.up="0x9b9b9b" textColor.down="0x9b9b9b" bold.down="true"/>
+			</e:Group>
+			<e:Group id="yuEJia" y="891.2" y.up="661.4" scaleX.down="1" scaleY.down="1" y.down="915.51" scaleX.up="0.9" scaleY.up="0.9" left.down="12" right.down="28" right.up="14.222222222222172" width.up="791">
+				<e:Image y="35" scaleX="0.6" scaleY="0.6" left.down="4" left="0" scaleX.down="0.62" left.up="50" y.down="27.12" scaleX.up="0.66" scaleY.up="0.66" source="zengjia_png"/>
+
+				<ns1:MyHslider id="shiZhi4" name="sheZhi4" x="78" scaleX="0.8" scaleY="0.8" maximum="40000" horizontalCenter.down="-34.5" horizontalCenter.up="-29.5" skinName.up="skins.DanCiJiaSkin" skinName.down="skins.DanCiJiaSkin" scaleX.down="0.7" scaleY.down="0.7" bottom.down="-17" scaleY.up="0.63" scaleX.up="0.63" y.up="128.48" skinName="skins.DanCiJiaSkin"/>
+
+
+
+				<e:Label id="jia1" text="0.00" x.up="38.47" y.down="149.85" textColor="0x5E5E5E" bold.up="true" fontFamily="PMingLiU" scaleX="0.8" size="40" size.up="35" text.up="0.00" size.down="35" text.down="0.00" left.down="0" y.up="175.28" fontFamily.down="Arial" fontFamily.up="Arial" textColor.down="0x9b9b9b" textColor.up="0x9b9b9b" bold.down="true"/>
+				<e:Label id="jia2" text="40000.00" x="240" y="86" textColor="0x5E5E5E" bold.up="true" fontFamily="PMingLiU" scaleX="0.8" size="40" text.up="20000.00" size.up="35" right.up="23" size.down="35" text.down="20000.00" y.down="151.29" y.up="179.02" fontFamily.down="Arial" fontFamily.up="Arial" textColor.down="0x9b9b9b" textColor.up="0x9b9b9b" x.down="608.99" verticalAlign.down="justify" bold.down="true"/>
+			</e:Group>
+			<e:Group id="yuEJian" y.up="916.42" scaleX.down="1" scaleY.down="1" scaleX.up="0.9" scaleY.up="0.9" left.down="16" right.down="24" right.up="2.2222222222221717" width.up="791" height.down="204" y.down="1180.86" anchorOffsetY.up="0" height.up="187.7">
+				<e:Image x="13" y="41" scaleX="0.6" scaleY="0.6" left.down="2" scaleX.down="0.62" x.up="37.53" y.down="11.98" y.up="6.42" scaleX.up="0.66" scaleY.up="0.66" source="jianshao_png"/>
+				<e:Image source="(CNY)_png" x="287.4" y="44" scaleX="0.6" scaleY="0.6" left.down="291" x.up="342" y.down="14.98" y.up="9.42" scaleX.up="0.66" scaleY.up="0.66"/>
+				<ns1:MyHslider id="shiZhi5" name="sheZhi5" x="78" y="88.54" scaleX="0.8" scaleY="0.8" maximum="40000" horizontalCenter.up="-45.5" skinName.up="skins.DanCiJianSkin" skinName.down="skins.DanCiJianSkin" scaleX.down="0.7" scaleY.down="0.7" scaleX.up="0.63" scaleY.up="0.63" bottom.up="-10.300000000000011" skinName="skins.DanCiJianSkin" y.down="75.2" x.down="55.49"/>
+
+
+
+
+
+				<e:Label id="jian1" text="0.00" x="537.77" y="86" textColor="0x5E5E5E" bold.up="true" fontFamily="PMingLiU" scaleX="0.8" size="40" text.up="0.00" bottom.up="1.6999999999999886" size.down="35" left.down="-2" bottom.down="34" text.down="0.00" size.up="35" x.up="26.64" fontFamily.down="Arial" fontFamily.up="Arial" textColor.down="0x9b9b9b" textColor.up="0x9b9b9b" bold.down="true"/>
+				<e:Label id="jian2" text="40000.00" x.up="240" y="86" textColor="0x5E5E5E" bold.up="true" fontFamily="PMingLiU" scaleX="0.8" size="40" bottom.up="0.6999999999999886" right.up="35" size.down="35" text.down="20000.00" size.up="35" fontFamily.down="Arial" fontFamily.up="Arial" text.up="20000.00" textColor.down="0x9b9b9b" textColor.up="0x9b9b9b" x.down="605" y.down="136.68" verticalAlign.down="justify" bold.down="true"/>
+			</e:Group>
+			<e:Group id="down" y="1421.2" y.up="1166.52" scaleX.down="1" scaleY.down="1" y.down="1464.63" scaleX.up="0.9" scaleY.up="0.9" left.down="12" right.down="28" right.up="2.2222222222221717" width.up="791">
+				<e:Image x="20" y="111" scaleX="0.6" scaleY="0.6" left.down="14" scaleX.down="0.62" x.up="40" y.up="135.7" y.down="70.98" source="ruoguomianfei_png"/>
+				<e:Image x="20" y="18" scaleX="0.6" scaleY="0.6" left.down="18" scaleX.down="0.62" x.up="40" y.up="42.7" y.down="-17.58" source="renghe_png"/>
+				<ns1:QieHuan id="renHeTo"  x="553" y="16" scaleX.up="1.5" scaleY.up="1.5" skinName="qieHuanSkin" right.down="31" scaleX.down="1.3" scaleY.down="1.3" y.down="-34.75"/>
+				<ns1:QieHuan id="freeGameTo"  x="553" y="109" scaleX.up="1.5" scaleY.up="1.5" skinName="qieHuanSkin" right.down="30" scaleX.down="1.3" scaleY.down="1.3" y.down="49.74"/>
+				
+			</e:Group>
+			<e:Group id="downW" y="1385.42" scaleX="0.9" scaleY="0.9" right="2.2222222222221717" width="791" includeIn="up" height="200">
+			</e:Group>
+			<e:Group id="down0" y="1789.44" scaleX="1" scaleY="1" left="0" right="0" includeIn="down">
+
+
+			</e:Group>
+			<e:Image source="heiSeDiTu_png" includeIn="up" rotation="90" width="1786" top="-20" horizontalCenter="-4.111111111111086" bottom="-690.7777777777778" height="4" alpha="0.15"/>
+
+
+
+		</e:Group>
+	</e:Scroller>
+	<e:Scroller id="sheZhiScroller" bounces="false" anchorOffsetY.up="0" bottom.up="37" top.up="60" width.up="1280" x.up="0" top.down="96" width.down="720" x.down="0" bottom.down="3" anchorOffsetY.down="0" visible.down="false" visible.up="false">
+		<e:Group id="sheZhiGroup" anchorOffsetY.up="0" height.up="612.06" anchorOffsetX.up="0" width.up="720.91" anchorOffsetY.down="0" height.down="966">
+			<e:Image y="72" scaleX="0.6" scaleY="0.6" x="151" y.down="51.9" y.up="96.26" x.up="152.52" x.down="104.22" scaleX.down="0.5" scaleY.down="0.5" scaleX.up="0.63" scaleY.up="0.63" source="musicSet_png"/>
+			<e:Image y="164" scaleX="0.6" scaleY="0.6" x="156" y.up="200.37" x.down="106.17" y.down="157.85" scaleX.down="0.5" scaleY.down="0.5" scaleX.up="0.63" scaleY.up="0.63" source="autoTouzhu_png"/>
+			<e:Image y="289" scaleX="0.6" scaleY="0.6" x="150" x.down="98.99" y.down="259.71" scaleX.down="0.5" scaleY.down="0.5" y.up="310.22" scaleX.up="0.63" scaleY.up="0.63" source="zuoshou_png"/>
+			<e:Image source="uiElements_58-202_png" y="268" scaleX="0.8" scaleY="0.8" x="28" x.up="73.5" scaleX.down="0.6" scaleY.down="0.65" y.down="234.64" x.down="43.16" y.up="284.72" scaleX.up="0.83" scaleY.up="0.83"/>
+			<e:Image source="uiElements_58-222_png" y="151" scaleX="0.7" x="20" x.up="63.94" y.up="185.88" scaleX.down="0.6" scaleY.down="0.65" x.down="23.04" y.down="144.92" scaleX.up="0.74" scaleY.up="0.8"/>
+			<e:Image source="uiElements_58-232_png" y="390" x="33" x.up="76.98" y.up="400.65" scaleX.down="0.6" scaleY.down="0.65" y.down="352.11" x.down="47.66" scaleX.up="0.83" scaleY.up="0.83"/>
+			<e:Image y="412" scaleX="0.6" scaleY="0.6" x="152" y.up="419.59" x.up="150.48" x.down="95.95" y.down="368.06" scaleX.down="0.5" scaleY.down="0.5" scaleX.up="0.63" scaleY.up="0.63" source="kuaisuSet_png"/>
+			<e:Image source="uiElements_662_png" y="58" scaleY="0.8" scaleX="0.8" x="37" y.down="34.96" x.up="76.44" y.up="74.72" scaleX.down="0.6" scaleY.down="0.65" x.down="45.22" scaleX.up="0.73" scaleY.up="0.8"/>
+			<ns1:QieHuan id="musicBtn"  y="70" x.down="634" y.down="39.01" right.down="14" scaleX.up="1.4" scaleY.up="1.4" y.up="65.25" scaleX.down="1.1" scaleY.down="1.1" skinName="qieHuanSkin" x.up="1110.56"/>
+			<ns1:QieHuan id="autoBtn"  y="162" x.down="634" right.down="14" scaleX.up="1.4" scaleY.up="1.4" y.up="172.42" scaleX.down="1.1" scaleY.down="1.1" y.down="141.89" skinName="qieHuanSkin" x.up="1110.56"/>
+			<ns1:QieHuan id="zuoShouTo"  y="286"  x.down="632" right.down="14" scaleX.up="1.4" scaleY.up="1.4" y.up="284.12" scaleX.down="1.1" scaleY.down="1.1" y.down="249.25" skinName="qieHuanSkin" x.up="1106"/>
+			<ns1:QieHuan id="speedBtn"  y="409"   x.down="632" right.down="14" y.up="392.13" scaleX.up="1.4" scaleY.up="1.4" scaleX.down="1.1" scaleY.down="1.1" y.down="355.53" skinName="qieHuanSkin" x.up="1107.52"/>
+			<e:Rect fillColor="0xFFFFFF" anchorOffsetX="0" anchorOffsetY="0" left="0" right="0" y="790" height="0" fillAlpha="0" strokeAlpha="0" includeIn="up" x="0" scaleX="1" scaleY="1"/>
+		</e:Group>
+	</e:Scroller>
+	<e:Scroller id="peiFuScroller" bounces.down="false" bounces="false" anchorOffsetY="0" bottom.up="37" bottom.down="168" top.up="59" width.up="1280" x.up="0" top.down="78" width.down="720" x.down="0" visible.up="false" visible.down="false">
+		<e:Group id="peifuGroup" anchorOffsetY.down="0" height.down="1037.03" touchEnabled.up="false">
+			<e:Image source="peifubg_png" top="0" scaleX="2" scaleY="1.8" alpha="0.25" left="0" right="0" left.down="0" right.down="0" top.down="0" height.down="747.888889" alpha.down="0.2" alpha.up="0.37" source.up="peifubg_png" visible.up="false" visible.down="false"/>
+			<e:Rect anchorOffsetX="0" anchorOffsetY="0" left="0" right="0" fillAlpha="0.38" strokeAlpha="0" includeIn="up" fillColor="0xb6b6b6" height="624" y="0" scaleY="4.3"/>
+			<e:Rect anchorOffsetX="0" anchorOffsetY="0" left="0" right="0" fillAlpha="0.38" strokeAlpha="0" includeIn="down" fillColor="0xb6b6b6" height="1485" y="0"/>
+			<e:Image source="peifu_png" left="0" right="0" top="2" scaleY.up="1.55"/>
+			
+
+
+
+			<e:Rect fillColor="0xFFFFFF" anchorOffsetX="0" anchorOffsetY="0" left="0" right="0" y="2322" height="0" fillAlpha="0" strokeAlpha="0" y.down="1433.22" y.up="2576.99" left.down="0" right.down="0" left.up="0" right.up="0"/>
+		</e:Group>
+	</e:Scroller>
+	<e:Scroller id="guiZeScroller" anchorOffsetY.up="0" scrollPolicyH="off" scrollPolicyV="on" bounces.down="false" bounces="false" anchorOffsetY.down="0" bottom.up="37" bottom.down="150" top.up="60" width.up="1280" top.down="96" width.down="720" x.down="0" visible.down="false" visible.up="false">
+		<e:Group id="guiZeiGroup" anchorOffsetX="0" anchorOffsetY.down="0" height.down="1022.24">
+
+
+			<e:Image id="guiZei0" scaleY.down="0.66" y="1361.96" y.up="28.26" y.down="4" scaleX.down="0.66" width.down="947" anchorOffsetX.down="0" anchorOffsetY.down="0" height.down="1859.86" horizontalCenter.down="0" horizontalCenter.up="-22" scaleY.up="1.06" anchorOffsetX.up="1083" scaleX.up="1.06" source.down="guize_01_png" source="guize_01_png" source.up="guize_01_png"/>
+			<e:Image id="guiZei1" scaleX.down="0.66" scaleY="0.66" y="1371.96" x="10" scaleY.up="1.06" y.up="2229.32" y.down="1238.67" width.down="947" height.down="1859.86" horizontalCenter.down="-0.5" horizontalCenter.up="0.5" anchorOffsetX.up="1133" scaleX.up="1.06" source.down="guize_02_png" source="guize_02_png"/>
+			<e:Rect width="720" height="0" y="2902" scaleX="1" scaleY="1" fillColor="0xffffff" strokeColor="0xffffff" horizontalCenter="0" width.up="1280" horizontalCenter.up="0" y.up="4566.68" horizontalCenter.down="0" y.down="2560.31"/>
+
+		</e:Group>
+	</e:Scroller>
+	<e:Scroller id="liShiScroller" scrollPolicyH="off" scrollPolicyV="on" bounces="false" width.up="1280" top.up="97" bottom.up="47" width.down="720" top.down="124" bottom.down="177" visible.up="false" visible.down="false">
+		<e:Group id="liShiGroup" anchorOffsetX="0" height.down="983.58">
+		</e:Group>
+	</e:Scroller>
+
+
+	<e:Group id="liShiUpGroup" height.down="22" y.down="97.09" scaleX.down="1" scaleY.down="1" width.down="720" width.up="1280" y.up="71" visible.up="false" visible.down="false">
+		<e:Image y="0" scaleX="0.55" scaleY="0.55" left.down="38" right.down="639" scaleX.up="1" scaleY.up="1" y.up="2" left.up="67" right.up="1135" source.down="riqi_png" source="riqi_png"/>
+		<e:Image y="0" scaleX="0.55" scaleY="0.55" left.down="223" right.down="400" scaleX.up="1" scaleY.up="1" y.up="2" left.up="456" right.up="647" source.down="gameName_png" source="gameName_png"/>
+		<e:Image y="0" scaleX="0.55" scaleY="0.55" left.down="374" right.down="289" scaleX.up="1" scaleY.up="1" y.up="2" left.up="779" right.up="398" source.down="touzhu_png" source="touzhu_png"/>
+		<e:Image y="0" scaleX="0.55" scaleY="0.55" left.down="481" right.down="182" scaleX.up="1" scaleY.up="1" y.up="2" left.up="937" right.up="240" source.down="jiangjin_png" source="jiangjin_png"/>
+		<e:Image y="0" scaleX="0.55" scaleY="0.55" left.down="589" right.down="34" scaleX.up="1" scaleY.up="1" y.up="2" left.up="1085" right.up="18" source.down="xiangxi_png" source="xiangxi_png"/>
+	</e:Group>
+	<e:Rect id="liShiDiTuRect0" anchorOffsetX="0" anchorOffsetY="0" fillColor="0x3D3B3B" left="0" right="0" top="0" bottom="0" x="0" y="-124" scaleX="1" scaleY="1" width.up="1280" visible.up="false" visible.down="false"/>
+	<e:Scroller id="liShiInfoGroup" scrollPolicyH="off" scrollPolicyV="on" bounces="false" width="720" anchorOffsetY="0" x="0" top="117" bottom="176" anchorOffsetX.up="0" top.up="83" bottom.up="70" width.up="1264" x.up="8" top.down="95" bottom.down="192" visible.up="false" visible.down="false">
+		<e:Group anchorOffsetX="0" anchorOffsetY="0" x="0" y="20" height.down="774">
+
+		<ns1:LiShiInfoUI id="liShiInfo" skinName="LiShiInfoSkin" currentState="up" currentState.down="down" anchorOffsetY="0" scaleX.down="0.8" scaleY.down="0.8" anchorOffsetX.up="0" x.up="15" y.up="0" anchorOffsetX.down="0" width.up="1232" x.down="24" y.down="0" width.down="835" skinName.up="LiShiInfoSkin"/>
+			<e:Image includeIn="down" scaleX="0.95" scaleY="0.96" horizontalCenter="0" verticalCenter="84.5" alpha="0.5" source=""/>
+
+
+		</e:Group>
+	</e:Scroller>
+
+	<e:Group id="up" anchorOffsetY="0" width.up="1280" height.up="67.5" left="0" scaleX="0.9" scaleY="0.9" left.down="0" left.up="0" right.up="0" top.up="0" right.down="0" top.down="0">
+		<e:Image anchorOffsetY="0" source.up="上_png" anchorOffsetX.up="0" left.up="0" right.up="0" top.up="0" bottom.up="0" left.down="0" right.down="0" top.down="0" height.down="85.22" source.down="zu1_png" source="zu1_png"/>
+		<e:Image id="upXuanZe" scaleY.down="0.3" y.up="55.05" x.up="13.17" width="54" scaleY.up="0.5" scaleY="0.5" x.down="20.18" x="28" width.up="99" bottom.up="0" y.down="79.55" width.down="67" source.down="juxing2_png" source="juxing2_png"/>
+		<e:RadioButton id="upPeiFu" x.down="208.96" scaleX="0.7" scaleY="0.7" groupName="aa" left.down="202" scaleX.up="0.84" scaleY.up="0.95" left.up="275" x="231" scaleX.down="0.65" scaleY.down="0.65" name="5" bottom.up="13.730000000000004" name.up="3" name.down="3" y.down="49.56">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="赔付表暗_png" source.down="赔付表                                                            _png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:RadioButton>
+		<e:RadioButton groupName="aa" id="upLiShi" x.down="527.52" scaleX="0.7" scaleY="0.7" left.down="490" scaleX.up="0.84" scaleY.up="0.92" left.up="660" scaleX.down="0.65" scaleY.down="0.65" name="4" bottom.up="16.730000000000004" name.up="5" name.down="5" y.down="49.56">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="游戏历史暗_png" source.down="游戏历史_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:RadioButton>
+		<e:RadioButton id="upGuiZe" groupName="aa" x.down="346.96" scaleX="0.7" scaleY="0.7" left.down="330" scaleX.up="0.84" scaleY.up="0.95" left.up="446" scaleX.down="0.65" scaleY.down="0.65" name="3" bottom.up="15.730000000000004" name.up="4" name.down="4" y.down="49.56">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="游戏规则暗_png" source.down="游戏规则_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:RadioButton>
+		<e:RadioButton groupName="aa" name="2" id="upSet" x.down="108.96" scaleX="0.7" scaleY="0.7" left.down="111" scaleX.up="0.95" scaleY.up="0.95" left.up="147" x="125" scaleX.down="0.65" scaleY.down="0.65" bottom.up="13.730000000000004" y.down="49.56">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="设置暗_png" source.down="设置_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:RadioButton>
+		<e:RadioButton groupName="aa" id="upTouZhu" x.down="8.96" scaleX="0.7" scaleY="0.7" left.down="19" scaleY.up="0.95" scaleX.up="0.95" left.up="16" x="20" scaleX.down="0.65" scaleY.down="0.65" name="1" bottom.up="13.730000000000004" selected="true" y.down="49.56">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="投注暗_png" source.down="投注_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:RadioButton>
+		<e:Image source="Mystery Joker_png" scaleX="0.7" scaleY="0.7" scaleX.up="1.12" scaleY.up="1.3" right.up="59.22222222222217" top.up="10" left.down="10" top.down="10"/>
+	</e:Group>
+
+
+</e:Skin>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="LoginWaitSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="up,down" >
+	<e:Group horizontalCenter="0" verticalCenter="0" width.up="890" height.up="632" width.down="890" height.down="793">
+		<e:Image source="feature_preview_texture0_level1_09_png" anchorOffsetX="445" anchorOffsetY="264" horizontalCenter="0" anchorOffsetX.up="0" anchorOffsetY.up="0" y.up="4" x.up="0" y.down="264"/>
+		<e:Group width="800" height="401" x="63.03" y="69" width.up="800" height.up="395" y.up="73" width.down="803.19" height.down="395" y.down="74" x.down="61.51" anchorOffsetX.up="0" anchorOffsetX.down="0">
+			<e:Group id="cGroup" height="401" anchorOffsetX.down="0" y.down="-10.57" width.down="721.49" width.up="724.24" height.up="395" height.down="395" anchorOffsetX.up="0" scaleX.up="1.1" x.up="-8.25" scaleX.down="1.1" x.down="-4.22" scaleY.down="1.1" scaleY.up="1.1" y.up="-10.58"/>
+			<e:Image id="masks" source="feature_preview_texture1_level1_png" x.down="-6.2" y.down="-3.01" anchorOffsetX.up="0" width.up="782.88" x.up="-4.56" y.up="1.52" anchorOffsetX.down="0" width.down="776.82"/>
+		</e:Group>
+		<e:RadioButton id="r0" label="" x="58" y="552.7" y.down="668.04" x.down="31.33" x.up="73" y.up="551.7" anchorOffsetX.up="0.5" anchorOffsetY.up="0.5" scaleX.up="0.7" scaleY.up="0.7">
+			<e:skinName>
+			<e:Skin states="up,down,disabled,upAndSelected,downAndSelected">
+				<e:Image width="100%" height="100%" source="feature_preview_texture0_level1_14_png" source.down="fert_png" source.upAndSelected="feature_preview_texture0_level1_04_png" source.downAndSelected="feature_preview_texture0_level1_04_png" y.upAndSelected="-2.33" x.upAndSelected="-1" scaleX.upAndSelected="1.4" scaleY.upAndSelected="1.4" scaleX.up="1.4" scaleY.up="1.4" scaleX.down="1.4" scaleY.down="1.4" y.down="-2.66" x.down="-1.33" y.up="1.33" x.up="1.33"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:RadioButton>
+		<e:RadioButton id="r1" label="" x="33" y="550.7" y.down="667.37" x.down="-4.32" anchorOffsetX.up="0.5" anchorOffsetY.up="0.5" scaleX.up="0.7" scaleY.up="0.7" y.up="551.7" x.up="46">
+			<e:skinName>
+			<e:Skin states="up,down,disabled,upAndSelected,downAndSelected">
+				<e:Image width="100%" height="100%" source="feature_preview_texture0_level1_14_png" source.down="fert_png" source.upAndSelected="feature_preview_texture0_level1_04_png" source.downAndSelected="feature_preview_texture0_level1_04_png" y.up="1" y.upAndSelected="-1" x.upAndSelected="-1" scaleX.upAndSelected="1.4" scaleY.upAndSelected="1.4" scaleX="1.4" scaleY="1.4"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:RadioButton>
+		<e:Image source="不再显示_png" x.up="670.23" y="544" y.down="586.58" scaleX.down="1.3" scaleY.down="1.3" horizontalCenter.down="-7" y.up="547.66" scaleX.up="0.9" scaleY.up="0.9"/>
+		<e:Image id="mainkk" source="feature_preview_texture1_level1_png" anchorOffsetX="397" anchorOffsetY="197" x="445" y="264" y.down="264" visible.up="false" visible="false"/>
+		<e:Image id="mainkk0" source="feature_preview_texture1_level1_png" anchorOffsetX="397" anchorOffsetY="197" x="445" y="264" visible.up="false" visible="false"/>
+		<e:Image id="goIn" source="继续_png" x="292" horizontalCenter.down="0.5" bottom.down="-52" scaleX.down="1.35" scaleY.down="1.35" horizontalCenter.up="0" bottom.up="14" scaleX.up="0.83" scaleY.up="0.83"/>
+		<e:Image id="mianFei" source="组 23_png" x.down="445" anchorOffsetY="190" x="445" y="264" x.up="445" y.up="264" anchorOffsetX="390" y.down="264" scaleX="0.96" scaleY="0.96" scaleX.up="0.96" scaleY.up="0.96" width="781" height="381" visible.up="false" visible="false"/>
+		<e:Image id="shengMi" anchorOffsetY="190" source="内容_png" x="445" y="264" anchorOffsetX="390" scaleX="0.96" scaleY="0.96" scaleX.up="0.96" scaleY.up="0.96" width.up="781" height.up="381" anchorOffsetX.up="390" anchorOffsetY.up="190" width="749" height="366" visible.up="false" visible="false"/>
+		<e:Image id="not" source="feature_preview_texture0_level1_02_png" x.up="636.38" y="539" y.down="585.1" horizontalCenter.down="-122" scaleX.down="1.15" scaleY.down="1.15" scaleX.up="0.83" scaleY.up="0.83" y.up="546.65"/>
+		<e:Image id="next2" source="feature_preview_texture0_level1_14_png" x="55" y="549" y.down="664.33" scaleX.down="1.4" scaleY.down="1.4" x.down="26.8" scaleX="1.5" scaleY="1.5" x.up="55.38" y.up="547.95" scaleX.up="1" scaleY.up="1" source.down="dian_png" source.up="dian_png" visible.up="false" visible.down="false"/>
+		<e:Image id="next1" source="feature_preview_texture0_level1_04_png" x="19" y="547" y.down="664.33" scaleX.down="1.4" scaleY.down="1.4" x.down="-7.14" scaleX="1.5" scaleY="1.5" x.up="30.97" y.up="547.95" scaleX.up="1" scaleY.up="1" source.up="dian_png" source.down="dian_png" visible.up="false" visible.down="false"/>
+		<e:Image id="lightImg" source="feature_preview_texture0_level1_24_png" x="294.45" y="570.9" anchorOffsetY="40"  y.down="763.22" scaleX.down="1.35" scaleY.down="1.5" x.down="-221.55" touchEnabled.up="false" touchEnabled.down="false" y.up="569.95" x.up="25.45" scaleY.up="1.05" scaleX.up="0.93" visible.up="false"/>
+		<e:Image id="kk" source="feature_preview_texture3_level1_png" x="287.39" scaleX="1.3" scaleY="1.3" scaleX.down="1.5" scaleY.down="1.5" x.down="263" touchEnabled.up="false" touchEnabled.down="false" y.up="534.68" scaleX.up="0.93" scaleY.up="0.93" x.up="332.69" y.down="709.32"/>
+		<e:Image id="quan" source="quan_png" x="62" y="547" source.down="quan_png" y.down="665.69" x.down="28.18" scaleX.down="1.3" scaleY.down="1.3" x.up="31" y.up="548.52" visible.up="false" visible="false"/>
+		<e:Image source="quan_png" includeIn="up" x="62" y="547" visible="false"/>
+	</e:Group>
+</e:Skin>

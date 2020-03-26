@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="LiShiSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"  states="down,up"  height.up="68" width.up="1166">
+	<e:Group width.down="720" height.down="44" scaleX.up="1.2" scaleY.up="1.2" left.up="0" right.up="0" top.up="0" bottom.up="0">
+		<e:Label id="label1" text="5/13/2019 7:44:15 AM" size="22" anchorOffsetX="0" width="170.3" anchorOffsetY="0" scaleX="0.8" fontFamily="Arial" width.up="424.96" size.up="35" textColor="0x000000" x.up="32" y.up="9" fontFamily.up="Arial" fontFamily.down="Arial" x.down="20" y.down="0" width.down="204.99" size.down="25"/>
+		<e:Label id="label2" text="Mystery Joker Mobile" left.down="205" size="22" anchorOffsetX="0" width="135.3" anchorOffsetY="0" scaleX="0.8" fontFamily="Arial" width.up="416.3" size.up="35" textColor="0x000000" x.up="363.06" scaleX.up="0.66" text.down="Mystery Joker Mobile" top.down="-1" y.up="9" fontFamily.up="Arial" fontFamily.down="Arial" width.down="157.5" size.down="25"/>
+		<e:Label id="label3" text="CNY" size="22" anchorOffsetX="0" anchorOffsetY="0" scaleX="0.8" fontFamily="Arial" x="396" size.up="35" x.up="636.38" textColor="0x000000" x.down="370.11" text.up="CNY" scaleX.up="0.66" y.up="9" bold.down="true" fontFamily.up="Arial" fontFamily.down="Arial" bold.up="true" size.down="25" y.down="-1"/>
+		<e:Label id="label4" text="2.00" size="22" anchorOffsetX="0" anchorOffsetY="0" scaleX="0.8" fontFamily="Arial" textAlign="center" x="397" x.up="689.83" size.up="35" textColor="0x000000" x.down="370.38" text.up=" 5.00" text.down="1.00" textAlign.up="left" scaleX.up="0.66" bold.up="true" y.up="9" bold.down="true" fontFamily.up="Arial" fontFamily.down="Arial" y.down="24" size.down="25"/>
+		<e:Label id="label5" text="CNY" size="22" anchorOffsetX="0" anchorOffsetY="0" scaleX="0.8" fontFamily="Arial" x="515" x.up="762.9" size.up="35" textColor="0x000000" x.down="456.73" text.up="CNY" scaleX.up="0.66" bold.up="true" y.up="9" bold.down="true" fontFamily.down="Arial" size.down="25" y.down="-1"/>
+		<e:Label id="label6" text="2.00" size="22" anchorOffsetX="0" anchorOffsetY="0" scaleX="0.8" fontFamily="Arial" x="516" textAlign="center" x.up="818.74" size.up="35" textColor="0x000000" text.down="1.00" x.down="456.73" text.up="14000.00" textAlign.up="left" scaleX.up="0.66" bold.up="true" y.up="9" bold.down="true" fontFamily.up="Arial" fontFamily.down="Arial" size.down="25" y.down="24"/>
+		<e:Image id="img1" source="uiElements_57-28_png" scaleX.up="1.5" scaleY.up="1.5" right.down="77" verticalCenter.down="0" x.up="957.78" verticalCenter.up="-0.25"/>
+		<e:Rect id="rect1" height="2" bottom.down="-21" width.down="672" width.up="1002.666667" y.up="57.1" x.up="33.66" height.down="2" x.down="20" height.up="1.2"/>
+	</e:Group>
+	
+		
+</e:Skin>

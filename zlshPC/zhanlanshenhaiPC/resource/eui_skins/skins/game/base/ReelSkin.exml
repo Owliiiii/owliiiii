@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ReelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" height="602" width="205">
+	<e:Group id="kGroup" left="0" right="0" top="0" bottom="0" scrollEnabled="true">
+		<ns1:ReelItem y="-201" skinName="ReelItemSkin" horizontalCenter="0" x="10" scaleX="1" scaleY="1"/>
+		<ns1:ReelItem y="0" skinName="ReelItemSkin" scaleX="1" scaleY="1" horizontalCenter="0"/>
+		<ns1:ReelItem y="201" skinName="ReelItemSkin" scaleX="1" scaleY="1" horizontalCenter="0"/>
+		<ns1:ReelItem y="402" skinName="ReelItemSkin" scaleX="1" scaleY="1" horizontalCenter="0"/>
+		<ns1:ReelItem y="604" skinName="ReelItemSkin" horizontalCenter="0" x="0" scaleX="1" scaleY="1"/>
+	</e:Group>
+</e:Skin>

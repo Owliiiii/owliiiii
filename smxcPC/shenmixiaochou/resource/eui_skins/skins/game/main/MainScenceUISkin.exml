@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MainScenceUISkin" width="1200" height="912" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" xmlns:tween="egret.tween.*" >
+	<w:Declarations>
+
+
+
+	</w:Declarations>
+	<e:Image id="bg1" horizontalCenter="0" verticalCenter="-430" source="background_texture1_level1_jpg"/>
+	<e:Image id="bg0" source="background_texture0_level1_jpg" horizontalCenter="0" verticalCenter="-430"/>
+
+
+	<e:Image id="mbg0" anchorOffsetY="0" source="bj-3_jpg" scale9Grid="20,54,125,56" left="0" right="0" bottom="33" height="158"/>
+
+
+	<e:Group id="mgroup0" scrollEnabled="false" width="1200" height="912" horizontalCenter="0" verticalCenter="0">
+
+
+
+
+
+
+
+
+
+
+		<e:Group id="showGroup" y="117.56" horizontalCenter="1.5">
+			<e:Image id="showbg" source="menu1_png" anchorOffsetX="0" width="975" height="78" verticalCenter="0" horizontalCenter="0"/>
+			<e:Label id="showlabel" text="" anchorOffsetX="0" width="900" anchorOffsetY="0" size="40" verticalAlign="middle" textAlign="center" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x09e8f2" verticalCenter="0" height="50"/>
+		</e:Group>
+		<ns1:GameScence id="gameScence" skinName="GameScenceSkin" verticalCenter="-4" horizontalCenter="-5" scaleY="0.98" scaleX="0.95"/>
+		<e:Rect id="shan" width="239.09" height="468.48" x="182.12" y="217.15" anchorOffsetX="0" anchorOffsetY="0" strokeColor="0xffffff" fillAlpha="0.25" fillColor="0xfcfcfc" visible="false"/>
+		<e:Rect id="shan0" width="235.09" height="468.48" x="477.12" y="219.15" anchorOffsetX="0" anchorOffsetY="0" fillColor="0xFCFCFC" strokeColor="0xFFFFFF" fillAlpha="0.25" visible="false"/>
+		<e:Rect id="shan1" width="235.09" height="468.48" x="770.12" y="217.15" anchorOffsetX="0" anchorOffsetY="0" fillColor="0xFCFCFC" strokeColor="0xFFFFFF" fillAlpha="0.25" visible="false"/>
+		<e:Group left="0" right="0" height="158" bottom="36">
+
+
+			<ns1:MouseButton id="ruleBtn" label="赔付表" x="36.94" y="16.53">
+				<ns1:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+					<e:Image width="100%" height="100%" source="menu_texture0_level1_36-44_png" source.down="menu_texture0_level1_36_png" source.disabled="menu_texture0_level1_36-22_png" source.rollOver="menu_texture0_level1_36-45_png"/>
+					<e:Label id="labelDisplay" fontFamily="Microsoft YaHei" textColor="0x000000" size="26" verticalCenter="2.5" horizontalCenter="0"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MouseButton>
+			<ns1:MouseButton id="autoBtn" label="自动游戏" x="38.48" y="83.92">
+				<ns1:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+					<e:Image width="100%" height="100%" source="menu_texture0_level1_36-44_png" source.down="menu_texture0_level1_36_png" source.disabled="menu_texture0_level1_36-22_png" source.rollOver="menu_texture0_level1_36-45_png" />
+					<e:Label id="labelDisplay" fontFamily="Microsoft YaHei" textColor="0x000000" size="26" verticalCenter="2.5" horizontalCenter="0"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MouseButton>
+			<ns1:MouseButton id="playBtn" label="旋转" y="12.57" right="22">
+				<ns1:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="menu_texture0_level1_1_png" source.down="menu_texture0_level1_3_png" source.disabled="menu_texture0_level1_3_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="2" verticalCenter="-2.5" fontFamily="Microsoft YaHei" textColor="0x000000" size="46" verticalAlign="middle" textAlign="center" height="56"/>
+					</e:Skin>
+				</ns1:skinName>
+
+
+			</ns1:MouseButton>
+			<e:Group id="autoPlayGroup" x="983.92" y="12.96" visible="false">
+				<e:Image source="menu_texture0_level1_42_png" y="0"/>
+				<e:Label id="autoPlayTitleLabel" text="自动游戏" y="34" fontFamily="Microsoft YaHei" size="16" horizontalCenter="0.5"/>
+				<e:BitmapLabel id="autoPlayNumLabel" text="75" font="f3_fnt" verticalCenter="12.5" scaleX="1.5" scaleY="1.5" horizontalCenter="0"/>
+			</e:Group>
+
+			<e:Group y="-8.56" horizontalCenter="-27" width="769" height="90">
+				<e:Group y="-4.56" left="26">
+				<e:Image source="menu3_png" horizontalCenter="0" verticalCenter="0"/>
+				<e:Label text="余额" y="11.9" size="16" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" textColor="0xefd413" horizontalCenter="0.5"/>
+				<e:BitmapLabel id="moneyLabel" font="f0_fnt" text="cny 898.75" textAlign="center" anchorOffsetX="0" verticalAlign="center" height="40" horizontalCenter="0.5" verticalCenter="10"/>
+				</e:Group>
+				<e:Group y="-4.56" horizontalCenter="22">
+				<e:Image source="menu3_png" horizontalCenter="0" verticalCenter="0"/>
+				<e:BitmapLabel id="betNumLabel" text="cny 4665.5" horizontalCenter="-4" verticalCenter="10" verticalAlign="center" textAlign="center" anchorOffsetX="0" height="40" font="f0_fnt"/>
+				<e:Label text="投注" y="11.9" size="16" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" textColor="0xefd413" horizontalCenter="0.5"/>
+				</e:Group>
+				<e:Group x="542.24" y="-4.56" anchorOffsetX="0">
+				<e:Image source="menu3_png" horizontalCenter="0" verticalCenter="0"/>
+				<e:BitmapLabel id="allNumLabel" font="f0_fnt" text="cny 170.00" horizontalCenter="-6.5" verticalCenter="10" verticalAlign="center" textAlign="center" anchorOffsetX="0" height="40"/>
+				<e:Label text="总获胜 :" y="11.9" size="16" fontFamily="Microsoft YaHei" textAlign="center" verticalAlign="middle" textColor="0xefd413" horizontalCenter="0"/>
+				</e:Group>
+			</e:Group>
+			<e:Label text="投注:" y="78.2" fontFamily="Microsoft YaHei" horizontalCenter="-10.5" size="20"/>
+			<ns1:CheckBanner id="baner" x="209.73" y="91.58" skinName="CheckBanerSkin"/>
+
+
+
+
+
+
+
+
+		</e:Group>
+
+		<e:Group id="ruleGroup" height="622" y="94" anchorOffsetY="0" left="0" right="0" visible="false">
+			<e:Image source="menu_texture0_level1_21_png" x="39.76" y="146"/>
+			<e:Image x="68.24" y="108" scaleX="0.8" scaleY="0.8" source="sicon_M0_0_png"/>
+			<e:Image x="164.24" y="108" scaleX="0.8" scaleY="0.8" source="sicon_M0_0_png"/>
+			<e:Image x="266.24" y="108" scaleX="0.8" scaleY="0.8" source="sicon_M0_0_png"/>
+
+			<e:Image source="menu_texture0_level1_21_png" x="38.24" y="216"/>
+			<e:Image x="66.72" y="182" scaleX="0.8" scaleY="0.8" source="sicon_M1_0_png"/>
+			<e:Image x="162.72" y="182" scaleX="0.8" scaleY="0.8" source="sicon_M1_0_png"/>
+			<e:Image x="264.72" y="182" scaleX="0.8" scaleY="0.8" source="sicon_M1_0_png"/>
+
+			<e:Image source="menu_texture0_level1_21_png" x="40.24" y="288"/>
+			<e:Image x="70.24" y="254" scaleX="0.8" scaleY="0.8" source="sicon_M2_0_png"/>
+			<e:Image x="172.24" y="252" scaleX="0.8" scaleY="0.8" source="sicon_M2_0_png"/>
+			<e:Image x="268.24" y="252" scaleX="0.8" scaleY="0.8" source="sicon_M2_0_png"/>
+
+			<e:Image source="menu_texture0_level1_21_png" x="40.24" y="362"/>
+			<e:Image x="69.8" y="330" scaleX="0.8" scaleY="0.8" source="sicon_M3_0_png"/>
+			<e:Image x="162.74" y="330" scaleX="0.8" scaleY="0.8" source="sicon_M3_0_png"/>
+			<e:Image x="260.76" y="330" scaleX="0.8" scaleY="0.8" source="sicon_M3_0_png"/>
+
+			<e:Image source="menu_texture0_level1_21_png" x="41.76" y="436"/>
+			<e:Image source="menu_texture0_level1_09-40_png" x="462.79" y="436" scaleX="0.8" scaleY="0.8"/>
+			<e:Image x="65.76" y="402" scaleX="0.8" scaleY="0.8" source="sicon_M4_0_png"/>
+
+			<e:Image x="169.76" y="404" scaleX="0.8" scaleY="0.8" source="sicon_M4_0_png"/>
+			<e:Image x="269.76" y="402" scaleX="0.8" scaleY="0.8" source="sicon_M4_0_png"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<e:Image source="menu_texture0_level1_09-32_png" x="443.76" y="144" scaleX="0.8" scaleY="0.8"/>
+			<e:Image source="menu_texture0_level1_09-30_png" x="441.76" y="218" scaleX="0.8" scaleY="0.8"/>
+			<e:Image source="menu_texture0_level1_09-31_png" x="441.76" y="288" scaleX="0.8" scaleY="0.8"/>
+			<e:Image source="menu_texture0_level1_09-40_png" x="463.76" y="362" scaleX="0.8" scaleY="0.8"/>
+			<e:Image source="menu_texture0_level1_64-39_png" x="130" y="530"/>
+			<e:Image source="menu_texture0_level1_64-38_png" x="200" y="530"/>
+			<e:Image source="menu_texture0_level1_64-36_png" x="282" y="532"/>
+			<e:Image source="menu_texture0_level1_64-33_png" x="366" y="530"/>
+			<e:Image source="menu_texture0_level1_64-37_png" x="456" y="530"/>
+
+
+
+
+
+
+
+			<e:Label text="分散获胜将乘以总投注额并添加至赔付线获胜上" y="530" anchorOffsetX="0" anchorOffsetY="0" verticalAlign="middle" textAlign="center" strokeColor="0x000000" stroke="2" fontFamily="Microsoft YaHei" lineSpacing="5" size="20" horizontalCenter="285" x="726" scaleX="1" scaleY="1"/>
+			<e:Image source="des_bg0_png" top="21" horizontalCenter="0"/>
+			<e:Image source="des_bg1_png" x="619.25" y="286.64" scaleX="0.9" scaleY="0.9"/>
+			<e:Image source="des_bg2_png" x="626.99" y="115.18" scaleX="0.9" scaleY="0.9"/>
+			<e:Image source="menu_texture0_level1_09-10_png" x="926.1" y="331.56" scaleX="0.9" scaleY="0.9"/>
+		</e:Group>
+	</e:Group>
+	<e:Group id="mgroup1" left="0" right="0" bottom="-2" height="39">
+		<e:Image source="statusbar_texture0_level1_03_png" left="0" right="0" top="0" bottom="0"/>
+		<e:Group left="6" verticalCenter="0">
+			<ns1:MouseButton id="historyBtn" label="" x="152.48" y="2">
+				<ns1:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+					<e:Image width="100%" height="100%" source="his_an_png" source.down="his_down_png" source.disabled="statusbar_texture0_level1_12-13_png" source.rollOver="his_liang_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MouseButton>
+			<ns1:MouseButton id="setBtn" label="" x="0" y="2">
+				<ns1:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+					<e:Image width="100%" height="100%" source="set_an_png" source.down="set_down_png" source.disabled="set_an_png" source.rollOver="set_liang_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MouseButton>
+			<ns1:MosueCheckBox id="musicBtn" label="" x="46" y="2">
+				<ns1:skinName>
+				<e:Skin states="up,down,disabled,upAndSelected,downAndSelected,rollOver,rollOverAndSelected">
+					<e:Image width="100%" height="100%" source="musicx_an_png" source.down="musicx_down_png" source.rollOver="musicx_liang_png" source.upAndSelected="music_an_png" source.downAndSelected="music_down_png" source.rollOverAndSelected="music_liang_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MosueCheckBox>
+			<ns1:MosueCheckBox id="shanBtn" label="" x="82" y="0">
+				<ns1:skinName>
+				<e:Skin states="up,down,disabled,upAndSelected,downAndSelected,rollOver,rollOverAndSelected">
+					<e:Image width="100%" height="100%" source="speed2_an_png" source.down="speed2_down_png" source.rollOver="speed2_liang_png" source.upAndSelected="speed1_an_png" source.downAndSelected="speed1_down_png" source.rollOverAndSelected="speed1_liang_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MosueCheckBox>
+			<ns1:MouseButton id="qusBtn" label="" x="112" y="2">
+				<ns1:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+					<e:Image width="100%" height="100%" source="qus_an_png" source.down="qus_down_png" source.disabled="statusbar_texture0_level1_12-10_png" source.rollOver="qus_liang_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MouseButton>
+		</e:Group>
+		<e:Group width="513" horizontalCenter="-14.5" verticalCenter="0">
+			<e:Label id="bananceLabel" text="余额:  CNY 65.25" x="-1.52" size="18" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" verticalCenter="0"/>
+			<e:Label id="betbanaceLabel" text="投注: CNY 65.25" x="211.26" size="18" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" verticalCenter="0"/>
+			<e:Label id="rewardLabel" text="奖金:  " x="458.96" size="18" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" verticalCenter="0"/>
+		</e:Group>
+		<e:Group y="4" right="8" width="132" height="31">
+			<ns1:MouseButton id="exitBtn" label="" scaleX="0.5" scaleY="0.5" x="105.55" verticalCenter="0">
+				<ns1:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+					<e:Image width="100%" height="100%" source="exitx_an_png" source.down="exitx_down_png" source.disabled="statusbar_texture0_level1_01_png" source.rollOver="exitx_liang_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MouseButton>
+			<e:Image source="statusbar_texture0_level1_12-05_png" x="-93.97" verticalCenter="0"/>
+		</e:Group>
+	</e:Group>
+	<e:Group id="strGroup" scaleX="0.8" scaleY="0.82" horizontalCenter="4" y="25.56">
+		<e:Image source="logo_texture1_level1_02_png" y="0" x="0"/>
+		<e:Image id="img0" source="logo_texture1_level1_10-06_png" x="6.17" y="11.46"/>
+		<e:Image id="img1" x="67.46" y="8.88" source="logo_texture1_level1_10-20_png"/>
+		<e:Image id="img2" source="logo_texture1_level1_10-10_png" x="120.18" y="10.75"/>
+
+
+		<e:Image id="img3" source="logo_texture1_level1_10-09_png" x="166.08" y="8.78"/>
+		<e:Image id="img4" source="logo_texture1_level1_10-18_png" x="215.82" y="10.78"/>
+		<e:Image id="img5" source="logo_texture1_level1_10-11_png" x="275.72" y="10"/>
+		<e:Image id="img6" source="logo_texture1_level1_10-17_png" x="331.36" y="10.78"/>
+		<e:Image id="img7" source="logo_texture1_level1_10-19_png" x="411.82" y="9.56"/>
+		<e:Image id="img8" source="logo_texture1_level1_10-15_png" x="466.28" y="7.56"/>
+		<e:Image id="img9" source="logo_texture1_level1_10_png" x="518.28" y="10.78"/>
+		<e:Image id="img10" source="logo_texture1_level1_10-07_png" x="577.46" y="12.34"/>
+		<e:Image id="img11" source="logo_texture1_level1_10-11_png" x="629" y="10.34"/>
+	</e:Group>
+	<e:Group y="-4" left="0" right="0">
+		<e:Image id="qbg0" source="logo_texture1_level1_01-03_png" y="12" left="18" scaleX="0.8" scaleY="0.8"/>
+		<e:Image id="qimg0" source="logo_texture1_level1_30_png" y="14" left="20" scaleX="0.8" scaleY="0.8"/>
+		<e:Image id="qbg1" source="logo_texture1_level1_01_png" y="6" right="18" scaleX="0.8" scaleY="0.8"/>
+		<e:Image id="qimg1" source="logo_texture1_level1_32_png" y="7.2" right="18" scaleX="0.8" scaleY="0.8"/>
+	</e:Group>
+	<ns1:PreviewCompoment id="preview" skinName="PreviewSkin" horizontalCenter="0" verticalCenter="0" visible="false"/>
+	<e:Image id="logoImg" source="loadingbg2_png" horizontalCenter="0" bottom="15" visible="false"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</e:Skin>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MyTogleButtonSkin" xmlns:e="http://ns.egret.com/eui" states="up,down,upAndSelected,downAndSelected" >
+	<e:Image source="videoslot_popup_texture0_level1_59-20_png" horizontalCenter="0" verticalCenter="0" source.up="videoslot_popup_texture0_level1_59_png" source.down="videoslot_popup_texture0_level1_59_png" verticalCenter.upAndSelected="0"/>
+	<e:Image source="videoslot_popup_texture0_level1_25-18_png" x.downAndSelected="12" x.upAndSelected="12" x.up="12" y="1" source.up="videoslot_popup_texture0_level1_25_png" left.up="-6" source.down="videoslot_popup_texture0_level1_25_png" verticalCenter.up="0" verticalCenter.down="0" verticalCenter.upAndSelected="0" verticalCenter.downAndSelected="0" right.upAndSelected="-6" right.downAndSelected="-6" left.down="-6"/>
+</e:Skin>

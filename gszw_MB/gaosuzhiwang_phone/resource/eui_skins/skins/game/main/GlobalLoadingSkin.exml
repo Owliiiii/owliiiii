@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GlobalLoadingSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="hor,ver"  width.hor="1334" height.hor="650" width.ver="750" height.ver="1100">
+	<e:Image source="gl_loading_bg_jpg" left="0" right="0" top="0" bottom="0" fillMode="repeat"/>
+	<e:Image source="gl_yuan_png" bottom.hor="0" y="0" x="0" horizontalCenter.hor="0" horizontalCenter.ver="0" verticalCenter.ver="0" fillMode="repeat"/>
+	<e:Image source="gl_logo_loadingpage_png" horizontalCenter.ver="0" verticalCenter.hor="-59.5" horizontalCenter.hor="0" verticalCenter.ver="-167.5"/>
+	<e:Group id="mainGroup" horizontalCenter="0" verticalCenter="0" horizontalCenter.hor="0" verticalCenter.hor="115" horizontalCenter.ver="0" verticalCenter.ver="-1">
+		<e:Label text="loading" y="32" textColor="0x9d9d9d" horizontalCenter.hor="0.5" y.ver="36.6" size.ver="24" horizontalCenter.ver="0"/>
+		<e:Label id="loadingLabel" text="86%" y="74" textColor="0x9D9D9D" size="40" horizontalCenter="0.5" horizontalCenter.ver="0.5" y.ver="61.84"/>
+		<e:Image id="quanImg" source="gl_quan_png" x="0" y="0"/>
+	</e:Group>
+</e:Skin>

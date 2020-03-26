@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MainScenceUISkin"   xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" xmlns:tween="egret.tween.*"  states="up,down"  width.up="1280" height.up="720" width.down="720" height.down="1280" width="720" height="1280">
+	<w:Declarations>
+	</w:Declarations>
+	<e:Group left.up="0" right.up="0" top.up="0" bottom.up="0" currentState.down="up" top.down="0" left="0" right="0" top="0" bottom="0" left.down="0" right.down="0" bottom.down="0">
+		<e:Image id="bg1" horizontalCenter="2" verticalCenter="0" source="hengRed_png" source.down="shuRed_png"/>
+		<e:Image id="bg0"  horizontalCenter.up="2" source="shuBlue_png" source.up="hengBlue_png" y.up="-24" horizontalCenter.down="0" verticalCenter.down="0"/>
+		<e:Image source="heiBG_png" includeIn="down" horizontalCenter="0.5" alpha="0.8" bottom="0" scaleX="0.6" anchorOffsetY="0" height="286.61" touchEnabled="false"/>
+		<e:Image id="diHei" source="heiBG_png" includeIn="up" bottom="0" alpha="0.8" scaleX="0.9" anchorOffsetY="0" left="0" right="0" height="206" touchEnabled="false"/>
+
+
+
+
+
+
+		<e:Group id="mainGroup" scrollEnabled="true" x="0"   left.down="0" right.down="0" width.down="720" left.up="0" right.up="0" bottom.up="0" top.up="0" height.down="1032" top.down="178">
+			<e:Group id="showGroup" horizontalCenter.up="4" right.down="8" left.down="8" height.up="69" x="0" scaleX="1" scaleY="1" height.down="158" y.up="90.33" y.down="18.66" scaleY.down="0.86">
+				<e:Image id="showbg" source="menu1_png" anchorOffsetX="0" width.up="812" height="70" verticalCenter="0" horizontalCenter="-6" horizontalCenter.down="0" verticalCenter.down="0" right.down="0" left.down="0" scaleY.up="0.9"/>
+				<e:Label id="showlabel" text="祝您好运!" anchorOffsetX="0" width.up="781.27" anchorOffsetY="0" size="40" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" textColor="0x09e8f2" height.down="50" top.up="8" horizontalCenter.up="-9.5" bottom.up="11" text.down="祝您好运！" text.up="祝您好运!" horizontalCenter.down="0.5" verticalCenter.down="-2" width.down="679" fontFamily.down="Arial" fontFamily.up="Arial"/>
+			</e:Group>
+			<ns1:GameScence id="gameScence" skinName="GameScenceSkin" scaleX="0.8" scaleY="0.8" scaleX.down="0.69" scaleY.down="0.74" scaleX.up="0.805" scaleY.up="0.81" y.down="87.96" y.up="123.82" horizontalCenter.down="0.5" horizontalCenter.up="0"/>
+			<e:Group id="numGroup" scaleX.down="0.92" scaleY.down="0.9" horizontalCenter.down="-0.5" x.up="256" horizontalCenter="0" scaleX.up="0.77" scaleY.up="0.77" horizontalCenter.up="-1" y.down="498.01" y.up="573.8">
+				<e:Group y="0" x.up="0" horizontalCenter="-262" width="245" height="90">
+				<e:Image source="menu3_png" left.up="0" right.up="0" top.up="0" bottom.up="0" left="0" right="0" top="0" bottom="0"/>
+				<e:Label text="余额" y="10" size="16" textColor="0xf2c709" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalAlign="middle" textAlign="center"/>
+				<e:BitmapLabel id="moneyLabel" font="f0_fnt" text="0.00" verticalCenter.down="11" text.up="cny 1999" text.down="cny 7304.25" verticalCenter.up="10" horizontalCenter.up="0" horizontalCenter.down="0"/>
+				</e:Group>
+				<e:Group y="0" x.up="262" horizontalCenter="0" width="245" height="90">
+				<e:Image source="menu3_png" left="0" right="0" top="0" bottom="0"/>
+				<e:Label text="投注" y="10" size="16" textColor="0xF2C709" fontFamily="Microsoft YaHei" horizontalCenter="0" verticalAlign="middle" textAlign="center"/>
+				<e:BitmapLabel id="betNumLabel" font="f0_fnt" text="cny 20.00" x.up="276.0000000000001" y="0" scaleX="1" scaleY="1" text.up="cny 20.00" y.up="35" horizontalCenter.up="0" horizontalCenter.down="0" y.down="36"/>
+				</e:Group>
+				<e:Group y="0" anchorOffsetX="0" horizontalCenter="262" width="245" height="90" horizontalCenter.up="262" y.up="1.89">
+				<e:Image source="menu3_png" right="0" x.up="0" left="0" top="0" bottom="0"/>
+				<e:BitmapLabel id="allNumLabel" font="f0_fnt" text="cny 1000.00" verticalCenter="11" horizontalCenter="0" horizontalCenter.down="0" text.up="cny 859.75" y.up="35" horizontalCenter.up="0" text.down="cny 1711.00"/>
+				<e:Label text="总获胜" y="10" size="16" textColor="0xF2C709" fontFamily="Microsoft YaHei" horizontalCenter="0" textAlign="center" verticalAlign="middle" text.up="总获胜 :" text.down="总获胜 :"/>
+				</e:Group>
+			</e:Group>
+
+
+
+			<e:Rect id="dianji" fillColor="0xFCFCFC" strokeColor="0xFCFCFC" fillAlpha="0.01" scaleX="1" scaleY="1" left="0" right="0" top="0" bottom="0" left.down="0" right.down="0" left.up="0" right.up="0" top.up="0" bottom.up="0" visible.down="false" visible.up="false"/>
+
+
+
+			<ns1:MouseButton id="playBtn" label="旋转" label.up="" label.down="" anchorOffsetX.up="80" anchorOffsetY.up="80" anchorOffsetX.down="80" anchorOffsetY.down="80"  scaleX.down="0.96" scaleY.down="0.96"  scaleX.up="0.9" scaleY.up="0.9" height.up="160" y.up="324" horizontalCenter.up="537" horizontalCenter.down="0" width.down="160" height.down="160" verticalCenter.down="229">
+			<ns1:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="uiElements_03-07_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="2" verticalCenter="-2.5" fontFamily="Microsoft YaHei" textColor="0x000000" size="46" verticalAlign="middle" textAlign="center" height="56"/>
+				</e:Skin>
+			</ns1:skinName>
+			</ns1:MouseButton>
+			<e:Image id="playTween" anchorOffsetX="80" anchorOffsetY="80" alpha="1" scaleX.down="0.96" scaleY.down="0.96" touchEnabled="false" source="uiElements_03-08_png" horizontalCenter.down="0"  scaleX.up="0.9" scaleY.up="0.9" horizontalCenter.up="537" y.up="324" verticalCenter.down="229"/>
+			<ns1:MouseButton id="playBtn0" label="" anchorOffsetX="80" anchorOffsetY="80" scaleX="0.9" scaleY="0.9" height="160" y="324" includeIn="up" horizontalCenter="-540" visible="false">
+				<ns1:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="uiElements_03-07_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="2" verticalCenter="-2.5" fontFamily="Microsoft YaHei" textColor="0x000000" size="46" verticalAlign="middle" textAlign="center" height="56"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MouseButton>
+			<e:Image id="playTween0" anchorOffsetX="80" anchorOffsetY="80" alpha="1" touchEnabled="false" source="uiElements_03-08_png" scaleX="0.9" scaleY="0.9" y="324" includeIn="up" horizontalCenter="-540" visible="false"/>
+			<e:Group id="autoPlayGroup" y.up="261.01" horizontalCenter.down="0"  horizontalCenter.up="537" y.down="666.32" scaleX.down="0.83" scaleY.down="0.83" scaleX.up="0.75" scaleY.up="0.75" visible.up="false" visible.down="false">
+			<e:Label id="autoPlayTitleLabel" text="自动游戏" y="34" fontFamily="Microsoft YaHei" size="16" horizontalCenter="0.5" textColor.down="0x000000" text.down="" text.up=""  horizontalCenter.up="5.5" y.up="41.6" visible.down="false"/>
+			<e:Image id="stopAuto" source="menu_texture0_level1_42_png" y="0"  source.down="uiElements_03-16_png" width.down="150" height.down="150" y.down="7.6" source.up="uiElements_03-16_png" width.up="150" height.up="150" y.up="9.45" x.up="1.89"/>
+			<e:BitmapLabel id="autoPlayNumLabel" text="75" font="f3_fnt" scaleX="1.5" scaleY="1.5" font.down="f3_fnt" touchEnabled.up="false" text.up="75" horizontalCenter.up="0" text.down="75" touchEnabled.down="false" scaleX.down="1.6" scaleY.down="1.6" verticalAlign.down="center" textAlign.down="center" verticalCenter.down="7" horizontalCenter.down="1.5" verticalCenter.up="10"/>
+				<e:BitmapLabel id="autoPlayNumLabel1" text="75" font="f3_fnt" scaleX="1.5" scaleY="1.5" touchEnabled="false" includeIn="up" horizontalCenter="0" verticalCenter="8"/>
+			</e:Group>
+			<e:Group id="autoPlayGroup0" y="268.56" includeIn="up" horizontalCenter="-540" scaleX="0.75" scaleY="0.75" visible="false">
+				<e:Label id="autoPlayTitleLabel0" text="" y="41.6" fontFamily="Microsoft YaHei" size="16" horizontalCenter="5.5"/>
+				<e:Image id="stopAuto0" y="0" source="uiElements_03-16_png" width="150" height="150"/>
+				<e:BitmapLabel id="autoPlayNumLabel0" text="75" font="f3_fnt" scaleX="1.5" scaleY="1.5" horizontalCenter="0" touchEnabled="false" y="61.66"/>
+			</e:Group>
+
+
+
+
+
+
+		</e:Group>
+		<e:Group id="touGroup" x="0" y="0" left.up="0" right.up="0" top.up="-4" bottom.up="4" anchorOffsetY.down="0" left.down="-6" right.down="6" y.down="121.43" touchThrough.up="true" touchEnabled.up="false" scaleY.down="0.94">
+			<e:Image id="qbg0" source="logo_texture1_level1_01-03_png" scaleX="0.8" scaleY="0.8" left.down="4" top.down="4" y="6" left.up="39" top.up="11" x.up="1048" y.up="6" scaleX.up="0.8000000000000002" scaleY.up="0.8000000000000002" left="0" x="0"/>
+			<e:Image id="qimg0" source="logo_texture1_level1_30_png" scaleX="0.8" scaleY="0.8" left.down="5" top.down="4" y="6" left.up="39" top.up="11" x.up="1061" y.up="6" scaleX.up="0.8000000000000002" scaleY.up="0.8000000000000002" left="0" x="0"/>
+			<e:Image id="qbg1" source="logo_texture1_level1_01_png" scaleX="0.8" scaleY="0.8" right.down="-8" top.down="-1" right.up="34" x.up="1048" y.up="6" scaleX.up="0.8000000000000002" scaleY.up="0.8000000000000002" top="6" right="0" x="1048" y="6" top.up="11" source.up="logo_texture1_level1_01_png"/>
+			<e:Image id="qimg1" source="logo_texture1_level1_32_png" scaleX="0.8" scaleY="0.8" right.down="-7" top.down="-1" right.up="34" x.up="1160" y.up="6" scaleX.up="0.8000000000000002" scaleY.up="0.8000000000000002" top="6" right="0" x="1160" y="6" top.up="11"/>
+			<e:Group x.down="0" left.down="0" right.down="0" height.down="193" top.up="0" y="0" y.down="0" right.up="0" includeIn="down"/>
+		</e:Group>
+		<e:Group id="strGroup" scaleX="0.85" scaleY="0.85" scaleX.down="0.77" scaleY.down="0.77" scaleX.up="0.78" scaleY.up="0.78" horizontalCenter.up="-0.5" top.up="25" x="0" y="0" height.down="92" y.down="160.24" horizontalCenter.down="0">
+			<e:Image source="logo_texture1_level1_02_png" y="0" x="0" x.down="4.94"/>
+			<e:Image id="img0" source="logo_texture1_level1_10-06_png" x="7" y="14" y.down="12.1" x.down="11.71" y.up="11.45" x.up="7"/>
+			<e:Image id="img1" source="logo_texture1_level1_10-17_png" x="65" y="12" x.down="72.96" source.up="logo_texture1_level1_10-20_png" y.up="7.75" x.up="68.41" source.down="logo_texture1_level1_10-20_png" y.down="8.29"/>
+			<e:Image id="img2" source="logo_texture1_level1_10-10_png" x="121" y="8" x.down="125" y.down="11.35" y.up="10.55" x.up="120.15"/>
+			<e:Image id="img3" source="logo_texture1_level1_10-09_png" x="171" y="8" x.down="170.83" y.down="8.71" x.up="165.9" y.up="8.85"/>
+			<e:Image id="img4" source="logo_texture1_level1_10-18_png" x="215" y="10" x.down="221.09" y.down="10.88" x.up="215.85" y.up="11.7"/>
+			<e:Image id="img5" source="logo_texture1_level1_10-11_png" x="279" y="10" x.down="279.87" x.up="274.75" y.up="10"/>
+			<e:Image id="img6" source="logo_texture1_level1_10-17_png" x="333" y="10" x.down="335.91" y.down="11.41" x.up="331.3" y.up="10.85"/>
+			<e:Image id="img7" source="logo_texture1_level1_10-19_png" x="411" y="8" x.down="417.08" y.down="10.29" y.up="10.55" x.up="411.85"/>
+			<e:Image id="img8" source="logo_texture1_level1_10-15_png" x="463" y="6" x.down="470.83" y.down="7.94" x.up="465.55" y.up="8.55"/>
+			<e:Image id="img9" source="logo_texture1_level1_10_png" x="515" y="10" x.down="523.7" y.down="11.94" y.up="11.69" x.up="519.25"/>
+			<e:Image id="img10" source="logo_texture1_level1_10-11_png" x="629" y="8" x.down="633.35" y.down="10.82" y.up="10.55" x.up="628.15"/>
+			<e:Image id="img11" source="logo_texture1_level1_10-07_png" x="575" y="10" x.down="581.09" y.down="13.35" y.up="12.55" x.up="575.85"/>
+		</e:Group>
+		<e:Group id="downGroup" left.up="0" right.up="0" top.up="-1" bottom.up="1" left="0" right="0" top="0" bottom="0" touchEnabled.up="true" left.down="0" right.down="0" top.down="0" bottom.down="0" touchThrough.up="true" touchEnabled.down="true" touchThrough.down="true">
+			<ns1:SetUI id="setUI" skinName="SetSkin" currentState.down="down" currentState.up="up" left.up="0" right.up="0" top.up="0" bottom.up="0" anchorOffsetY.down="0" left.down="0" right.down="0" top.down="0" bottom.down="0" left="0" right="0" top="0" bottom="0"/>
+			<e:Group id="down1Group" left.up="0" right.up="0" anchorOffsetY.up="0" left.down="0" right.down="0" anchorOffsetY.down="0" x="0" height.down="178" bottom.down="0" bottom.up="0" top.up="672">
+			<e:Image source="bottomBg_png" anchorOffsetX="0" scaleY="0.3" scaleY.down="0.3" x="0" left.down="0" bottom.down="0" right.down="0" bottom.up="0" source.down="组 22_png" scaleY.up="1" anchorOffsetY.up="0" right.up="0" left.up="0" anchorOffsetY.down="0" top.down="0" top.up="0"/>
+			<e:Label id="bananceLabel" text="余额:  CNY 00.00" size="30" verticalAlign="middle" textAlign="center" fontFamily="KaiTi" left.down="11" bottom.down="32" text.down="余额 :   CNY 00.00" fontFamily.down="Arial" scaleX.down="0.9" scaleX="0.9" size.up="25" textColor.up="0xa0a0a0" textColor.down="0xf2e6e6" size.down="25" text.up="余额 : CNY 7586.2011111" scaleX.up="0.8" fontFamily.up="Arial" left.up="8" alpha.down="0.6" scaleY.up="0.9" verticalCenter.up="0"/>
+			<e:Label id="bananceLabel0" text="余额:" size="25" verticalAlign="middle" textAlign="center" fontFamily="KaiTi" textColor="0xA0A0A0" includeIn="up" left="10" verticalCenter="0" visible="false"/>
+			<e:Label id="betbanaceLabel" text="投注:  CNY 00.00" size="30" verticalAlign="middle" textAlign="center" fontFamily="KaiTi" left.down="192" text.down="CNY 00.00" textColor.up="0xf7b504" textColor="0xf7b504" fontFamily.down="Arial" scaleX.down="0.9" textColor.down="0xf7b504" scaleX="0.9" text.up="CNY 00.00" size.up="25" size.down="25" bottom.down="115" left.up="535" verticalCenter.up="0" fontFamily.up="Arial" scaleY.up="0.9"/>
+			<e:Label id="betbanaceLabel0" text="投注:" size="30" verticalAlign="middle" textAlign="center" fontFamily="KaiTi" left="114" scaleX="0.9" textColor="0xffffff" left.up="449" size.up="25" size.down="27" left.down="108" bottom.down="115" textColor.up="0xffffff" fontFamily.up="Arial" fontFamily.down="Arial" text.down="投注 :" scaleY.up="0.9" verticalCenter.up="0"/>
+			<e:Label id="rewardLabel" text="奖金: " size="30" verticalAlign="middle" textAlign="center" fontFamily="KaiTi" text.down="奖金 : " fontFamily.down="Arial" scaleX.down="0.9" scaleX="0.9" size.up="25" size.down="25" bottom.down="115" left.up="698" x.down="537" textColor.up="0xffffff" fontFamily.up="Arial" text.up="奖金 : " scaleY.up="0.9" verticalCenter.up="0"/>
+				<e:Label id="rewardLabel0" text="CNY 3200" size="25" verticalAlign="middle" textAlign="center" fontFamily="Arial" scaleX="0.9" bottom.down="113" x="507" textColor="0xf7b504" x.up="763" visible.down="false" scaleY.up="0.9" verticalCenter.up="2.5" visible.up="false"/>
+			</e:Group>
+			<e:Image id="setA" source="uiElements_05-11_png" height.up="136" scaleX.up="0.8" scaleY.up="0.8" height.down="136" scaleX.down="0.65" scaleY.down="0.65" width.down="136.66666666666669" source.up="uiElements_05-11_png" width.up="136.25" right.up="14" bottom.up="52" right.down="-1" bottom.down="81"/>
+			<e:Image id="setA0" source="uiElements_05-11_png" height="136" scaleX="0.6" scaleY="0.6" width="136.66666666666669" scaleX.up="0.8" scaleY.up="0.8" bottom.up="52" left.up="15" scaleX.down="0.65" scaleY.down="0.65" x.down="2.2" bottom.down="84" width.up="136.25" visible.up="false" visible.down="false"/>
+
+			<e:Image id="outMain" source="uiElements_05-03_png" scaleX.up="0.8" scaleY.up="0.8" scaleX.down="0.65" scaleY.down="0.65" height.down="136" height.up="136" width.down="136.66666666666669" width.up="136.25" bottom.up="52" left.up="15" bottom.down="84" x.down="2.2"/>
+			<e:Image id="outMain0" source="uiElements_05-03_png" scaleX="0.6" scaleY="0.6" height="136" width="136.66666666666669" scaleX.up="0.8" scaleY.up="0.8" bottom.down="81" right.down="-1" right.up="14" bottom.up="52" scaleX.down="0.65" scaleY.down="0.65" width.up="136.25" visible.up="false" visible.down="false"/>
+			<e:Image id="loading1" source="uiElements_05-03_png" scaleX="1.2" scaleY="1.2" scaleX.down="0.65" scaleY.down="0.65" source.down="uiElements_05-03_png" width.down="136" height.down="136" bottom.up="52" y="1107.88" x.down="2.2" bottom.down="84" left.up="15"/>
+			<e:Image id="loading2" source="uiElements_05-12_png" scaleX="1.2" scaleY="1.2" scaleX.down="0.65" scaleY.down="0.65" width.down="136" height.down="136" right.up="14" right.down="-1" bottom.up="52" source.up="uiElements_05-12_png" y="1111.02" bottom.down="81"/>
+
+		</e:Group>
+		<e:Group id="loadingGroup" touchEnabled.up="true" left.down="0" right.down="0" anchorOffsetY.down="0" left.up="-2" right.up="2" left="0" right="-170" y.up="2" height.up="720" verticalCenter.down="-37" height.down="932">
+			<ns1:LoginWaitUI id="LoginWaitUI" skinName="LoginWaitSkin" currentState="down" scaleX.up="0.79" scaleY.up="0.79" currentState.up="up"  scaleX.down="0.73" scaleY.down="0.73" anchorOffsetY.down="0" horizontalCenter.up="0" verticalCenter.up="-4" horizontalCenter.down="0" verticalCenter.down="0"/>
+
+
+			<e:Image id="loading3" scaleX="1.2" scaleY="1.2" source="loadingbg2_png" x="373"  horizontalCenter.up="0" horizontalCenter.down="2" y.down="1041.29" bottom.up="21" scaleX.down="1.1" scaleY.down="1.1"/>
+		</e:Group>
+		<e:Group id="speedGroup" left="0" right="0" top="0" bottom="0" visible.up="false" visible.down="false">
+			<e:Rect fillAlpha="0.6" width="1120" height="912" x="0" y="0" left="0" right="0" top="0" bottom="0" scaleX="1" scaleY="1"/>
+			<e:Group id="speedUi" scaleY="2.2" scaleY.up="2.18" scaleX.up="2.95" scaleY.down="1.8" scaleX.down="2.42" width.down="258.33" height.down="232.111111" width.up="252.52" height.up="209" anchorOffsetX.down="0" horizontalCenter.down="-0.5" y.down="396.64" y.up="129.77" anchorOffsetX.up="0" horizontalCenter.up="0.5" visible.up="false" visible.down="false">
+				<e:Image source="speedbg_png" scaleX="0.9" scaleY.down="1.1" source.up="hengSpeed_png" left.up="0" right.up="0" top.up="0" bottom.up="0" scaleX.up="0.9" source.down="shuSpeed_png" left.down="0" right.down="0" top.down="0" bottom.down="0"/>
+				<e:Image id="nono" source="h1_png" scaleX="0.5" scaleY="0.5" anchorOffsetX.up="0" width.up="143.04" anchorOffsetY.up="0" height.up="106.27" anchorOffsetY.down="0" height.down="129.33" verticalCenter.up="68" horizontalCenter.up="-41.260000000000005" verticalCenter.down="83.4444445" horizontalCenter.down="-54.66499999999999" width.down="217" scaleY.down="0.55"/>
+				<e:Image id="yesyes" source="h2_png" scaleX="0.5" scaleY="0.5" anchorOffsetY.up="0" height.up="107.66" anchorOffsetX.up="0" width.up="137.91" anchorOffsetY.down="0" height.down="126.37" verticalCenter.up="68.5" horizontalCenter.up="43.239999999999995" verticalCenter.down="83.4444445" horizontalCenter.down="57.33500000000001" width.down="217" scaleY.down="0.55"/>
+
+
+
+
+
+
+			</e:Group>
+			<e:Group id="tipsUi" scaleY="2.15" scaleX="2.98" width="252.52" height="209" y="148.96" anchorOffsetX="0" scaleY.up="1.99" horizontalCenter.up="0.5" y.up="146.44" y.down="418.67" width.down="241.61073825503357" scaleX.down="2.52" scaleY.down="1.86" horizontalCenter.down="0.5" scaleX.up="2.95" visible.up="false" visible.down="false">
+				<e:Image scaleX="0.9" left="0" right="0" top="0" bottom="0" source="hengTips_png" source.down="shuTips_png"/>
+				<e:Image id="yesyes0" source="h3_png" y.up="141.59" scaleX="0.5" scaleY="0.5" anchorOffsetX="0" width="138.93" horizontalCenter.up="-0.7600000000000051" width.down="207.46" anchorOffsetY.down="0" height.down="125.78" horizontalCenter.down="0.19463087248321642" verticalCenter.up="64.5" verticalCenter.down="72" scaleY.down="0.55"/>
+
+
+			</e:Group>
+
+		</e:Group>
+
+
+
+	</e:Group>
+
+
+
+
+</e:Skin>

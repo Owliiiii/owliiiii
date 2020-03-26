@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="skins.HSliderSkin" minWidth="20" minHeight="8" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image anchorOffsetX="0" source="popupBox_png"/>
+	<e:Image id="track" scale9Grid="105,2,30,1" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" source="sliderPanel_png" horizontalCenter="0.5" verticalCenter="3"/>
+	<e:Image id="tsbar" touchEnabled="false" verticalCenter="3" source="sliderPanelG_png" width="224" x="24"/>
+	<e:Image id="thumb" source="sliderBarB_png" x="19" y="27"/>
+</e:Skin>

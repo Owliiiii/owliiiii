@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="AutoItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" height="380">
+	<e:Group id="autoStopGroup" anchorOffsetY="0" height="98" horizontalCenter="0.5" bottom="0" visible="false">
+		<e:Image source="auto_spins_png" x="-1" top="0"/>
+		<e:Label id="autoCountLabel" text="直到环节" y="24" fontFamily="Microsoft JhengHei" size="17" horizontalCenter="0.5" bold="true"/>
+		<ns1:MouseButton id="sopAutoBtn" label="停止" horizontalCenter="0.5" bottom="0">
+			<ns1:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="stop_autoplay_png" source.down="stop_autoplay_pressed_png" source.disabled="stop_autoplay_disabled_png" source.rollOver="stop_autoplay_hovered_png"  />
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="24"/>
+				</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+		<e:Image source="stopAutoText_png" y="64" touchEnabled="false" horizontalCenter="0" visible="false"/>
+	</e:Group>
+	<e:Group id="sMainGroup" horizontalCenter="0" scrollEnabled="true" touchThrough="true" touchChildren="true" height="275" anchorOffsetY="0" y="0">
+		<e:Group id="sGroup" horizontalCenter="0" x="0" scaleX="1" scaleY="1" anchorOffsetY="0" height="275" y="275">
+			<e:Group id="btn0" scaleX="1" scaleY="1" horizontalCenter="0" top="0">
+				<ns1:MouseButton label="" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0">
+					<ns1:skinName>
+						<e:Skin states="up,down,disabled,rollOver">
+						<e:Image width="100%" height="100%" source="autoStopBG_png" source.down="autoStop_downBG_png" source.disabled="autoStop_disableBG_png" source.rollOver="autoStop_hoverBG_png"/>
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+						</e:Skin>
+					</ns1:skinName>
+				</ns1:MouseButton>
+				<e:Image id="anBg0" source="autoStop_disableBG_png" horizontalCenter="0"/>
+				<e:Image source="rotate99_png" horizontalCenter="0" verticalCenter="0" touchEnabled="false"/>
+			</e:Group>
+			<e:Group id="btn1" scaleX="1" scaleY="1" horizontalCenter="0" top="54">
+				<ns1:MouseButton label="" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0">
+				<ns1:skinName>
+					<e:Skin states="up,down,disabled,rollOver">
+					<e:Image width="100%" height="100%" source="autoStopBG_png" source.down="autoStop_downBG_png" source.disabled="autoStop_disableBG_png" source.rollOver="autoStop_hoverBG_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</ns1:skinName>
+				</ns1:MouseButton>
+				<e:Image source="autoStop_disableBG_png" id="anBg1"/>
+				<e:Image horizontalCenter="0" verticalCenter="0" touchEnabled="false" source="rotate55_png"/>
+			</e:Group>
+			<e:Group id="btn2" scaleX="1" scaleY="1" horizontalCenter="0" y="108">
+				<ns1:MouseButton label="" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0">
+				<ns1:skinName>
+					<e:Skin states="up,down,disabled,rollOver">
+					<e:Image width="100%" height="100%" source="autoStopBG_png" source.down="autoStop_downBG_png" source.disabled="autoStop_disableBG_png" source.rollOver="autoStop_hoverBG_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</ns1:skinName>
+				</ns1:MouseButton>
+				<e:Image source="autoStop_disableBG_png" id="anBg2"/>
+				<e:Image horizontalCenter="0" verticalCenter="0" touchEnabled="false" source="rotate25_png"/>
+			</e:Group>
+			<e:Group id="btn3" scaleX="1" scaleY="1" horizontalCenter="0" y="162">
+				<ns1:MouseButton label="" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0">
+				<ns1:skinName>
+					<e:Skin states="up,down,disabled,rollOver">
+					<e:Image width="100%" height="100%" source="autoStopBG_png" source.down="autoStop_downBG_png" source.disabled="autoStop_disableBG_png" source.rollOver="autoStop_hoverBG_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</ns1:skinName>
+				</ns1:MouseButton>
+				<e:Image source="autoStop_disableBG_png" id="anBg3"/>
+				<e:Image horizontalCenter="0" verticalCenter="0" touchEnabled="false" source="rotate10_png"/>
+			</e:Group>
+			<e:Group id="btn4" scaleX="1" scaleY="1" horizontalCenter="0" top="216" height="59">
+				<ns1:MouseButton label="" scaleX="1" scaleY="1" horizontalCenter="0" top="0">
+				<ns1:skinName>
+					<e:Skin states="up,down,disabled,rollOver">
+					<e:Image width="100%" height="100%" source="autoStopBG_png" source.down="autoStop_downBG_png" source.disabled="autoStop_disableBG_png" source.rollOver="autoStop_hoverBG_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</ns1:skinName>
+				</ns1:MouseButton>
+				<e:Image source="autoStop_disableBG_png" id="anBg4"/>
+				<e:Image horizontalCenter="0" touchEnabled="false" source="alwaysRotate_png" top="10"/>
+			</e:Group>
+		</e:Group>
+	</e:Group>
+	<ns1:MouseButton id="autoBtn" label="" horizontalCenter="0" x="44" scaleX="1" scaleY="1" bottom="0">
+		<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver">
+			<e:Image width="100%" height="100%" source="auto_mode_png" source.down="auto_down_png" source.disabled="auto_disable_png" source.rollOver="auto_hover_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" xmlns:tween="egret.tween.*" size="24" fontFamily="Microsoft JhengHei"/>
+			</e:Skin>
+		</ns1:skinName>
+	</ns1:MouseButton>
+	<e:Image id="autoText_mode" source="autoText_png" x="11" y="315" touchEnabled="false"/>
+	<e:Image id="autoText_an" source="autoText_an_png" x="16" y="315" touchEnabled="false" visible="false"/>
+</e:Skin>

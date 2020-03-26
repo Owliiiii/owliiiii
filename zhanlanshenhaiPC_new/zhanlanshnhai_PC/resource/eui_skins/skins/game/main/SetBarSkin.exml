@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SetBarSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group y="28" scrollEnabled="true" anchorOffsetY="0" touchEnabled="false" horizontalCenter="0" width="313" height="170">
+		<ns1:MyHslider id="volueSlider" y="-1" skinName="skins.HSliderSkin" horizontalCenter="8" x="31" alpha="0"/>
+		<ns1:CheckList id="checkList" x="167" y="0" skinName="CheckListSkin" alpha="0"/>
+	</e:Group>
+	<e:Group id="setgroup" height="28" scaleX="1" scaleY="1" right="29" top="0">
+		<ns1:MouseButton id="setBtn" label="" x="0" verticalCenter="0.5">
+		<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver" xmlns:tween="egret.tween.*">
+			<e:Image width="100%" height="100%" source="bg_sets_an_png" source.down="bg_sets_an_png" source.rollOver="bg_sets_liang_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</ns1:skinName>
+		</ns1:MouseButton>
+		<ns1:MusicBtn id="musicCheckBox" label="CheckBox" x="31.95" skinName="MusicBtnSkin" verticalCenter="0"/>
+		<e:Rect width="10" x="26.66" top="0" bottom="0" alpha="0"/>
+		<e:Rect height="6" y="23.69" anchorOffsetY="0" left="-2" right="-5" alpha="0"/>
+	</e:Group>
+</e:Skin>

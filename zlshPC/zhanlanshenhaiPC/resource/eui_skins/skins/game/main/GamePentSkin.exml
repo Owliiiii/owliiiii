@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GamePentSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" xmlns:tween="egret.tween.*" width="1300" height="650">
+	<w:Declarations>
+	</w:Declarations>
+
+	<e:Image alpha="0.5" verticalCenter="7" horizontalCenter="0" source="lineObj_png" visible="false"/>
+
+
+
+
+
+
+	<e:Group id="lineGroup" left="0" right="0" top="0" bottom="0">
+		<e:Image id="line_1" source="line01_png" y="324.41" scaleX="1" scaleY="1" x="205.97"/>
+		<e:Image id="line_2" source="line02_png" y="120.28" scaleX="1" scaleY="1" x="210.32"/>
+		<e:Image id="line_3" source="line03_png" y="519.48" x="208.34"/>
+		<e:Image id="line_4" source="line04_png" y="119.01" x="207.33"/>
+		<e:Image id="line_5" source="line05_png" y="119.33" x="207.87"/>
+		<e:Image id="line_6" source="line06_png" y="117.86" scaleX="1" scaleY="1" x="205.99"/>
+		<e:Image id="line_7" source="line07_png" y="325.83" scaleX="1" scaleY="1" x="206.05"/>
+		<e:Image id="line_8" source="line08_png" y="118.75" x="206.66"/>
+		<e:Image id="line_9" source="line09_png" y="119.34" x="207.31"/>
+		<e:Image id="line_10" source="line10_png" y="117.86" x="206.6"/>
+		<e:Image id="line_11" source="line11_png" y="118.8" x="206"/>
+		<e:Image id="line_12" source="line12_png" y="118.29" x="206.03"/>
+		<e:Image id="line_13" source="line13_png" y="325.85" x="206.74"/>
+		<e:Image id="line_14" source="line14_png" y="118.71" x="206.66"/>
+		<e:Image id="line_15" source="line15_png" y="325.49" x="206.66"/>
+		<e:Image id="line_16" source="line16_png" y="117.68" x="206.48"/>
+		<e:Image id="line_17" source="line17_png" y="324.66" x="206"/>
+		<e:Image id="line_18" source="line18_png" y="118.26" x="205.15"/>
+		<e:Image id="line_19" source="line19_png" y="118.75" x="207.01"/>
+		<e:Image id="line_20" source="line20_png" y="117.7" x="205.46"/>
+		<e:Image id="line_21" source="line21_png" y="118.19" x="207.02"/>
+		<e:Image id="line_22" source="line22_png" y="116.42" x="205"/>
+		<e:Image id="line_23" source="line23_png" y="116.5" horizontalCenter="-1.5"/>
+		<e:Image id="line_24" source="line24_png" y="117.23" horizontalCenter="-2"/>
+		<e:Image id="line_25" source="line25_png" y="118.76" x="206"/>
+		<e:Group id="gGroup" scaleX="1" scaleY="1" left="0" bottom="0" top="0" right="0">
+		</e:Group>
+	</e:Group>
+	<e:Group id="kuangGroup" top="0" bottom="0" left="0" right="0">
+		<e:Group x="101.17" verticalCenter="0.5">
+			<e:Image x="0" y="0" source="box01_png"/>
+			<e:Image verticalCenter="0" x="0" source="box01_png"/>
+			<e:Image source="box01_png" y="400" x="0"/>
+		</e:Group>
+		<e:Group x="318.49" verticalCenter="0.5">
+			<e:Image source="box01_png" x="0"/>
+			<e:Image source="box01_png" y="200" x="0"/>
+			<e:Image source="box01_png" y="400" x="0"/>
+		</e:Group>
+		<e:Group width="228" height="609" y="21" horizontalCenter="0">
+			<e:Image source="box01_png"/>
+			<e:Image source="box01_png" y="200"/>
+			<e:Image source="box01_png" y="400"/>
+		</e:Group>
+		<e:Group width="228" height="609" x="753.81" verticalCenter="0.5">
+			<e:Image x="0" source="box01_png"/>
+			<e:Image source="box01_png" y="200" x="0"/>
+			<e:Image source="box01_png" y="400" x="0"/>
+		</e:Group>
+		<e:Group width="228" height="609" x="971.41" verticalCenter="0.5">
+			<e:Image source="box01_png" x="0"/>
+			<e:Image source="box01_png" x="0" y="200"/>
+			<e:Image source="box01_png" x="0" y="400"/>
+		</e:Group>
+	</e:Group>
+	<e:Group id="tipGroup" top="0" bottom="0" left="0" right="0" anchorOffsetX="0" anchorOffsetY="0">
+		<e:Group id="g4" x="32.65" y="12.06" scaleX="1" scaleY="1">
+		<e:Image id="blueBg_4" scaleX="1" scaleY="1" x="0" y="0" source="blueBg_png"/>
+		<e:Image id="lineBg_4" source="over_04_png" y="0" visible="false"/>
+		<e:BitmapLabel id="txt_4" text="4" touchEnabled="false" letterSpacing="-5" scaleX="1" scaleY="1" x="14" y="10.5" font="scence_f0_fnt"/>
+		</e:Group>
+		<e:Group id="g2" x="32.65" y="60.33" scaleX="1" scaleY="1">
+		<e:Image id="blueBg_2" source="blueBg_png" scaleX="1" scaleY="1"/>
+		<e:Image id="lineBg_2" source="over_02_png" scaleX="1" scaleY="1" visible="false"/>
+		<e:BitmapLabel id="txt_2" text="2" touchEnabled="false" scaleX="1" scaleY="1" x="14" y="10.5" letterSpacing="-3" font="scence_f0_fnt"/>
+		</e:Group>
+		<e:Group id="g24" x="32.65" y="109.34">
+		<e:Image id="blueBg_24" scaleX="1" scaleY="1" source="blueBg_png"/>
+		<e:Image id="lineBg_24" source="over_24_png" scaleX="1" scaleY="1" visible="false"/>
+		<e:BitmapLabel id="txt_24" x="10" y="10.83" text="24" touchEnabled="false" letterSpacing="-5" scaleX="1" scaleY="1" font="scence_f0_fnt"/>
+		</e:Group>
+		<e:Group id="g20" x="32.65" y="158.99" height="40" width="54">
+		<e:Image id="blueBg_20" source="blueBg_png" scaleX="1" scaleY="1"/>
+		<e:Image id="lineBg_20" source="over_20_png" scaleX="1" scaleY="1" visible="false"/>
+		<e:BitmapLabel id="txt_20" text="20" touchEnabled="false" letterSpacing="-5" scaleX="1" scaleY="1" y="10.83" x="10" font="scence_f0_fnt"/>
+		</e:Group>
+		<e:Group id="g16" x="32.65" y="207.99" height="40" width="54">
+		<e:Image id="blueBg_16" source="blueBg_png" scaleX="1" scaleY="1"/>
+		<e:Image id="lineBg_16" source="over_16_png" scaleX="1" scaleY="1" visible="false"/>
+		<e:BitmapLabel id="txt_16" x="8" text="16" touchEnabled="false" scaleX="1" scaleY="1" y="10.83" letterSpacing="-3" font="scence_f0_fnt"/>
+		</e:Group>
+		<e:Group id="g10" x="32.65" y="256.99" height="40" width="54">
+		<e:Image id="blueBg_10" source="blueBg_png" scaleX="1" scaleY="1"/>
+		<e:Image id="lineBg_10" source="over_10_png" scaleX="1" scaleY="1" visible="false"/>
+		<e:BitmapLabel id="txt_10" text="10" touchEnabled="false" letterSpacing="-5" scaleX="1" scaleY="1" y="10.33" x="9.33" font="scence_f0_fnt"/>
+		</e:Group>
+		<e:Group id="g1" x="32.65" y="305.99" height="40" width="54">
+		<e:Image id="blueBg_1" source="blueBg_png" scaleX="1" scaleY="1"/>
+		<e:Image id="lineBg_1" source="over_01_png" scaleX="1" scaleY="1" visible="false"/>
+		<e:BitmapLabel id="txt_1" text="1" touchEnabled="false" letterSpacing="-5" font="scence_f0_fnt" scaleX="1" scaleY="1" y="10" x="12.25"/>
+		</e:Group>
+		<e:Group id="g11" x="32.65" y="354.99" height="40" width="54">
+		<e:Image id="blueBg_11" source="blueBg_png"/>
+		<e:Image id="lineBg_11" source="over_11_png" visible="false"/>
+		<e:BitmapLabel id="txt_11" text="11" touchEnabled="false" letterSpacing="-5" font="scence_f0_fnt" y="10" x="8.75"/>
+		</e:Group>
+		<e:Group id="g17" x="32.65" y="403.99" height="40" width="54">
+		<e:Image id="blueBg_17" source="blueBg_png"/>
+		<e:Image id="lineBg_17" source="over_17_png" visible="false"/>
+		<e:BitmapLabel id="txt_17" text="17" touchEnabled="false" letterSpacing="-5" font="scence_f0_fnt" y="10.25" x="9.25"/>
+		</e:Group>
+		<e:Group id="g13" x="32.65" y="452.99" height="40" width="54">
+		<e:Image id="blueBg_13" source="blueBg_png"/>
+		<e:Image id="lineBg_13" source="over_13_png" visible="false"/>
+		<e:BitmapLabel id="txt_13" text="13" touchEnabled="false" letterSpacing="-5" font="scence_f0_fnt" y="10.5" x="9.5"/>
+		</e:Group>
+		<e:Group id="g21" x="32.65" y="501.99" height="40" width="54">
+		<e:Image id="blueBg_21" source="blueBg_png"/>
+		<e:Image id="lineBg_21" source="over_21_png" visible="false"/>
+		<e:BitmapLabel id="txt_21" text="21" touchEnabled="false" letterSpacing="-5" font="scence_f0_fnt" y="10" x="9.75"/>
+		</e:Group>
+		<e:Group id="g5" x="32.65" y="550.99" height="40" width="54">
+		<e:Image id="blueBg_5" source="blueBg_png"/>
+		<e:Image id="lineBg_5" source="over_05_png" visible="false"/>
+		<e:BitmapLabel id="txt_5" text="5" touchEnabled="false" letterSpacing="-5" font="scence_f0_fnt" y="10.25" x="13.25"/>
+		</e:Group>
+		<e:Group id="g3" x="32.65" y="599.99" height="40" width="54">
+		<e:Image id="blueBg_3" source="blueBg_png"/>
+		<e:Image id="lineBg_3" source="over_03_png" visible="false"/>
+		<e:BitmapLabel id="txt_3" text="3" touchEnabled="false" letterSpacing="-5" font="scence_f0_fnt" y="10.5" x="13"/>
+		</e:Group>
+		<e:Group id="g14" x="1229.65" y="11.49">
+		<e:Image id="blueBg_14" source="blueBg_png" x="-0.5"/>
+		<e:Image id="lineBg_14" source="over_14_png" x="-15.5" visible="false"/>
+		<e:BitmapLabel id="txt_14" text="14" touchEnabled="false" letterSpacing="-3" y="11.5" x="8.5" font="scence_f0_fnt"/>
+		</e:Group>
+		<e:Group id="g18" x="1229.65" y="64.99">
+		<e:Image id="blueBg_18" source="blueBg_png" x="-0.5"/>
+		<e:Image id="lineBg_18" source="over_18_png" x="-15.5" visible="false"/>
+		<e:BitmapLabel id="txt_18" text="18" touchEnabled="false" letterSpacing="-5" font="scence_f0_fnt" y="10" x="9.5"/>
+		</e:Group>
+		<e:Group id="g12" x="1229.65" y="118.49">
+		<e:Image id="blueBg_12" source="blueBg_png" x="-0.5"/>
+		<e:Image id="lineBg_12" source="over_12_png" x="-15.5" visible="false"/>
+		<e:BitmapLabel id="txt_12" text="12" touchEnabled="false" letterSpacing="-5" font="scence_f0_fnt" y="10.5" x="8.5"/>
+		</e:Group>
+		<e:Group id="g9" x="1230.15" y="170.49">
+		<e:Image id="blueBg_9" source="blueBg_png" x="-0.5"/>
+		<e:Image id="lineBg_9" source="over_09_png" x="-15.5" visible="false"/>
+		<e:BitmapLabel id="txt_9" text="9" touchEnabled="false" letterSpacing="-5" font="scence_f0_fnt" y="10" x="13.5"/>
+		</e:Group>
+		<e:Group id="g22" x="1229.65" y="222.99">
+		<e:Image id="blueBg_22" source="blueBg_png" x="-0.5"/>
+		<e:Image id="lineBg_22" source="over_22_png" x="-15.5" visible="false"/>
+		<e:BitmapLabel id="txt_22" x="10.05" text="22" touchEnabled="false" letterSpacing="-5" font="scence_f0_fnt" y="11"/>
+		</e:Group>
+		<e:Group id="g6" x="1229.65" y="276.49">
+		<e:Image id="blueBg_6" source="blueBg_png" x="-0.5"/>
+		<e:Image id="lineBg_6" source="over_06_png" x="-15.5" visible="false"/>
+		<e:BitmapLabel id="txt_6" text="6" touchEnabled="false" letterSpacing="-5" font="scence_f0_fnt" y="11" x="13"/>
+		</e:Group>
+		<e:Group id="g7" x="1229.65" y="329.49">
+		<e:Image id="blueBg_7" source="blueBg_png" x="-0.5" y="0"/>
+		<e:Image id="lineBg_7" source="over_07_png" x="-15.5" y="0" visible="false"/>
+		<e:BitmapLabel id="txt_7" text="7" touchEnabled="false" letterSpacing="-5" font="scence_f0_fnt" y="10.5" x="13.5"/>
+		</e:Group>
+		<e:Group id="g23" x="1229.65" y="382.49">
+		<e:Image id="blueBg_23" source="blueBg_png" x="-0.5"/>
+		<e:Image id="lineBg_23" source="over_23_png" x="-15.5" visible="false"/>
+		<e:BitmapLabel id="txt_23" text="23" touchEnabled="false" letterSpacing="-5" font="scence_f0_fnt" x="10" y="10.5"/>
+		</e:Group>
+		<e:Group id="g8" x="1229.65" y="435.99">
+		<e:Image id="blueBg_8" source="blueBg_png" x="-0.5" y="0"/>
+		<e:Image id="lineBg_8" source="over_08_png" x="-15.5" visible="false"/>
+		<e:BitmapLabel id="txt_8" text="8" touchEnabled="false" letterSpacing="-5" font="scence_f0_fnt" y="10" x="12.5"/>
+		</e:Group>
+		<e:Group id="g19" x="1229.65" y="488.49">
+		<e:Image id="blueBg_19" source="blueBg_png" x="-0.5"/>
+		<e:Image id="lineBg_19" source="over_19_png" x="-15.5" visible="false"/>
+		<e:BitmapLabel id="txt_19" text="19" touchEnabled="false" letterSpacing="-5" font="scence_f0_fnt" y="10" x="9.5"/>
+		</e:Group>
+		<e:Group id="g25" x="1230.15" y="541.99">
+		<e:Image id="blueBg_25" source="blueBg_png" x="-0.5"/>
+		<e:Image id="lineBg_25" source="over_25_png" x="-15.5" visible="false"/>
+		<e:BitmapLabel id="txt_25" text="25" touchEnabled="false" letterSpacing="-5" font="scence_f0_fnt" y="10" x="9.5"/>
+		</e:Group>
+		<e:Group id="g15" x="1230.15" y="594.99">
+		<e:Image id="blueBg_15" source="blueBg_png" x="-0.5"/>
+		<e:Image id="lineBg_15" source="over_15_png" x="-15.5" visible="false"/>
+		<e:BitmapLabel id="txt_15" text="15" touchEnabled="false" letterSpacing="-5" font="scence_f0_fnt" y="10" x="9"/>
+		</e:Group>
+	</e:Group>
+
+
+</e:Skin>

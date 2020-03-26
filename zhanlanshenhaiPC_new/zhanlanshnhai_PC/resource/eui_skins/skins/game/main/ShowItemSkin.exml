@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ShowItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="90" height="105">
+	<e:Group id="tGroup" width="90" height="105" anchorOffsetX="45" anchorOffsetY="45" y="45" x="45">
+		<e:Image id="icons" source="testIcon_png" x="0" y="0"/>
+		<e:Label id="nameLabel" text="大西瓜圆又圆" y="94" size="14" horizontalCenter="0" fontFamily="'Asap',sans-serif"/>
+	</e:Group>
+</e:Skin>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ReelResultSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" height="185">
+	<e:Image id="img" source=""/>
+	<e:Rect id="bg" width="150" height="24" horizontalCenter="0" bottom="-10" ellipseWidth="24" ellipseHeight="24" visible="false"/>
+	<e:Label id="lineScore" text="￥0.01" size="22" horizontalCenter="0" bottom="-8" bold="true" visible="false"/>
+</e:Skin>

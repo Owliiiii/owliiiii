@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MoreGameSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"  states="ver,hor"  width.ver="750" height.ver="1334" width.hor="1334" height.hor="750">
+	<e:Rect id="bgRect" left="0" right="0" top="0" bottom="0" alpha="0.5"/>
+	<e:Group right="0" left="0" anchorOffsetY.ver="0" left.ver="0" right.ver="0" height.ver="823.24" height.hor="380">
+		<e:Image source="more_bg_png" top="0" left="0" right="0" bottom="0" top.hor="0"/>
+		<e:Label text="游戏" fontFamily="Microsoft JhengHei" scaleX="1" scaleY="1" top="14" verticalAlign="middle" textAlign="center" horizontalCenter.ver="0" top.ver="14" horizontalCenter.hor="0" top.hor="14" size="28"/>
+		<e:Scroller id="scrolls" y.ver="112.88" anchorOffsetY.ver="0" left.ver="0" right.ver="0" height.ver="707.22" bounces="true" scrollPolicyV.ver="on" y.hor="112" anchorOffsetY.hor="0" height.hor="265" scrollPolicyH.hor="on" left.hor="0" right.hor="0">
+			<e:Group>
+				<e:List id="lists" x.ver="0" y.ver="0" scaleX="1" scaleY="1"  itemRendererSkinName="GameItemSkin" x.hor="0" verticalCenter.hor="0">
+					<e:layout.hor>
+						<e:HorizontalLayout horizontalAlign="left" verticalAlign="top" gap="10" paddingTop="40" paddingLeft="0" paddingRight="0"/>
+					</e:layout.hor>
+					<e:layout.ver>
+						<e:TileLayout orientation="rows" horizontalAlign="left" verticalAlign="top" rowAlign="top" columnAlign="left" paddingTop="25" requestedColumnCount="3" verticalGap="0"  horizontalGap="65"/>
+					</e:layout.ver>
+				</e:List>
+			</e:Group>
+		</e:Scroller>
+		<e:Group left="0" right="0" left.ver="0" right.ver="0" y.ver="51.27" left.hor="0" right.hor="0" y.hor="48.67">
+			<e:Image source="more_bg1_png" scale9Grid="20,7,125,48" left="0" right="0" top="0" bottom="0"/>
+			<e:Group left="0" right="0" verticalCenter="0">
+			<e:RadioButton id="r0" label="新游戏" x="33" y="16" skinName="RadioCheckSkin"/>
+			<e:RadioButton id="r1" label="热门游戏" x="159" y="29" skinName="RadioCheckSkin"/>
+			<e:layout>
+				<e:HorizontalLayout horizontalAlign="justify" verticalAlign="middle"/>
+			</e:layout>
+			</e:Group>
+		</e:Group>
+	</e:Group>
+	<e:Button id="hbackBtn" label="" horizontalCenter="0"  y="794.97" horizontalCenter.ver="0" y.ver="823.24" horizontalCenter.hor="0" y.hor="377.35">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="more_bg2_png" source.down="more_bg2_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+</e:Skin>

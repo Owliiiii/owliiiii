@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>神秘小丑</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <style>
+        html, body {
+            -ms-touch-action: none;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin: auto;width: 100%;height: 100%;" class="egret-player"
+         data-entry-class="Main"
+         data-orientation="auto"
+         data-scale-mode="showAll"
+         data-frame-rate="60"
+         data-content-width="1200"
+         data-content-height="912"
+         data-multi-fingered="2"
+         data-show-fps="false" data-show-log="false"
+         data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
+    </div>
+<script>
+   /**
+    * 打开历史记录
+    */
+
+   function openHistory()
+   {
+       let w=window.screen.width/2-800/2;
+       let t=window.screen.height/2 - 600/2;
+        window.open('https://asicw.playngonetwork.com/CasinoHistory?userId=295167-311O469S532G133A&custId=1214919&pid=185&lang=zh_CN', '_blank', "height=600, width=800,left="+ w
+        +",top="+t);
+   }
+
+    /**
+    * 打开游戏说明
+    */
+   function openDes()
+   {
+       let w=window.screen.width/2-800/2;
+       let t=window.screen.height/2 - 600/2;
+        window.open('https://asicw.playngonetwork.com/casino/gamehelp?pid=185&gameid=283&lang=zh_CN&brand=&jurisdiction=&context=&currency=DEMO',  '_blank', "height=600, width=800,left="+ w 
+        +",top="+t);
+   }
+    var loadScript = function (list, callback) {
+        var loaded = 0;
+        var loadNext = function () {
+            loadSingleScript(list[loaded], function () {
+                loaded++;
+                if (loaded >= list.length) {
+                    callback();
+                }
+                else {
+                    loadNext();
+                }
+            })
+        };
+        loadNext();
+    };
+
+    var loadSingleScript = function (src, callback) {
+        var s = document.createElement('script');
+        s.async = false;
+        s.src = src;
+        s.addEventListener('load', function () {
+            s.parentNode.removeChild(s);
+            s.removeEventListener('load', arguments.callee, false);
+            callback();
+        }, false);
+        document.body.appendChild(s);
+    };
+
+    /**
+	 * 当前网页参数
+	 */
+	var CasinoGame  =  {
+		            "Game_id":  "T5080501001",
+		            "GameCode":  ".",
+		            "Skin":  "normal",
+		            "Link_auth":  "a3adba9f9b56ccb2ea9faff460248c8d",
+		            "UrlBase":  "ws://172.104.44.114:8086",
+		            'PartnerId':  't50',
+		            "PlayerId":  "user-035",
+		            "Token":  "DF87AE8CEC65ED753B2F9CCAC0AA3857",
+		            "IP":  ":",
+		            "Language":  "chs",
+		            "GameCanvas":  "game_block",
+		            "vtoken_interval":  10,
+		            "Denom": "32767",
+		            "guest":"0",
+		            "crnex":  '',
+		            "udf1":  "",
+		            "udf2":  ':',
+		            "udf3":  '',
+		            "udf4":  '',
+		            "udf5":  '',
+		            "UrlRes":":",
+		            "NjsHost":"172.104.44.114"
+	        }
+    window['CasinoGame'] = CasinoGame;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', './manifest.json?v=' + Math.random(), true);
+    xhr.addEventListener("load", function () {
+        var manifest = JSON.parse(xhr.response);
+        var list = manifest.initial.concat(manifest.game);
+        loadScript(list, function () {
+            /**
+             * {
+             * "renderMode":, //Engine rendering mode, "canvas" or "webgl"
+             * "audioType": 0 //Use the audio type, 0: default, 2: web audio, 3: audio
+             * "antialias": //Whether the anti-aliasing is enabled in WebGL mode, true: on, false: off, defaults to false
+             * "calculateCanvasScaleFactor": //a function return canvas scale factor
+             * }
+             **/
+            egret.runEgret({ renderMode: "webgl", audioType: 2, calculateCanvasScaleFactor:function(context) {
+                var backingStore = context.backingStorePixelRatio ||
+                    context.webkitBackingStorePixelRatio ||
+                    context.mozBackingStorePixelRatio ||
+                    context.msBackingStorePixelRatio ||
+                    context.oBackingStorePixelRatio ||
+                    context.backingStorePixelRatio || 1;
+                return (window.devicePixelRatio || 1) / backingStore;
+            }});
+        });
+    });
+    xhr.send(null);
+</script>
+</body>
+
+</html>

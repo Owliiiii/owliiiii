@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ReelItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" height="176">
+	<e:Image id="icons" source=""/>
+
+	<e:Image id="aIcon" source="borders_png" horizontalCenter="0" verticalCenter="0" visible="false"/>
+	<e:Image id="vIcon" source="blur0_png" anchorOffsetY="293" anchorOffsetX="100" horizontalCenter="0" verticalCenter="0" visible="false"/>
+</e:Skin>

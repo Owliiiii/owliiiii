@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MainScenceUISkin" width="1920" height="990" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" xmlns:tween="egret.tween.*">
+	<w:Declarations></w:Declarations>
+	<e:Image id="bg" horizontalCenter="0" source="BG_1x_png" verticalCenter="-1"/>
+	<e:Group id="mainGroup" width="1266" height="990" verticalCenter="0" horizontalCenter="0">
+		<ns1:GameScence id="gameScence" skinName="GameScenceSkin" horizontalCenter="-1.5" verticalCenter="8.5" x="32" y="202" scaleX="1" scaleY="1"/>
+		<e:Group y="60" horizontalCenter="-8" x="84" scaleX="1" scaleY="1">
+		<e:Image source="logo1_png" y="36" horizontalCenter="22.5"/>
+		<e:Image source="leftTruck_png" x="-2" y="12"/>
+		<e:Image source="rightTruck_png" x="832" y="0"/>
+		</e:Group>
+		<e:Rect id="touchRect" width="1060" height="578" x="100.99999999999994" y="216" anchorOffsetX="0" anchorOffsetY="0" alpha="0" scaleX="1" scaleY="1"/>
+		<e:Group y="794.0000000000001" horizontalCenter="0" height="137" x="-11" scaleX="1" scaleY="1">
+		<e:Image source="btn_bottom_png" y="0" x="0"/>
+		<e:Group x="123.65" y="19.67">
+			<e:Image source="lines_png" x="0" y="0"/>
+			<e:BitmapLabel id="lineLabel" y="35.99" text="1" horizontalCenter="-1.5" scaleX="0.8" scaleY="0.8" font="f0_fnt"/>
+		</e:Group>
+		<e:Group x="286.34" y="20.32">
+			<e:Image source="line_bet_png" x="0" y="0"/>
+			<e:BitmapLabel id="betLabel" y="36.01" text="x0.35" font="f2_fnt" horizontalCenter="0"/>
+		</e:Group>
+		<e:Group x="452.57" y="69.69">
+			<e:Image source="total_bet_png" x="0" y="0"/>
+			<e:BitmapLabel id="allBetLabel" y="29.96" text="x0.35" horizontalCenter="0" font="f2_fnt" scaleX="0.9" scaleY="0.9"/>
+		</e:Group>
+		<ns1:MouseButton id="infoBtn" label="" x="24.48" y="33.33">
+			<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="info_png" source.down="info_pressed_png" source.disabled="info_disabled_png" source.rollOver="info_hovered_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+		<ns1:MouseButton id="lineSubBtn" label="" x="138.47" y="87.33">
+			<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="down_nromal_png" source.down="down_down_png" source.disabled="down_disable_png" source.rollOver="down_hover_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+		<ns1:MouseButton id="lineAddBtn" label="" x="213.8" y="86.69">
+			<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="up_nromal_png" source.down="up_down_png" source.disabled="up_disable_png" source.rollOver="up_hover_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+		<ns1:MouseButton id="betSubBtn" label="" x="299.81" y="88">
+			<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="down_nromal_png" source.down="down_down_png" source.disabled="down_disable_png" source.rollOver="down_hover_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+		<ns1:MouseButton id="betAddBtn" label="" x="376.66" y="85.36">
+			<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="up_nromal_png" source.down="up_down_png" source.disabled="up_disable_png" source.rollOver="up_hover_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+		<ns1:MouseButton id="speedOffBtn" label="" x="932.21" y="29.61">
+			<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="turbo_png" source.down="turbo_pressed_png" source.disabled="turbo_disabled_png" source.rollOver="turbo_hovered_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+		<ns1:MouseButton id="speedOnBtn" label="" x="933.11" y="31" visible="false">
+			<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="turbo_on_png" source.down="turbo_on_pressed_png" source.disabled="turbo_on_disabled_png" source.rollOver="turbo_on_hovered_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+		<ns1:MouseButton id="startBtn" label="" x="1062.84" y="33.89">
+			<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="spin_png" source.down="spin_pressed_png" source.disabled="spin_disabled_png" source.rollOver="spin_hovered_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+		<ns1:MouseButton id="stopBtn" label="" x="1062.24" y="33.29" visible="false">
+			<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="stop_png" source.down="stop_pressed_png" source.disabled="stop_disabled_png" source.rollOver="stop_hovered_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+		<ns1:AutoItem id="autoItem" skinName="AutoItemSkin" scaleX="1" scaleY="1" x="787.88" y="-303.03"/>
+		<e:Group id="rewardGroup" x="638.57" y="56" anchorOffsetX="182" anchorOffsetY="31.5">
+			<e:Image source="dynamic_win_box_level_3_png" x="0" y="0"/>
+			<e:BitmapLabel id="rewardLabel" y="25.33" text="x0.35" font="f0_fnt" horizontalCenter="0"/>
+		</e:Group>
+		</e:Group>
+		<e:Group id="aGroup" left="0" right="0" top="0" bottom="0" touchChildren="false" touchEnabled="false" touchThrough="true" width="1266" height="990" x="0" y="0" scaleX="1" scaleY="1" visible="false">
+		<e:Group id="mcGroup" left="0" right="0" top="0" bottom="0"/>
+		<e:Group id="bigRewardGroup" width="570" height="211" anchorOffsetX="285" anchorOffsetY="105.5" horizontalCenter="0" verticalCenter="0">
+			<e:Image source="bigreward_png" x="0" y="0"/>
+			<e:Label id="bigRewardLabel" text="大奖" anchorOffsetX="0" anchorOffsetY="0" height="160" size="80" verticalAlign="middle" textAlign="center" fontFamily="SimSun" bold="true" stroke="1" strokeColor="0xb62b38" horizontalCenter="0" verticalCenter="-15.5"/>
+		</e:Group>
+		</e:Group>
+	</e:Group>
+
+
+
+
+
+	<e:Group id="topGroup" width="1920" horizontalCenter="0" height="25" top="0">
+		<e:Image left="0" right="0" top="-2" bottom="-2" scale9Grid="2,3,16,19" source="top_BG_png"/>
+		<ns1:TextButton id="tGameBtn" skinName="TextButtonSkin" anchorOffsetX="0" anchorOffsetY="0" verticalCenter="3" left="30"/>
+		<ns1:SetBar id="setBar" skinName="SetBarSkin" scaleX="1" scaleY="1" right="0" top="0"/>
+		<e:Group id="textGroup" verticalCenter="3" horizontalCenter="0">
+			<ns1:TextButton id="t0" x="10" skinName="TextButtonSkin" anchorOffsetX="0" anchorOffsetY="0" verticalCenter="0"/>
+			<ns1:TextButton id="t1" x="10" skinName="TextButtonSkin" anchorOffsetX="0" anchorOffsetY="0" verticalCenter="0"/>
+			<ns1:TextButton id="t2" x="20" skinName="TextButtonSkin" anchorOffsetX="0" anchorOffsetY="0" verticalCenter="0"/>
+			<ns1:TextButton id="t3" x="79" skinName="TextButtonSkin" anchorOffsetX="0" anchorOffsetY="0" verticalCenter="0"/>
+			<ns1:TextButton id="t4" x="221" skinName="TextButtonSkin" anchorOffsetX="0" anchorOffsetY="0" verticalCenter="0"/>
+			<e:layout>
+				<e:HorizontalLayout gap="20"/>
+			</e:layout>
+		</e:Group>
+		<e:Group id="topListGroup" height="154" left="0" right="0" scrollEnabled="true" touchThrough="true" touchChildren="true" y="-154" alpha="0">
+			<e:Image source="topshowlist_png" left="0" right="0" y="26" scale9Grid="200,16,1200,96"/>
+			<ns1:TopList id="topList" y="22" skinName="TopListSkin" left="0" right="0" x="0" scaleX="1" scaleY="1"/>
+		</e:Group>
+		<e:Rect id="topMask" left="0" right="0" top="0" bottom="0" alpha="0.3" visible="false"/>
+
+	</e:Group>
+
+	<e:Group id="bottomGroup" width="1920" horizontalCenter="0" height="29" bottom="0">
+		<e:Image left="0" right="0" top="0" bottom="-2" scale9Grid="5,10,12,11" source="top_BG_png"/>
+		<e:Label id="timeLabel" text="" size="16" height="22" verticalAlign="middle" textAlign="left" fontFamily="'Asap',sans-serif" right="10" verticalCenter="0"/>
+
+
+
+		<e:Group x="6" verticalCenter="0">
+			<e:Image source="attention_png" x="0" y="2"/>
+			<e:Label id="balanceLabel" text="￥9,990.01" x="26.17" size="16" height="22" verticalAlign="middle" textAlign="left" fontFamily="'Asap',sans-serif" y="0"/>
+			<ns1:MouseButton id="moneyBtn" label="出纳柜台" x="-154" y="-1170">
+				<ns1:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+					<e:Image width="100%" height="100%" source="desktop_button_png" source.down="desktop_button_hover_png" source.rollOver="desktop_button_hover_png"/>
+					<e:Label id="labelDisplay" verticalCenter="1" size="14" fontFamily="'Asap',sans-serif" horizontalCenter="0"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MouseButton>
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="5"/>
+			</e:layout>
+		</e:Group>
+		<e:Rect id="bottomMask" left="0" right="0" top="0" bottom="0" fillAlpha="0.3" visible="false"/>
+	</e:Group>
+	<e:Image source="obj_png" horizontalCenter="0" verticalCenter="0" alpha="0.5" visible="false"/>
+
+
+</e:Skin>

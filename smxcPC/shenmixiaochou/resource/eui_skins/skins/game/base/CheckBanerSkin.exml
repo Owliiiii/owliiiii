@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="CheckBanerSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group bottom="0" horizontalCenter="0">
+		<ns1:MouseButton id="leftBtn" xmlns:ns1="*" label="" x="-2" verticalCenter="0.5">
+		<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*">
+			<e:Image width="100%" height="100%" source="menu_texture0_level1_64-48_png" source.down="menu_texture0_level1_64-28_l_png" source.disabled="menu_texture0_level1_64-48_png" source.rollOver="menu_texture0_level1_64-28_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="2" verticalCenter="-2.5" fontFamily="Microsoft YaHei" textColor="0x000000"/>
+			</e:Skin>
+		</ns1:skinName>
+		</ns1:MouseButton>
+		<ns1:MosueRadioButton id="btn0" xmlns:ns1="*" label="1.00" x="56" verticalCenter="0" anchorOffsetX="0">
+		<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver,upAndSelected,downAndSelected,rollOverAndSelected,disabledAndSelected" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*">
+			<e:Image width="100%" height="100%" source="menu_texture0_level1_51_png" source.upAndSelected="menu_texture0_level1_51-29_png" source.downAndSelected="menu_texture0_level1_51-29_png" source.rollOverAndSelected="menu_texture0_level1_51-29_png" source.disabled="menu_texture0_level1_51-47_png" source.disabledAndSelected="menu_texture0_level1_51-29_png" source.down="menu_texture0_level1_51_png" source.rollOver="menu_texture0_level1_51_png"/>
+			<e:BitmapLabel id="labelDisplay" text="1.00" font="f1_fnt" scaleX="1" scaleY="1" verticalCenter.rollOver="0" verticalCenter.upAndSelected="-3" horizontalCenter.upAndSelected="0.5" horizontalCenter.downAndSelected="0.5" verticalCenter.downAndSelected="-3" horizontalCenter.rollOverAndSelected="0.5" verticalCenter.rollOverAndSelected="-3" horizontalCenter.disabledAndSelected="0.5" verticalCenter.disabledAndSelected="-3" horizontalCenter.up="0" verticalCenter.up="0" horizontalCenter.down="0" verticalCenter.down="0" horizontalCenter.disabled="0" verticalCenter.disabled="0" horizontalCenter.rollOver="0"/>
+			</e:Skin>
+		</ns1:skinName>
+		</ns1:MosueRadioButton>
+		<ns1:MosueRadioButton id="btn1" xmlns:ns1="*" label="2.00" x="185" verticalCenter="0" anchorOffsetX="0">
+		<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver,upAndSelected,downAndSelected,rollOverAndSelected,disabledAndSelected" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*">
+			<e:Image width="100%" height="100%" source="menu_texture0_level1_51_png" source.upAndSelected="menu_texture0_level1_51-29_png" source.downAndSelected="menu_texture0_level1_51-29_png" source.rollOverAndSelected="menu_texture0_level1_51-29_png" source.disabled="menu_texture0_level1_51-47_png" source.disabledAndSelected="menu_texture0_level1_51-29_png" source.down="menu_texture0_level1_51_png" source.rollOver="menu_texture0_level1_51_png"/>
+			<e:BitmapLabel id="labelDisplay" horizontalCenter.rollOver="0" horizontalCenter.disabled="0" text="0.10" font="f1_fnt" scaleX="1" scaleY="1" verticalCenter.rollOver="0" verticalCenter.disabled="0" horizontalCenter.downAndSelected="0.5" verticalCenter.downAndSelected="-3" horizontalCenter.rollOverAndSelected="0.5" verticalCenter.rollOverAndSelected="-3" horizontalCenter.disabledAndSelected="0.5" verticalCenter.disabledAndSelected="-3" horizontalCenter.up="0" verticalCenter.up="0" horizontalCenter.down="0" verticalCenter.down="0" horizontalCenter.upAndSelected="0.5" verticalCenter.upAndSelected="-3"/>
+			</e:Skin>
+		</ns1:skinName>
+		</ns1:MosueRadioButton>
+		<ns1:MosueRadioButton id="btn2" xmlns:ns1="*" label="3.00" x="314" verticalCenter="0" anchorOffsetX="0">
+		<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver,upAndSelected,downAndSelected,rollOverAndSelected,disabledAndSelected" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*">
+			<e:Image width="100%" height="100%" source="menu_texture0_level1_51_png" source.downAndSelected="menu_texture0_level1_51-29_png" source.rollOverAndSelected="menu_texture0_level1_51-29_png" source.disabled="menu_texture0_level1_51-47_png" source.disabledAndSelected="menu_texture0_level1_51-29_png" source.up="menu_texture0_level1_51_png" source.down="menu_texture0_level1_51_png" source.rollOver="menu_texture0_level1_51_png" source.upAndSelected="menu_texture0_level1_51-29_png"/>
+			<e:BitmapLabel id="labelDisplay" text="3.00" font="f1_fnt" scaleX="1" scaleY="1" horizontalCenter.disabled="0" horizontalCenter.upAndSelected="0.5" verticalCenter.upAndSelected="-3" horizontalCenter.downAndSelected="0.5" verticalCenter.downAndSelected="-3" horizontalCenter.rollOverAndSelected="0.5" verticalCenter.rollOverAndSelected="-3" horizontalCenter.disabledAndSelected="0.5" verticalCenter.disabledAndSelected="-3" verticalCenter.up="0" horizontalCenter.up="0" verticalCenter.down="0" horizontalCenter.down="0" verticalCenter.disabled="0" verticalCenter.rollOver="0" horizontalCenter.rollOver="0"/>
+			</e:Skin>
+		</ns1:skinName>
+		</ns1:MosueRadioButton>
+		<ns1:MosueRadioButton id="btn3" xmlns:ns1="*" label="4.00" x="443" verticalCenter="0" anchorOffsetX="0">
+		<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver,upAndSelected,downAndSelected,rollOverAndSelected,disabledAndSelected" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*">
+			<e:Image width="100%" height="100%" source="menu_texture0_level1_51_png" source.upAndSelected="menu_texture0_level1_51-29_png" source.downAndSelected="menu_texture0_level1_51-29_png" source.rollOverAndSelected="menu_texture0_level1_51-29_png" source.disabled="menu_texture0_level1_51-47_png" source.disabledAndSelected="menu_texture0_level1_51-29_png" source.down="menu_texture0_level1_51_png" source.rollOver="menu_texture0_level1_51_png"/>
+			<e:BitmapLabel id="labelDisplay" horizontalCenter.up="0" text="4.00" font="f1_fnt" scaleX="1" scaleY="1" horizontalCenter.upAndSelected="0.5" verticalCenter.upAndSelected="-3" horizontalCenter.downAndSelected="0.5" verticalCenter.downAndSelected="-3" horizontalCenter.rollOverAndSelected="0.5" verticalCenter.rollOverAndSelected="-3" horizontalCenter.disabledAndSelected="0.5" verticalCenter.disabledAndSelected="-3" verticalCenter.up="0" horizontalCenter.down="0" verticalCenter.down="0" verticalCenter.disabled="0" horizontalCenter.disabled="0" horizontalCenter.rollOver="0" verticalCenter.rollOver="0"/>
+			</e:Skin>
+		</ns1:skinName>
+		</ns1:MosueRadioButton>
+		<ns1:MosueRadioButton id="btn4" xmlns:ns1="*" label="5.00" x="573" verticalCenter="0" anchorOffsetX="0">
+		<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver,upAndSelected,downAndSelected,rollOverAndSelected,disabledAndSelected" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*">
+			<e:Image width="100%" height="100%" source="menu_texture0_level1_51_png" source.upAndSelected="menu_texture0_level1_51-29_png" source.downAndSelected="menu_texture0_level1_51-29_png" source.rollOverAndSelected="menu_texture0_level1_51-29_png" source.disabled="menu_texture0_level1_51-47_png" source.disabledAndSelected="menu_texture0_level1_51-29_png" source.down="menu_texture0_level1_51_png" source.rollOver="menu_texture0_level1_51_png"/>
+			<e:BitmapLabel id="labelDisplay" horizontalCenter.rollOver="0" horizontalCenter.disabled="0" horizontalCenter.up="0" text="5.00" font="f1_fnt" scaleX="1" scaleY="1" horizontalCenter.upAndSelected="0.5" verticalCenter.upAndSelected="-3" horizontalCenter.downAndSelected="0.5" verticalCenter.downAndSelected="-3" horizontalCenter.rollOverAndSelected="0.5" verticalCenter.rollOverAndSelected="-3" horizontalCenter.disabledAndSelected="0.5" verticalCenter.disabledAndSelected="-3" verticalCenter.up="0" verticalCenter.down="0" horizontalCenter.down="0" verticalCenter.disabled="0" verticalCenter.rollOver="0"/>
+			</e:Skin>
+		</ns1:skinName>
+		</ns1:MosueRadioButton>
+		<ns1:MouseButton id="rightBtn" xmlns:ns1="*" label="" x="702" verticalCenter="0.5">
+		<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*">
+			<e:Image width="100%" height="100%" source="menu_texture0_level1_64-43_png" source.down="menu_texture0_level1_64_l_png" source.disabled="menu_texture0_level1_64-43_png" source.rollOver="menu_texture0_level1_64_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="2" verticalCenter="-2.5" fontFamily="Microsoft YaHei" textColor="0x000000"/>
+			</e:Skin>
+		</ns1:skinName>
+		</ns1:MouseButton>
+	</e:Group>
+</e:Skin>

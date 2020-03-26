@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="AutoSetCompomentSkin" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" states="ver,hor1,hor0,ver0,ver1"  width.ver="716" height.ver="236" width.hor1="810" height.hor1="253" width.hor0="810" height.hor0="253" width.ver0="770" height.ver0="250" width.ver1="770" height.ver1="250">
+	<e:Image source="rigth_tanchu_png" left="0" right="0" top="0" bottom="0" source.ver="auto_bg_png" scaleX.hor1="-1" source.ver0="auto_bg_png" source.ver1="auto_bg_png"/>
+	<e:ToggleButton id="arrButton" label="" x="454" verticalCenter="0" visible.ver="false" right.hor1="38" left.hor0="36" scaleX.hor0="-1" visible.ver0="false" visible.ver1="false" verticalCenter.hor1="0.5" verticalCenter.hor0="0.5">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="leftbar_velocity_open@2x_png" source.down="leftbar_velocity_close@2x_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:ToggleButton>
+	<e:Label id="countLabel" text="99次旋转" size="36" horizontalCenter.hor1="50" width.hor1="200" verticalAlign.hor1="middle" textAlign.hor1="center" fontFamily.hor1="Microsoft JhengHei" horizontalCenter.hor0="-50" width.hor0="200" fontFamily.hor0="Microsoft JhengHei" fontFamily.ver="Microsoft JhengHei" verticalAlign.hor0="middle" textAlign.hor0="center" width.ver="150" horizontalCenter.ver="0" textAlign.ver="center" verticalAlign.ver="middle" horizontalCenter.ver0="0" horizontalCenter.ver1="0" fontFamily.ver0="Microsoft JhengHei" fontFamily.ver1="Microsoft JhengHei" width.ver1="200" verticalAlign.ver1="middle" textAlign.ver1="center" width.ver0="200" textAlign.ver0="center" verticalAlign.ver0="middle" width="200" verticalAlign="middle" textAlign="center" y.hor1="75" y.hor0="75" y.ver0="56" y.ver1="56"/>
+	<ns1:MyHslider id="mySlider" x="86.16" y="150" skinName="skins.HSliderSkin" horizontalCenter.ver="0" horizontalCenter.hor1="50" horizontalCenter.hor0="-50" scaleX.hor1="-1" horizontalCenter.ver0="0" horizontalCenter.ver1="0" scaleX.ver1="-1"/>
+</e:Skin>

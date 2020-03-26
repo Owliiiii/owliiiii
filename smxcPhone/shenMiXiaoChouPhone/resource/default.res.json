@@ -1,0 +1,1894 @@
+{
+	"groups": [
+		{
+			"keys": "loadingbg2_png,bottomBg_png,tips_cn_gif,tips_cn1_gif,heiBG_png,loadingbg1_jpg,loading2_png,neterror_png,loading1_png,loading0_png,guize_01_png,guize_02_png,riqi_png,gameName_png,touzhu_png,jiangjin_png,xiangxi_png,zu1_png,juxing2_png,musicSet_png,autoTouzhu_png,zuoshou_png,kuaisuSet_png,touzhuCNY_png,ruguo_png,zengjia_png,jianshao_png,ruoguomianfei_png,renghe_png,tou2_png,autoGame_png,stopAuto_png",
+			"name": "preload"
+		},
+		{
+			"keys": "fbg_png,skin_texture1_level1_02_png,skin_texture1_level1_03_png,skin_texture1_level1_07_png,skin_texture1_level1_26_png,skin_texture1_level1_76_png,skin_texture1_level1_78_png,bicon_C1_0_png,bicon_C1_1_png,bicon_M0_0_png,bicon_M0_1_png,bicon_M1_0_png,bicon_M1_1_png,bicon_M2_0_png,bicon_M2_1_png,bicon_M3_0_png,bicon_M3_1_png,bicon_M4_0_png,bicon_M4_1_png,C10_png,C11_png,C12_png,C13_png,C14_png,C15_png,line1_aicon_png,line1_icon_png,line1_png,line2_aicon_png,line2_icon_png,line2_png,line3_aicon_png,line3_icon_png,line3_png,line4_aicon_png,line4_icon_png,line4_png,line5_aicon_png,line5_icon_png,line5_png,sicon_C1_0_png,sicon_M0_0_png,sicon_M0_1_png,sicon_M1_0_png,sicon_M1_1_png,sicon_M2_0_png,sicon_M2_1_png,sicon_M3_0_png,sicon_M3_1_png,sicon_M4_0_png,sicon_M4_1_png,allwin_mp3,bigreward_mp3,button_mp3,freeslot_show_mp3,houzi_mp3,nomalReward_1_mp3,nomalReward_2_mp3,reelstart_mp3,start_mp3,bigrewardshows_mp3,reelend_mp3,star_png,star_json,bicon_C1_2_png,bicon_M0_2_png,bicon_M1_2_png,bicon_M2_2_png,bicon_M3_2_png,bicon_M4_2_png,f5_fnt,f5_png,f6_png,f6_fnt,uiElements_03-06_png,uiElements_05-02_png,uiElements_05_png,uiElements_05-03_png,uiElements_05-13_png,uiElements_05-04_png,uiElements_05-12_png,uiElements_05-14_png,uiElements_05-11_png,uiElements_45_png,uiElements_23_png,uiElements_45-33_png,uiElements_50_png,uiElements_45-30_png,uiElements_57-28_png,uiElements_57_png,uiElements_58_png,uiElements_50-26_png,uiElements_50-25_png,uiElements_58-20_png,uiElements_58-22_png,uiElements_58-23_png,uiElements_62_png,uiElements_61_png,uiElements_105_png,uiElements_66_png,bottomBg_png,uiElements_102_png,qq1_png,qq2_png,qq1Dis_png,uiElements_03-07_png,uiElements_03_png,uiElements_03-08_png,uiElements_03-09_png,uiElements_03-10_png,uiElements_03-16_png,a5_png,CNY 2.00_png,a4_png,uiElements_05-032_png,a1_png,a2_png,uiElements_05-142_png,a3_png,游戏规则暗_png,游戏历史_png,游戏历史暗_png,b1_png,b2_png,Mystery Joker_png,设置_png,赔付表暗_png,赔付表                                                            _png,设置暗_png,投注_png,投注暗_png,游戏规则_png,分割_png,2.00_png,CNY 拷贝_png,bet_png,CNY_png,inFo_png,Mobile_png,Mystery Joker2_png,uiElements_572_png,total_png,uiElements_57-282_png,xia2_png,开关开_png,进度3_png,开关  开_png,如果游戏获胜超过_png,自动游戏_png,组 3_png,组 22_png,停止自动游戏_png,0.00_png,1.00_png,10_png,100_png,1000.00_png,40000.00_png,4000.00_png,heiSeDiTu_png,huadongquan_png,dianDis_png,sanJiao_png,sanJiao1_png,sanJiao2_png,yuanJiao_png,sanjiaoDis_png,yuanJiaoDis_png,进度2_png,进度1_png,uiElements_05-143_png,xia_png,奖金：2_png,上_png,赔付表暗2_png,赔付表                                                            2_png,设置2_png,设置暗2_png,投注2_png,游戏规则2_png,投注暗2_png,投注：2_png,游戏历史2_png,游戏历史暗2_png,余额：_png,游戏规则暗2_png,圆角矩形 22_png,圆角矩形 2 拷贝_png,组 2_png,组 12_png,组 32_png,0.002_png,(CNY)_png,1.002_png,102_png,50_png,4000.002_png,1000.002_png,CNY 2.002_png,Mystery Joker3_png,uiElements_05-033_png,1002_png,uiElements_03-062_png,uiElements_662_png,uiElements_58-232_png,关_png,开_png,开bj_png,uiElements_58-202_png,uiElements_58-222_png,feature_preview_texture0_level1_02_png,feature_preview_texture3_level1_png,feature_preview_texture1_level1_png,feature_preview_texture0_level1_24_png,xuanZhong_png,fert_png,quan_png,继续_png,不再显示_png,内容_png,继续亮_png,组 23_png,组 33_png,组 14_png,dian_png,feature_preview_texture0_level1_04_png,feature_1_png,feature_0_png,feature_preview_texture0_level1_09_png,feature_preview_texture0_level1_06_png,feature_preview_texture0_level1_14_png,feature_preview_texture0_level1_18_png,feature_preview_texture0_level1_20_png,feature_preview_texture0_level1_23_png,videoslot_popup_texture0_level1_23_png,videoslot_popup_texture0_level1_13-06_png,videoslot_popup_texture0_level1_13_png,videoslot_popup_texture0_level1_19_png,videoslot_popup_texture0_level1_25-18_png,videoslot_popup_texture0_level1_28_png,videoslot_popup_texture0_level1_25_png,videoslot_popup_texture0_level1_26_png,videoslot_popup_texture0_level1_34_png,videoslot_popup_texture0_level1_34-14_png,videoslot_popup_texture0_level1_38_png,videoslot_popup_texture0_level1_59_png,videoslot_popup_texture0_level1_38-16_png,videoslot_popup_texture0_level1_59-20_png,videoslot_popup_texture0_level1_71_png,videoslot_popup_texture0_level1_67_png,yelows_l_png,grn_1_png,grn_2_png,grn_0_png,hui_l_png,red_0_png,red_1_png,red_2_png,videoslot_popup_texture0_level1_03_png,videoslot_popup_texture0_level1_03-02_png,videoslot_popup_texture0_level1_03-03_png,videoslot_popup_texture0_level1_03-04_png,menu_texture0_level1_51-41_png,menu_texture0_level1_51-47_png,menu_texture0_level1_51-46_png,menu_texture0_level1_75_png,menu_texture0_level1_62_png,menu_texture0_level1_51-42_png,menu_texture0_level1_103_png,menu1_png,menu_texture0_level1_21_png,menu2_png,menu_texture0_level1_35_png,menu_texture0_level1_36_png,menu3_png,menu_texture0_level1_36-45_png,menu_texture0_level1_36-22_png,menu_texture0_level1_36-44_png,menu_texture0_level1_49_png,menu_texture0_level1_42_png,menu_texture0_level1_51_png,menu_texture0_level1_51-29_png,menu_texture0_level1_51-35_png,rule1_png,peifubg_png,peifu_png,M1_mp3,M2_mp3,M4_mp3,M3_mp3,M0_mp3,background_texture1_level1_jpg,background_texture0_level1_jpg,nomalReward_3_mp3,hengRed_png,hengBlue_png,shuRed_png,shuBlue_png,f0_png,maozi_json,maozi_png,speedbg_png,pfBg_png,hengSpeed_png,shuSpeed_png,hengTips_png,shuTips_png,h3_png,s1_png,s2_png,s3_png,h1_png,h2_png",
+			"name": "main"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets/loading/neterror.png",
+			"type": "image",
+			"name": "neterror_png"
+		},
+		{
+			"url": "assets/loading/loading1.png",
+			"type": "image",
+			"name": "loading1_png"
+		},
+		{
+			"url": "assets/loading/loading2.png",
+			"type": "image",
+			"name": "loading2_png"
+		},
+		{
+			"url": "assets/loading/loading0.png",
+			"type": "image",
+			"name": "loading0_png"
+		},
+		{
+			"url": "assets/statebar/statusbar_texture0_level1_03.png",
+			"type": "image",
+			"name": "statusbar_texture0_level1_03_png"
+		},
+		{
+			"url": "assets/statebar/statusbar_texture0_level1_12-05.png",
+			"type": "image",
+			"name": "statusbar_texture0_level1_12-05_png"
+		},
+		{
+			"url": "assets/skin/skin_texture1_level1_02.png",
+			"type": "image",
+			"name": "skin_texture1_level1_02_png"
+		},
+		{
+			"url": "assets/skin/skin_texture1_level1_76.png",
+			"type": "image",
+			"name": "skin_texture1_level1_76_png"
+		},
+		{
+			"url": "assets/skin/skin_texture1_level1_78.png",
+			"type": "image",
+			"name": "skin_texture1_level1_78_png"
+		},
+		{
+			"url": "assets/skin/skin_texture1_level1_03.png",
+			"type": "image",
+			"name": "skin_texture1_level1_03_png"
+		},
+		{
+			"url": "assets/skin/skin_texture1_level1_07.png",
+			"type": "image",
+			"name": "skin_texture1_level1_07_png"
+		},
+		{
+			"url": "assets/skin/skin_texture1_level1_26.png",
+			"type": "image",
+			"name": "skin_texture1_level1_26_png"
+		},
+		{
+			"url": "assets/logo/logo_texture1_level1_02.png",
+			"type": "image",
+			"name": "logo_texture1_level1_02_png"
+		},
+		{
+			"url": "assets/logo/logo_texture1_level1_10-07.png",
+			"type": "image",
+			"name": "logo_texture1_level1_10-07_png"
+		},
+		{
+			"url": "assets/logo/logo_texture1_level1_10.png",
+			"type": "image",
+			"name": "logo_texture1_level1_10_png"
+		},
+		{
+			"url": "assets/logo/logo_texture1_level1_10-06.png",
+			"type": "image",
+			"name": "logo_texture1_level1_10-06_png"
+		},
+		{
+			"url": "assets/logo/logo_texture1_level1_10-08.png",
+			"type": "image",
+			"name": "logo_texture1_level1_10-08_png"
+		},
+		{
+			"url": "assets/logo/logo_texture1_level1_10-10.png",
+			"type": "image",
+			"name": "logo_texture1_level1_10-10_png"
+		},
+		{
+			"url": "assets/logo/logo_texture1_level1_10-09.png",
+			"type": "image",
+			"name": "logo_texture1_level1_10-09_png"
+		},
+		{
+			"url": "assets/logo/logo_texture1_level1_10-11.png",
+			"type": "image",
+			"name": "logo_texture1_level1_10-11_png"
+		},
+		{
+			"url": "assets/logo/logo_texture1_level1_10-15.png",
+			"type": "image",
+			"name": "logo_texture1_level1_10-15_png"
+		},
+		{
+			"url": "assets/logo/logo_texture1_level1_10-17.png",
+			"type": "image",
+			"name": "logo_texture1_level1_10-17_png"
+		},
+		{
+			"url": "assets/logo/logo_texture1_level1_10-18.png",
+			"type": "image",
+			"name": "logo_texture1_level1_10-18_png"
+		},
+		{
+			"url": "assets/logo/logo_texture1_level1_10-20.png",
+			"type": "image",
+			"name": "logo_texture1_level1_10-20_png"
+		},
+		{
+			"url": "assets/logo/logo_texture1_level1_10-19.png",
+			"type": "image",
+			"name": "logo_texture1_level1_10-19_png"
+		},
+		{
+			"url": "assets/logo/logo_texture1_level1_35.png",
+			"type": "image",
+			"name": "logo_texture1_level1_35_png"
+		},
+		{
+			"url": "assets/logo/logo_texture1_level1_30.png",
+			"type": "image",
+			"name": "logo_texture1_level1_30_png"
+		},
+		{
+			"url": "assets/logo/logo_texture1_level1_01.png",
+			"type": "image",
+			"name": "logo_texture1_level1_01_png"
+		},
+		{
+			"url": "assets/logo/logo_texture1_level1_32.png",
+			"type": "image",
+			"name": "logo_texture1_level1_32_png"
+		},
+		{
+			"url": "assets/logo/logo_texture1_level1_01-02.png",
+			"type": "image",
+			"name": "logo_texture1_level1_01-02_png"
+		},
+		{
+			"url": "assets/logo/logo_texture1_level1_01-03.png",
+			"type": "image",
+			"name": "logo_texture1_level1_01-03_png"
+		},
+		{
+			"url": "assets/logo/logo_texture1_level1_01-04.png",
+			"type": "image",
+			"name": "logo_texture1_level1_01-04_png"
+		},
+		{
+			"url": "assets/feature_preview/feature_preview_texture0_level1_18.png",
+			"type": "image",
+			"name": "feature_preview_texture0_level1_18_png"
+		},
+		{
+			"url": "assets/feature_preview/feature_preview_texture0_level1_20.png",
+			"type": "image",
+			"name": "feature_preview_texture0_level1_20_png"
+		},
+		{
+			"url": "assets/feature_preview/feature_preview_texture0_level1_23.png",
+			"type": "image",
+			"name": "feature_preview_texture0_level1_23_png"
+		},
+		{
+			"url": "assets/feature_preview/feature_preview_texture0_level1_24.png",
+			"type": "image",
+			"name": "feature_preview_texture0_level1_24_png"
+		},
+		{
+			"url": "assets/feature_preview/feature_preview_texture0_level1_04.png",
+			"type": "image",
+			"name": "feature_preview_texture0_level1_04_png"
+		},
+		{
+			"url": "assets/feature_preview/feature_preview_texture0_level1_06.png",
+			"type": "image",
+			"name": "feature_preview_texture0_level1_06_png"
+		},
+		{
+			"url": "assets/feature_preview/feature_preview_texture1_level1.png",
+			"type": "image",
+			"name": "feature_preview_texture1_level1_png"
+		},
+		{
+			"url": "assets/feature_preview/feature_preview_texture3_level1.png",
+			"type": "image",
+			"name": "feature_preview_texture3_level1_png"
+		},
+		{
+			"url": "assets/feature_preview/feature_preview_texture0_level1_09.png",
+			"type": "image",
+			"name": "feature_preview_texture0_level1_09_png"
+		},
+		{
+			"url": "assets/icon/lineicon/line5_icon.png",
+			"type": "image",
+			"name": "line5_icon_png"
+		},
+		{
+			"url": "assets/icon/lineicon/line2_icon.png",
+			"type": "image",
+			"name": "line2_icon_png"
+		},
+		{
+			"url": "assets/icon/lineicon/line1_icon.png",
+			"type": "image",
+			"name": "line1_icon_png"
+		},
+		{
+			"url": "assets/icon/lineicon/line3_icon.png",
+			"type": "image",
+			"name": "line3_icon_png"
+		},
+		{
+			"url": "assets/icon/lineicon/line4_icon.png",
+			"type": "image",
+			"name": "line4_icon_png"
+		},
+		{
+			"url": "assets/icon/smallicon/sicon_M4_1.png",
+			"type": "image",
+			"name": "sicon_M4_1_png"
+		},
+		{
+			"url": "assets/icon/smallicon/sicon_M3_1.png",
+			"type": "image",
+			"name": "sicon_M3_1_png"
+		},
+		{
+			"url": "assets/icon/smallicon/sicon_M4_0.png",
+			"type": "image",
+			"name": "sicon_M4_0_png"
+		},
+		{
+			"url": "assets/icon/smallicon/sicon_M3_0.png",
+			"type": "image",
+			"name": "sicon_M3_0_png"
+		},
+		{
+			"url": "assets/icon/smallicon/sicon_M1_0.png",
+			"type": "image",
+			"name": "sicon_M1_0_png"
+		},
+		{
+			"url": "assets/icon/smallicon/sicon_M2_1.png",
+			"type": "image",
+			"name": "sicon_M2_1_png"
+		},
+		{
+			"url": "assets/icon/smallicon/sicon_M2_0.png",
+			"type": "image",
+			"name": "sicon_M2_0_png"
+		},
+		{
+			"url": "assets/icon/smallicon/sicon_M1_1.png",
+			"type": "image",
+			"name": "sicon_M1_1_png"
+		},
+		{
+			"url": "assets/background_texture1_level1.jpg",
+			"type": "image",
+			"name": "background_texture1_level1_jpg"
+		},
+		{
+			"url": "assets/background_texture0_level1.jpg",
+			"type": "image",
+			"name": "background_texture0_level1_jpg"
+		},
+		{
+			"url": "assets/loading/loadingbg1.jpg",
+			"type": "image",
+			"name": "loadingbg1_jpg"
+		},
+		{
+			"url": "assets/loading/loadingbg2.png",
+			"type": "image",
+			"name": "loadingbg2_png"
+		},
+		{
+			"url": "assets/icon/lineicon/line4.png",
+			"type": "image",
+			"name": "line4_png"
+		},
+		{
+			"url": "assets/icon/lineicon/line5.png",
+			"type": "image",
+			"name": "line5_png"
+		},
+		{
+			"url": "assets/icon/lineicon/line2.png",
+			"type": "image",
+			"name": "line2_png"
+		},
+		{
+			"url": "assets/icon/lineicon/line1.png",
+			"type": "image",
+			"name": "line1_png"
+		},
+		{
+			"url": "assets/icon/lineicon/line3.png",
+			"type": "image",
+			"name": "line3_png"
+		},
+		{
+			"url": "assets/f0.fnt",
+			"type": "font",
+			"name": "f0_fnt"
+		},
+		{
+			"url": "assets/zhen_an.png",
+			"type": "image",
+			"name": "zhen_an_png"
+		},
+		{
+			"url": "assets/zhen_liang.png",
+			"type": "image",
+			"name": "zhen_liang_png"
+		},
+		{
+			"url": "assets/bj-3.jpg",
+			"type": "image",
+			"name": "bj-3_jpg"
+		},
+		{
+			"url": "assets/f1.png",
+			"type": "image",
+			"name": "f1_png"
+		},
+		{
+			"url": "assets/f3.png",
+			"type": "image",
+			"name": "f3_png"
+		},
+		{
+			"url": "assets/f3.fnt",
+			"type": "font",
+			"name": "f3_fnt"
+		},
+		{
+			"url": "assets/icon/bigicon/bicon_M3_0.png",
+			"type": "image",
+			"name": "bicon_M3_0_png"
+		},
+		{
+			"url": "assets/icon/bigicon/bicon_M3_1.png",
+			"type": "image",
+			"name": "bicon_M3_1_png"
+		},
+		{
+			"url": "assets/icon/bigicon/bicon_M4_0.png",
+			"type": "image",
+			"name": "bicon_M4_0_png"
+		},
+		{
+			"url": "assets/icon/bigicon/C10.png",
+			"type": "image",
+			"name": "C10_png"
+		},
+		{
+			"url": "assets/icon/bigicon/bicon_M4_1.png",
+			"type": "image",
+			"name": "bicon_M4_1_png"
+		},
+		{
+			"url": "assets/icon/bigicon/C11.png",
+			"type": "image",
+			"name": "C11_png"
+		},
+		{
+			"url": "assets/icon/bigicon/C12.png",
+			"type": "image",
+			"name": "C12_png"
+		},
+		{
+			"url": "assets/icon/bigicon/C13.png",
+			"type": "image",
+			"name": "C13_png"
+		},
+		{
+			"url": "assets/icon/bigicon/C15.png",
+			"type": "image",
+			"name": "C15_png"
+		},
+		{
+			"url": "assets/icon/bigicon/bicon_M0_0.png",
+			"type": "image",
+			"name": "bicon_M0_0_png"
+		},
+		{
+			"url": "assets/icon/bigicon/bicon_M0_1.png",
+			"type": "image",
+			"name": "bicon_M0_1_png"
+		},
+		{
+			"url": "assets/icon/bigicon/C14.png",
+			"type": "image",
+			"name": "C14_png"
+		},
+		{
+			"url": "assets/icon/bigicon/bicon_M1_0.png",
+			"type": "image",
+			"name": "bicon_M1_0_png"
+		},
+		{
+			"url": "assets/icon/bigicon/bicon_M1_1.png",
+			"type": "image",
+			"name": "bicon_M1_1_png"
+		},
+		{
+			"url": "assets/icon/bigicon/bicon_M2_0.png",
+			"type": "image",
+			"name": "bicon_M2_0_png"
+		},
+		{
+			"url": "assets/icon/bigicon/bicon_M2_1.png",
+			"type": "image",
+			"name": "bicon_M2_1_png"
+		},
+		{
+			"url": "assets/icon/smallicon/sicon_C1_0.png",
+			"type": "image",
+			"name": "sicon_C1_0_png"
+		},
+		{
+			"url": "assets/icon/smallicon/sicon_M0_1.png",
+			"type": "image",
+			"name": "sicon_M0_1_png"
+		},
+		{
+			"url": "assets/icon/smallicon/sicon_M0_0.png",
+			"type": "image",
+			"name": "sicon_M0_0_png"
+		},
+		{
+			"url": "assets/icon/lineicon/line3_aicon.png",
+			"type": "image",
+			"name": "line3_aicon_png"
+		},
+		{
+			"url": "assets/icon/lineicon/line4_aicon.png",
+			"type": "image",
+			"name": "line4_aicon_png"
+		},
+		{
+			"url": "assets/icon/lineicon/line5_aicon.png",
+			"type": "image",
+			"name": "line5_aicon_png"
+		},
+		{
+			"url": "assets/icon/lineicon/line1_aicon.png",
+			"type": "image",
+			"name": "line1_aicon_png"
+		},
+		{
+			"url": "assets/icon/lineicon/line2_aicon.png",
+			"type": "image",
+			"name": "line2_aicon_png"
+		},
+		{
+			"url": "assets/f4.png",
+			"type": "image",
+			"name": "f4_png"
+		},
+		{
+			"url": "assets/f4.fnt",
+			"type": "font",
+			"name": "f4_fnt"
+		},
+		{
+			"url": "assets/skin/fbg.png",
+			"type": "image",
+			"name": "fbg_png"
+		},
+		{
+			"url": "assets/icon/bigicon/bicon_C1_0.png",
+			"type": "image",
+			"name": "bicon_C1_0_png"
+		},
+		{
+			"url": "assets/icon/bigicon/bicon_C1_1.png",
+			"type": "image",
+			"name": "bicon_C1_1_png"
+		},
+		{
+			"url": "assets/sound/allwin.mp3",
+			"type": "sound",
+			"name": "allwin_mp3"
+		},
+		{
+			"url": "assets/sound/freeslot_show.mp3",
+			"type": "sound",
+			"name": "freeslot_show_mp3"
+		},
+		{
+			"url": "assets/sound/bigreward.mp3",
+			"type": "sound",
+			"name": "bigreward_mp3"
+		},
+		{
+			"url": "assets/sound/houzi.mp3",
+			"type": "sound",
+			"name": "houzi_mp3"
+		},
+		{
+			"url": "assets/sound/button.mp3",
+			"type": "sound",
+			"name": "button_mp3"
+		},
+		{
+			"url": "assets/sound/nomalReward_2.mp3",
+			"type": "sound",
+			"name": "nomalReward_2_mp3"
+		},
+		{
+			"url": "assets/sound/nomalReward_1.mp3",
+			"type": "sound",
+			"name": "nomalReward_1_mp3"
+		},
+		{
+			"url": "assets/sound/start.mp3",
+			"type": "sound",
+			"name": "start_mp3"
+		},
+		{
+			"url": "assets/sound/reelstart.mp3",
+			"type": "sound",
+			"name": "reelstart_mp3"
+		},
+		{
+			"url": "assets/sound/bigrewardshows.mp3",
+			"type": "sound",
+			"name": "bigrewardshows_mp3"
+		},
+		{
+			"url": "assets/sound/reelend.mp3",
+			"type": "sound",
+			"name": "reelend_mp3"
+		},
+		{
+			"url": "assets/sound/nomalReward_3.mp3",
+			"type": "sound",
+			"name": "nomalReward_3_mp3"
+		},
+		{
+			"url": "assets/mc/star.png",
+			"type": "image",
+			"name": "star_png"
+		},
+		{
+			"url": "assets/mc/star.json",
+			"type": "json",
+			"name": "star_json"
+		},
+		{
+			"url": "assets/icon/bigicon/bicon_M3_2.png",
+			"type": "image",
+			"name": "bicon_M3_2_png"
+		},
+		{
+			"url": "assets/icon/bigicon/bicon_M4_2.png",
+			"type": "image",
+			"name": "bicon_M4_2_png"
+		},
+		{
+			"url": "assets/icon/bigicon/bicon_C1_2.png",
+			"type": "image",
+			"name": "bicon_C1_2_png"
+		},
+		{
+			"url": "assets/icon/bigicon/bicon_M0_2.png",
+			"type": "image",
+			"name": "bicon_M0_2_png"
+		},
+		{
+			"url": "assets/icon/bigicon/bicon_M1_2.png",
+			"type": "image",
+			"name": "bicon_M1_2_png"
+		},
+		{
+			"url": "assets/icon/bigicon/bicon_M2_2.png",
+			"type": "image",
+			"name": "bicon_M2_2_png"
+		},
+		{
+			"url": "assets/f5.fnt",
+			"type": "font",
+			"name": "f5_fnt"
+		},
+		{
+			"url": "assets/f5.png",
+			"type": "image",
+			"name": "f5_png"
+		},
+		{
+			"url": "assets/f6.fnt",
+			"type": "font",
+			"name": "f6_fnt"
+		},
+		{
+			"url": "assets/f6.png",
+			"type": "image",
+			"name": "f6_png"
+		},
+		{
+			"url": "assets/downAnNiu/bottomBg.png",
+			"type": "image",
+			"name": "bottomBg_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_03-06.png",
+			"type": "image",
+			"name": "uiElements_03-06_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_03-07.png",
+			"type": "image",
+			"name": "uiElements_03-07_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_03-08.png",
+			"type": "image",
+			"name": "uiElements_03-08_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_03-09.png",
+			"type": "image",
+			"name": "uiElements_03-09_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_03-10.png",
+			"type": "image",
+			"name": "uiElements_03-10_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_03-16.png",
+			"type": "image",
+			"name": "uiElements_03-16_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_03.png",
+			"type": "image",
+			"name": "uiElements_03_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_05-02.png",
+			"type": "image",
+			"name": "uiElements_05-02_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_05-03.png",
+			"type": "image",
+			"name": "uiElements_05-03_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_05-04.png",
+			"type": "image",
+			"name": "uiElements_05-04_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_05-11.png",
+			"type": "image",
+			"name": "uiElements_05-11_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_05-12.png",
+			"type": "image",
+			"name": "uiElements_05-12_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_05-13.png",
+			"type": "image",
+			"name": "uiElements_05-13_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_05-14.png",
+			"type": "image",
+			"name": "uiElements_05-14_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_05.png",
+			"type": "image",
+			"name": "uiElements_05_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_102.png",
+			"type": "image",
+			"name": "uiElements_102_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_105.png",
+			"type": "image",
+			"name": "uiElements_105_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_23.png",
+			"type": "image",
+			"name": "uiElements_23_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_45-30.png",
+			"type": "image",
+			"name": "uiElements_45-30_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_45-33.png",
+			"type": "image",
+			"name": "uiElements_45-33_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_45.png",
+			"type": "image",
+			"name": "uiElements_45_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_50-25.png",
+			"type": "image",
+			"name": "uiElements_50-25_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_50-26.png",
+			"type": "image",
+			"name": "uiElements_50-26_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_50.png",
+			"type": "image",
+			"name": "uiElements_50_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_57-28.png",
+			"type": "image",
+			"name": "uiElements_57-28_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_57.png",
+			"type": "image",
+			"name": "uiElements_57_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_58-20.png",
+			"type": "image",
+			"name": "uiElements_58-20_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_58-22.png",
+			"type": "image",
+			"name": "uiElements_58-22_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_58-23.png",
+			"type": "image",
+			"name": "uiElements_58-23_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_58.png",
+			"type": "image",
+			"name": "uiElements_58_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_61.png",
+			"type": "image",
+			"name": "uiElements_61_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_62.png",
+			"type": "image",
+			"name": "uiElements_62_png"
+		},
+		{
+			"url": "assets/downAnNiu/uiElements_66.png",
+			"type": "image",
+			"name": "uiElements_66_png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/底部菜单/a1.png",
+			"type": "image",
+			"name": "a1_png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/底部菜单/a2.png",
+			"type": "image",
+			"name": "a2_png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/底部菜单/a3.png",
+			"type": "image",
+			"name": "a3_png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/底部菜单/a4.png",
+			"type": "image",
+			"name": "a4_png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/底部菜单/a5.png",
+			"type": "image",
+			"name": "a5_png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/底部菜单/CNY 2.00.png",
+			"type": "image",
+			"name": "CNY 2.00_png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/底部菜单/uiElements_05-03.png",
+			"type": "image",
+			"name": "uiElements_05-032_png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/底部菜单/uiElements_05-14.png",
+			"type": "image",
+			"name": "uiElements_05-142_png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/顶部菜单/b1.png",
+			"type": "image",
+			"name": "b1_png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/顶部菜单/b2.png",
+			"type": "image",
+			"name": "b2_png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/顶部菜单/Mystery Joker.png",
+			"type": "image",
+			"name": "Mystery Joker_png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/顶部菜单/投注.png",
+			"type": "image",
+			"name": "投注_png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/顶部菜单/投注暗.png",
+			"type": "image",
+			"name": "投注暗_png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/顶部菜单/游戏历史.png",
+			"type": "image",
+			"name": "游戏历史_png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/顶部菜单/游戏历史暗.png",
+			"type": "image",
+			"name": "游戏历史暗_png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/顶部菜单/游戏规则.png",
+			"type": "image",
+			"name": "游戏规则_png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/顶部菜单/游戏规则暗.png",
+			"type": "image",
+			"name": "游戏规则暗_png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/顶部菜单/设置.png",
+			"type": "image",
+			"name": "设置_png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/顶部菜单/设置暗.png",
+			"type": "image",
+			"name": "设置暗_png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/顶部菜单/赔付表                                                            .png",
+			"type": "image",
+			"name": "赔付表                                                            _png"
+		},
+		{
+			"url": "assets/设置qie/公共部分竖/顶部菜单/赔付表暗.png",
+			"type": "image",
+			"name": "赔付表暗_png"
+		},
+		{
+			"url": "assets/设置qie/设置-历史/2.00.png",
+			"type": "image",
+			"name": "2.00_png"
+		},
+		{
+			"url": "assets/设置qie/设置-历史/CNY 拷贝.png",
+			"type": "image",
+			"name": "CNY 拷贝_png"
+		},
+		{
+			"url": "assets/设置qie/设置-历史/CNY.png",
+			"type": "image",
+			"name": "CNY_png"
+		},
+		{
+			"url": "assets/设置qie/设置-历史/Mobile.png",
+			"type": "image",
+			"name": "Mobile_png"
+		},
+		{
+			"url": "assets/设置qie/设置-历史/Mystery Joker.png",
+			"type": "image",
+			"name": "Mystery Joker2_png"
+		},
+		{
+			"url": "assets/设置qie/设置-历史/uiElements_57-28.png",
+			"type": "image",
+			"name": "uiElements_57-282_png"
+		},
+		{
+			"url": "assets/设置qie/设置-历史/uiElements_57.png",
+			"type": "image",
+			"name": "uiElements_572_png"
+		},
+		{
+			"url": "assets/设置qie/设置-历史/分割.png",
+			"type": "image",
+			"name": "分割_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/0.00.png",
+			"type": "image",
+			"name": "0.00_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/1.00.png",
+			"type": "image",
+			"name": "1.00_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/10.png",
+			"type": "image",
+			"name": "10_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/100.png",
+			"type": "image",
+			"name": "100_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/1000.00.png",
+			"type": "image",
+			"name": "1000.00_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/4000.00.png",
+			"type": "image",
+			"name": "4000.00_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/停止自动游戏.png",
+			"type": "image",
+			"name": "停止自动游戏_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/如果游戏获胜超过.png",
+			"type": "image",
+			"name": "如果游戏获胜超过_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/开关  开.png",
+			"type": "image",
+			"name": "开关  开_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/开关开.png",
+			"type": "image",
+			"name": "开关开_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/组 3.png",
+			"type": "image",
+			"name": "组 3_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/自动游戏.png",
+			"type": "image",
+			"name": "自动游戏_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/进度1.png",
+			"type": "image",
+			"name": "进度1_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/进度2.png",
+			"type": "image",
+			"name": "进度2_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/进度3.png",
+			"type": "image",
+			"name": "进度3_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/(CNY).png",
+			"type": "image",
+			"name": "(CNY)_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/0.00.png",
+			"type": "image",
+			"name": "0.002_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/1.00.png",
+			"type": "image",
+			"name": "1.002_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/10.png",
+			"type": "image",
+			"name": "102_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/100.png",
+			"type": "image",
+			"name": "1002_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/1000.00.png",
+			"type": "image",
+			"name": "1000.002_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/4000.00.png",
+			"type": "image",
+			"name": "4000.002_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/50.png",
+			"type": "image",
+			"name": "50_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/CNY 2.00.png",
+			"type": "image",
+			"name": "CNY 2.002_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/Mystery Joker.png",
+			"type": "image",
+			"name": "Mystery Joker3_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/uiElements_03-06.png",
+			"type": "image",
+			"name": "uiElements_03-062_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/uiElements_05-03.png",
+			"type": "image",
+			"name": "uiElements_05-033_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/uiElements_05-14.png",
+			"type": "image",
+			"name": "uiElements_05-143_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/xia.png",
+			"type": "image",
+			"name": "xia_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/上.png",
+			"type": "image",
+			"name": "上_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/余额：.png",
+			"type": "image",
+			"name": "余额：_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/圆角矩形 2 拷贝.png",
+			"type": "image",
+			"name": "圆角矩形 2 拷贝_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/圆角矩形 2.png",
+			"type": "image",
+			"name": "圆角矩形 22_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/奖金：.png",
+			"type": "image",
+			"name": "奖金：2_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/投注.png",
+			"type": "image",
+			"name": "投注2_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/投注暗.png",
+			"type": "image",
+			"name": "投注暗2_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/投注：.png",
+			"type": "image",
+			"name": "投注：2_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/游戏历史.png",
+			"type": "image",
+			"name": "游戏历史2_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/游戏历史暗.png",
+			"type": "image",
+			"name": "游戏历史暗2_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/游戏规则.png",
+			"type": "image",
+			"name": "游戏规则2_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/游戏规则暗.png",
+			"type": "image",
+			"name": "游戏规则暗2_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/组 1.png",
+			"type": "image",
+			"name": "组 12_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/组 2.png",
+			"type": "image",
+			"name": "组 2_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/组 3.png",
+			"type": "image",
+			"name": "组 32_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/设置.png",
+			"type": "image",
+			"name": "设置2_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/设置暗.png",
+			"type": "image",
+			"name": "设置暗2_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/赔付表                                                            .png",
+			"type": "image",
+			"name": "赔付表                                                            2_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注2/赔付表暗.png",
+			"type": "image",
+			"name": "赔付表暗2_png"
+		},
+		{
+			"url": "assets/设置qie/设置-设置/uiElements_58-20.png",
+			"type": "image",
+			"name": "uiElements_58-202_png"
+		},
+		{
+			"url": "assets/设置qie/设置-设置/uiElements_58-22.png",
+			"type": "image",
+			"name": "uiElements_58-222_png"
+		},
+		{
+			"url": "assets/设置qie/设置-设置/uiElements_58-23.png",
+			"type": "image",
+			"name": "uiElements_58-232_png"
+		},
+		{
+			"url": "assets/设置qie/设置-设置/uiElements_66.png",
+			"type": "image",
+			"name": "uiElements_662_png"
+		},
+		{
+			"url": "assets/设置qie/设置-设置/关.png",
+			"type": "image",
+			"name": "关_png"
+		},
+		{
+			"url": "assets/设置qie/设置-设置/开.png",
+			"type": "image",
+			"name": "开_png"
+		},
+		{
+			"url": "assets/设置qie/设置-设置/开bj.png",
+			"type": "image",
+			"name": "开bj_png"
+		},
+		{
+			"url": "assets/downAnNiu/qq2.png",
+			"type": "image",
+			"name": "qq2_png"
+		},
+		{
+			"url": "assets/downAnNiu/qq1.png",
+			"type": "image",
+			"name": "qq1_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/40000.00.png",
+			"type": "image",
+			"name": "40000.00_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/组 2.png",
+			"type": "image",
+			"name": "组 22_png"
+		},
+		{
+			"url": "assets/feature_preview/feature_preview_texture0_level1_02.png",
+			"type": "image",
+			"name": "feature_preview_texture0_level1_02_png"
+		},
+		{
+			"url": "assets/feature_preview/不再显示.png",
+			"type": "image",
+			"name": "不再显示_png"
+		},
+		{
+			"url": "assets/feature_preview/继续.png",
+			"type": "image",
+			"name": "继续_png"
+		},
+		{
+			"url": "assets/feature_preview/继续亮.png",
+			"type": "image",
+			"name": "继续亮_png"
+		},
+		{
+			"url": "assets/feature_preview/内容.png",
+			"type": "image",
+			"name": "内容_png"
+		},
+		{
+			"url": "assets/feature_preview/组 1.png",
+			"type": "image",
+			"name": "组 14_png"
+		},
+		{
+			"url": "assets/feature_preview/组 2.png",
+			"type": "image",
+			"name": "组 23_png"
+		},
+		{
+			"url": "assets/feature_preview/组 3.png",
+			"type": "image",
+			"name": "组 33_png"
+		},
+		{
+			"url": "assets/feature_preview/xuanZhong.png",
+			"type": "image",
+			"name": "xuanZhong_png"
+		},
+		{
+			"url": "assets/设置qie/设置-历史/inFo.png",
+			"type": "image",
+			"name": "inFo_png"
+		},
+		{
+			"url": "assets/设置qie/设置-历史/xia.png",
+			"type": "image",
+			"name": "xia2_png"
+		},
+		{
+			"url": "assets/设置qie/设置-历史/total.png",
+			"type": "image",
+			"name": "total_png"
+		},
+		{
+			"url": "assets/设置qie/设置-历史/bet.png",
+			"type": "image",
+			"name": "bet_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/heiSeDiTu.png",
+			"type": "image",
+			"name": "heiSeDiTu_png"
+		},
+		{
+			"url": "assets/feature_preview/feature_preview_texture0_level1_14.png",
+			"type": "image",
+			"name": "feature_preview_texture0_level1_14_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/yuanJiao.png",
+			"type": "image",
+			"name": "yuanJiao_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/sanJiao.png",
+			"type": "image",
+			"name": "sanJiao_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/sanJiao1.png",
+			"type": "image",
+			"name": "sanJiao1_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/sanJiao2.png",
+			"type": "image",
+			"name": "sanJiao2_png"
+		},
+		{
+			"url": "assets/tips_cn.gif",
+			"type": "image",
+			"name": "tips_cn_gif"
+		},
+		{
+			"url": "assets/hengRed.png",
+			"type": "image",
+			"name": "hengRed_png"
+		},
+		{
+			"url": "assets/shuBlue.png",
+			"type": "image",
+			"name": "shuBlue_png"
+		},
+		{
+			"url": "assets/shuRed.png",
+			"type": "image",
+			"name": "shuRed_png"
+		},
+		{
+			"url": "assets/hengBlue.png",
+			"type": "image",
+			"name": "hengBlue_png"
+		},
+		{
+			"url": "assets/设置qie/设置-规则/peifu.png",
+			"type": "image",
+			"name": "peifu_png"
+		},
+		{
+			"url": "assets/f0.png",
+			"type": "image",
+			"name": "f0_png"
+		},
+		{
+			"url": "assets/sound/nomalReward_21.mp3",
+			"type": "sound",
+			"name": "nomalReward_21_mp3"
+		},
+		{
+			"url": "assets/downAnNiu/qq1Dis.png",
+			"type": "image",
+			"name": "qq1Dis_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/sanjiaoDis.png",
+			"type": "image",
+			"name": "sanjiaoDis_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/dianDis.png",
+			"type": "image",
+			"name": "dianDis_png"
+		},
+		{
+			"url": "assets/mc/maozi.json",
+			"type": "json",
+			"name": "maozi_json"
+		},
+		{
+			"url": "assets/mc/maozi.png",
+			"type": "image",
+			"name": "maozi_png"
+		},
+		{
+			"url": "assets/sound/M1.mp3",
+			"type": "sound",
+			"name": "M1_mp3"
+		},
+		{
+			"url": "assets/sound/M2.mp3",
+			"type": "sound",
+			"name": "M2_mp3"
+		},
+		{
+			"url": "assets/sound/M3.mp3",
+			"type": "sound",
+			"name": "M3_mp3"
+		},
+		{
+			"url": "assets/sound/M4.mp3",
+			"type": "sound",
+			"name": "M4_mp3"
+		},
+		{
+			"url": "assets/sound/M0.mp3",
+			"type": "sound",
+			"name": "M0_mp3"
+		},
+		{
+			"url": "assets/feature_preview/quan.png",
+			"type": "image",
+			"name": "quan_png"
+		},
+		{
+			"url": "assets/feature_preview/dian.png",
+			"type": "image",
+			"name": "dian_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/huadongquan.png",
+			"type": "image",
+			"name": "huadongquan_png"
+		},
+		{
+			"url": "assets/tips_cn1.gif",
+			"type": "image",
+			"name": "tips_cn1_gif"
+		},
+		{
+			"url": "assets/heiBG.png",
+			"type": "image",
+			"name": "heiBG_png"
+		},
+		{
+			"url": "assets/feature_preview/feature_0.png",
+			"type": "image",
+			"name": "feature_0_png"
+		},
+		{
+			"url": "assets/feature_preview/feature_1.png",
+			"type": "image",
+			"name": "feature_1_png"
+		},
+		{
+			"url": "assets/feature_preview/fert.png",
+			"type": "image",
+			"name": "fert_png"
+		},
+		{
+			"url": "assets/speedbg.png",
+			"type": "image",
+			"name": "speedbg_png"
+		},
+		{
+			"url": "assets/pfBg.png",
+			"type": "image",
+			"name": "pfBg_png"
+		},
+		{
+			"url": "assets/设置qie/设置-投注1/yuanJiaoDis.png",
+			"type": "image",
+			"name": "yuanJiaoDis_png"
+		},
+		{
+			"url": "assets/menu/menu3.png",
+			"type": "image",
+			"name": "menu3_png"
+		},
+		{
+			"url": "assets/videoslot_popup/hui_l.png",
+			"type": "image",
+			"name": "hui_l_png"
+		},
+		{
+			"url": "assets/videoslot_popup/videoslot_popup_texture0_level1_03-02.png",
+			"type": "image",
+			"name": "videoslot_popup_texture0_level1_03-02_png"
+		},
+		{
+			"url": "assets/videoslot_popup/videoslot_popup_texture0_level1_03-03.png",
+			"type": "image",
+			"name": "videoslot_popup_texture0_level1_03-03_png"
+		},
+		{
+			"url": "assets/videoslot_popup/videoslot_popup_texture0_level1_03-04.png",
+			"type": "image",
+			"name": "videoslot_popup_texture0_level1_03-04_png"
+		},
+		{
+			"url": "assets/videoslot_popup/videoslot_popup_texture0_level1_19.png",
+			"type": "image",
+			"name": "videoslot_popup_texture0_level1_19_png"
+		},
+		{
+			"url": "assets/videoslot_popup/videoslot_popup_texture0_level1_23.png",
+			"type": "image",
+			"name": "videoslot_popup_texture0_level1_23_png"
+		},
+		{
+			"url": "assets/videoslot_popup/videoslot_popup_texture0_level1_25-18.png",
+			"type": "image",
+			"name": "videoslot_popup_texture0_level1_25-18_png"
+		},
+		{
+			"url": "assets/videoslot_popup/videoslot_popup_texture0_level1_25.png",
+			"type": "image",
+			"name": "videoslot_popup_texture0_level1_25_png"
+		},
+		{
+			"url": "assets/videoslot_popup/videoslot_popup_texture0_level1_26.png",
+			"type": "image",
+			"name": "videoslot_popup_texture0_level1_26_png"
+		},
+		{
+			"url": "assets/videoslot_popup/videoslot_popup_texture0_level1_28.png",
+			"type": "image",
+			"name": "videoslot_popup_texture0_level1_28_png"
+		},
+		{
+			"url": "assets/videoslot_popup/videoslot_popup_texture0_level1_34-14.png",
+			"type": "image",
+			"name": "videoslot_popup_texture0_level1_34-14_png"
+		},
+		{
+			"url": "assets/videoslot_popup/videoslot_popup_texture0_level1_34.png",
+			"type": "image",
+			"name": "videoslot_popup_texture0_level1_34_png"
+		},
+		{
+			"url": "assets/videoslot_popup/videoslot_popup_texture0_level1_38-16.png",
+			"type": "image",
+			"name": "videoslot_popup_texture0_level1_38-16_png"
+		},
+		{
+			"url": "assets/videoslot_popup/videoslot_popup_texture0_level1_59-20.png",
+			"type": "image",
+			"name": "videoslot_popup_texture0_level1_59-20_png"
+		},
+		{
+			"url": "assets/videoslot_popup/videoslot_popup_texture0_level1_59.png",
+			"type": "image",
+			"name": "videoslot_popup_texture0_level1_59_png"
+		},
+		{
+			"url": "assets/videoslot_popup/videoslot_popup_texture0_level1_67.png",
+			"type": "image",
+			"name": "videoslot_popup_texture0_level1_67_png"
+		},
+		{
+			"url": "assets/videoslot_popup/videoslot_popup_texture0_level1_71.png",
+			"type": "image",
+			"name": "videoslot_popup_texture0_level1_71_png"
+		},
+		{
+			"url": "assets/videoslot_popup/yelows_l.png",
+			"type": "image",
+			"name": "yelows_l_png"
+		},
+		{
+			"url": "assets/videoslot_popup/videoslot_popup_texture0_level1_38.png",
+			"type": "image",
+			"name": "videoslot_popup_texture0_level1_38_png"
+		},
+		{
+			"url": "assets/videoslot_popup/grn_0.png",
+			"type": "image",
+			"name": "grn_0_png"
+		},
+		{
+			"url": "assets/videoslot_popup/grn_1.png",
+			"type": "image",
+			"name": "grn_1_png"
+		},
+		{
+			"url": "assets/videoslot_popup/grn_2.png",
+			"type": "image",
+			"name": "grn_2_png"
+		},
+		{
+			"url": "assets/videoslot_popup/red_0.png",
+			"type": "image",
+			"name": "red_0_png"
+		},
+		{
+			"url": "assets/videoslot_popup/red_1.png",
+			"type": "image",
+			"name": "red_1_png"
+		},
+		{
+			"url": "assets/videoslot_popup/red_2.png",
+			"type": "image",
+			"name": "red_2_png"
+		},
+		{
+			"url": "assets/videoslot_popup/videoslot_popup_texture0_level1_03.png",
+			"type": "image",
+			"name": "videoslot_popup_texture0_level1_03_png"
+		},
+		{
+			"url": "assets/videoslot_popup/videoslot_popup_texture0_level1_13.png",
+			"type": "image",
+			"name": "videoslot_popup_texture0_level1_13_png"
+		},
+		{
+			"url": "assets/videoslot_popup/videoslot_popup_texture0_level1_13-06.png",
+			"type": "image",
+			"name": "videoslot_popup_texture0_level1_13-06_png"
+		},
+		{
+			"url": "assets/设置qie/设置-规则/rule1.png",
+			"type": "image",
+			"name": "rule1_png"
+		},
+		{
+			"url": "assets/设置qie/设置-规则/peifubg.png",
+			"type": "image",
+			"name": "peifubg_png"
+		},
+		{
+			"url": "assets/menu/menu1.png",
+			"type": "image",
+			"name": "menu1_png"
+		},
+		{
+			"url": "assets/menu/menu2.png",
+			"type": "image",
+			"name": "menu2_png"
+		},
+		{
+			"url": "assets/menu/menu_texture0_level1_21.png",
+			"type": "image",
+			"name": "menu_texture0_level1_21_png"
+		},
+		{
+			"url": "assets/menu/menu_texture0_level1_35.png",
+			"type": "image",
+			"name": "menu_texture0_level1_35_png"
+		},
+		{
+			"url": "assets/menu/menu_texture0_level1_36.png",
+			"type": "image",
+			"name": "menu_texture0_level1_36_png"
+		},
+		{
+			"url": "assets/menu/menu_texture0_level1_36-22.png",
+			"type": "image",
+			"name": "menu_texture0_level1_36-22_png"
+		},
+		{
+			"url": "assets/menu/menu_texture0_level1_36-44.png",
+			"type": "image",
+			"name": "menu_texture0_level1_36-44_png"
+		},
+		{
+			"url": "assets/menu/menu_texture0_level1_36-45.png",
+			"type": "image",
+			"name": "menu_texture0_level1_36-45_png"
+		},
+		{
+			"url": "assets/menu/menu_texture0_level1_42.png",
+			"type": "image",
+			"name": "menu_texture0_level1_42_png"
+		},
+		{
+			"url": "assets/menu/menu_texture0_level1_49.png",
+			"type": "image",
+			"name": "menu_texture0_level1_49_png"
+		},
+		{
+			"url": "assets/menu/menu_texture0_level1_51.png",
+			"type": "image",
+			"name": "menu_texture0_level1_51_png"
+		},
+		{
+			"url": "assets/menu/menu_texture0_level1_51-29.png",
+			"type": "image",
+			"name": "menu_texture0_level1_51-29_png"
+		},
+		{
+			"url": "assets/menu/menu_texture0_level1_51-35.png",
+			"type": "image",
+			"name": "menu_texture0_level1_51-35_png"
+		},
+		{
+			"url": "assets/menu/menu_texture0_level1_51-41.png",
+			"type": "image",
+			"name": "menu_texture0_level1_51-41_png"
+		},
+		{
+			"url": "assets/menu/menu_texture0_level1_51-42.png",
+			"type": "image",
+			"name": "menu_texture0_level1_51-42_png"
+		},
+		{
+			"url": "assets/menu/menu_texture0_level1_51-46.png",
+			"type": "image",
+			"name": "menu_texture0_level1_51-46_png"
+		},
+		{
+			"url": "assets/menu/menu_texture0_level1_51-47.png",
+			"type": "image",
+			"name": "menu_texture0_level1_51-47_png"
+		},
+		{
+			"url": "assets/menu/menu_texture0_level1_62.png",
+			"type": "image",
+			"name": "menu_texture0_level1_62_png"
+		},
+		{
+			"url": "assets/menu/menu_texture0_level1_75.png",
+			"type": "image",
+			"name": "menu_texture0_level1_75_png"
+		},
+		{
+			"url": "assets/menu/menu_texture0_level1_103.png",
+			"type": "image",
+			"name": "menu_texture0_level1_103_png"
+		},
+		{
+			"url": "assets/hengSpeed.png",
+			"type": "image",
+			"name": "hengSpeed_png"
+		},
+		{
+			"url": "assets/hengTips.png",
+			"type": "image",
+			"name": "hengTips_png"
+		},
+		{
+			"url": "assets/shuSpeed.png",
+			"type": "image",
+			"name": "shuSpeed_png"
+		},
+		{
+			"url": "assets/shuTips.png",
+			"type": "image",
+			"name": "shuTips_png"
+		},
+		{
+			"url": "assets/h3.png",
+			"type": "image",
+			"name": "h3_png"
+		},
+		{
+			"url": "assets/s1.png",
+			"type": "image",
+			"name": "s1_png"
+		},
+		{
+			"url": "assets/s2.png",
+			"type": "image",
+			"name": "s2_png"
+		},
+		{
+			"url": "assets/s3.png",
+			"type": "image",
+			"name": "s3_png"
+		},
+		{
+			"url": "assets/h1.png",
+			"type": "image",
+			"name": "h1_png"
+		},
+		{
+			"url": "assets/h2.png",
+			"type": "image",
+			"name": "h2_png"
+		},
+		{
+			"name": "guize_01_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-规则/guize_01.png"
+		},
+		{
+			"name": "guize_02_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-规则/guize_02.png"
+		},
+		{
+			"name": "riqi_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-历史/riqi.png"
+		},
+		{
+			"name": "gameName_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-历史/gameName.png"
+		},
+		{
+			"name": "touzhu_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-历史/touzhu.png"
+		},
+		{
+			"name": "jiangjin_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-历史/jiangjin.png"
+		},
+		{
+			"name": "xiangxi_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-历史/xiangxi.png"
+		},
+		{
+			"name": "zu1_png",
+			"type": "image",
+			"url": "assets/设置qie/公共部分竖/顶部菜单/zu1.png"
+		},
+		{
+			"name": "juxing2_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-投注2/juxing2.png"
+		},
+		{
+			"name": "musicSet_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-设置/musicSet.png"
+		},
+		{
+			"name": "autoTouzhu_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-设置/autoTouzhu.png"
+		},
+		{
+			"name": "zuoshou_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-设置/zuoshou.png"
+		},
+		{
+			"name": "kuaisuSet_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-设置/kuaisuSet.png"
+		},
+		{
+			"name": "touzhuCNY_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-投注1/touzhuCNY.png"
+		},
+		{
+			"name": "ruguo_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-投注2/ruguo.png"
+		},
+		{
+			"name": "zengjia_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-投注1/zengjia.png"
+		},
+		{
+			"name": "jianshao_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-投注1/jianshao.png"
+		},
+		{
+			"name": "ruoguomianfei_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-投注1/ruoguomianfei.png"
+		},
+		{
+			"name": "renghe_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-投注1/renghe.png"
+		},
+		{
+			"name": "tou2_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-投注2/tou2.png"
+		},
+		{
+			"name": "autoGame_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-投注2/autoGame.png"
+		},
+		{
+			"name": "stopAuto_png",
+			"type": "image",
+			"url": "assets/设置qie/设置-投注2/stopAuto.png"
+		}
+	]
+}

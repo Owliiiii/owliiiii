@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GameScenceSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"
+        xmlns:tween="egret.tween.*" width="1445" height="631">
+	<w:Declarations></w:Declarations>
+	<e:Image source="center_bg_png"  horizontalCenter="0" verticalCenter="0"/>
+	<e:Group left="0" top="0" bottom="0" right="0">
+		<ns1:Reel id="reel0" anchorOffsetY="0" anchorOffsetX="0" skinName="ReelSkin" x="104" y="6" scaleX="1" scaleY="1"/>
+		<ns1:Reel id="reel1" x="354" skinName="ReelSkin" y="6" scaleX="1" scaleY="1"/>
+		<ns1:Reel id="reel2" skinName="ReelSkin" scaleX="1" scaleY="1" y="6" x="602"/>
+		<ns1:Reel id="reel3" x="850" skinName="ReelSkin" scaleX="1" scaleY="1" y="4" anchorOffsetX="0"/>
+		<ns1:Reel id="reel4" skinName="ReelSkin" scaleX="1" scaleY="1" anchorOffsetX="0" anchorOffsetY="0" x="1100" y="6"/>
+		<e:Group id="leftLine" width="30" height="520" x="37" scaleX="1" scaleY="1" anchorOffsetX="0.5" alpha="1" y="56">
+			<e:Group id="left_1" x="1.44" verticalCenter="0" visible="false">
+				<e:Image x="0" source="left_1_png"/>
+				<e:Label text="1" textColor="0x000000" size="32" scaleX="1" scaleY="1" y="15.01" x="21"/>
+			</e:Group>
+			<e:Group id="left_2" x="1.21" y="103.05" visible="false">
+				<e:Image x="0" source="left_2_png"/>
+				<e:Label text="2" textColor="0x000000" size="32" scaleX="1" scaleY="1" y="16.44" x="21.92"/>
+			</e:Group>
+			<e:Group id="left_3" x="2.61" y="352.63" visible="false">
+				<e:Image x="0" source="left_3_png"/>
+				<e:Label text="3" textColor="0x000000" size="32" scaleX="1" scaleY="1" y="16.31" x="20.14"/>
+			</e:Group>
+
+
+			<e:Group id="left_4" x="1.92" y="-21.15" visible="false">
+				<e:Image x="0" source="left_4_png"/>
+				<e:Label text="4" x="20.81" y="16.94" textColor="0x000000" size="32"/>
+			</e:Group>
+			<e:Group id="left_5" x="1.41" y="477.34" visible="false">
+				<e:Image x="0" source="left_5_png"/>
+				<e:Label text="5" textColor="0x000000" size="32" scaleX="1" scaleY="1" y="17.61" x="20.92"/>
+			</e:Group>
+
+
+		</e:Group>
+		<e:Group id="rightLine" width="30" height="520" x="1381" anchorOffsetX="0.5" y="56">
+			<e:Group id="right_1" scaleX="1" scaleY="1" x="-57.68" y="230.33" visible="false">
+				<e:Image source="left_1_png" scaleX="-1" horizontalCenter="0" verticalCenter="0"/>
+				<e:Label text="1" textColor="0x000000" size="32" scaleX="1" scaleY="1" y="14.76" x="39.61" anchorOffsetX="0"/>
+			</e:Group>
+			<e:Group id="right_2" x="-58.4" y="104.91" scaleY="1" visible="false">
+				<e:Image source="left_2_png" scaleX="-1" left="0" right="0" top="0" bottom="0"/>
+				<e:Label text="2" textColor="0x000000" size="32" scaleX="1" scaleY="1" anchorOffsetX="0" verticalCenter="0" horizontalCenter="9"/>
+			</e:Group>
+			<e:Group id="right_3" x="-56.74" y="348.91" scaleX="1" scaleY="1" visible="false">
+				<e:Image source="left_3_png" scaleX="-1" x="80" y="4"/>
+				<e:Label text="3" textColor="0x000000" size="32" scaleX="1" scaleY="1" y="19.93" x="39.6" anchorOffsetX="0"/>
+			</e:Group>
+			<e:Group id="right_4" x="-58.74" y="-20.48" scaleX="1" scaleY="1" visible="false">
+				<e:Image source="left_4_png" scaleX="-1" x="80" y="0"/>
+				<e:Label text="4" textColor="0x000000" size="32" scaleX="1" scaleY="1" y="15.61" x="41.47" anchorOffsetX="0"/>
+			</e:Group>
+			<e:Group id="right_5" x="-56.65" scaleX="1" scaleY="1" y="477" width="80" height="62" visible="false">
+				<e:Image source="left_5_png" scaleX="-1" scaleY="1" x="80" y="0"/>
+
+				<e:Label text="5" textColor="0x000000" size="32" scaleX="1" scaleY="1" y="16.41" x="40.07" anchorOffsetX="0"/>
+			</e:Group>
+
+
+
+
+
+		</e:Group>
+
+
+
+
+
+
+
+
+
+
+		<e:Image id="line11" source="line1_png" horizontalCenter="0" y="250" x="163" scaleX="1" scaleY="1" alpha="0" anchorOffsetX="0" anchorOffsetY="0" visible="false"/>
+		<e:Image id="line21" source="line2_png" horizontalCenter="0" y="80" x="163" scaleX="1" scaleY="1" alpha="0" anchorOffsetX="0" anchorOffsetY="0" visible="false"/>
+		<e:Image id="line31" source="line3_png" horizontalCenter="0" y="420" x="163" scaleX="1" scaleY="1" alpha="0" anchorOffsetX="0" anchorOffsetY="0" visible="false"/>
+		<e:Image id="line41" source="line4_png" horizontalCenter="0" verticalCenter="0" x="163" y="80" scaleX="1" scaleY="1" alpha="0" anchorOffsetX="0" anchorOffsetY="0" visible="false"/>
+		<e:Image id="line51" source="line5_png" horizontalCenter="0" verticalCenter="0" x="163" y="80" scaleX="1" scaleY="1" alpha="0" anchorOffsetX="0" anchorOffsetY="0" visible="false"/>
+		<e:Group id="line1" width="850" height="10" x="170" y="250" alpha="0" visible="false">
+			<e:Rect width="850" height="10" x="2" y="3" rotation="0" ellipseWidth="20" ellipseHeight="20" scaleX="1" scaleY="1" fillColor="0x000000"/>
+			<e:Rect width="850" height="10" x="0" y="0" rotation="0" fillColor="0x74bb39" ellipseWidth="20" ellipseHeight="20" scaleX="1" scaleY="1"/>
+		</e:Group>
+		<e:Group id="line2" width="850" height="10" x="180" y="80" alpha="0" visible="false">
+			<e:Rect width="850" height="10" x="2" y="3" rotation="0" ellipseWidth="20" ellipseHeight="20" scaleX="1" scaleY="1" fillColor="0x000000"/>
+			<e:Rect width="850" height="10" x="0" y="0" rotation="0" ellipseWidth="20" ellipseHeight="20" scaleX="1" scaleY="1" fillColor="0x5eccf5"/>
+		</e:Group>
+		<e:Group id="line3" width="850" height="10" x="180" y="420" alpha="0" visible="false">
+			<e:Rect width="850" height="10" x="2" y="3" rotation="0" ellipseWidth="20" ellipseHeight="20" scaleX="1" scaleY="1" fillColor="0x000000"/>
+			<e:Rect width="850" height="10" x="0" y="0" rotation="0" ellipseWidth="20" ellipseHeight="20" scaleX="1" scaleY="1" fillColor="0xe998ed"/>
+		</e:Group>
+		<e:Group id="line4" width="850" height="10" x="180" y="80" rotation="0" alpha="0" visible="false">
+			<e:Rect width="545" height="10" x="848" y="10" ellipseWidth="20" ellipseHeight="20" rotation="141.02" fillColor="0x000000"/>
+			<e:Rect width="550" height="10" x="0" y="0" rotation="38.58" ellipseWidth="20" ellipseHeight="20" scaleX="1" scaleY="1" fillColor="0xf1db4a"/>
+			<e:Rect width="550" height="10" x="850" y="5" ellipseWidth="20" ellipseHeight="20" rotation="141.02" fillColor="0xf1db4a"/>
+		</e:Group>
+		<e:Group id="line5" width="850" height="10" x="180" y="420" rotation="0" alpha="0" visible="false">
+			<e:Rect width="540" height="10" x="3" y="5" ellipseWidth="20" ellipseHeight="20" rotation="320.78" fillColor="0x000000"/>
+			<e:Rect width="550" height="10" x="-4.55" y="9.55" rotation="320.78" ellipseWidth="20" ellipseHeight="20" scaleX="1" scaleY="1" fillColor="0xe75158"/>
+			<e:Rect width="550" height="10" x="850" y="12" ellipseWidth="20" ellipseHeight="20" rotation="218.96" fillColor="0xe75158"/>
+		</e:Group>
+
+
+</e:Group>
+	
+
+
+
+	<e:Group id="maskGroup" width="1445" height="631" x="0" y="0" visible="false">
+		<e:Rect id="bonusMask" fillAlpha="0.5" anchorOffsetX="0" scaleX="1" scaleY="1" width="1245" height="631" y="0" x="100"/>
+		<e:Image id="bonusImg" width="292" height="91" scaleX="1" scaleY="1" source="bonusImg_png" horizontalCenter="0" verticalCenter="0"/>
+	</e:Group>
+	<e:Rect id="dianji" width="1238" x="102.85" anchorOffsetX="0" anchorOffsetY="0" top="0" bottom="0" alpha="0.01" fillColor="0xffffff"/>
+	<e:Image source="mmm_png" alpha="0.5" horizontalCenter="-1.5" verticalCenter="42.5" visible="false"/>
+
+
+</e:Skin>

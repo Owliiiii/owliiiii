@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="BetSetCompomentSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"  states="ver,hor_1,hor_0,ver_1"  width.ver="766" height.ver="233" width.hor_1="797" height.hor_1="253" width.hor_0="797" height.hor_0="253" width.ver_1="766" height.ver_1="233">
+	<e:Image source="leftbar_velocity@2x_png" horizontalCenter="0" verticalCenter="0" source.ver="btn_xianzhu_bg@2x_png" scaleX.hor_1="-1" width.ver="770" height.ver="233" width.hor_1="797" height.hor_1="253" width.hor_0="797" height.hor_0="253" source.ver_1="btn_xianzhu_bg@2x_png" width.ver_1="770" height.ver_1="233"/>
+	<e:Group x.ver="215.26" verticalCenter.ver="4.5" x.hor_1="510.6" scaleX.hor_1="0.9" scaleY.hor_1="0.9" verticalCenter.hor_1="0" scaleX.hor_0="0.9" scaleY.hor_0="0.9" x.hor_0="281.91" verticalCenter.hor_0="0" x.ver_1="498.26" verticalCenter.ver_1="4.5">
+		<e:Image id="adddImg0" source="add_disable_png" horizontalCenter="0" verticalCenter="0"/>
+		<e:Button id="addBtn0" label="" horizontalCenter="0" horizontalCenter.ver="0" y.ver="0" horizontalCenter.ver_1="0" y.ver_1="0">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="jia_png" source.down="jia1_png" source.disabled="add_disable_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+	</e:Group>
+	<e:Group x.ver="104.79" verticalCenter.ver="4.5" x.hor_1="407.6" scaleX.hor_1="0.9" scaleY.hor_1="0.9" verticalCenter.hor_1="0" scaleX.hor_0="0.9" scaleY.hor_0="0.9" verticalCenter.hor_0="0" x.hor_0="180.43" x.ver_1="387.79" verticalCenter.ver_1="4.5">
+		<e:Image id="subdImg0" source="sub_disable_png" horizontalCenter="0" verticalCenter="0"/>
+		<e:Button id="sunBtn0" label="" horizontalCenter="0" horizontalCenter.ver="0" y.ver="0" horizontalCenter.ver_1="0" y.ver_1="0">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="jian_png" source.down="jian1_png" source.disabled="sub_disable_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+	</e:Group>
+	<e:Group horizontalCenter.ver="71" horizontalCenter.hor_0="105" horizontalCenter.hor_1="-208.5" verticalCenter.ver="4.5" scaleX.hor_1="0.9" scaleY.hor_1="0.9" verticalCenter.hor_1="0" scaleX.hor_0="0.9" scaleY.hor_0="0.9" verticalCenter.hor_0="0" horizontalCenter.ver_1="-214" verticalCenter.ver_1="4.5">
+		<e:Image id="subdImg" source="sub_disable_png" horizontalCenter="0" verticalCenter="0"/>
+		<e:Button id="sunBtn" label="" x.ver="103" horizontalCenter="0" verticalCenter.ver="0" horizontalCenter.ver="0" x.ver_1="103" verticalCenter.ver_1="0" horizontalCenter.ver_1="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="jian_png" source.down="jian1_png" source.disabled="sub_disable_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
+	<e:Group x="286" horizontalCenter.ver="183" horizontalCenter.hor_0="206.5" horizontalCenter.hor_1="-86.5" verticalCenter.ver="4.5" scaleX.hor_1="0.9" scaleY.hor_1="0.9" verticalCenter.hor_1="0" scaleX.hor_0="0.9" scaleY.hor_0="0.9" verticalCenter.hor_0="0" horizontalCenter.ver_1="-102" verticalCenter.ver_1="4.5">
+		<e:Image id="adddImg" source="add_disable_png" horizontalCenter="0" verticalCenter="0"/>
+		<e:Button id="addBtn" label="" x.ver="252" horizontalCenter="0" verticalCenter.ver="0" horizontalCenter.ver="0" x.ver_1="252" verticalCenter.ver_1="0" horizontalCenter.ver_1="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="jia_png" source.down="jia1_png" source.disabled="add_disable_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
+	<e:Label id="lineLabel" text="￥0.01" y.ver="34" x.ver="181.85" verticalAlign.ver="middle" textAlign.ver="center" text.ver="25" width.ver="100" x.hor_1="475.78" y.hor_1="50" text.hor_1="25" width.hor_1="100" verticalAlign.hor_1="middle" textAlign.hor_1="center" x.hor_0="247.07" text.hor_0="25" width.hor_0="100" verticalAlign.hor_0="middle" textAlign.hor_0="center" y.hor_0="47" size="32" size.ver="34" y.ver_1="34" x.ver_1="466.85" verticalAlign.ver_1="middle" textAlign.ver_1="center" text.ver_1="25" width.ver_1="100" size.ver_1="34"/>
+	<e:Label id="betLabel" text="￥0.01" x="250.5" y="52" horizontalCenter.hor_0="150.5" horizontalCenter.hor_1="-147.5" width.hor_1="250" verticalAlign.hor_1="middle" textAlign.hor_1="center" width.hor_0="250" verticalAlign.hor_0="middle" textAlign.hor_0="center" y.ver="34" verticalAlign.ver="middle" textAlign.ver="center" anchorOffsetX.ver="0" width.ver="236" horizontalCenter.ver="122" y.hor_1="50" y.hor_0="47" size="32" size.ver="34" y.ver_1="34" verticalAlign.ver_1="middle" textAlign.ver_1="center" anchorOffsetX.ver_1="0" width.ver_1="236" horizontalCenter.ver_1="-167" size.ver_1="34"/>
+	<e:Label text="快速" x="60" y="195" size="22" textColor="0xddac37" left.hor_0="60" right.hor_1="67" size.hor_0="20" size.hor_1="20" visible.ver="false" y.hor_1="180" y.hor_0="180" visible.ver_1="false"/>
+	<e:Label text="线注" y="195" size="22" textColor="0xDDAC37" horizontalCenter.hor_0="157.5" horizontalCenter.hor_1="-147.5" horizontalCenter.ver="128" size.ver="24" size.hor_1="20" size.hor_0="20" y.ver="180" y.hor_1="180" y.hor_0="180" horizontalCenter.ver_1="-154" size.ver_1="24" y.ver_1="180"/>
+	<e:Label text="线" size="22" textColor="0xDDAC37" y.ver="180" x.ver="224.3" x.hor_1="515.17" y.hor_1="180" y.hor_0="180" x.hor_0="289.51" size.ver="24" y.ver_1="180" x.ver_1="506.3" size.ver_1="24"/>
+	<ns1:CheckButton id="checkBtn" x="31" y="110" skinName="CheckSkin" visible.ver="false" left.hor_0="32" right.hor_1="41" verticalCenter.hor_1="0" verticalCenter.hor_0="0" visible.ver_1="false"/>
+	<e:ToggleButton id="arrButton" label="" visible.ver="false" x="454" y.hor_1="106" y.ver="106" scaleX.hor_1="-1" left.hor_1="23" verticalCenter.hor_1="5" right.hor_0="23" verticalCenter.hor_0="0" visible.ver_1="false" y.ver_1="106">
+		<e:skinName>
+			<e:Skin states="up,down,disabled,upAndSelected,downAndSelected">
+			<e:Image width="100%" height="100%" source="leftbar_velocity_open@2x_png" source.down="leftbar_velocity_open@2x_png" source.upAndSelected="leftbar_velocity_close@2x_png" source.downAndSelected="leftbar_velocity_close@2x_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:ToggleButton>
+</e:Skin>

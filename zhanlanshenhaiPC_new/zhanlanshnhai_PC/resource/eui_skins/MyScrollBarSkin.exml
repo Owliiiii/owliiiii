@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MyScrollBarSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Image id="track" source="scrollbar_bg_png" left="0" right="0" top="17" bottom="17"/>
+	<ns1:MouseButton id="thumb" label="" y="38" horizontalCenter="0">
+		<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver">
+			<e:Image width="100%" height="100%" source="scrollbar_png" source.rollOver="scrollbar_hover_png" source.down="scrollbar_pressed_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</ns1:skinName>
+	</ns1:MouseButton>
+	<ns1:MouseButton id="addBtn" label="" horizontalCenter="0" bottom="0" scaleY="-1">
+		<ns1:skinName>
+		<e:Skin states="up,down,disabled,rollOver">
+			<e:Image width="100%" height="100%" source="scroll_png" source.down="scroll_pressed_png" source.rollOver="scroll_hover_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</ns1:skinName>
+	</ns1:MouseButton>
+	<ns1:MouseButton id="subtn" label="" horizontalCenter="0" top="0" anchorOffsetX="7.5" anchorOffsetY="8.5">
+		<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver">
+			<e:Image width="100%" height="100%" source="scroll_png" source.down="scroll_pressed_png" source.rollOver="scroll_hover_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</ns1:skinName>
+	</ns1:MouseButton>
+</e:Skin>

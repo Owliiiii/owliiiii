@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GameScenceSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" xmlns:tween="egret.tween.*" width="1100" height="600">
+	<w:Declarations>
+	</w:Declarations>
+	<e:Image source="skin_texture1_level1_02_png" horizontalCenter="0" verticalCenter="0"/>
+	<ns1:Reel id="reel0" verticalCenter="-3" left="146" anchorOffsetY="0" anchorOffsetX="0" skinName="ReelSkin"/>
+	<ns1:Reel id="reel1" width="214" height="444" verticalCenter="0" horizontalCenter="1" skinName="ReelSkin"/>
+	<ns1:Reel id="reel2" width="214" height="444" verticalCenter="0" right="148" skinName="ReelSkin"/>
+	<e:Group left="0" top="0" bottom="0" right="0">
+		<e:Image id="line1" source="line1_png" y="276.15" scaleX="0.8" scaleY="0.8" horizontalCenter="0"/>
+		<e:Image id="line2" source="line2_png" y="165.12" scaleX="0.8" scaleY="0.8" horizontalCenter="0"/>
+		<e:Image id="line3" source="line3_png" y="386.06" scaleX="0.8" scaleY="0.8" horizontalCenter="0"/>
+		<e:Image id="line4" source="line4_png" x="96.86" y="68.06" rotation="23.37" scaleX="0.9" scaleY="0.9"/>
+		<e:Image id="line5" source="line5_png" x="90.81" y="467.65" scaleX="0.9" scaleY="0.9" rotation="336.68"/>
+		<ns1:MouseButton2 id="lm4" label="" y="19.95" horizontalCenter="-483" scaleX="0.8" scaleY="0.8">
+			<ns1:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="line4_icon_png" source.down="line4_icon_png" source.disabled="line4_icon_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton2>
+		<ns1:MouseButton2 id="lm2" label="" y="117.98" horizontalCenter="-483" scaleX="0.8" scaleY="0.8">
+			<ns1:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="line2_icon_png" source.down="line2_icon_png" source.disabled="line2_icon_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton2>
+		<ns1:MouseButton2 id="lm1" label="" y="227.99" horizontalCenter="-483" scaleX="0.8" scaleY="0.8">
+			<ns1:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="line1_icon_png" source.down="line1_icon_png" source.disabled="line1_icon_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton2>
+		<ns1:MouseButton2 id="lm3" label="" y="339.34" horizontalCenter="-483" scaleX="0.8" scaleY="0.8">
+			<ns1:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source.down="line3_icon_png" source.disabled="line3_icon_png" source="line3_icon_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton2>
+		<ns1:MouseButton2 id="lm5" label="" y="439.4" scaleX="0.8" scaleY="0.8" horizontalCenter="-483">
+			<ns1:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="line5_icon_png" source.down="line5_icon_png" source.disabled="line5_icon_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</ns1:skinName>
+
+		</ns1:MouseButton2>
+		<ns1:MouseButton2 id="rm5" label="" y="20.65" scaleX="0.8" scaleY="0.8" horizontalCenter="488">
+			<ns1:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="line5_icon_png" source.down="line5_icon_png" source.disabled="line5_icon_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</ns1:skinName>
+
+		</ns1:MouseButton2>
+		<ns1:MouseButton2 id="rm2" label="" y="117.98" scaleX="0.8" scaleY="0.8" horizontalCenter="488">
+			<ns1:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="line2_icon_png" source.down="line2_icon_png" source.disabled="line2_icon_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton2>
+		<ns1:MouseButton2 id="rm1" label="" y="227.99" horizontalCenter="488" scaleX="0.8" scaleY="0.8">
+			<ns1:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="line1_icon_png" source.down="line1_icon_png" source.disabled="line1_icon_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton2>
+		<ns1:MouseButton2 id="rm3" label="" y="339.34" scaleX="0.8" scaleY="0.8" horizontalCenter="488">
+			<ns1:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="line3_icon_png" source.down="line3_icon_png" source.disabled="line3_icon_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton2>
+		<ns1:MouseButton2 id="rm4" label="" y="438.7" scaleX="0.8" scaleY="0.8" horizontalCenter="488">
+			<ns1:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source.down="line4_icon_png" source.disabled="line4_icon_png" source="line4_icon_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton2>
+	</e:Group>
+	<e:Group id="scoreGroup" y="298.34" width="300" height="80" anchorOffsetX="150" anchorOffsetY="40" x="550">
+		<e:Image source="fbg_png" left="0" right="0" top="0" bottom="0"/>
+		<e:BitmapLabel id="scoreLabel" text="cny 20.00" horizontalCenter="0" verticalCenter="0" font="f4_fnt" letterSpacing="-8"/>
+	</e:Group>
+	<e:Rect id="maskRect" fillAlpha="0.6" left="-900" right="-1050" top="-500" bottom="-483" anchorOffsetX="0" anchorOffsetY="0" visible="false"/>
+	<e:Rect id="dianji" width="838.18" height="474.54" x="131.32" y="61.97" anchorOffsetX="0" anchorOffsetY="0" fillColor="0xFCFCFC" strokeColor="0xFFFFFF" fillAlpha="0.01"/>
+	<e:Group id="group" width="800" height="500" anchorOffsetX="400" anchorOffsetY="250" x="552" y="299" visible="false">
+		<e:Image source="skin_texture1_level1_03_png" left="0" right="0" top="0" bottom="0"/>
+		<e:Group id="rewardScoreGroup" left="0" right="0" top="0" bottom="0">
+
+
+			<e:Group id="fuhao" y="201.82" scaleX="0.9" scaleY="0.9" width="282" height="140" horizontalCenter="0">
+				<e:Image id="image1" source="skin_texture1_level1_78_png" anchorOffsetX="46.5" anchorOffsetY="70" verticalCenter="0" x="147" scaleX="0" scaleY="0"/>
+				<e:Image id="image0" source="skin_texture1_level1_78_png" anchorOffsetX="46.5" anchorOffsetY="70" verticalCenter="0" horizontalCenter="-116.5" scaleX="0" scaleY="0"/>
+				<e:Image id="image2" source="skin_texture1_level1_78_png" x="266.93" anchorOffsetX="46.5" anchorOffsetY="70" verticalCenter="0" scaleX="0" scaleY="0"/>
+			</e:Group>
+			<e:Label text="赢得神秘大奖" y="68.75" textColor="0xf4b407" fontFamily="Microsoft YaHei" size="60" horizontalCenter="0" height="110" verticalAlign="middle" textAlign="center" stroke="2" strokeColor="0x3a0054"/>
+			<e:Label id="ewaiLabel" text="您赢得额外10次免费旋转" y="365.25" textColor="0xF4B407" fontFamily="Microsoft YaHei" size="40" height="70" verticalAlign="middle" textAlign="center" horizontalCenter="0"/>
+
+			<e:Group horizontalCenter="1.5" verticalCenter="10" scaleX="1.6" scaleY="1.6">
+				<e:BitmapLabel id="numLabel" font="f6_fnt" text="cny 300.00" horizontalCenter="0" verticalCenter="0"/>
+			</e:Group>
+		</e:Group>
+		<e:Group id="freeslotGroup" left="0" right="0" top="0" bottom="0" visible="false">
+			<e:Label text="点击&quot;旋转&quot;以开始" y="379.04" size="30" horizontalCenter="3.5" fontFamily="Microsoft YaHei" stroke="5" strokeColor="0x3a0054" textColor="0xeec413"/>
+			<e:Label text="旋转" y="245.7" size="90" horizontalCenter="3.5" fontFamily="Microsoft YaHei" textColor="0xeec413" strokeColor="0x3a0054" stroke="5" height="100" verticalAlign="middle" textAlign="center"/>
+			<e:Label text="恭喜您!" y="79.87" anchorOffsetX="0" width="49.76" anchorOffsetY="0" height="220.6" textAlign="center" scaleY="0.3" size="50" horizontalCenter="0" textColor="0xeec413" stroke="2" strokeColor="0x3a0054"/>
+			<e:Label text="您赢得10次免费" y="139.64" size="90" fontFamily="Microsoft YaHei" horizontalCenter="3.5" textColor="0xeec413" strokeColor="0x3a0054" stroke="5" verticalAlign="middle" textAlign="center" height="100"/>
+		</e:Group>
+		<e:Group id="allGroup" left="0" right="0" top="0" bottom="0" visible="false">
+			<e:BitmapLabel y="242" id="allnumLabel0" text="cny" horizontalCenter="0" font="f6_fnt"/>
+			<e:Label text="总获胜" y="128" fontFamily="Microsoft YaHei" size="80" strokeColor="0x3a0054" stroke="2" textColor="0xeec413" horizontalCenter="0" height="100" verticalAlign="middle" textAlign="center"/>
+			<e:BitmapLabel id="allnumLabel" y="318" font="f6_fnt" text="28" horizontalCenter="0"/>
+		</e:Group>
+
+	</e:Group>
+</e:Skin>

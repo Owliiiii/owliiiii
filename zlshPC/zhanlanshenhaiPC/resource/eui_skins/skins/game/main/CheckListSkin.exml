@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="CheckListSkin" width="130" height="161" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Image x="0" y="0" source="menuBox_BG_png"/>
+	<ns1:MouseButton3 id="hisBtn" label="历史纪录" y="19" skinName="MouseButton3Skin" horizontalCenter="0"/>
+	<ns1:MouseButton3 id="checkBtn" label="选项" y="54" skinName="MouseButton3Skin" horizontalCenter="0"/>
+	<ns1:MouseButton3 id="helpBtn" label="帮助" y="91" skinName="MouseButton3Skin" horizontalCenter="0"/>
+	<ns1:MouseButton3 id="rewardBtn" label="奖金表" y="126" skinName="MouseButton3Skin" horizontalCenter="0" x="10"/>
+</e:Skin>

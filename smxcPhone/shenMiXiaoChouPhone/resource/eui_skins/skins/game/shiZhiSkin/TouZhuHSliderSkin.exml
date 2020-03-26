@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="skins.TouZhuHSliderSkin" minWidth="20" minHeight="8" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="482" height="185" >
+	<e:Image id="tsbar" scale9Grid="10,2,62,1" source="圆角矩形 2 拷贝_png" anchorOffsetX="0" y="121.5" anchorOffsetY="9.5" height="19" x="43" width="0"/>
+	<e:Image id="diTu" scale9Grid="105,2,30,1" anchorOffsetX="0" anchorOffsetY="8.5" source="圆角矩形 22_png" y="122" left="42" height="17" width="352"/>
+	<e:Image id="track" scale9Grid="105,2,30,1" anchorOffsetX="0" anchorOffsetY="0" width="442" y="112" height="20" source="videoslot_popup_texture0_level1_67_png" alpha="0.01"/>
+	<e:Rect id="thumb0" width="108.36" height="71" x="48.04" y="32.39" anchorOffsetX="54.18" anchorOffsetY="35.5" ellipseWidth="18" ellipseHeight="18" scaleX="1.2" scaleY="1.15" fillColor="0xFFBF00"/>
+	<e:Rect id="thumb0Dis" width="108.36" height="71" x="58.04" y="42.39" anchorOffsetX="54.18" anchorOffsetY="35.5" ellipseWidth="18" ellipseHeight="18" scaleX="1.2" scaleY="1.15" fillColor="0xdcdadd" visible="false"/>
+	<e:Image id="thumb01" source="yuanJiao_png" x="45.67" y="57.66" anchorOffsetX="56" anchorOffsetY="57.5" scaleX="1.1" scaleY="1.19" scale9Grid="19,18,72,37" visible="false"/>
+	<e:Image id="sanjiao" source="sanJiao_png" x="48" y="46" anchorOffsetX="56" anchorOffsetY="57.5" scaleX="2.3" scaleY="1.7"/>
+	<e:Label text="1.00" textColor="0x000000" height="69" id="tabela" size="50" x="48.04" y="32.39" fontFamily="Arial" width="206" verticalAlign="middle" textAlign="center" anchorOffsetX="103" anchorOffsetY="34.5" bold="true" scaleY="1.5" scaleX="1.2"/>
+	<e:Image id="sanjiaoDis" source="sanjiaoDis_png" x="46.5" y="64" anchorOffsetX="56" anchorOffsetY="57.5" scaleY="0.95" visible="false"/>
+    <e:Image id="thumb" scale9Grid="12,12,2,2" anchorOffsetX="48" anchorOffsetY="48" y="122" x="47" source="huadongquan_png"/>
+	<e:Image id="thumbDis" source="dianDis_png" x="48" y="122" anchorOffsetX="48" anchorOffsetY="48" visible="false"/>
+</e:Skin>

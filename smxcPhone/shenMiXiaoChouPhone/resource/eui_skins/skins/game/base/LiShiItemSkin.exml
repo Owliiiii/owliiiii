@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="LiShiItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="u,d"  width.u="1180" height.u="380" width.d="780" height.d="500">
+	<e:Rect fillColor="0xffffff" strokeWeight="3" strokeColor="0x000000" height.d="500" y.d="0" x="0" width.u="1180" x.u="0" height.u="380" y.u="0" width.d="780" x.d="-1" fillColor.d="0xf2f2f2" fillColor.u="0xf4f4f4"/>
+	<e:Rect width="164" height="160" anchorOffsetX="0" anchorOffsetY="0" fillColor="0xffffff" strokeWeight="3" y.d="96.65" y.u="58.64" width.u="292" height.u="292" width.d="335" height.d="335" horizontalCenter.u="0" horizontalCenter.d="0.5"/>
+	<e:Label id="winLine" text="Player won CNY 150.00 at line 2" y="29" textColor="0x000000" size="18" anchorOffsetY="0" height="22" bold="true" y.u="16.08" size.u="20" y.d="39.33" horizontalCenter.d="2" scaleX.u="1.5" scaleY.u="1.5" horizontalCenter.u="0" size.d="25"/>
+	<e:Image id="icon41" source="" y="180.5" scaleX="0.4" scaleY="0.4" x="166" x.d="302" y.d="150.5" x.u="498" includeIn="u"/>
+	<e:Image id="icon51" source="" y="180.5" scaleX="0.4" scaleY="0.4" x="244" x.d="380" y.d="150.5" x.u="576" includeIn="u"/>
+	<e:Image id="icon61" source="" y="180.5" scaleX="0.4" scaleY="0.4" x="333" x.d="469" y.d="150.5" x.u="665" includeIn="u"/>
+	<e:Group width="119" height="117" height.u="176" width.u="165" y.u="67.05" x.u="448.18" y.d="123.51" width.d="188" height.d="188" horizontalCenter.d="-42.5" scaleX.d="1.1" scaleY.d="1.1">
+		<e:Image id="icon1" source="" y="0" scaleX="0.4" scaleY="0.4"/>
+		<e:Image id="icon2" source="" scaleX="0.4" scaleY="0.4" x="59" x.u="90.5" x.d="84.78"/>
+		<e:Image id="icon3" source="" scaleX="0.4" scaleY="0.4" x="116" x.u="179.5" x.d="171.28" y.d="0"/>
+		<e:Image id="icon4" source="" y="56" scaleX="0.4" scaleY="0.4" y.u="88.58" y.d="89.31"/>
+		<e:Image id="icon5" source="" y="56" scaleX="0.4" scaleY="0.4" x="59" y.u="88.58" x.u="90.5" x.d="84.78" y.d="89.31"/>
+		<e:Image id="icon6" source="" y="56" scaleX="0.4" scaleY="0.4" x="116" y.u="88.58" x.u="179.5" x.d="171.28" y.d="89.31"/>
+		<e:Image id="icon7" source="" y="112" scaleX="0.4" scaleY="0.4" x="0" y.u="156" y.d="175.85"/>
+		<e:Image id="icon8" source="" y="112" scaleX="0.4" scaleY="0.4" x="59" y.u="156" x.u="90.5" x.d="84.78" y.d="175.85"/>
+		<e:Image id="icon9" source="" y="112" scaleX="0.4" scaleY="0.4" x="118" y.u="156" x.u="179.5" x.d="171.28" y.d="175.85"/>
+	</e:Group>
+</e:Skin>

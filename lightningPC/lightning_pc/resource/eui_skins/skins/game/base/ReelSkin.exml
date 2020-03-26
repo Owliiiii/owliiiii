@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ReelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" height="704" width="232">
+	<e:Group id="kGroup" left="0" right="0" top="0" bottom="0"  scrollEnabled="true">
+		<ns1:ReelItem y="-176" skinName="ReelItemSkin" horizontalCenter="0"/>
+		<ns1:ReelItem y="0" skinName="ReelItemSkin" horizontalCenter="0"/>
+		<ns1:ReelItem y="176" skinName="ReelItemSkin" horizontalCenter="0"/>
+		<ns1:ReelItem y="352" skinName="ReelItemSkin" horizontalCenter="0"/>
+		<ns1:ReelItem y="528" skinName="ReelItemSkin" horizontalCenter="0"/>
+		<ns1:ReelItem y="704" skinName="ReelItemSkin" horizontalCenter="0"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</e:Group>
+	<e:Group id="niuGroup" left="0" right="0" top="0" bottom="0"  scrollEnabled="true">
+		<ns1:ReelItem y="-176" skinName="ReelItemSkin" horizontalCenter="0"/>
+		<ns1:ReelItem y="0" skinName="ReelItemSkin" horizontalCenter="0"/>
+		<ns1:ReelItem y="176" skinName="ReelItemSkin" horizontalCenter="0"/>
+		<ns1:ReelItem y="352" skinName="ReelItemSkin" horizontalCenter="0"/>
+		<ns1:ReelItem y="528" skinName="ReelItemSkin" horizontalCenter="0"/>
+		<ns1:ReelItem y="704" skinName="ReelItemSkin" horizontalCenter="0"/>
+
+	</e:Group>
+	<e:Group id="C1Group" left="0" right="0" top="1" bottom="-1" scrollEnabled="true" visible="false">
+		<ns1:ReelItem y="-176" skinName="ReelItemSkin" horizontalCenter="0"/>
+		<ns1:ReelItem y="0" skinName="ReelItemSkin" horizontalCenter="0"/>
+		<ns1:ReelItem y="176" skinName="ReelItemSkin" horizontalCenter="0"/>
+		<ns1:ReelItem y="352" skinName="ReelItemSkin" horizontalCenter="0"/>
+		<ns1:ReelItem y="528" skinName="ReelItemSkin" horizontalCenter="0"/>
+		<ns1:ReelItem y="704" skinName="ReelItemSkin" horizontalCenter="0"/>
+	</e:Group>
+</e:Skin>

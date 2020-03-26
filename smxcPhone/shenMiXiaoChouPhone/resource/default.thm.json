@@ -1,0 +1,39 @@
+{
+	"skins": {
+		"tuoguanButton": "resource/eui_skins/tuoguanButton.exml"
+	},
+	"autoGenerateExmlsList": true,
+	"exmls": [
+		"resource/eui_skins/HSliderSkin.exml",
+		"resource/eui_skins/skins/game/base/CheckBanerSkin.exml",
+		"resource/eui_skins/skins/game/base/LiShiInfoSkin.exml",
+		"resource/eui_skins/skins/game/base/LiShiItemSkin.exml",
+		"resource/eui_skins/skins/game/base/LiShiSkin.exml",
+		"resource/eui_skins/skins/game/base/NomalLoadingUISkin.exml",
+		"resource/eui_skins/skins/game/base/PlayTypeSkin.exml",
+		"resource/eui_skins/skins/game/base/qieHuanSkin.exml",
+		"resource/eui_skins/skins/game/base/ReelItemSkin.exml",
+		"resource/eui_skins/skins/game/base/ReelSkin.exml",
+		"resource/eui_skins/skins/game/base/tingZhiSkin.exml",
+		"resource/eui_skins/skins/game/login/LoginSkin.exml",
+		"resource/eui_skins/skins/game/login/LoginWaitSkin.exml",
+		"resource/eui_skins/skins/game/login/ScrollItem1Skin.exml",
+		"resource/eui_skins/skins/game/main/GameScenceSkin.exml",
+		"resource/eui_skins/skins/game/main/ItemSkin.exml",
+		"resource/eui_skins/skins/game/shiZhiSkin/TouZhuHSliderSkin.exml",
+		"resource/eui_skins/skins/game/shiZhiSkin/ZiDongYouXiHSliderSkin.exml",
+		"resource/eui_skins/skins/game/shiZhiSkin/DanCiHSliderSkin.exml",
+		"resource/eui_skins/skins/game/shiZhiSkin/DanCiJiaSkin.exml",
+		"resource/eui_skins/skins/game/shiZhiSkin/DanCiJianSkin.exml",
+		"resource/eui_skins/skins/game/main/SetSkin.exml",
+		"resource/eui_skins/skins/game/main/MainScenceUISkin.exml",
+		"resource/eui_skins/skins/game/MyTogleButtonSkin.exml",
+		"resource/eui_skins/skins/game/net/netcloseSkin.exml",
+		"resource/eui_skins/skins/game/net/NetSkin.exml",
+		"resource/eui_skins/skins/game/NormalOkTipsSkin.exml",
+		"resource/eui_skins/skins/game/SpeedTipsSkin.exml",
+		"resource/eui_skins/skins/game/StipSkin.exml",
+		"resource/eui_skins/VSliderSkin.exml"
+	],
+	"path": "resource/default.thm.json"
+}

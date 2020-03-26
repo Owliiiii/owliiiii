@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="HelpSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="hor,ver"  width.hor="1334" height.hor="750" width.ver="750" height.ver="1334">
+	<e:Image source="BG1_png" includeIn="hor,ver" left.hor="0" right.hor="0" top.hor="0" bottom.hor="0" top.ver="0" left.ver="0" right.ver="0" bottom.ver="0" source.hor="BG2_png"/>
+	<e:Scroller left="0" right="0" top="0" bottom="0" bounces.hor="true" bounces.ver="true" scrollPolicyV.ver="on" scrollPolicyV.hor="on">
+		<e:Group>
+			<e:Image id="icons" y="0" source="help_png" source.ver="help1_png" horizontalCenter.ver="0" horizontalCenter.hor="0.5" y.ver="30.3" y.hor="0"/>
+			<e:layout.ver>
+				<e:BasicLayout/>
+			</e:layout.ver>
+			<e:layout.hor>
+				<e:BasicLayout/>
+			</e:layout.hor>
+		</e:Group>
+	</e:Scroller>
+	<e:Button id="backBtn" label="" left.hor="0" top.hor="32" left.ver="0" top.ver="40">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="back_up_png" source.down="back_down_png" source.disabled="back_disable_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Group x="850" horizontalCenter="0" top="10">
+		<e:Rect left="-5" right="-5" top="-5" bottom="-5" ellipseWidth="40" ellipseHeight="40" alpha="0.5"/>
+		<e:Label id="timeLabel" text="" horizontalCenter="0" verticalCenter="0" fontFamily="Arial" size="22"/>
+	</e:Group>
+</e:Skin>

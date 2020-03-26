@@ -1,0 +1,40 @@
+{
+	"skins": {
+		"tuoguanButton": "resource/eui_skins/tuoguanButton.exml"
+	},
+	"autoGenerateExmlsList": true,
+	"exmls": [
+		"resource/eui_skins/HSliderSkin.exml",
+		"resource/eui_skins/MyScrollBarSkin.exml",
+		"resource/eui_skins/MyScrollSkin.exml",
+		"resource/eui_skins/skins/game/base/NomalLoadingUISkin.exml",
+		"resource/eui_skins/skins/game/base/ReelItemSkin.exml",
+		"resource/eui_skins/skins/game/base/ReelResultSkin.exml",
+		"resource/eui_skins/skins/game/base/ReelSkin.exml",
+		"resource/eui_skins/skins/game/login/LoginSkin.exml",
+		"resource/eui_skins/skins/game/main/AutoItemSkin.exml",
+		"resource/eui_skins/skins/game/main/btn/TogleButtonSkin.exml",
+		"resource/eui_skins/skins/game/main/btn/DesButtonSkin.exml",
+		"resource/eui_skins/skins/game/main/btn/MouseButton3Skin.exml",
+		"resource/eui_skins/skins/game/main/btn/MusicBtnSkin.exml",
+		"resource/eui_skins/skins/game/main/btn/TextButtonSkin.exml",
+		"resource/eui_skins/skins/game/main/CheckListSkin.exml",
+		"resource/eui_skins/skins/game/main/GamePentSkin.exml",
+		"resource/eui_skins/skins/game/main/GameScenceSkin.exml",
+		"resource/eui_skins/skins/game/main/HelpDesSkin.exml",
+		"resource/eui_skins/skins/game/main/HelpSkin.exml",
+		"resource/eui_skins/skins/game/main/ItemSkin.exml",
+		"resource/eui_skins/skins/game/main/SetBarSkin.exml",
+		"resource/eui_skins/skins/game/main/TopListSkin.exml",
+		"resource/eui_skins/skins/game/main/MainScenceUISkin.exml",
+		"resource/eui_skins/skins/game/main/ShowItemSkin.exml",
+		"resource/eui_skins/skins/game/net/netcloseSkin.exml",
+		"resource/eui_skins/skins/game/net/NetSkin.exml",
+		"resource/eui_skins/skins/game/NormalOkTipsSkin.exml",
+		"resource/eui_skins/skins/HSlider1Skin.exml",
+		"resource/eui_skins/skins/game/SetSkin.exml",
+		"resource/eui_skins/skins/game/StipSkin.exml",
+		"resource/eui_skins/VSliderSkin.exml"
+	],
+	"path": "resource/default.thm.json"
+}

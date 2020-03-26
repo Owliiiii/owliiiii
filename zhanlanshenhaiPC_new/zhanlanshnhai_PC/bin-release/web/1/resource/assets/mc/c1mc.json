@@ -1,0 +1,28 @@
+{"mc":{
+	"c1mc":{
+		"frameRate":12,
+		"labels":[
+			{"name":"c1mc","frame":1,"end":2}
+			
+			],
+		"events":[
+			
+			],
+		"frames":[
+			
+			{
+			"res":"anticipation01",
+			"x":-134,
+			"y":-342
+			},
+			{
+			"res":"anticipation02",
+			"x":-134,
+			"y":-342
+			}
+			]
+}},
+	"res":{
+		"anticipation02":{"x":271,"y":1,"w":268,"h":683},
+		"anticipation01":{"x":1,"y":1,"w":268,"h":683}
+	}}

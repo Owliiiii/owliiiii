@@ -1,0 +1,555 @@
+<html>
+
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Turn off telephone number detection. -->
+    <meta name="format-detection" content="telephone=no">
+
+    <!--<link rel="stylesheet" type="text/css" href="../../css/cards.css">
+    <link rel="stylesheet" type="text/css" href="../../css/help-override.css">
+
+    <script type="text/javascript" src="../../js/iscroll-lite-mod.js"></script>
+    <script type="text/javascript" src="../../js/handlebars-v3.0.3.js"></script>
+    <script type="text/javascript" src="../../js/jqlite.1.1.1.min.js"></script>
+    <script type="text/javascript" src="../../js/help.js"></script>
+    <script type="text/javascript" src="../../js/viewport.js"></script>-->
+
+    <style>
+        * { 
+            max-height: 999999px 
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            -webkit-text-size-adjust:100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-family: Arial, sans-serif;
+            font-size: 30px;
+        }
+
+        h2 {
+            color: rgb(255, 255, 255);
+            font-family: Arial;
+            font-size: 26px;
+        }
+
+        p, li, #game_info {
+            color: rgb(255, 255, 255);
+            font-family: Arial;
+            font-size: 22px;
+        }
+
+        table {
+            border-collapse: collapse;
+            color: rgb(255, 255, 255);
+            font-family: Arial;
+            font-size: 22px;
+        }
+        
+        tr, th {
+            border: 1px solid rgb(255, 255, 255);
+            padding: 5px;
+        }
+        
+        #container {
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            overflow: auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        #wrapper {
+            border: 1px solid transparent;
+            padding: 0 95px;
+        }
+
+        @media all and (orientation: portrait) {
+            #wrapper {
+                padding: 0 15px;
+            }
+        }
+
+         #content {
+                margin: 30px auto 30px auto;
+                background-color: #141617;
+                box-shadow: 0 0 30px #141617;
+                border-top-left-radius:     31px;
+                border-top-right-radius:     31px;
+                border-bottom-left-radius:  31px;
+                border-bottom-right-radius: 31px;
+                padding:20px 50px 50px 50px;
+                background: rgba(20, 22, 23, .7); 
+        }
+
+        #loading {
+            background-color:black; 
+            position: absolute; 
+            z-index: 100; 
+            width: 100%; 
+            height: 100%;
+        }
+
+        #loading_table {
+            width: 100%;
+            height: 100%;
+            border-collapse: separate;
+        }
+
+        @-webkit-keyframes rotating {
+            from{
+                -webkit-transform: rotate(0deg);
+            }
+            to{
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @-ms-keyframes rotating {
+            0% { -ms-transform: rotate(0deg); }
+            100% { -ms-transform: rotate(360deg); }
+        }
+
+        #rotating {
+            -webkit-animation: rotating 2s linear infinite;
+            -ms-animation: rotating 2s linear infinite;
+        }
+
+        #game_info p {
+            text-align: left;
+            font-size: 14px;
+        }
+
+        #game_info table {
+            float: right;
+        }
+
+        #game_info tr, th {
+            border: 0px;
+        }
+        
+        /* for UC Browser only */
+        .uc-broken-help li, .uc-broken-help p {
+            width: 100%;
+            float: right;
+        }
+        .uc-broken-help #panel, .uc-broken-help ul {
+            overflow: auto;
+        }
+        .uc-broken-help td p {
+            float: none;
+        }
+
+        .btnclose:hover {
+	    background:url('./resource/assets/helpandreward/cloesx_hover.png');  
+}
+    </style>
+<!--<script src="zh-cn/hk.js" uuid="15c775a9-6fa7-41d8-940c-a99dcc9dd12e" name="hk"></script>
+<script src="zh-cn/common/how_to_play_nonfixed.js" uuid="9b0a2d29-bfa0-4cd5-afe6-fe2bdb6b4b82" name="how_to_play_nonfixed"></script>
+<script src="zh-cn/common/notes.js" uuid="b5468b82-ba32-4799-98a7-36697b12d0e1" name="notes"></script>
+<script src="zh-cn/common/Italy_Bring_Money.js" uuid="d5f8d2fd-687d-4b0d-9cd9-c8219b0339cf" name="Italy_Bring_Money"></script>-->
+<script>
+   var ischage=false;
+    document.addEventListener("readystatechange", function () {
+        if (document.readyState == 'complete') {
+            document.getElementById("loading").style.visibility = 'hidden';
+            document.getElementById("rotating").style.visibility = 'hidden';
+            console.log(document.readyState);
+            parent.postMessage('loadhide');
+            ischage=true;
+        }
+    });
+    function load() {
+         if(ischage)
+         {
+              parent.postMessage('loadhide');
+         }
+    }
+</script>
+
+</head>
+
+<body   style="background-image: url(./resource/assets/helpGround.jpg);">
+<div id="loading" style="visibility: visible;">
+<table id="loading_table" style="height: 0px;top:25%;position: absolute;">
+<tbody>
+    <tr>
+        <td align="center" style="vertical-align: middle; ">
+<img src="./resource/assets/loading/quan.png" id="rotating" style="visibility: visible;">
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<div id="container" style="height: 100%;">
+		<div id="wrapper">
+			<div id="content">
+				<div id="panel" data-uuid="3e75a773-01f9-45dd-be7a-cd54d7bfa535">﻿<h1>湛蓝深海™</h1>
+					<p><b>5转轴、25赔付线老虎机</b></p>
+					<p>湛蓝深海™的目标是通过旋转转轴来获得赢奖符号组合。</p>
+					<h2>游戏玩法</h2>
+					<ul>
+						<li>只有活跃的赔付线才能赢得奖金。</li>
+						<li>每轮游戏的总赌注 = 线注 × 活跃赔付线数。</li>
+						<li>在<b>投注选项</b>面板上可选择赔付线和线注。</li>
+						<ul type="circle">
+							<li>单击<b>线 注</b>下的'−'或'+'来选择线注。</li>
+							<li>单击“−”或“+”在面板上选择赔付线。</li>
+							<li>点击<b>快速模式</b>按钮来打开或关闭快速模式。打开快速模式时，一些获胜动画和声音将被跳过，转轴也会旋转得更快。</li>
+						</ul>
+						<li>单击<b>旋转</b>会以当前选定的线注来旋转转轴。在转轴旋转时，<b>旋转</b>按钮会变成<b>停止</b>。单击<b>停止</b>可结束旋转动画并立即显示旋转结果。</li>
+						<ul type="circle">
+							<li>选择要自动旋转的次数，或选择<b>直到功能</b>旋转到 Sea Shell 奖励 被触发。</li>
+							<li>剩余自动旋转的次数显示在较小的<b>停止</b>按钮上方（除非您选择了<b>直到功能</b>选项）。</li>
+						</ul>
+						<li>要进入触发的功能，请单击<b>单击以开始</b>按钮。功能结束后，在奖金汇总屏幕中单击<b>继续</b>可返回主游戏或者继续自动游戏模式（如果有剩余的自动旋转）。</li>
+						<li>通过<b>信息</b>页面可访问赔付表。</li>
+					</ul>
+					<h2>关于赔付</h2>
+					<ul>
+						<li>奖金将根据<b>赔付表</b>进行计算，您可以通过'菜单'来查看赔付表。</li>
+						<ul type="circle">
+							<li>赔付线奖金 = 线注 × 赔付表上相应的乘数。</li>
+							<li><b>SCATTER</b>奖金 = 总赌注 × 赔付表上相应的乘数。</li>
+						</ul>
+						<li>如果超过1条活跃的赔付线出现赢奖组合，则奖金将累计。如果一条赔付线上出现了2个赢奖组合，则按奖金较高的组合赔付。赢奖组合必须从最左侧的转轴开始，并且符号必须是连续的。<b>SCATTER</b>符号不受这些规则的限制。有关<b>SCATTER</b>符号的更多信息可在下面找到。</li>
+						<li>每次旋转赢奖后都会显示累加的奖金和所有赔付线的奖金。赢得大奖时，奖金窗口将弹出来并显示总旋转赢奖金额。</li>
+					</ul>
+					<h2>WILD符号</h2>
+					<p><b>WILD</b>符号可代替任何其他符号（<b>SCATTER</b>和<b>BONUS</b>符号除外），从而组成尽可能最佳的赢奖组合。 包括代替其他符号的<b>WILD</b>符号的赢奖组合，其奖金翻倍。 活动赔付线上的2个或更多<b>WILD</b>符号还会获得单独的赔付。如果<b>WILD</b>符号的奖金超过常规符号（通过<b>WILD</b>替代）的奖金，则赔付常规符号的奖金。 </p>
+					<h2>SCATTER符号</h2>
+					<p><b>SCATTER</b>符号不一定会出现在任何特定的赔付线上。如果旋转结果中任意位置有2个或更多的<b>SCATTER</b>符号，赢得的彩金将乘以总赌注并加入到任何赔付线奖金中。 当3个或更多<b>SCATTER</b>符号出现在转轴上的任意位置时，将会触发Sea Shells奖励。 </p>
+					<h2>SEA SHELLS奖励</h2>
+					<p>触发了奖励游戏时，您自动赢得8次免费游戏，其赢奖翻倍乘数为2。转轴屏幕将变换为显示5个贝壳，点击贝壳来赢取奖品。单击2个贝壳来赢取额外的免费旋转和/或增加赢奖翻倍乘数。</p>
+					<p>在免费旋转中，转轴会以赢得免费游戏时的相同线数和线注自动旋转。在免费旋转中，如果3个或更多<b>SCATTER</b>符号出现在转轴上的任意位置，另有15次免费旋转将添加到现有旋转中。赢奖翻倍乘数不变。</p><br>
+					<p><strong>赌场工具栏</strong></p>
+					<p>游戏窗口的上下边缘有赌场工具栏。这些工具栏中有很多菜单和按钮，供您更改客户端设置或使用赌场客户端中的各种功能。 单击一个按钮就可以将其打开。</p>
+					<p>底部工具栏包含以下内容：</p>
+					<ul>
+						<li><b>余额</b> - 您的游戏窗口余额。这是您可以在当前赌场游戏中使用的总资金，包括真钱余额以及此游戏可用的奖励金额。</li>
+						<li><b>充值/收银台</b> - 单击该按钮可以打开'充值/收银台'窗口，您可以在该窗口中充值和提现、查看交易历史记录等。</li>
+						<li><b>玩真钱</b> -此按钮仅在娱乐和匿名模式中出现。点击它就会进入真钱帐户创建页面。如果您已有真钱帐户，它会将您带入玩真钱登录界面。</li>
+						<li><b>免费旋转奖励</b> - 只有当游戏中您有可用的奖励免费旋转时，此图标才会显示。点击此图标来打开<b>免费旋转奖励面板</b>。</li>
+					</ul>
+					<p>顶部工具栏包含以下内容：</p>
+					<ul>
+						<li><b>游戏</b> - 此图标旁是快速启动菜单。将光标移动到任何类别上来查看该类别中可选的游戏。点击任何游戏来启动该游戏。</li>
+						<li><b>特别推荐</b> - 能够帮助您找到下一次游戏冒险！这里有多种多样的游戏类别，供您挑选出自己喜欢的游戏。</li>
+						<li><b>老虎机</b> - 找到心仪的游戏后，单击相应的游戏图标来开始游戏。</li>
+						<li><b>赌桌游戏</b> - 找到心仪的游戏后，单击相应的游戏图标来开始游戏。</li>
+						<li><b>声音开/关</b> - 单击此按钮将禁用/启用音效。将光标悬停在声音图标上来滑动打开音量滑块，从而调节音量。</li>
+						<li><b>菜单</b> - 将鼠标移动此图标上打开工具菜单。该菜单有以下内容：</li>
+						<ul type="circle">
+							<li><b>历史记录</b> - 打开游戏历史记录窗口，从中查看近期游戏局的详细信息。请注意，历史记录在娱乐和匿名模式中不可用</li>
+							<li><b>选项</b> - 打开选项对话框，从中可更改各种游戏设置。</li>
+							<li><b>帮助</b> - 打开您正在阅读的帮助文本。</li>
+							<li><b>赔付表</b> - 打开游戏赔付表。</li>
+						</ul>
+					</ul>
+					<p><b>信息页面:</b></p>
+					<ul>
+						<li>单击 <strong>信息</strong> 可打开描述不同游戏组件的参考屏幕。单击屏幕右下角的箭头按钮，可在不同信息屏幕间浏览。 </li>
+						<ul type="circle">
+							<li><strong>赔率表</strong>屏幕显示所有赢奖组合。</li>
+							<li><b>功能</b>界面说明在游戏中可触发和玩哪些功能。</li>
+							<li><strong>赔付线</strong>屏幕描述了所有可能的赔付线组合，并解释了游戏中的赔付规则。</li>
+						</ul>
+						<li>单击<strong>X</strong>退出<strong>信息</strong>界面并返回游戏。</li>
+					</ul>
+					<p><strong>赌付线：</strong></p>
+					<ul>
+						<li>活动赔付线以转轴上出现的线条表示，如<strong>信息</strong>页面的<strong>赔付线</strong>屏幕显示的示例。</li>
+						<li>只有激活的赔付线才能登记奖金。</li>
+						<li>赔付线赌注和总赌注有所不同。 赔付线赌注是指在单条赔付线上投放的赌注。 总赌注表示在游戏局内共投注多少。赔付表中显示的赔付额会乘以线注。</li>
+					</ul>
+					<p><b>Scatter</b>符号不受这些规则的限制。上面提供了有关Scatter符号的更多信息。</p>
+					<p><strong>按钮：</strong></p>
+					<ul>
+						<li><strong>信息</strong> - 打开描述不同游戏组件的参考屏幕。</li>
+						<li><strong>線 + 和 – 按鈕</strong> - 增加或減少活動賠付線的數量。</li>
+						<li><strong>線注 + 和 – 按鈕</strong> - 增加或减少每条线的赌注。</li>
+						<li><b>自动游戏/停止自动游戏</b> - 连续旋转转轴数次。/结束活跃的自动游戏重新旋转模式。</li>
+						<li><b>旋转</b> - 转动转轴。 按<b>空格</b>键会以当前选定的总赌注来旋转转轴。</li>
+						<li><b>停止</b> - 停止转轴旋转动画并立即显示旋转结果。</li>
+						<li><strong>快速模式</strong> - 打开/关闭快速模式，仅在主游戏中可用。切换到快速模式可关闭一些获胜动画和声音并让转轴旋转得更快，从而加快游戏速度。</li>
+					</ul><br>
+					<div data-uuid="ff2f835c-7e69-4870-a789-7c5a9305d680">
+						<p><b>网络断开说明：</b>如果在游戏期间您与互联网的连接断开，请重新登录回到娱乐场。您会直接自动回到游戏中，并可以从中断处继续游戏。如果您重新打开游戏而没有重新登录娱乐场，则游戏将从头开始。在两种情况下，您之前的赢奖都会得到赔付。</p>
+						<p>要查看之前游戏的结果或了解最近游戏的更多详情，可单击菜单中的'历史记录'按钮。使用常用的用户名和密码登录来查看之前在桌面版和移动版玩游戏的结果。</p>
+						<p><b>故障说明：</b>出现故障则所有赔付和游戏无效。</p>
+						<p></p>
+						<p><b>未处理赌注说明：</b>放置的赌注未处理在90天后失效。</p>
+						<p></p>
+					</div>
+					<p></p>
+					<p>理论玩家回报率(RTP)为96.03%。 </p>
+				</div>
+
+        <div id="game_info">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p>Build: <span id="game_version">19.11.3.18</span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Date: <span id="game_build">2019-11-15 </span></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+<!--<button type="button" class="btnclose" style="width: 73px;height: 73px;position:absolute;top:20px;right:27px;background: url('./resource/assets/helpandreward/cloesx.png')" ></button>-->
+<input name="submit" class="btnclose" id='closebtn' type="image" value=" " src="./resource/assets/helpandreward/cloesx.png"
+    style='position:absolute;top:25px;right:33.75px;outline: none; '/>
+
+<script type="text/javascript">
+              // for UC browser only
+              document.addEventListener("onload", function (event) {
+                  if (/UCBrowser\/\d/i.test(navigator.userAgent)) {
+                      document.body.classList.add("uc-broken-help");
+                      if (customTouchScroller !== undefined) {
+                          customTouchScroller.refresh();
+                      }
+                  }
+                  //setTimeout(function() {
+                  document.getElementById("loading").style.visibility = 'hidden';
+                  document.getElementById("rotating").style.visibility = 'hidden';
+                  console.log('aaaaaaaaaaaaaaaaaa');
+                  //}, 1500);
+              });
+
+              btn = document.getElementById('closebtn');
+              btn.onclick = () => {
+                  parent.postMessage('closedesui');
+              }
+              // Parameters received in URL
+              var urlParams = getParameters(window.location.href.slice(window.location.href.indexOf('?') + 1), '&');
+              // Parameters received from main frame in postMessage callback
+              var parameters;
+
+              setDomain();
+              preInitCustomScroll();
+
+              var cont = document.getElementById("container");
+              var isWindowsPhone = navigator.userAgent.indexOf("Windows Phone") > -1;
+              var customTouchScroller;
+              var background;
+
+              function getParameters(message, splitter) {
+                  vars = [];
+                  var paramPair;
+                  var params = message.split(splitter);
+                  for (var i = 0; i < params.length; i++) {
+                      paramPair = params[i].split('=');
+                      vars.push(paramPair[0]);
+                      vars[paramPair[0]] = paramPair[1];
+                  }
+                  return vars;
+              }
+
+              function isCustomCloseBtn() {
+                  return !!document.getElementById("close");
+              }
+
+              function sendToParent(message) {
+                  if (isNative()) {
+                      window.location.href = message;
+                  } else if (typeof parent != "undefined") {
+                      if (isWindowsPhone) {
+                          parent.handleMessage(message);
+                      } else {
+                          parent.postMessage(message, '*');
+                      }
+                  }
+              }
+
+              function closePage() {
+                  sendToParent("close");
+              }
+
+              function handleMessage(message) {
+                  parameters = getParameters(message, ';');
+
+                  var bgParam = parameters["background"];
+                  if (bgParam.indexOf('|') > -1) {
+                      background = bgParam.split('|');
+                      for (var i = 0; i < background.length; i++) {
+                          background[i] = encodeURI(background[i]);
+                      }
+                      document.body.style.backgroundImage = 'url(' + background[0] + ')';
+                      cont.style.backgroundImage = isLandscape() ? '' : 'url(' + background[1] + ')';
+                  } else {
+                      cont.style.backgroundImage = 'url(' + encodeURI(bgParam) + ')';
+                  }
+                  document.getElementById("loading_table").style.height = isNative() ? "100%" : (parameters["height"]) + "px";
+                  document.getElementById("rotating").style.visibility = "visible";
+
+                  var isGameInfoVisible = parameters["game_info_visible"];
+                  if (isGameInfoVisible && isGameInfoVisible === "true") {
+                      var game_build = parameters["game_build"];
+                      var game_version = parameters["game_version"];
+                      if (game_build) {
+                          document.getElementById("game_build").innerHTML = game_build;
+                      }
+                      if (game_version) {
+                          document.getElementById("game_version").innerHTML = game_version;
+                      }
+                  } else {
+                      document.getElementById("game_info").style.visibility = "hidden";
+                  }
+
+
+                  if (parameters["regulations"]) {
+                      try {
+                          var context = eval("({" + parameters["regulations"] + "})");
+                          if (parameters["language"]) {
+                              context.language = parameters["language"];
+                          }
+                          Help.callback = helpLoaded;
+                          Help.load("panel", context);
+                      } catch (ex) {
+                          console.error("Cannot load help file properly. " + ex.message);
+                          helpLoaded();
+                      }
+                  } else {
+                      helpLoaded();
+                  }
+              }
+
+              function helpLoaded() {
+                  if (!isCustomCloseBtn()) {
+                      sendToParent("general");
+                  }
+
+                  if (document.getElementById("minBet") != null) {
+                      document.getElementById("minBet").innerHTML = parameters["min_bet"];
+                  }
+                  if (document.getElementById("maxBet") != null) {
+                      document.getElementById("maxBet").innerHTML = parameters["max_bet"];
+                  }
+                  var betLimitsPanelVisible = parameters["bet_limits_visible"];
+                  if (!betLimitsPanelVisible) {
+                      if (document.getElementById("betLimitsPanel") != null) {
+                          document.getElementById("betLimitsPanel").style.display = "none";
+                      }
+                  }
+
+                  //ios hack (added because of background missed) to redraw view, as a result background will be present
+                  if (isNative() && isIOS()) {
+                      cont.style.display = 'none';
+                      cont.offsetHeight;
+                      cont.style.display = 'block';
+                      cont.style.webkitTransform = 'scale(1)';
+                  }
+
+                  if (!parameters["disable_scroll"]) {
+                      customTouchScroller = initScroll('container');
+                  }
+                  window.addEventListener("resize", pageResizedHandler);
+
+                  setTimeout(function () {
+                      if (!isWindowsPhone) {
+                          cont.style.height = '100%';
+                          if (customTouchScroller) {
+                              customTouchScroller.refresh();
+                          }
+                      }
+
+                      document.getElementById("loading").style.visibility = 'hidden';
+                      document.getElementById("rotating").style.visibility = "hidden";
+                      document.getElementById("loading_table").style.height = "0px";
+                  }, 20);
+              }
+
+              // DOT NOT REMOVE! Function for native applications backward compatibility
+              function messageFromNative(message) {
+                  handleMessage(message);
+              }
+
+              window.addEventListener("message", function (event) {
+                  handleMessage(event.data);
+              }, false);
+
+              function pageResizedHandler(event) {
+                  if (isWindowsPhone) {
+                      cont.style.height = document.documentElement.clientHeight + 'px';
+                  } else {
+                      cont.style.height = '100%';
+                  }
+                  if (customTouchScroller) {
+                      customTouchScroller.refresh();
+                  }
+                  if (background && background.length == 2) {
+                      cont.style.backgroundImage = isLandscape() ? '' : 'url(' + background[1] + ')';
+                  }
+              };
+
+              function isLandscape() {
+                  if (isIOS() && window.hasOwnProperty("orientation")) {
+                      // Approach with inner or outer parameters is unstable on iOS.
+                      return Math.abs(window.orientation) === 90;
+                  }
+                  // For some reasons innerHeight and innerWidth can be 0 at this point.
+                  // However we can define orientation with outerHeight and outerWidth values also.
+                  if (window.innerWidth && window.innerHeight) {
+                      return window.innerWidth >= window.innerHeight;
+                  } else {
+                      return window.outerWidth >= window.outerHeight;
+                  }
+              }
+
+              function setDomain() {
+                  var domain = urlParams["domain"];
+                  if (!(typeof domain === "undefined") && (domain != "") && (domain != "null")) {
+                      try {
+                          document.domain = domain;
+                      } catch (err) { }
+                  }
+              }
+
+              function preInitCustomScroll() {
+                  /*
+                   * If the player moves whole page using touch and at the same time transformations are applied to page content - it disappers.
+                   * To avoid it, the touch event is blocked if custom scroll should be used (transformation will be applied on iScroll initialization).
+                   * Reproduced on iPad Air 2, iOS 10.2.1, Chrome/Safari.
+                   */
+                  // if (useCustomScroll && disableDefaultTouch && useCustomScroll()) {
+                  //     disableDefaultTouch();
+                  // }
+              }
+
+              function isNative() {
+                  return (!!urlParams["platform"] && urlParams["platform"].indexOf("native") == 0);
+              }
+
+              function isIOS() {
+                  return !!navigator.userAgent.match(/iPhone|iPad|iPod/i);
+              }
+
+</script>
+
+
+</body>
+
+</html>

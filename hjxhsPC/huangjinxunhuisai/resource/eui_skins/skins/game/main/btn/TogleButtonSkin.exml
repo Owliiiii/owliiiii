@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TogleButtonSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" states="up,down,upAndSelected,downAndSelected,rollOver,rollOverAndSelected,disabled" >
+	<e:Image horizontalCenter="0" verticalCenter="0" source.disabled="bg_set19_png" source="check0_png" source.down="check0_png" source.upAndSelected="check1_png" source.downAndSelected="check1_png" source.rollOver="check0_png" source.rollOverAndSelected="check1_png" includeIn="up,down,upAndSelected,downAndSelected,rollOver,rollOverAndSelected"/>
+</e:Skin>

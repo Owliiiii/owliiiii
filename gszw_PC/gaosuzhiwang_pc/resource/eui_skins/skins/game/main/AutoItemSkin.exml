@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="AutoItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="autoStopGroup" horizontalCenter="0" y="292" visible="false">
+		<e:Image source="auto_spins_png" x="0" y="-6"/>
+		<e:BitmapLabel id="autoCountLabel" y="43" font="f0_fnt" text="99" horizontalCenter="0"/>
+		<ns1:MouseButton id="sopAutoBtn" label="" y="78" horizontalCenter="0">
+			<ns1:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="stop_autoplay_png" source.down="stop_autoplay_pressed_png" source.disabled="stop_autoplay_disabled_png" source.rollOver="stop_autoplay_hovered_png"  />
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+	</e:Group>
+	<e:Group id="sMainGroup" width="112" height="317" y="0" horizontalCenter="0" scrollEnabled="true" touchThrough="false" touchChildren="true">
+		<e:Group id="sGroup" y="317" horizontalCenter="0" x="0" scaleX="1" scaleY="1">
+			<e:Image source="autoplay_bg_png" y="0" x="0"/>
+			<ns1:MouseButton id="btn0" label="" y="15" x="17">
+			<e:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="99_spins_png" source.down="99_spins_pressed_png" source.disabled="99_spins_disabled_png" source.rollOver="99_spins_hovered_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</ns1:MouseButton>
+			<ns1:MouseButton id="btn1" label="" y="94" x="17">
+			<e:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="50_spins_png" source.down="50_spins_pressed_png" source.disabled="50_spins_disabled_png" source.rollOver="50_spins_hovered_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</ns1:MouseButton>
+			<ns1:MouseButton id="btn2" label="" y="172" x="17">
+			<e:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="25_spins_png" source.down="25_spins_pressed_png" source.disabled="25_spins_disabled_png" source.rollOver="25_spins_hovered_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</ns1:MouseButton>
+			<ns1:MouseButton id="btn3" label="" y="252" x="17">
+			<e:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="10_spins_png" source.down="10_spins_pressed_png" source.disabled="10_spins_disabled_png" source.rollOver="10_spins_hovered_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</ns1:MouseButton>
+		</e:Group>
+	</e:Group>
+	<ns1:MouseButton id="autoBtn" label="" y="336.73" horizontalCenter="0">
+		<ns1:skinName>
+		<e:Skin states="up,down,disabled,rollOver" xmlns:tween="egret.tween.*">
+			<e:Image width="100%" height="100%" source="autoplay_png" source.down="autoplay_pressed_png" source.disabled="autoplay_disabled_png" source.rollOver="autoplay_hovered_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</ns1:skinName>
+	</ns1:MouseButton>
+</e:Skin>

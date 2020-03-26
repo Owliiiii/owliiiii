@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SpeedTipsSkin" width="1120" height="912" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" states="down,up" >
+	<e:Rect fillAlpha="0.6" width="1120" height="912" x="0" y="0" left.up="0" right.up="0" top.up="0" bottom.up="0" left.down="0" right.down="0" top.down="0" bottom.down="0"/>
+	<e:Group left="0" right="0" top="0" bottom="0" scaleX.up="2" scaleY.up="2" scaleY.down="2.2" y.down="60" scaleX.down="2">
+		<e:Image horizontalCenter="0" verticalCenter="0" source="speedbg_png" scaleX.up="1.2" scaleY.up="1.1" scaleX.down="0.9"/>
+		<e:Label id="desLabel" text="您似乎喜欢较快的游戏节奏。是否启用“快速游戏”模式？您可以随时在设置菜单中禁用它。" fontFamily="FangSong_GB2312" textAlign="center" verticalAlign="middle" size="15" anchorOffsetY="0" textColor="0xFFFFFF" lineSpacing="5" scaleX="1" scaleY="1" height="162" anchorOffsetX="0" width="274.68" horizontalCenter="0.5" verticalCenter="-21" horizontalCenter.down="1.5" verticalCenter.down="-20.272727272727252" height.down="70" fontFamily.down="Arial" size.down="13" size.up="13" horizontalCenter.up="-1" verticalCenter.up="-12" width.up="328.01" height.up="62.33" width.down="247.34"/>
+		<e:Label id="titleLabel" text="快速进行" fontFamily="KaiTi_GB2312" textAlign="center" verticalAlign="middle" size="20" anchorOffsetY="0" y="370.98" textColor="0xf2c130" scaleX="1" scaleY="1" fontFamily.down="SimHei" fontFamily.up="SimHei" size.up="18" horizontalCenter.down="0" horizontalCenter.up="0" verticalCenter.down="-75" verticalCenter.up="-76"/>
+		<ns1:MouseButton id="nono" label="否" x.down="458.17" y.down="504.98" anchorOffsetY="0" scaleY="1.3" horizontalCenter.down="-52" verticalCenter.down="75" horizontalCenter.up="-54" verticalCenter.up="81">
+			<ns1:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="red_0_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" text="否" size="15" fontFamily="SimHei" scaleY="0.85"/>
+				</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+		<ns1:MouseButton id="yesyes" label="是" x.down="563.65" y.down="504.31" scaleY="1.3" horizontalCenter.down="55" verticalCenter.down="74" horizontalCenter.up="56" verticalCenter.up="80">
+			<ns1:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="grn_0_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" text="是" size="15" fontFamily="SimHei" scaleY="0.85"/>
+				</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+	</e:Group>
+</e:Skin>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="StipSkin" width="1600" height="990" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect id="bg" left="0" right="0" top="0" bottom="0" alpha="0.6"/>
+	<e:Group id="autoGroup" horizontalCenter="0" verticalCenter="-10">
+		<e:Image id="autoImg" source="nomalbg_png" scale9Grid="50,95,300,17" anchorOffsetY="0" x="0" y="0" width="460" height="300"/>
+		<e:Label id="titleLabel" text="自动游戏已停止。\n 您想重复自动游戏吗？" fontFamily="'Asap',sans-serif" verticalAlign="middle" size="30" anchorOffsetY="0" width="360" lineSpacing="4" textColor="0xffffff" multiline="true" anchorOffsetX="0" textAlign="center" x="50" y="82"/>
+		<ns1:MouseButton id="okBtn" label="是" x="29" y="210">
+			<e:skinName>
+			<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="btn_green_png" source.rollOver="btn_green_pressed_png" source.down="btn_green_pressed_png"/>
+				<e:Label id="labelDisplay" fontFamily="'Asap',sans-serif" verticalCenter="-4" horizontalCenter="0" size="20"/>
+			</e:Skin>
+			</e:skinName>
+		</ns1:MouseButton>
+		<ns1:MouseButton id="cancleBtn" label="否" x="233" y="210">
+			<e:skinName>
+			<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="btn_red_png" source.rollOver="btn_red_pressed_png" source.down="btn_red_pressed_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="-4" size="20" fontFamily="'Asap',sans-serif"/>
+			</e:Skin>
+			</e:skinName>
+		</ns1:MouseButton>
+	</e:Group>
+	<e:Group id="allGroup" horizontalCenter="0" verticalCenter="0" visible="false">
+		<e:Image id="img" source="nomalbg_png" scale9Grid="50,95,300,17" anchorOffsetY="0" x="0" y="0"/>
+		<e:Label id="desLabel" text="连接断开,   正在重新连接." fontFamily="'Asap',sans-serif" textAlign="center" verticalAlign="middle" size="18" anchorOffsetY="0" width="380" lineSpacing="5" textColor="0xffffff" x="34" y="76"/>
+		<ns1:MouseButton id="confirBtn" label="确定" anchorOffsetX="0" width="216" x="117" y="162">
+			<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="btn_green_png" source.rollOver="btn_green_pressed_png" source.down="btn_green_pressed_png"/>
+				<e:Label id="labelDisplay" fontFamily="sans-serif" verticalCenter="-4" horizontalCenter="0" size="20"/>
+			</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+	</e:Group>
+	<e:Image source="18_jpg" horizontalCenter="15.5" verticalCenter="-33.5" alpha="0.3" visible="false"/>
+	<e:Image source="20_jpg" horizontalCenter="13.5" verticalCenter="-41.5" alpha="0.3" visible="false"/>
+</e:Skin>

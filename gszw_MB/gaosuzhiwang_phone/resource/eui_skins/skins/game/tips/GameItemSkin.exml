@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GameItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" height="200" states="hor,ver"  width.ver="173" height.ver="235">
+	<e:Image id="icons" width="144" height="144" x="0" y="0" source="lobby8_png" scaleX.ver="1.2" scaleY.ver="1.2"/>
+	<e:Label id="nameLabel" text="Tiger Claw" size="20" anchorOffsetX="0" anchorOffsetY="0" height="50" verticalAlign="top" textAlign="center" width="144" left="0" right="0" bottom="0" size.ver="26"/>
+</e:Skin>

@@ -1,0 +1,21 @@
+{
+	"initial": [
+		"js/egret_36b8d151.js",
+		"js/egret.web_b1651b4.js",
+		"js/eui_4cfe0505.js",
+		"js/assetsmanager_f4112ffb.js",
+		"js/tween_dfc20c22.js",
+		"js/game_81dfcf37.js",
+		"js/socket_42804cd4.js",
+		"js/promise_f50208f5.js",
+		"js/mouse_440ba7bb.js",
+		"js/particle_b447dcfb.js",
+		"js/socket.io_9fb06125.js",
+		"js/keyboard_42af67f.js"
+	],
+	"game": [
+		"js/fullscreen_db9d3fb2.js",
+		"js/default.thm_754d3c8c.js",
+		"js/main.min_777e99e.js"
+	]
+}
