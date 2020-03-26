@@ -141,7 +141,7 @@ class GameManager extends egret.EventDispatcher {
 	 * 游戏正式结束通知
 	 */
 	public onLogicGameOver(): void { 
-		console.log('游戏结束');
+		console.log('游戏结束'); 
 
 		this.gameState = GameType.GameState.STOP;
 		this.isStart = true;
