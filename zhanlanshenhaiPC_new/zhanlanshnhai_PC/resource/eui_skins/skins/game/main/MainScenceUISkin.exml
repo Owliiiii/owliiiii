@@ -2,13 +2,13 @@
 <e:Skin class="MainScenceUISkin" width="1920" height="990" xmlns:e="http://ns.egret.com/eui"
         xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" xmlns:tween="egret.tween.*">
 	<w:Declarations></w:Declarations>
-	<e:Image id="bg" source="BG_1_png" height="938" horizontalCenter="0" verticalCenter="-1" visible="false"/>
-	<e:Image id="bg1" source="freeBG_png" height="938" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image id="bg" source="BG_1_png" height="938" horizontalCenter="0" verticalCenter="-1"/>
+	<e:Image id="bg1" source="freeBG_png" height="938" horizontalCenter="0" verticalCenter="0" visible="false"/>
 
 
 
 
-	<e:Group id="mainGroup" scrollEnabled="false" width="1266" height="990" horizontalCenter="0" verticalCenter="0" visible="false">
+	<e:Group id="mainGroup" scrollEnabled="false" width="1266" height="990" horizontalCenter="0" verticalCenter="0">
 
 		<ns1:GameScence id="gameScence" skinName="GameScenceSkin"
 		                 scaleX="0.968" scaleY="0.968" horizontalCenter="0" y="154"/>
@@ -156,7 +156,7 @@
 
 
 	</e:Group>
-	<e:Group id="freeGroup" width="1444" height="990" horizontalCenter="0" verticalCenter="0" scaleX="1">
+	<e:Group id="freeGroup" width="1444" height="990" horizontalCenter="0" verticalCenter="0" scaleX="1" visible="false">
 		<e:Image source="freeTxt_png" y="214.66" scaleX="1" scaleY="1" horizontalCenter="0"/>
 		<e:Group id="freeNumGroup" width="524" height="200" x="815" y="52" anchorOffsetX="0" visible="false">
 		<e:Image source="fanbei_png" x="333.46000000000004" y="41.629999999999995" scaleX="1" scaleY="1"/>

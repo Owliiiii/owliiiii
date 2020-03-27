@@ -93,8 +93,6 @@ class HelpDesUI extends core.BaseUI {
 		if (window.innerHeight <= 500 / window.devicePixelRatio) {
 			this.bg.scaleY = window.innerHeight / this.bg.height + 0.2;
 		}
-
-
 		// this.onScrollChange();
 		// this.onScrollBarChange();
 		egret.updateAllScreens();

@@ -129,7 +129,9 @@ class GameManager extends egret.EventDispatcher {
 		// vo.GameData.matchInfo.money = data.Value.Balance - vo.GameData.matchInfo.allScore / vo.GameData.matchInfo.bili;
 		// core.NotifyManager.getInstance().sendNotify(core.NotifyConst.LOGIC_BALANCE);
 		vo.GameData.initData.Value.TokenInfo.Balance = data.Value.Balance;
-		if (this.isupdataMoney) {
+		if (this.isupdataMoney && vo.GameData.initData.Value.TokenInfo.Balance) {
+			let ui: MainScenceUI = core.UIManager.getUI(core.UIConst.MainScenceUI);
+			console.log("data.Value.Balance == " + data.Value.Balance);
 			vo.GameData.initData.Value.TokenInfo.Balance = data.Value.Balance;
 			vo.GameData.balance = data.Value.Balance;
 			this.dispatchEventWith(SetEvent.SET_BALANCE_CHANGE);

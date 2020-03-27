@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "loadingbg2_png,open_liang2_png,beat_mp3,jumpBonus_mp3,button_mp3,chooseTools_mp3,bgm_mp3,intoBonus_mp3,entrance_mp3,win_tickup_mp3,intoDong_mp3,zidongStop_mp3,reelRoll_mp3,mobanTips_png,www_png,ooo_png,b2_png,b3_png,mmm_png,b1_png,ccc_png,bigCCC_png,ggg_png,xiaoX_png,smusic_mp3,alwaysImg_png,piayObj_png,jkjkj_png,f5_fnt,f5_png,M6_liang_png",
+			"keys": "loadingbg2_png,open_liang2_png,beat_mp3,jumpBonus_mp3,button_mp3,chooseTools_mp3,bgm_mp3,intoBonus_mp3,entrance_mp3,win_tickup_mp3,intoDong_mp3,zidongStop_mp3,reelRoll_mp3,mobanTips_png,www_png,ooo_png,b2_png,b3_png,mmm_png,b1_png,ccc_png,bigCCC_png,ggg_png,xiaoX_png,smusic_mp3,alwaysImg_png,piayObj_png,jkjkj_png,f5_fnt,f5_png,M6_liang_png,setting_set_png",
 			"name": "preload"
 		},
 		{
@@ -1419,6 +1419,11 @@
 			"name": "M6_liang_png",
 			"type": "image",
 			"url": "assets/icon/headicon/M6_liang.png"
+		},
+		{
+			"name": "setting_set_png",
+			"type": "image",
+			"url": "assets/set/setting_set.png"
 		}
 	]
 }

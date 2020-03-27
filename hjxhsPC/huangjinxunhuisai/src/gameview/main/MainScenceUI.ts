@@ -185,7 +185,7 @@ class MainScenceUI extends core.BaseUI {
 			//弹出
 			core.UIManager.openUI(core.UIConst.StipsUI, core.LayerManager.Layer_Top);
 			let ui: StipsUI = core.UIManager.getUI(core.UIConst.StipsUI);
-			ui.showConfirBtn('您的InstanCash存款已經獲准 · 希望您在我们的赌城 度過美好時光 · 祝您好運！', () => {
+			ui.showConfirBtn('您的InstanCash存款已经获准 · 希望您在我们的赌城 度过美好时光 · 祝您好运！', () => {
 				ui.hide();
 				egret.setTimeout(() => {
 					core.UIManager.openUI(core.UIConst.StipsUI, core.LayerManager.Layer_Top);

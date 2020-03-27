@@ -1,7 +1,7 @@
 {
 	"initial": [
 		"js/egret_36b8d151.js",
-		"js/egret.web_1d511375.js",
+		"js/egret.web_b1651b4.js",
 		"js/eui_4cfe0505.js",
 		"js/assetsmanager_f4112ffb.js",
 		"js/tween_dfc20c22.js",
@@ -15,7 +15,7 @@
 	],
 	"game": [
 		"js/fullscreen_db9d3fb2.js",
-		"js/default.thm_4af0154d.js",
-		"js/main.min_865df940.js"
+		"js/default.thm_653a1762.js",
+		"js/main.min_4902d8c7.js"
 	]
 }
