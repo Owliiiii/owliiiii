@@ -87,6 +87,11 @@ class AutoSetCompoment extends eui.Component {
 	}
 
 	public updata(): void {
+		if(!GameConfig.isFree){
+			this.visible = true;
+		}else{
+			this.visible = false;
+		}
 		egret.Tween.removeTweens(this);
 		this.arrButton.selected = SetConst.AUTO_SHOW;
 		let t: any = this.getXY();
@@ -95,6 +100,11 @@ class AutoSetCompoment extends eui.Component {
 	}
 
 	public goUpdata(): void {
+		if(!GameConfig.isFree){
+			this.visible = true;
+		}else{
+			this.visible = false;
+		}
 		egret.Tween.removeTweens(this);
 		this.arrButton.selected = SetConst.AUTO_SHOW;
 		let t: any = this.getXY();

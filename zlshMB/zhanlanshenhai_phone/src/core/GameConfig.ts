@@ -17,6 +17,10 @@ class GameConfig {
 	 * 快速玩法状态
 	 */
 	public static speedPlay:boolean=false;
+	/**
+	 * 中了免费抽奖
+	 */
+	public static isFree:boolean = false;
 	
     /**
 	 * 加载

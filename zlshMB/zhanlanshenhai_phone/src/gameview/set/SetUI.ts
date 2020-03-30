@@ -38,6 +38,8 @@ class SetUI extends eui.Component {
 	public controllGroup: eui.Group;
 	public startButton: StartButton;
 	public autoButton: AutoStartBtn;
+	public bonusBtn: BonusBtn;
+
 
 	public qukcheckBtn: CheckButton;
 	public qukGroup: eui.Group;
@@ -88,7 +90,7 @@ class SetUI extends eui.Component {
 		this.musicCheck.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTab, this);
 		this.modleCheckButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTab, this);
 		this.exitBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTab, this);
-	    this.btnBg.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTab, this);
+		this.btnBg.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTab, this);
 		core.TimerManager.instance.addTick(1000, -1, this.onFrame, this);
 		this.startButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTab, this);
 		this.autoButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTab, this);
@@ -107,7 +109,10 @@ class SetUI extends eui.Component {
 			SetConst.LONG_TOUCH = true;
 			SetConst.AUTO_SHOW = true;
 			this.startButton.visible = false;
-			this.autoButton.visible = true;
+			if (!GameConfig.isFree) {
+				this.autoButton.visible = true;
+			}
+
 			this.autoButton.isPlay = false;
 			this.autoSetCompoment.goUpdata();
 			SetConst.BETSET_SHOW = false;
@@ -162,14 +167,14 @@ class SetUI extends eui.Component {
 			this.betBtn.visible = this.qukGroup.visible = false;
 		}
 	}
-	public btnBg:eui.Image;
+	public btnBg: eui.Image;
 
 	public onTab(e: egret.TouchEvent): void {
 		switch (e.currentTarget) {
 			case this.btnBg:
-			e.stopPropagation();
-			e.stopImmediatePropagation();
-			break;
+				e.stopPropagation();
+				e.stopImmediatePropagation();
+				break;
 			case this.setBtn:
 				e.stopPropagation();
 				e.stopImmediatePropagation();
@@ -195,7 +200,7 @@ class SetUI extends eui.Component {
 				egret.Tween.get(this.rightGroup).to({ x: 200 }, 200);
 				SetConst.TOP_SHOW = false;
 				SetConst.RIGHT_SHOW = false;
-				
+
 				break;
 			case this.backButton:
 				this.maskRect.visible = false;
@@ -219,7 +224,11 @@ class SetUI extends eui.Component {
 				GameManager.getInstance().dispatchEventWith(SetEvent.SET_HIDE_REWARD);
 				//this.betBtn.enabled = this.qukcheckBtn.enabled = !SetConst.BETSET_SHOW;
 				this.autoButton.visible = false;
-				this.startButton.visible = true;
+
+				if (!GameConfig.isFree) {
+					this.startButton.visible = true;
+				}
+
 
 				break;
 			case this.stage:
@@ -370,12 +379,16 @@ class SetUI extends eui.Component {
 	public updataBtnState(): void {
 		if (SetConst.AUTO || SetConst.AUTO_SHOW) {
 			this.startButton.visible = false;
-			this.autoButton.visible = true;
+			if (!GameConfig.isFree) {
+				this.autoButton.visible = true;
+			}
 			this.autoButton.scaleX = 1;
 			this.autoButton.scaleY = 1;
 		}
 		else {
-			this.startButton.visible = true;
+			if (!GameConfig.isFree) {
+				this.startButton.visible = true;
+			}
 			this.startButton.scaleX = 1;
 			this.startButton.scaleY = 1;
 			this.autoButton.visible = false;
@@ -518,6 +531,17 @@ class SetUI extends eui.Component {
 		}, this);
 	}
 
+	public bonusBtnState(b: boolean) {
+
+		if (b) {
+			egret.Tween.get(this.bonusBtn, { loop: true }).to({ scaleX: 0.85, scaleY: 0.85 }, 700).to({ scaleX: 1, scaleY: 1 }, 700);
+		} else {
+			egret.Tween.removeTweens(this.bonusBtn);
+			this.autoButton.scaleX = 1;
+			this.autoButton.scaleY = 1;
+		}
+	}
+
 	private bottomChange(): void {
 		this.bottomBg.source = SetConst.AUTO ? 'bottom_1_png' : 'bottom_2_png';
 		this.bottomBg.alpha = SetConst.AUTO ? 0.75 : 1;
@@ -526,10 +550,10 @@ class SetUI extends eui.Component {
 		}
 		this.tipLabel.alpha = 1;
 		if (SetConst.AUTO) {
-			
-			if(SetConst.AUTO_COUNT > 99 ){
+
+			if (SetConst.AUTO_COUNT > 99) {
 				this.tipLabel.text = "直到环节自动旋转";
-			}else{
+			} else {
 				this.tipLabel.text = '剩余' + SetConst.AUTO_COUNT + '次自动旋转';
 			}
 			this.tipLabel.scaleX = this.tipLabel.scaleY = 0.7;

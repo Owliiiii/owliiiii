@@ -13,6 +13,7 @@
 		"resource/eui_skins/skins/game/main/btn/CheckSkin.exml",
 		"resource/eui_skins/skins/game/main/BetSetCompomentSkin.exml",
 		"resource/eui_skins/skins/game/main/btn/AutoStartBtnSkin.exml",
+		"resource/eui_skins/skins/game/main/btn/BonusBtnSkin.exml",
 		"resource/eui_skins/skins/game/main/btn/TogleButtonSkin.exml",
 		"resource/eui_skins/skins/game/main/btn/DesButtonSkin.exml",
 		"resource/eui_skins/skins/game/main/btn/MouseButton3Skin.exml",

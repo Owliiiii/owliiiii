@@ -99,8 +99,8 @@ class GameScence extends eui.Component {
 		this.bonusMc.gotoAndPlay('bonusMc', 1);
 		this.bonusMc.x = this.width / 2;
 		this.bonusMc.y = this.height / 2;
-		this.bonusMc.scaleX = 1.31;
-		this.bonusMc.scaleY = 1.3;
+		this.bonusMc.scaleX = 1.32;
+		this.bonusMc.scaleY = 1.32;
 		
 	}
 	//移除免费动画

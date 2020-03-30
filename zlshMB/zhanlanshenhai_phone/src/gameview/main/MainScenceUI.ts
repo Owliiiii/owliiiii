@@ -25,6 +25,7 @@ class MainScenceUI extends core.BaseUI {
 		// this.registerEvent(this, egret.TouchEvent.TOUCH_END, this.onEnd, this);
 		egret.MainContext.instance.stage.addEventListener(egret.TouchEvent.TOUCH_END, this.onEnd, this);
 		this.registerEvent(this.setUI.autoButton, egret.TouchEvent.TOUCH_END, this.onEnd, this);
+		this.registerEvent(this.setUI.bonusBtn, egret.TouchEvent.TOUCH_END, this.onBonusEnd, this);
 		GameManager.getInstance().addEventListener(SetEvent.SET_HIDE_REWARD, this.hideWin, this);
 		this.alpha = 0;
 		egret.Tween.get(this).to({ alpha: 1 }, 1000).wait(5000).call(() => {
@@ -65,6 +66,7 @@ class MainScenceUI extends core.BaseUI {
 			}
 			return;
 		}
+
 		if (this.isBegin) {
 			this.isBegin = false;
 			if (SetConst.AUTO_SHOW || SetConst.BETSET_SHOW) return;
@@ -90,6 +92,15 @@ class MainScenceUI extends core.BaseUI {
 				this.gameScence.stopReel();
 			}
 		}
+	}
+	//Bonus
+	public onBonusEnd() {
+		console.log('点击免费游戏');
+		//隐藏动画，跳转界面,替换按钮
+		this.setUI.bonusBtn.visible = false;
+		this.gameScence.removeBonusMc();
+		// GameConfig.isFree = false;
+		this.setUI.bonusBtnState(false);
 	}
 
 	public curtime: number = 0;
@@ -149,7 +160,7 @@ class MainScenceUI extends core.BaseUI {
 
 	private showReward: number = 0;
 	//public curtime: number = 0;
-	public bonusPos:Array<any>;//保存3个中奖的位置
+	public bonusPos: Array<any>;//保存3个中奖的位置
 
 	public showWin(arr: Array<any>): void {
 		SetConst.REWARD_SHOW = true;
@@ -159,19 +170,30 @@ class MainScenceUI extends core.BaseUI {
 			});
 		}
 		//进入免费游戏抽奖
-		if (arr.length > 0 && arr[0].Type == "Bonus2" && arr[0].SymbolCount == 3){
+		if (arr.length > 0 && arr[0].Type == "Bonus2" && arr[0].SymbolCount == 3) {
 			//当有3个C1,C1不在中间一列移动到中间
-				this.gameScence.displayBonus(arr[0].Positions);
-				this.bonusPos = [];
-				this.bonusPos = arr[0].Positions;
-				//显示免费中奖的3个动画
-				let positions: Array<any> = arr[0].Positions;
-				// this.gameScence.pent.showkuang2(arr[0].Positions);		//免费旋转3个的框
-				for (let j: number = 0; j < positions.length; j++) {
-					let p: any = positions[j];
-					this.gameScence.showAnimation(p);	//免费旋转3个的动画
-				}
-				return;
+			GameConfig.isFree = true;
+			SetConst.AUTO_COUNT = 0;
+			// SetConst.isCanStopGame = false;
+			// console.log('aaaaaaa111');
+			// this.gameScence.stopReel();
+
+			this.gameScence.displayBonus(arr[0].Positions);
+			this.bonusPos = [];
+			this.bonusPos = arr[0].Positions;
+			//显示免费中奖的3个动画
+			let positions: Array<any> = arr[0].Positions;
+			// this.gameScence.pent.showkuang2(arr[0].Positions);		//免费旋转3个的框
+			for (let j: number = 0; j < positions.length; j++) {
+				let p: any = positions[j];
+				this.gameScence.showAnimation(p);	//免费旋转3个的动画
+			}
+			//按钮状态
+			this.setUI.startButton.visible = false;
+			this.setUI.autoButton.visible = false;
+			this.setUI.bonusBtnState(true);
+			this.setUI.bonusBtn.visible = true;
+			return;
 		}
 		//其他界面状态
 
@@ -326,7 +348,7 @@ class MainScenceUI extends core.BaseUI {
 		if (this.setUI.rewardMc) {
 			this.setUI.rewardMc.stop();
 		}
-		this.setUI.tipLabel.visible=true;
+		this.setUI.tipLabel.visible = true;
 	}
 
 	public setReward(v: number, isA: boolean = true): void {
@@ -354,7 +376,7 @@ class MainScenceUI extends core.BaseUI {
 
 	public setRewardMax(v: number, isA: boolean = true, t: number = 1): void {
 		egret.Tween.removeTweens(this);
-        this.setUI.tipLabel.visible=false;
+		this.setUI.tipLabel.visible = false;
 		let tArr: Array<number> = [0, 2000, 3000, 4000, 9000];
 		let ish: boolean = window.innerWidth > window.innerHeight;
 		let ty: number = 0;

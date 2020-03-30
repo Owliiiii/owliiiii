@@ -42,6 +42,10 @@ var GameConfig = (function () {
      */
     GameConfig.speedPlay = false;
     /**
+     * 中了免费抽奖
+     */
+    GameConfig.isFree = false;
+    /**
      * 最大宽度
      */
     GameConfig.MAX_WIDTH = 1920;

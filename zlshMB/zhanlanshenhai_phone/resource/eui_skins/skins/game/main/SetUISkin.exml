@@ -33,10 +33,13 @@
 
 	<ns1:AutoSetCompoment id="autoSetCompoment" skinName="AutoSetCompomentSkin" y="249" y.ver="1336.75" x.hor="1338" horizontalCenter.ver="0" y.hor="257"/>
 	<e:Group id="controllGroup" x="1085.97" y.ver="251.28" horizontalCenter.ver="0" verticalCenter.ver="283" verticalCenter.hor="-5">
-		<ns1:StartButton id="startButton" x.ver="1085.97" skinName="StartButtonSkin" horizontalCenter.ver="0" y.ver="833.46" scaleX.hor="1" scaleY.hor="1" horizontalCenter.hor="0" verticalCenter.hor="0" horizontalCenter="0" verticalCenter="0"/>
-		<ns1:AutoStartBtn id="autoButton" x.ver="1088" skinName="AutoStartBtnSkin" horizontalCenter.ver="0" y.ver="834.18" scaleX.hor="1" scaleY.hor="1" horizontalCenter.hor="0" verticalCenter.hor="0" horizontalCenter="0" verticalCenter="0" visible.hor="false"/>
+		<ns1:StartButton id="startButton" x.ver="1085.97" skinName="StartButtonSkin" horizontalCenter.ver="0" y.ver="833.46" scaleX.hor="1" scaleY.hor="1" horizontalCenter.hor="0" verticalCenter.hor="0" horizontalCenter="0" verticalCenter="0" visible.ver="false"/>
+		<ns1:AutoStartBtn id="autoButton" x.ver="1088" skinName="AutoStartBtnSkin" horizontalCenter.ver="0" y.ver="834.18" scaleX.hor="1" scaleY.hor="1" horizontalCenter.hor="0" verticalCenter.hor="0" horizontalCenter="0" verticalCenter="0" skinName.hor="AutoStartBtnSkin" visible.hor="false"/>
+		<ns1:BonusBtn id="bonusBtn" scaleX="1" scaleY="1" skinName="BonusBtnSkin" horizontalCenter="0" verticalCenter="0" visible.hor="false" visible.ver="false"/>
+
 	</e:Group>
-	<e:Group id="mcGroup" left="0" right="0" top="0" bottom="0" touchChildren="false" touchEnabled="false" touchThrough="true"/>
+	<e:Group id="mcGroup" left="0" right="0" top="0" bottom="0" touchChildren="false" touchEnabled="false" touchThrough="true">
+	</e:Group>
 	<e:Group height="106.06" left="0" right="0" height.hor="82" y.ver="1078.47" height.ver="254" bottom.hor="0">
 		<e:Group id="rewradMaxGroup" y="424" y.hor="173.27" horizontalCenter.ver="0" y.ver="400.81" anchorOffsetX="231" anchorOffsetY="84" x="436" scaleX="1" scaleY="1" horizontalCenter.hor="0.5" anchorOffsetX.ver="218" anchorOffsetY.ver="79.5" anchorOffsetX.hor="218" anchorOffsetY.hor="79.5">
 		<e:Image source="reward_btnbg_png" x="0" y="0" scaleY="0.7" scaleX="0.7" scaleX.hor="0.65" scaleY.hor="0.65" scaleX.ver="0.66" scaleY.ver="0.66" alpha="0.85"/>

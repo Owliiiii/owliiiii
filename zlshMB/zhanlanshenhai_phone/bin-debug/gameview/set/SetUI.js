@@ -58,7 +58,9 @@ var SetUI = (function (_super) {
             SetConst.LONG_TOUCH = true;
             SetConst.AUTO_SHOW = true;
             _this.startButton.visible = false;
-            _this.autoButton.visible = true;
+            if (!GameConfig.isFree) {
+                _this.autoButton.visible = true;
+            }
             _this.autoButton.isPlay = false;
             _this.autoSetCompoment.goUpdata();
             SetConst.BETSET_SHOW = false;
@@ -163,7 +165,9 @@ var SetUI = (function (_super) {
                 GameManager.getInstance().dispatchEventWith(SetEvent.SET_HIDE_REWARD);
                 //this.betBtn.enabled = this.qukcheckBtn.enabled = !SetConst.BETSET_SHOW;
                 this.autoButton.visible = false;
-                this.startButton.visible = true;
+                if (!GameConfig.isFree) {
+                    this.startButton.visible = true;
+                }
                 break;
             case this.stage:
                 if (SetConst.BETSET_SHOW || SetConst.AUTO_SHOW) {
@@ -306,12 +310,16 @@ var SetUI = (function (_super) {
     SetUI.prototype.updataBtnState = function () {
         if (SetConst.AUTO || SetConst.AUTO_SHOW) {
             this.startButton.visible = false;
-            this.autoButton.visible = true;
+            if (!GameConfig.isFree) {
+                this.autoButton.visible = true;
+            }
             this.autoButton.scaleX = 1;
             this.autoButton.scaleY = 1;
         }
         else {
-            this.startButton.visible = true;
+            if (!GameConfig.isFree) {
+                this.startButton.visible = true;
+            }
             this.startButton.scaleX = 1;
             this.startButton.scaleY = 1;
             this.autoButton.visible = false;
@@ -443,6 +451,16 @@ var SetUI = (function (_super) {
                 }, _this);
             }
         }, this);
+    };
+    SetUI.prototype.bonusBtnState = function (b) {
+        if (b) {
+            egret.Tween.get(this.bonusBtn, { loop: true }).to({ scaleX: 0.85, scaleY: 0.85 }, 700).to({ scaleX: 1, scaleY: 1 }, 700);
+        }
+        else {
+            egret.Tween.removeTweens(this.bonusBtn);
+            this.autoButton.scaleX = 1;
+            this.autoButton.scaleY = 1;
+        }
     };
     SetUI.prototype.bottomChange = function () {
         this.bottomBg.source = SetConst.AUTO ? 'bottom_1_png' : 'bottom_2_png';

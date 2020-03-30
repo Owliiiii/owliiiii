@@ -16,6 +16,8 @@ declare class BetSetCompomentSkin extends eui.Skin{
 }
 declare class AutoStartBtnSkin extends eui.Skin{
 }
+declare class BonusBtnSkin extends eui.Skin{
+}
 declare class CheckSkin extends eui.Skin{
 }
 declare class DesButtonSkin extends eui.Skin{

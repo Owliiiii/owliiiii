@@ -34,6 +34,7 @@ var MainScenceUI = (function (_super) {
         // this.registerEvent(this, egret.TouchEvent.TOUCH_END, this.onEnd, this);
         egret.MainContext.instance.stage.addEventListener(egret.TouchEvent.TOUCH_END, this.onEnd, this);
         this.registerEvent(this.setUI.autoButton, egret.TouchEvent.TOUCH_END, this.onEnd, this);
+        this.registerEvent(this.setUI.bonusBtn, egret.TouchEvent.TOUCH_END, this.onBonusEnd, this);
         GameManager.getInstance().addEventListener(SetEvent.SET_HIDE_REWARD, this.hideWin, this);
         this.alpha = 0;
         egret.Tween.get(this).to({ alpha: 1 }, 1000).wait(5000).call(function () {
@@ -96,6 +97,15 @@ var MainScenceUI = (function (_super) {
             }
         }
     };
+    //Bonus
+    MainScenceUI.prototype.onBonusEnd = function () {
+        console.log('点击免费游戏');
+        //隐藏动画，跳转界面,替换按钮
+        this.setUI.bonusBtn.visible = false;
+        this.gameScence.removeBonusMc();
+        // GameConfig.isFree = false;
+        this.setUI.bonusBtnState(false);
+    };
     MainScenceUI.prototype.canStop = function () {
         for (var i = 0; i < this.gameScence.reelArr.length; i++) {
             var reel = this.gameScence.reelArr[i];
@@ -151,6 +161,11 @@ var MainScenceUI = (function (_super) {
         //进入免费游戏抽奖
         if (arr.length > 0 && arr[0].Type == "Bonus2" && arr[0].SymbolCount == 3) {
             //当有3个C1,C1不在中间一列移动到中间
+            GameConfig.isFree = true;
+            SetConst.AUTO_COUNT = 0;
+            // SetConst.isCanStopGame = false;
+            // console.log('aaaaaaa111');
+            // this.gameScence.stopReel();
             this.gameScence.displayBonus(arr[0].Positions);
             this.bonusPos = [];
             this.bonusPos = arr[0].Positions;
@@ -161,6 +176,11 @@ var MainScenceUI = (function (_super) {
                 var p = positions[j];
                 this.gameScence.showAnimation(p); //免费旋转3个的动画
             }
+            //按钮状态
+            this.setUI.startButton.visible = false;
+            this.setUI.autoButton.visible = false;
+            this.setUI.bonusBtnState(true);
+            this.setUI.bonusBtn.visible = true;
             return;
         }
         //其他界面状态

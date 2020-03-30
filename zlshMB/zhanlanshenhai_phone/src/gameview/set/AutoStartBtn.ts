@@ -23,6 +23,10 @@ class AutoStartBtn extends eui.Component {
 		 this.countLabel.visible=this.isPlay;
 	}
 
+	// public bonusBtn(isBonus:boolean){
+	// 	this.bg.source = isBonus?'btn_autogame_selected_png':'rightbar_autoplay_normal_png';
+	// }
+
 	public get isPlay():boolean
 	{
 		return this._isPlay;

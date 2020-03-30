@@ -88,6 +88,12 @@ var AutoSetCompoment = (function (_super) {
         return { x: x, y: y };
     };
     AutoSetCompoment.prototype.updata = function () {
+        if (!GameConfig.isFree) {
+            this.visible = true;
+        }
+        else {
+            this.visible = false;
+        }
         egret.Tween.removeTweens(this);
         this.arrButton.selected = SetConst.AUTO_SHOW;
         var t = this.getXY();
@@ -95,6 +101,12 @@ var AutoSetCompoment = (function (_super) {
         this.y = t.y;
     };
     AutoSetCompoment.prototype.goUpdata = function () {
+        if (!GameConfig.isFree) {
+            this.visible = true;
+        }
+        else {
+            this.visible = false;
+        }
         egret.Tween.removeTweens(this);
         this.arrButton.selected = SetConst.AUTO_SHOW;
         var t = this.getXY();

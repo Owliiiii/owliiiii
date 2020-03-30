@@ -18,6 +18,9 @@ var AutoStartBtn = (function (_super) {
     AutoStartBtn.prototype.childrenCreated = function () {
     };
     Object.defineProperty(AutoStartBtn.prototype, "isPlay", {
+        // public bonusBtn(isBonus:boolean){
+        // 	this.bg.source = isBonus?'btn_autogame_selected_png':'rightbar_autoplay_normal_png';
+        // }
         get: function () {
             return this._isPlay;
         },
