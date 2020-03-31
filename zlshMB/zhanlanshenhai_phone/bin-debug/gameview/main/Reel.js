@@ -298,7 +298,6 @@ var ReelItem = (function (_super) {
             this.icons.visible = false;
         }
         if (this.value == "M4") {
-            console.log("看看多少次");
             if (!GameConfig.speedPlay) {
                 // SoundManager.getInstance().playEffect(SoundConst.DEJIANG);
             }
@@ -321,8 +320,8 @@ var ReelItem = (function (_super) {
             this.maoziMC6.gotoAndPlay('c1', -1);
             this.maoziMC6.x = this.width / 2;
             this.maoziMC6.y = this.height / 2;
-            this.maoziMC6.scaleX = 1.4;
-            this.maoziMC6.scaleY = 1.4;
+            this.maoziMC6.scaleX = 1.36;
+            this.maoziMC6.scaleY = 1.36;
             this.icons.visible = false;
         }
         else {

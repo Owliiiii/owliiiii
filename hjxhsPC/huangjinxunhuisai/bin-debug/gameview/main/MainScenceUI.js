@@ -123,7 +123,7 @@ var MainScenceUI = (function (_super) {
             //弹出
             core.UIManager.openUI(core.UIConst.StipsUI, core.LayerManager.Layer_Top);
             var ui_2 = core.UIManager.getUI(core.UIConst.StipsUI);
-            ui_2.showConfirBtn('您的InstanCash存款已经获准 · 希望您在我们的赌城 度过美好时光 · 祝您好运！', function () {
+            ui_2.showConfirBtn('您的存款已被通过.我们希望您在我们的赌城玩得愉快.祝您好运！', function () {
                 ui_2.hide();
                 egret.setTimeout(function () {
                     core.UIManager.openUI(core.UIConst.StipsUI, core.LayerManager.Layer_Top);

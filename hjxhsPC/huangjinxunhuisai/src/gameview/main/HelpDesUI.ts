@@ -54,7 +54,6 @@ class HelpDesUI extends core.BaseUI {
 
 	public onFrame(): void {
 		if (this.webview) {
-			
 			this.webview.width = window.innerWidth < GameConfig.MAX_WIDTH ? window.innerWidth * window.devicePixelRatio : GameConfig.MAX_WIDTH * window.devicePixelRatio;
 			// console.log(this.webview.width+" ==UUU=" + window.innerWidth * window.devicePixelRatio );
 			this.webview.x = this.mainGroup.x * window.devicePixelRatio;

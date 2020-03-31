@@ -158,11 +158,11 @@ data-content-height="990" data-multi-fingered="2" data-show-fps="false" data-sho
         loadNext();
     };
 
-    var loadSingleScript = function (src, callback) {
+    var loadSingleScript = function (src, callback) { 
         var s = document.createElement('script');
         s.async = false;
         s.src = src;
-        s.addEventListener('load', function () {
+        s.addEventListener('load', function () { 
             s.parentNode.removeChild(s);
             s.removeEventListener('load', arguments.callee, false);
             callback();

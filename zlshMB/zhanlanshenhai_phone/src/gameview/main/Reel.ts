@@ -5,7 +5,7 @@ class Reel extends eui.Component {
 	public kGroup: eui.Group;
 	public static START_CHANEL: egret.SoundChannel;
 	public isAction: boolean = false;
-	public static REEL_MODE=0;
+	public static REEL_MODE = 0;
 	/**
 	 * 展示数量
 	 */
@@ -73,21 +73,19 @@ class Reel extends eui.Component {
 		this.addEventListener(egret.Event.ENTER_FRAME, this.onFrame, this);
 	}
 
-	public showAnimation(i:number): void {
-		let item: ReelItem = this.kGroup.getChildAt(i+1) as ReelItem;
+	public showAnimation(i: number): void {
+		let item: ReelItem = this.kGroup.getChildAt(i + 1) as ReelItem;
 		item.goAnimation();
 	}
-	public hideAnimation(i:number): void {
-		let item: ReelItem = this.kGroup.getChildAt(i+1) as ReelItem;
+	public hideAnimation(i: number): void {
+		let item: ReelItem = this.kGroup.getChildAt(i + 1) as ReelItem;
 		item.hideAnimation();
 	}
 
-	public clearAllAnimation():void
-	{
-		for(let i:number=0;i<this.kGroup.numChildren;i++)
-		{
+	public clearAllAnimation(): void {
+		for (let i: number = 0; i < this.kGroup.numChildren; i++) {
 			let item: ReelItem = this.kGroup.getChildAt(i) as ReelItem;
-			 item.hideAnimation();
+			item.hideAnimation();
 		}
 	}
 
@@ -99,7 +97,7 @@ class Reel extends eui.Component {
 				if (item.y >= this.height) {
 					let t1: number = SetConst.SPEED_PLAY ? Reel.QUK_TIME : Reel.TIME;
 					//let t2: number = GameConfig.speedPlay ? Reel.QUK_STOPTIME : Reel.STOPTIME;
-					let t3:Array<number>=SetConst.SPEED_PLAY?[200,350,500,650,800]:[0,400,730,930,1030];
+					let t3: Array<number> = SetConst.SPEED_PLAY ? [200, 350, 500, 650, 800] : [0, 400, 730, 930, 1030];
 					if (egret.getTimer() - this.curTime > t1 + t3[this.index]) {
 						this.isAction = false;
 						this.overReel();
@@ -118,11 +116,10 @@ class Reel extends eui.Component {
 
 	private overReel(): void {
 		egret.Tween.removeTweens(this);
-		if(!this.stopState)
-		{
-           SoundManager.getInstance().playEffect(SoundConst.REELEND);
+		if (!this.stopState) {
+			SoundManager.getInstance().playEffect(SoundConst.REELEND);
 		}
-		
+
 		for (let i: number = 0; i < this.kGroup.numChildren; i++) {
 			let item: ReelItem = this.kGroup.getChildAt(i) as ReelItem;
 			egret.Tween.removeTweens(item);
@@ -132,7 +129,7 @@ class Reel extends eui.Component {
 			item.value = i > 0 && i < 4 ? this.curReelData[i - 1] : 'M' + Math.ceil(Math.random() * 5);
 			// item.setVir(false);
 			//item.value ='M'+Math.ceil(Math.random()*9);
-			let t:number=this.stopState?0:300;
+			let t: number = this.stopState ? 0 : 300;
 			egret.Tween.get(item).to({ y: ty }, t, egret.Ease.cubicOut).call(() => {
 				if (this.index == 4 && i == this.kGroup.numChildren - 1) {
 					core.NotifyManager.getInstance().sendNotify(core.NotifyConst.LOGIC_ROUNDOVER);
@@ -158,7 +155,7 @@ class Reel extends eui.Component {
 		egret.Tween.get(this).wait(200).call(() => {
 			this.isAction = true;
 			this.stopState = false;
-			this.curTime = egret.getTimer()+99999;
+			this.curTime = egret.getTimer() + 99999;
 			//this.curReelData = JSON.parse(JSON.stringify(this.targetReelData));		
 		}, this);
 	}
@@ -173,32 +170,32 @@ class Reel extends eui.Component {
 	/**
 	 * 中奖的3个移到中间栏
 	 */
-	public moveC1y(c1Y:number):void{
+	public moveC1y(c1Y: number): void {
 		for (let i: number = 0; i < this.kGroup.numChildren; i++) {
 			let item: ReelItem = this.kGroup.getChildAt(i) as ReelItem;
 			//移动到中间
 			// egret.Tween.get(item).to({ y: 201 },500);
-			let c1y0:number = item.y + 201;
-			let c1y2:number = item.y - 201;
-			if(c1Y == 0){
+			let c1y0: number = item.y + 201;
+			let c1y2: number = item.y - 201;
+			if (c1Y == 0) {
 				egret.Tween.get(item).to({ y: c1y0 }, 700);
 			}
-			if(c1Y == 2){
+			if (c1Y == 2) {
 				egret.Tween.get(item).to({ y: c1y2 }, 700);
 			}
 		}
 	}
-	public huanYuan(c1Y:number):void{
+	public huanYuan(c1Y: number): void {
 		for (let i: number = 0; i < this.kGroup.numChildren; i++) {
 			let item: ReelItem = this.kGroup.getChildAt(i) as ReelItem;
 			//移动到中间
 			// egret.Tween.get(item).to({ y: 201 },500);
-			let c1y0:number = item.y + 201;
-			let c1y2:number = item.y - 201;
-			if(c1Y == 0){
+			let c1y0: number = item.y + 201;
+			let c1y2: number = item.y - 201;
+			if (c1Y == 0) {
 				egret.Tween.get(item).to({ y: c1y2 }, 1);
 			}
-			if(c1Y == 2){
+			if (c1Y == 2) {
 				egret.Tween.get(item).to({ y: c1y0 }, 1);
 			}
 		}
@@ -242,15 +239,15 @@ class ReelItem extends eui.Component {
 	}
 
 
-    public isA:boolean=false;
+	public isA: boolean = false;
 	public goAnimation(): void {
-		if(this.isA) return;
-		this.isA=true;
+		if (this.isA) return;
+		this.isA = true;
 		egret.Tween.removeTweens(this.icons);
 		this.value = this._value;
 		// this.aIcon.visible=true;
-		if(this.value == "WW"){
-			if(!GameConfig.speedPlay){
+		if (this.value == "WW") {
+			if (!GameConfig.speedPlay) {
 				// SoundManager.getInstance().playEffect(SoundConst.WWMUSIC);
 			}
 			if (!this.maoziMC) {
@@ -260,11 +257,11 @@ class ReelItem extends eui.Component {
 			this.maoziMC.gotoAndPlay('ww', -1);
 			this.maoziMC.x = this.width / 2;
 			this.maoziMC.y = this.height / 2;
-			this.maoziMC.scaleX=1.4;
-			this.maoziMC.scaleY=1.4;
+			this.maoziMC.scaleX = 1.4;
+			this.maoziMC.scaleY = 1.4;
 			this.icons.visible = false;
 		}
-		if(this.value == "M5"){
+		if (this.value == "M5") {
 			if (!this.maoziMC1) {
 				this.maoziMC1 = game.MCUtils.getMc('m5');
 			}
@@ -272,11 +269,11 @@ class ReelItem extends eui.Component {
 			this.maoziMC1.gotoAndPlay('m5', -1);
 			this.maoziMC1.x = this.width / 2;
 			this.maoziMC1.y = this.height / 2;
-			this.maoziMC1.scaleX=1.4;
-			this.maoziMC1.scaleY=1.4;
+			this.maoziMC1.scaleX = 1.4;
+			this.maoziMC1.scaleY = 1.4;
 			this.icons.visible = false;
 		}
-		if(this.value == "M3"){
+		if (this.value == "M3") {
 			if (!this.maoziMC2) {
 				this.maoziMC2 = game.MCUtils.getMc('m3');
 			}
@@ -284,11 +281,11 @@ class ReelItem extends eui.Component {
 			this.maoziMC2.gotoAndPlay('m3', -1);
 			this.maoziMC2.x = this.width / 2;
 			this.maoziMC2.y = this.height / 2;
-			this.maoziMC2.scaleX=1.4;
-			this.maoziMC2.scaleY=1.4;
+			this.maoziMC2.scaleX = 1.4;
+			this.maoziMC2.scaleY = 1.4;
 			this.icons.visible = false;
 		}
-		if(this.value == "M1"){
+		if (this.value == "M1") {
 			if (!this.maoziMC3) {
 				this.maoziMC3 = game.MCUtils.getMc('m1');
 			}
@@ -296,11 +293,11 @@ class ReelItem extends eui.Component {
 			this.maoziMC3.gotoAndPlay('m1', -1);
 			this.maoziMC3.x = this.width / 2;
 			this.maoziMC3.y = this.height / 2;
-			this.maoziMC3.scaleX=1.4;
-			this.maoziMC3.scaleY=1.4;
+			this.maoziMC3.scaleX = 1.4;
+			this.maoziMC3.scaleY = 1.4;
 			this.icons.visible = false;
 		}
-		if(this.value == "M2"){
+		if (this.value == "M2") {
 			if (!this.maoziMC4) {
 				this.maoziMC4 = game.MCUtils.getMc('m2');
 			}
@@ -308,13 +305,12 @@ class ReelItem extends eui.Component {
 			this.maoziMC4.gotoAndPlay('m2', -1);
 			this.maoziMC4.x = this.width / 2;
 			this.maoziMC4.y = this.height / 2;
-			this.maoziMC4.scaleX=1.4;
-			this.maoziMC4.scaleY=1.4;
+			this.maoziMC4.scaleX = 1.4;
+			this.maoziMC4.scaleY = 1.4;
 			this.icons.visible = false;
 		}
-		if(this.value == "M4"){
-			console.log("看看多少次");
-			if(!GameConfig.speedPlay){
+		if (this.value == "M4") {
+			if (!GameConfig.speedPlay) {
 				// SoundManager.getInstance().playEffect(SoundConst.DEJIANG);
 			}
 			if (!this.maoziMC5) {
@@ -324,11 +320,11 @@ class ReelItem extends eui.Component {
 			this.maoziMC5.gotoAndPlay('m4', -1);
 			this.maoziMC5.x = this.width / 2;
 			this.maoziMC5.y = this.height / 2;
-			this.maoziMC5.scaleX=1.4;
-			this.maoziMC5.scaleY=1.4;
+			this.maoziMC5.scaleX = 1.4;
+			this.maoziMC5.scaleY = 1.4;
 			this.icons.visible = false;
 		}
-		if(this.value == "C1"){
+		if (this.value == "C1") {
 			if (!this.maoziMC6) {
 				this.maoziMC6 = game.MCUtils.getMc('c1');
 			}
@@ -336,17 +332,17 @@ class ReelItem extends eui.Component {
 			this.maoziMC6.gotoAndPlay('c1', -1);
 			this.maoziMC6.x = this.width / 2;
 			this.maoziMC6.y = this.height / 2;
-			this.maoziMC6.scaleX=1.4;
-			this.maoziMC6.scaleY=1.4;
+			this.maoziMC6.scaleX = 1.36;
+			this.maoziMC6.scaleY = 1.36;
 			this.icons.visible = false;
-		}else{
+		} else {
 			egret.Tween.get(this.icons, { loop: true }).to({ scaleX: 1, scaleY: 1 }, 700).to({ scaleX: 1.2, scaleY: 1.2 }, 700);
 		}
-		
+
 	}
 
 	public hideAnimation(): void {
-		this.isA=false;
+		this.isA = false;
 		if (this.maoziMC && this.maoziMC.parent) {
 			this.maoziMC.parent.removeChild(this.maoziMC);
 			this.maoziMC.stop();
@@ -377,9 +373,9 @@ class ReelItem extends eui.Component {
 		}
 		// this.aIcon.visible=false;
 		egret.Tween.removeTweens(this.icons);
-		this.icons.scaleX=1;
-		this.icons.scaleY=1;
+		this.icons.scaleX = 1;
+		this.icons.scaleY = 1;
 		this.value = this._value;
 	}
-	
+
 }
