@@ -8,6 +8,7 @@ module core {
 			this.initSize();
 			this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAdd, this);
 			this.addEventListener(egret.Event.REMOVED_FROM_STAGE, this.onRemove, this);
+			
 			LayerManager.getInstance().addEventListener(SetEvent.SET_OR_CHANGE, this.onOChange, this);
 			this.onOChange();
 		}
@@ -45,6 +46,7 @@ module core {
 		public upDataStateHor(): void {
 
 		}
+		
 
 		private onResize(): void {
 			egret.updateAllScreens();
@@ -57,11 +59,17 @@ module core {
 		}
 
 		public updataHor(): void {
-
+			let ui: MainScenceUI = core.UIManager.getUI(core.UIConst.MainScenceUI);
+			if(ui){
+				ui.setUI.updataState();
+			}
 		}
 
 		public updataVer(): void {
-
+			let ui: MainScenceUI = core.UIManager.getUI(core.UIConst.MainScenceUI);
+			if(ui){
+				ui.setUI.updataState();
+			}
 		}
 
 		public initSize(): void {

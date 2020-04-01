@@ -17,7 +17,10 @@ class SetUI extends eui.Component {
 	public setBtn: eui.Button;
 	public moreBtn: eui.Button;
 	public betBtn: eui.ToggleButton;
-
+	public t0: eui.Label;
+	public t1: eui.Label;
+	public t2: eui.Label;
+	public t3: eui.Label;
 
 
 	public rightGroup: eui.Group;
@@ -68,6 +71,7 @@ class SetUI extends eui.Component {
 
 	public childrenCreated(): void {
 		super.childrenCreated();
+		this.updataState();
 		this.musicCheck.selected = SoundManager.getInstance().effectOn;
 		this.setBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTab, this);
 		this.maskRect.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTab, this);
@@ -102,7 +106,7 @@ class SetUI extends eui.Component {
 		GameManager.getInstance().addEventListener(SetEvent.SET_MUSIC_CHANGE, this.onDataChanged, this);
 		this.autoSetCompoment.addEventListener(SetEvent.SET_STATE_CHANGE, this.onStateChange, this);
 		this.betSetCompoment.addEventListener(SetEvent.SET_STATE_CHANGE, this.onStateChange, this);
-
+		
 		GameManager.getInstance().addEventListener(SetEvent.SET_MODLE, this.onModleChange, this);
 		core.MyUIUtils.addLongTouch(this.startButton, () => {
 			SoundManager.getInstance().playEffect(SoundConst.BUTTON);
@@ -128,6 +132,26 @@ class SetUI extends eui.Component {
 
 		this.rewradMaxGroup.visible = false;
 	}
+
+	public updataState(): void {
+		if (window.innerWidth >= window.innerHeight) {
+			//蓝色字体
+			this.t0.textColor = 0x0ED9F7;
+			this.t1.textColor = 0x0ED9F7;
+			this.t2.textColor = 0x0ED9F7;
+			this.t3.textColor = 0x0ED9F7;
+		}
+		else {
+			// this.currentState = 'ver'+SetConst.MODLE;
+			this.t0.textColor = 0xFCCB44;
+			this.t1.textColor = 0xFCCB44;
+			this.t2.textColor = 0xFCCB44;
+			this.t3.textColor = 0xFCCB44;
+		}
+		
+	}
+
+	
 
 	public updataHor(): void {
 		this.updataSame();

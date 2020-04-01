@@ -57,18 +57,17 @@ module core {
 
 			// }, false);   
 
-			egret.MainContext.instance.stage.addEventListener(egret.StageOrientationEvent.ORIENTATION_CHANGE, () => {
-				// if (egret.Capabilities.os == 'iOS') {
-				// 	let JQ = window['$'];
-				// 	JQ('#nvLayer').show();
-				// }
-				this.dispatchEventWith(SetEvent.SET_OR_CHANGE);
-			}, this);
+			// egret.MainContext.instance.stage.addEventListener(egret.StageOrientationEvent.ORIENTATION_CHANGE, () => {
+			// 	// if (egret.Capabilities.os == 'iOS') {
+			// 	// 	let JQ = window['$'];
+			// 	// 	JQ('#nvLayer').show();
+			// 	// }
+			// 	this.dispatchEventWith(SetEvent.SET_OR_CHANGE);
+			// }, this);
 
 			window.onresize = () => {
 				this.dispatchEventWith(SetEvent.SET_OR_CHANGE);
 			};
-
 		}
 		/**添加UI到舞台 */
 		public addUI(ui: any, layer: number = 1) {

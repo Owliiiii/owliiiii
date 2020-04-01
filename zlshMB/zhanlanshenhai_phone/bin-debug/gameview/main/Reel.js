@@ -69,12 +69,74 @@ var Reel = (function (_super) {
         if (this.isAction) {
             for (var i = 0; i < this.kGroup.numChildren; i++) {
                 var item = this.kGroup.getChildAt(i);
+                var stopTime = 600;
                 item.y += this.reelSpeed;
                 if (item.y >= this.height) {
-                    var t1 = SetConst.SPEED_PLAY ? Reel.QUK_TIME : Reel.TIME;
-                    //let t2: number = GameConfig.speedPlay ? Reel.QUK_STOPTIME : Reel.STOPTIME;
-                    var t3 = SetConst.SPEED_PLAY ? [200, 350, 500, 650, 800] : [0, 400, 730, 930, 1030];
-                    if (egret.getTimer() - this.curTime > t1 + t3[this.index]) {
+                    var num3 = 4 - GameConfig.twoC1Index; //1,2,3
+                    for (var k = 1; k <= num3; k++) {
+                        if (GameConfig.isTwo && this.index == (GameConfig.twoC1Index + k)) {
+                            stopTime = 1500;
+                        }
+                    }
+                    var t1 = GameConfig.speedPlay ? 250 : 700; //Reel.QUK_TIME : Reel.TIME;
+                    var t2 = GameConfig.speedPlay ? 250 : stopTime; //Reel.QUK_STOPTIME : Reel.STOPTIME;
+                    // let t3: Array<number> = GameConfig.speedPlay ? [300, 350, 500, 650, 800] : [0, 400, 730, 930, 1030];
+                    for (var j = 1; j <= num3; j++) {
+                        if (this.index == (GameConfig.twoC1Index + j) && GameConfig.isTest) {
+                            // console.log("第" + this.index + "列停止");
+                            // if(SoundManager.getInstance().effectOn && this.chanel == null){
+                            // 	SoundManager.getInstance().playMusic(SoundConst.C1TWO, 1).then((chanel) => {
+                            // 		this.chanel = chanel; 
+                            // 	});
+                            // };
+                            if (!this.c1MC) {
+                                this.c1MC = game.MCUtils.getMc('c1mc');
+                            }
+                            this.addChild(this.c1MC);
+                            this.c1MC.gotoAndPlay('c1mc', -1);
+                            this.c1MC.x = this.kGroup.width / 2;
+                            this.c1MC.y = this.kGroup.height / 2;
+                            this.c1MC.scaleX = 1;
+                            this.c1MC.scaleY = 1;
+                            GameConfig.isTest = false;
+                            // t1 = t1+1000;
+                            t2 = t2 + 500;
+                            ;
+                            if (this.index > GameConfig.threeC1Index) {
+                                this.c1MC.visible = false;
+                                t2 = t2 - 800;
+                            }
+                            else {
+                                this.c1MC.visible = true;
+                            }
+                        }
+                    }
+                    // if(!GameConfig.isData){		//等待数据返回
+                    // 	t2 = 99999;
+                    // }
+                    var t3 = 500;
+                    // if(!GameConfig.speedPlay){
+                    // 	t3 = 500;
+                    // }
+                    if (egret.getTimer() - this.curTime > t1 + (t2 * this.index + t3) && !GameConfig.isTest) {
+                        // if(GameConfig.oneC1Index <= 2){
+                        // 	SoundManager.getInstance().playEffect(SoundConst.DENG);
+                        // }
+                        if (GameConfig.twoC1Index != -1) {
+                            if (this.index == GameConfig.twoC1Index) {
+                                GameConfig.isTest = true;
+                            }
+                            if (this.index == GameConfig.twoC1Index + 1) {
+                                GameConfig.isTest = true;
+                            }
+                            if (this.index == GameConfig.twoC1Index + 2) {
+                                GameConfig.isTest = true;
+                            }
+                        }
+                        // if(this.index == GameConfig.twoC1Index && GameConfig.threeC1Index == -1){
+                        // 	console.log("CCCCCCC");
+                        // 	GameConfig.isTest = true;
+                        // }
                         this.isAction = false;
                         this.overReel();
                         return;
@@ -89,11 +151,17 @@ var Reel = (function (_super) {
             }
         }
     };
+    Reel.prototype.stopMusic = function () {
+        if (this.chanel) {
+            this.chanel.stop();
+            this.chanel = null;
+        }
+    };
     Reel.prototype.overReel = function () {
         var _this = this;
         egret.Tween.removeTweens(this);
         if (!this.stopState) {
-            SoundManager.getInstance().playEffect(SoundConst.REELEND);
+            // SoundManager.getInstance().playEffect(SoundConst.REEL_STOP);
         }
         var _loop_1 = function (i) {
             var item = this_1.kGroup.getChildAt(i);
@@ -103,10 +171,22 @@ var Reel = (function (_super) {
             item.y = this_1.stopState ? ty : i * item.height - item.height + 100;
             item.value = i > 0 && i < 4 ? this_1.curReelData[i - 1] : 'M' + Math.ceil(Math.random() * 5);
             // item.setVir(false);
-            //item.value ='M'+Math.ceil(Math.random()*9);
+            //item.value ='M'+Math.ceil(Math.random()*5);
+            // if((i > 0 && i < 4 ? this.curReelData[i - 1] : 'M' + Math.ceil(Math.random() * 5)) == "C1" && this.index <= 2 && !this.stopState){
+            // 	SoundManager.getInstance().playEffect(SoundConst.DENG);
+            // }
             var t = this_1.stopState ? 0 : 300;
+            egret.setTimeout(function () {
+                if (_this.c1MC && _this.c1MC.parent) {
+                    _this.c1MC.parent.removeChild(_this.c1MC);
+                    _this.c1MC.stop();
+                    // this.stopMusic();
+                }
+            }, this_1, 300);
             egret.Tween.get(item).to({ y: ty }, t, egret.Ease.cubicOut).call(function () {
                 if (_this.index == 4 && i == _this.kGroup.numChildren - 1) {
+                    // GameConfig.twoC1Index = -1;
+                    GameConfig.isTest = false;
                     core.NotifyManager.getInstance().sendNotify(core.NotifyConst.LOGIC_ROUNDOVER);
                 }
             }, this_1);
@@ -133,7 +213,7 @@ var Reel = (function (_super) {
             _this.isAction = true;
             _this.stopState = false;
             _this.curTime = egret.getTimer() + 99999;
-            //this.curReelData = JSON.parse(JSON.stringify(this.targetReelData));		
+            // this.curReelData = JSON.parse(JSON.stringify(this.targetReelData));		
         }, this);
     };
     Reel.prototype.stop = function () {

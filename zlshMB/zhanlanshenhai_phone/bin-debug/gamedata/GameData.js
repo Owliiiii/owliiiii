@@ -25,6 +25,10 @@ var vo;
          */
         GameData.autoPlayCount = 0;
         /**
+         * 次数
+         */
+        GameData.TotalActionCount = 0;
+        /**
              * 赔付表
              */
         GameData.payData = [];

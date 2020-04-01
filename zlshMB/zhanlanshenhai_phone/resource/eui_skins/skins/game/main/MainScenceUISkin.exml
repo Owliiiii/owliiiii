@@ -15,5 +15,84 @@
 		</e:Group>
 	</e:Group>
 	<ns1:SetUI id="setUI" left="0" right="0" top.hor="0" bottom.hor="0" currentState.hor="hor" currentState.ver="ver" skinName="SetUISkin" left.ver="0" right.ver="0" bottom.ver="0" top.ver="0" left.hor="-2" right.hor="2"/>
+
+	<e:Group id="freeGroup" left="0" right="0" top="0" bottom="0" visible.hor="false" visible.ver="false">
+		<e:Group width.ver="1303" height="787" scaleX="0.58" scaleY="0.58" horizontalCenter="0.5" verticalCenter="-123.5" scaleX.hor="1" scaleY.hor="1" width.hor="1334" height.hor="750" horizontalCenter.hor="0" verticalCenter.hor="0">
+			<e:Image id="bg1" source="freeBG_png" scaleX="1" scaleY="1" left="0" right="0" top="0" bottom="0"/>
+			<e:Image source="freeTxt_png" includeIn="hor" y="123.8" scaleX="1" scaleY="1" horizontalCenter="0"/>
+
+			<!--<e:Group id="freeNumGroup" width="200" height="200" x="891" anchorOffsetX.hor="0" width.hor="424.24" x.hor="812.21" y.hor="5.9" anchorOffsetY.hor="0" height.hor="153.03" scaleX="1" scaleY="1" visible.hor="false" x.ver="754.655172" y.ver="-159.103448" scaleX.ver="1.2" scaleY.ver="1.2" anchorOffsetX="0" width="415.52">-->
+
+
+
+			<e:Group id="freeNumGroup" width="200" height="200" x="290" scaleX="1" scaleY="1" anchorOffsetX.ver="0" width.ver="510.87" anchorOffsetX.hor="0" width.hor="459.09" x.hor="818" x.ver="734" top.hor="0" top.ver="0" visible.ver="false" visible.hor="false">
+				<e:Image source="fanbei_png" x="234" y="30" scaleX="1" scaleY="1" x.ver="330" y.ver="24" scaleX.ver="1" scaleY.ver="1"/>
+				<e:Image source="rotation_png" x="48.49" y="30" scaleX="1" scaleY="1" x.ver="60.49" y.ver="24" scaleX.ver="1" scaleY.ver="1"/>
+				<e:Label id="rotateNum" text="Label" x="83" y="67" text.hor="8" x.hor="67.48" y.hor="81" x.ver="79.19" y.ver="78.12" scaleX.ver="1" scaleY.ver="1" text.ver="8" size.ver="60" size.hor="60"/>
+				<e:Label id="fanbeiNum" text="Label" x="300.58" y="46.51" text.hor="X15" x.hor="251" y.hor="84.5" x.ver="368.61" y.ver="80.47" scaleX.ver="1" scaleY.ver="1" text.ver="X2" size.ver="60" size.hor="60"/>
+			</e:Group>
+			<e:Image id="beiKe_0" source="with_pearl_01_png" x="150.12" y="160" y.hor="132.81" x.hor="144.05" x.ver="149.275862" y.ver="182.78" scaleX.ver="0.9" scaleY.ver="0.9"/>
+			<e:Image id="beiKe_x0" source="pearl_text5_png" x="237.7" y="224" visible.hor="false" x.ver="216.27" y.ver="310.86" scaleX.ver="1.2" scaleY.ver="1.2" visible.ver="false"/>
+			<e:Image id="beiKe_1" source="with_pearl_01_png" x="497.79" y="135.16" x.ver="503.49" y.ver="182.6" scaleX.ver="0.9" scaleY.ver="0.9"/>
+			<e:Image x="247.7" y="234" id="beiKe_x1" source="pearl_text7_png" x.hor="636.85" y.hor="304" visible.hor="false" x.ver="622.79" y.ver="327.2" scaleX.ver="1.2" scaleY.ver="1.2" visible.ver="false"/>
+			<e:Image id="beiKe_2" source="with_pearl_01_png" x="860.01" y="133.06" x.ver="847.7" y.ver="176.3" scaleX.ver="0.9" scaleY.ver="0.9"/>
+			<e:Image x="636.85" y="304" id="beiKe_x2" source="pearl_text7_png" source.hor="pearl_text15_png" x.hor="962.85" visible.hor="false" x.ver="964.4" y.ver="300.5" scaleX.ver="1.2" scaleY.ver="1.2" visible.ver="false"/>
+			<e:Image id="beiKe_3" source="with_pearl_01_png" x="256.12" y="291" y.hor="286.44" x.ver="274" y.ver="333.8" scaleX.ver="0.9" scaleY.ver="0.9"/>
+			<e:Image x="355.85" y="464" id="beiKe_x3" source="pearl_text10_png" visible.hor="false" x.ver="359.06" y.ver="461.02" scaleX.ver="1.2" scaleY.ver="1.2" visible.ver="false"/>
+			<e:Image id="beiKe_4" source="with_pearl_01_png" x="667.12" y="284" y.hor="291.6" x.ver="659.5" y.ver="332.5" scaleX.ver="0.9" scaleY.ver="0.9"/>
+			<e:Image x="365.85" y="474" id="beiKe_x4" source="pearl_text10_png" x.hor="768.37" y.hor="463.6" visible.hor="false" x.ver="743" y.ver="467" scaleX.ver="1.2" scaleY.ver="1.2" visible.ver="false"/>
+			</e:Group>
+			<!--<e:Image id="bg1" source="freeBG_png" left="0" right="0" top.ver="0" bottom="0" scaleX.ver="1" scaleY.ver="1" width.ver="1293.103448275862" height.ver="2300" x.ver="3.4482758620689657" y.ver="-543.1034482758621" scaleX.hor="1.7241379310344829" scaleY.hor="1.7241379310344829" scaleX="1" scaleY="1" horizontalCenter="0" verticalCenter="0" left.hor="0" right.hor="0" bottom.hor="0" top.hor="0" left.hor="0" right.hor="0" top.hor="0" bottom.hor="0"/>-->
+
+
+
+
+
+
+
+
+
+
+		</e:Group>
+
+
+
+
+
+
+
+	<!--</e:Group>-->
+	<e:Group id="tipsGroup" left="0" right="0" top="0" bottom="0" width.ver="750" height.ver="1334" scaleX.ver="0.58" scaleY.ver="0.5" visible.ver="false" visible.hor="false">
+		<e:Image source="freeKuang_png" horizontalCenter="0" verticalCenter="0" scaleX="0.85" scaleY="0.85" y.ver="795"/>
+		<e:Group id="pickFree" width="822.73" height="546.97" scaleX="1" scaleY="1" anchorOffsetX="0" horizontalCenter="2.5" verticalCenter="-0.5" anchorOffsetY="0" y.ver="795">
+			<ns1:MouseButton id="pickFreeBtn" label="Button" x="350" y="411" label.hor="" horizontalCenter.hor="-0.3650000000000091" scaleX.hor="1.2" scaleY.hor="1.2" y.hor="401.88" label.ver="" horizontalCenter.ver="-0.3650000000000091" y.ver="425.65">
+				<ns1:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="freeBtn_png" source.down="freeBtn_H_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</ns1:skinName>
+			</ns1:MouseButton>
+			<e:Image source="freeTextTop_png" horizontalCenter="0" verticalCenter="0" scaleX="0.8" scaleY="0.8" horizontalCenter.hor="-0.3650000000000091" verticalCenter.hor="-50.985000000000014"/>
+			<e:Label id="freeNum" text="Label" x="248" y="179" text.hor="8" size.hor="60" textColor.hor="0xe4a6ea" y.hor="153.23" bold.hor="true" x.hor="196.28" textAlign.hor="center" width.hor="80" text.ver="8" size.ver="60" x.ver="237" y.ver="205" textColor.ver="0xe4a6ea"/>
+			<e:Label id="beiNum" text="Label" x="258" y="189" text.hor="2" y.hor="314" x.hor="149" textColor.hor="0x35e4f4" size.hor="60" bold.hor="true" width.hor="80" textAlign.hor="center" y.ver="367.67" x.ver="182" text.ver="2" size.ver="60" textColor.ver="0x35e4f4"/>
+		</e:Group>
+		<e:Group id="overFree" width="822.73" height="546.97" scaleX="1" scaleY="1" anchorOffsetX="0" horizontalCenter="2.5" verticalCenter="-0.5" anchorOffsetY="0" y.ver="795" visible.ver="false" visible.hor="false">
+			<ns1:MouseButton id="overFreeBtn" label="" x.ver="350" y="411" horizontalCenter.ver="0" y.hor="407.09" scaleX.hor="1.2" scaleY.hor="1.2" horizontalCenter.hor="0">
+				<ns1:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="freeBtn_png" source.down="freeBtn_H_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MouseButton>
+			<e:Image source="allmoney_png" x="298.29" y="256" scaleX="0.8" scaleY="0.8"/>
+			<e:Image source="gameMoney_png" x="90.76" y="86"/>
+			<e:Image source="gongnengMoney_png" x="531.76" y="86"/>
+			<e:BitmapLabel id="gameMoney" x="154" y="143" font.hor="free_f0_fnt" text.hor="x1.25" x.hor="96.5" y.hor="148.94" scaleX.hor="1.2" scaleY.hor="1.2" anchorOffsetX.hor="0" anchorOffsetY.hor="0" font.ver="free_f0_fnt" text.ver="x1.25" anchorOffsetX.ver="0" anchorOffsetY.ver="0" x.ver="90.76" y.ver="144.7"/>
+			<e:BitmapLabel id="gongNengMoney" x="164" y="307" text.hor="x12.81" scaleX.hor="1.2" scaleY.hor="1.2" y.hor="151.92" x.hor="522" anchorOffsetX.hor="0" anchorOffsetY.hor="0" font.hor="free_f0_fnt" x.ver="531.76" y.ver="144.7" text.ver="x12.81" anchorOffsetX.ver="0" anchorOffsetY.ver="0" font.ver="free_f0_fnt"/>
+			<e:BitmapLabel id="totalMoney" x.ver="305.66" y="307" text.hor="x14.06" scaleX.hor="1.4" scaleY.hor="1.4" anchorOffsetX.hor="0" anchorOffsetY.hor="0" font.hor="free_f0_fnt" y.hor="342.44" x.hor="277" font.ver="free_f0_fnt" text.ver="x14.06" anchorOffsetX.ver="0" anchorOffsetY.ver="0" y.ver="346.67"/>
+		</e:Group>
+	</e:Group>
 	<e:Image source="OBJL_png" includeIn="hor" alpha="0.5" horizontalCenter="0" verticalCenter="0" visible="false"/>
 </e:Skin>

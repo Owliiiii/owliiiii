@@ -16,7 +16,9 @@ var MainScenceUI = (function (_super) {
         _this.isBegin = false;
         _this.tx = 0;
         _this.ty = 0;
+        _this.indexNum = 0;
         _this.curtime = 0;
+        _this.indexC1 = 0;
         _this.showReward = 0;
         _this.winIndex = 0;
         _this._rewardNum = 0;
@@ -25,21 +27,28 @@ var MainScenceUI = (function (_super) {
         return _this;
     }
     MainScenceUI.prototype.onAdd = function () {
+        var _this = this;
         _super.prototype.onAdd.call(this);
         this.gameScence.init();
         this.gameScence.reset();
         this.updataUI();
+        this.setUI.updataState();
         this.registerEvent(this.gameScence, egret.TouchEvent.TOUCH_BEGIN, this.onBegin, this);
         this.registerEvent(this, egret.TouchEvent.TOUCH_BEGIN, this.onBegin, this);
         // this.registerEvent(this, egret.TouchEvent.TOUCH_END, this.onEnd, this);
         egret.MainContext.instance.stage.addEventListener(egret.TouchEvent.TOUCH_END, this.onEnd, this);
         this.registerEvent(this.setUI.autoButton, egret.TouchEvent.TOUCH_END, this.onEnd, this);
         this.registerEvent(this.setUI.bonusBtn, egret.TouchEvent.TOUCH_END, this.onBonusEnd, this);
+        this.registerEvent(this.pickFreeBtn, egret.TouchEvent.TOUCH_TAP, this.closeFreeUi, this);
         GameManager.getInstance().addEventListener(SetEvent.SET_HIDE_REWARD, this.hideWin, this);
         this.alpha = 0;
         egret.Tween.get(this).to({ alpha: 1 }, 1000).wait(5000).call(function () {
             core.UIManager.closeUI(core.UIConst.AudioTips);
         });
+        egret.MainContext.instance.stage.addEventListener(egret.StageOrientationEvent.ORIENTATION_CHANGE, function () {
+            _this.setUI.updataState();
+        }, this);
+        this.registerEvent(this, eui.UIEvent.RESIZE, this.initSc, this);
         var today = egret.localStorage.getItem('today');
         if (today) {
             var nowtime = new Date().getTime();
@@ -52,6 +61,12 @@ var MainScenceUI = (function (_super) {
             this.setUI.popBet();
         }
         egret.localStorage.setItem('today', new Date().getTime() + '');
+    };
+    MainScenceUI.prototype.initSc = function () {
+        var _this = this;
+        egret.setTimeout(function () {
+            _this.setUI.updataState();
+        }, this, 800);
     };
     MainScenceUI.prototype.onBegin = function (e) {
         this.tx = e.stageX;
@@ -97,6 +112,20 @@ var MainScenceUI = (function (_super) {
             }
         }
     };
+    //选择贝壳结束按钮
+    MainScenceUI.prototype.closeFreeUi = function () {
+        this.indexNum = 0;
+        // GameConfig.freeGame = false;
+        this.bg.visible = true;
+        this.mainGroup.visible = true;
+        this.setUI.visible = true;
+        this.freeGroup.visible = false;
+        for (var i = 0; i < 5; i++) {
+            this["beiKe_" + i].source = "with_pearl_01_png";
+            this["beiKe_x" + i].visible = false;
+        }
+        // GameManager.getInstance().startGame(true);
+    };
     //Bonus
     MainScenceUI.prototype.onBonusEnd = function () {
         console.log('点击免费游戏');
@@ -105,12 +134,140 @@ var MainScenceUI = (function (_super) {
         this.gameScence.removeBonusMc();
         // GameConfig.isFree = false;
         this.setUI.bonusBtnState(false);
+        this.gameScence.huanyuanC1(this.bonusPos);
+        //
+        this.showFreeUi();
+    };
+    MainScenceUI.prototype.showFreeUi = function () {
+        //音乐
+        this.hideWin();
+        this.bg.visible = false;
+        this.mainGroup.visible = false;
+        this.setUI.visible = false;
+        this.freeGroup.visible = true;
+        for (var i = 0; i < 5; i++) {
+            this["beiKe_" + i].pixelHitTest = true;
+            this["beiKe_" + i].addEventListener(egret.TouchEvent.TOUCH_TAP, this.changeBeiKe, this);
+        }
+    };
+    MainScenceUI.prototype.changeBeiKe = function (evt) {
+        var _this = this;
+        //选择贝壳，播放动画
+        var index;
+        var Count;
+        this.indexNum++;
+        switch (evt.currentTarget) {
+            case this["beiKe_0"]:
+                index = 0;
+                Count = 5;
+                break;
+            case this["beiKe_1"]:
+                index = 1;
+                Count = 7;
+                break;
+            case this["beiKe_2"]:
+                index = 2;
+                Count = 15;
+                break;
+            case this["beiKe_3"]:
+                index = 3;
+                Count = 10;
+                break;
+            case this["beiKe_4"]:
+                index = 4;
+                Count = 8;
+                break;
+        }
+        // vo.GameData.TotalActionCount = vo.GameData.TotalActionCount + Count;
+        if (this.indexNum == 1) {
+            vo.GameData.TotalActionCount = Count + 8;
+        }
+        if (this.indexNum >= 2) {
+            if (Count < 8) {
+                Count = 0;
+            }
+            vo.GameData.TotalActionCount = (vo.GameData.TotalActionCount + Count);
+        }
+        this["beiKe_" + index].removeEventListener(egret.TouchEvent.TOUCH_TAP, this.changeBeiKe, this);
+        if (this.indexNum >= 2) {
+            for (var i = 0; i < 5; i++) {
+                this["beiKe_" + i].removeEventListener(egret.TouchEvent.TOUCH_TAP, this.changeBeiKe, this);
+            }
+        }
+        egret.Tween.get(this["beiKe_" + index]).call(function () { _this["beiKe_" + index].source = "with_pearl_01_png"; })
+            .wait(300)
+            .call(function () { _this["beiKe_" + index].source = "with_pearl_02_png"; })
+            .wait(500)
+            .call(function () {
+            _this["beiKe_" + index].source = "with_pearl_03_png";
+            // this.rotateNum.text = "";
+            // this.fanbeiNum.text = "";
+            _this.freeNum.text = "";
+            _this.beiNum.text = "";
+            _this.rotateNum.text = "" + vo.GameData.TotalActionCount;
+            _this.fanbeiNum.text = "X2";
+            _this.freeNumGroup.visible = true;
+            if (index <= 2) {
+                _this["beiKe_x" + index].y = 327;
+            }
+            else {
+                _this["beiKe_x" + index].y = 525;
+            }
+            _this["beiKe_x" + index].visible = true;
+            // 5 7 15 10 8
+            egret.setTimeout(function () {
+                if (_this.indexNum >= 2) {
+                    for (var i = 0; i < 5; i++) {
+                        if (!_this["beiKe_x" + i].visible) {
+                            if (i <= 2) {
+                                _this["beiKe_x" + i].y = 433;
+                            }
+                            else {
+                                _this["beiKe_x" + i].y = 630;
+                            }
+                            _this["beiKe_x" + i].visible = true;
+                        }
+                    }
+                    _this.fanbeiNum.text = "X2";
+                    _this.rotateNum.text = "" + vo.GameData.TotalActionCount;
+                    _this.freeNum.text = "" + vo.GameData.TotalActionCount;
+                    _this.beiNum.text = "2";
+                    // Commond.sendBonus(vo.GameData.TotalActionCount, 2);
+                    _this.tipsGroup.visible = true;
+                    vo.GameData.TotalActionCount -= 1;
+                }
+            }, _this, 200);
+        });
     };
     MainScenceUI.prototype.canStop = function () {
+        this.indexC1 = 0;
+        GameConfig.isTwo = false;
+        // GameConfig.isTest = false;
+        GameConfig.twoC1Index = -1;
+        // GameConfig.twoC1Index = 4;
+        // GameConfig.isData = true;
         for (var i = 0; i < this.gameScence.reelArr.length; i++) {
             var reel = this.gameScence.reelArr[i];
             reel.curTime = egret.getTimer();
             reel.curReelData = vo.GameData.resultData.Value.SpinResult.Main.ReelSymbols[i];
+            for (var j = 0; j < reel.curReelData.length; j++) {
+                if (reel.curReelData[j] == "C1") {
+                    this.indexC1++;
+                    if (this.indexC1 == 1) {
+                        GameConfig.oneC1Index = i;
+                    }
+                    else if (this.indexC1 == 2) {
+                        GameConfig.twoC1Index = i;
+                        GameConfig.isTwo = true;
+                    }
+                    else if (this.indexC1 >= 3) {
+                        GameConfig.threeC1Index = i;
+                    }
+                    else {
+                        GameConfig.threeC1Index = -1;
+                    }
+                }
+            }
         }
     };
     MainScenceUI.prototype.updataHor = function () {
@@ -159,7 +316,7 @@ var MainScenceUI = (function (_super) {
             });
         }
         //进入免费游戏抽奖
-        if (arr.length > 0 && arr[0].Type == "Bonus2" && arr[0].SymbolCount == 3) {
+        if (arr.length > 0 && arr[0].Type == "Bonus2" && arr[0].SymbolCount >= 3) {
             //当有3个C1,C1不在中间一列移动到中间
             GameConfig.isFree = true;
             SetConst.AUTO_COUNT = 0;

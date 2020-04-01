@@ -60,8 +60,16 @@ var core;
             }
         };
         BaseUI.prototype.updataHor = function () {
+            var ui = core.UIManager.getUI(core.UIConst.MainScenceUI);
+            if (ui) {
+                ui.setUI.updataState();
+            }
         };
         BaseUI.prototype.updataVer = function () {
+            var ui = core.UIManager.getUI(core.UIConst.MainScenceUI);
+            if (ui) {
+                ui.setUI.updataState();
+            }
         };
         BaseUI.prototype.initSize = function () {
             this.top = 0;

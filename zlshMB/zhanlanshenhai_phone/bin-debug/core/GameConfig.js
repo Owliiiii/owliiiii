@@ -45,6 +45,9 @@ var GameConfig = (function () {
      * 中了免费抽奖
      */
     GameConfig.isFree = false;
+    //标记有2个贝壳
+    GameConfig.isTwo = false;
+    GameConfig.isTest = false;
     /**
      * 最大宽度
      */

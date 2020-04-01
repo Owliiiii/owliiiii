@@ -5,11 +5,11 @@
 	<e:Group id="bottomGroup" height="106.06" anchorOffsetY="0" left="0" right="0" left.ver="0" right.ver="0" height.ver="250" left.hor="0" right.hor="0" height.hor="82" y.hor="668" y.ver="1074">
 		<e:Image id="bottomBg" left="0" right="0" top.hor="0" bottom="0" left.ver="0" right.ver="0" bottom.ver="0" top.ver="0" source.ver="bottom_2_png" source="bottom_2_png" source.hor="bottom_2_png"/>
 		<e:Group x="45.94" y.hor="21.06" width="84" height="52" left.hor="120" verticalCenter.hor="0" horizontalCenter.ver="0" bottom.ver="12">
-		<e:Label id="t0" text="您的余额" x="2.78" y="0" textColor="0xfccb44" size="22"/>
+		<e:Label id="t0" text="您的余额" x="2.78" y="0" size="22" textColor.hor="0x0ed9f7" textColor="0x081954"/>
 		<e:Label id="balanceLabel" text="115.85" y="23.33" size="30" horizontalCenter="0"/>
 		</e:Group>
 		<e:Group x="216.85" y="21.06" width="84" height="52" horizontalCenter.ver="-232" y.ver="101.8" left.hor="343" verticalCenter.hor="0">
-		<e:Label id="t1" text="线" y="0" textColor="0xFCCB44" size="22" horizontalCenter="0"/>
+		<e:Label id="t1" text="线" y="0" textColor="0xFCCB44" size="22" horizontalCenter="0" textColor.ver="0xfccb44" textColor.hor="0x0ed9f7"/>
 		<e:Label id="lineLabel" text="1" y="23.33" size="30" horizontalCenter="0"/>
 		</e:Group>
 		<e:Group id="rewardGroup" width="80" horizontalCenter.hor="0" horizontalCenter.ver="0" top.ver="12" verticalCenter.hor="2.5" visible.hor="false" visible.ver="false">
@@ -18,11 +18,11 @@
 		</e:Group>
 		<e:Label id="tipLabel" text="滑动转轴或按旋转" y="25.82" textAlign="center" size="40" horizontalCenter="0" horizontalCenter.ver="0" top.ver="23" fontFamily.ver="Microsoft JhengHei" verticalCenter.hor="0" fontFamily="Microsoft JhengHei" size.ver="48" fontFamily.hor="Microsoft JhengHei"/>
 		<e:Group y="21.06" width="84" height="52" right.hor="343" horizontalCenter.ver="0" y.ver="101.8" x.ver="329" verticalCenter.hor="0">
-		<e:Label id="t2" text="线注" y="0" textColor="0xFCCB44" size="22" horizontalCenter="0"/>
+		<e:Label id="t2" text="线注" y="0" textColor="0xFCCB44" size="22" horizontalCenter="0" textColor.hor="0x0ed9f7"/>
 		<e:Label id="betLabel" text="1" y="23.33" size="30" horizontalCenter="0"/>
 		</e:Group>
 		<e:Group y="21.06" width="84" height="52" right.hor="120" y.ver="101.8" verticalCenter.hor="0" horizontalCenter.ver="232">
-		<e:Label id="t3" text="总赌注" y="0" textColor="0xFCCB44" size="22" horizontalCenter="0"/>
+		<e:Label id="t3" text="总赌注" y="0" textColor="0xFCCB44" size="22" horizontalCenter="0" textColor.hor="0x0ed9f7"/>
 		<e:Label id="totalBet" text="1" y="23.33" size="30" horizontalCenter="0"/>
 		</e:Group>
 	</e:Group>

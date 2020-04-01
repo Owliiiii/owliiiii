@@ -21,6 +21,10 @@ module vo {
 		 */
 		public static autoPlayCount: number = 0;
 
+		/**
+		 * 次数
+		 */
+		public static TotalActionCount:number = 0;
 		
 		/**
 		 * 当前老虎机数据

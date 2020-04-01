@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "loadingbg2_png,loading0_png,loading1_png,loading2_png,loadingBar_png,loadingbg1_jpg,loading3_png,BG@2x_png,sound_icon@2x_png,check_disable_png,check_nomal_png,check_s_disable_png,check_s_nomal_png,BG@2x1_png,top_menu_icon_more_normal@2x_png,top_menu_icon_more_selected@2x_png,help2_png,helpBg2_png",
+			"keys": "loadingbg2_png,loading0_png,loading1_png,loading2_png,loadingBar_png,loadingbg1_jpg,loading3_png,BG@2x_png,sound_icon@2x_png,check_disable_png,check_nomal_png,check_s_disable_png,check_s_nomal_png,BG@2x1_png,top_menu_icon_more_normal@2x_png,top_menu_icon_more_selected@2x_png,help2_png,helpBg2_png,freeBG_png,with_pearl_03_png,with_pearl_01_png,with_pearl_02_png,pearl_text15_png,pearl_text5_png,pearl_text7_png,pearl_text8_png,pearl_text10_png,freeTextTop_png,freeTxt_png,rotation_png,fanbei_png,freeKuang_png,freeBtn_png,freeBtn_H_png,allmoney_png,gongnengMoney_png,gameMoney_png",
 			"name": "preload"
 		},
 		{
@@ -1604,6 +1604,101 @@
 			"name": "helpBg2_png",
 			"type": "image",
 			"url": "assets/help/helpBg2.png"
+		},
+		{
+			"name": "freeBG_png",
+			"type": "image",
+			"url": "assets/bg/freeBG.png"
+		},
+		{
+			"name": "with_pearl_03_png",
+			"type": "image",
+			"url": "assets/bg/with_pearl_03.png"
+		},
+		{
+			"name": "with_pearl_01_png",
+			"type": "image",
+			"url": "assets/bg/with_pearl_01.png"
+		},
+		{
+			"name": "with_pearl_02_png",
+			"type": "image",
+			"url": "assets/bg/with_pearl_02.png"
+		},
+		{
+			"name": "pearl_text15_png",
+			"type": "image",
+			"url": "assets/bg/pearl_text15.png"
+		},
+		{
+			"name": "pearl_text5_png",
+			"type": "image",
+			"url": "assets/bg/pearl_text5.png"
+		},
+		{
+			"name": "pearl_text7_png",
+			"type": "image",
+			"url": "assets/bg/pearl_text7.png"
+		},
+		{
+			"name": "pearl_text8_png",
+			"type": "image",
+			"url": "assets/bg/pearl_text8.png"
+		},
+		{
+			"name": "pearl_text10_png",
+			"type": "image",
+			"url": "assets/bg/pearl_text10.png"
+		},
+		{
+			"name": "freeTextTop_png",
+			"type": "image",
+			"url": "assets/bg/freeTextTop.png"
+		},
+		{
+			"name": "freeTxt_png",
+			"type": "image",
+			"url": "assets/bg/freeTxt.png"
+		},
+		{
+			"name": "rotation_png",
+			"type": "image",
+			"url": "assets/bg/rotation.png"
+		},
+		{
+			"name": "fanbei_png",
+			"type": "image",
+			"url": "assets/bg/fanbei.png"
+		},
+		{
+			"name": "freeKuang_png",
+			"type": "image",
+			"url": "assets/bg/freeKuang.png"
+		},
+		{
+			"name": "freeBtn_png",
+			"type": "image",
+			"url": "assets/bg/freeBtn.png"
+		},
+		{
+			"name": "freeBtn_H_png",
+			"type": "image",
+			"url": "assets/bg/freeBtn_H.png"
+		},
+		{
+			"name": "allmoney_png",
+			"type": "image",
+			"url": "assets/bg/allmoney.png"
+		},
+		{
+			"name": "gongnengMoney_png",
+			"type": "image",
+			"url": "assets/bg/gongnengMoney.png"
+		},
+		{
+			"name": "gameMoney_png",
+			"type": "image",
+			"url": "assets/bg/gameMoney.png"
 		}
 	]
 }

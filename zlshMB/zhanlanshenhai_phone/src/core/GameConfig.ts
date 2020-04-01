@@ -21,7 +21,16 @@ class GameConfig {
 	 * 中了免费抽奖
 	 */
 	public static isFree:boolean = false;
-	
+
+	//第一次中C1的Index 
+	public static oneC1Index:number;
+	//第二次中C1的Index 
+	public static twoC1Index:number;
+	//标记有2个贝壳
+	public static isTwo:boolean = false;
+	//第三次中C1的Index 
+	public static threeC1Index:number;
+	public static isTest:boolean = false;
     /**
 	 * 加载
 	 */

@@ -2,9 +2,9 @@ class LayerSetManager extends egret.EventDispatcher {
 	public constructor() {
 		super();
 		this.s = GameConfig.HEIGHT / GameConfig.WIDTH;
-		egret.MainContext.instance.stage.addEventListener(egret.StageOrientationEvent.ORIENTATION_CHANGE, () => {
-			this.s = GameConfig.HEIGHT / GameConfig.WIDTH;
-		}, this);
+		// egret.MainContext.instance.stage.addEventListener(egret.StageOrientationEvent.ORIENTATION_CHANGE, () => {
+		// 	this.s = GameConfig.HEIGHT / GameConfig.WIDTH;
+		// }, this);
 		// if (egret.Capabilities.os == 'iOS') {
 		// egret.setInterval(() => {
 		// 	//window.scrollTo(0, 0);

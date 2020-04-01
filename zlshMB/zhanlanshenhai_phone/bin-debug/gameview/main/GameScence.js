@@ -36,7 +36,7 @@ var GameScence = (function (_super) {
     GameScence.prototype.startReel = function () {
         for (var i = 0; i < 5; i++) {
             var reel = this['reel' + i];
-            //reel.targetReelData = vo.GameData.resultData.Value.SpinResult.Main.ReelSymbols[i];
+            // reel.targetReelData = vo.GameData.resultData.Value.SpinResult.Main.ReelSymbols[i];
             reel.start();
         }
         if (!SoundManager.getInstance().effectOn)
@@ -74,6 +74,12 @@ var GameScence = (function (_super) {
         for (var i = 0; i < this.reelArr.length; i++) {
             var reel = this.reelArr[i];
             reel.clearAllAnimation();
+        }
+    };
+    //还原
+    GameScence.prototype.huanyuanC1 = function (arr) {
+        for (var i = 0; i < arr.length; i++) {
+            this.reelArr[arr[i].X].huanYuan(arr[i].Y);
         }
     };
     GameScence.prototype.showLight = function () {

@@ -19,6 +19,7 @@ var SetUI = (function (_super) {
     SetUI.prototype.childrenCreated = function () {
         var _this = this;
         _super.prototype.childrenCreated.call(this);
+        this.updataState();
         this.musicCheck.selected = SoundManager.getInstance().effectOn;
         this.setBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTab, this);
         this.maskRect.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTab, this);
@@ -74,6 +75,22 @@ var SetUI = (function (_super) {
             }, _this);
         });
         this.rewradMaxGroup.visible = false;
+    };
+    SetUI.prototype.updataState = function () {
+        if (window.innerWidth >= window.innerHeight) {
+            //蓝色字体
+            this.t0.textColor = 0x0ED9F7;
+            this.t1.textColor = 0x0ED9F7;
+            this.t2.textColor = 0x0ED9F7;
+            this.t3.textColor = 0x0ED9F7;
+        }
+        else {
+            // this.currentState = 'ver'+SetConst.MODLE;
+            this.t0.textColor = 0xFCCB44;
+            this.t1.textColor = 0xFCCB44;
+            this.t2.textColor = 0xFCCB44;
+            this.t3.textColor = 0xFCCB44;
+        }
     };
     SetUI.prototype.updataHor = function () {
         this.updataSame();

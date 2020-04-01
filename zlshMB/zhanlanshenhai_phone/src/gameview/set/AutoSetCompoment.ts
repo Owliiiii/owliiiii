@@ -12,23 +12,22 @@ class AutoSetCompoment extends eui.Component {
 		this.arrButton.selected = SetConst.AUTO_SHOW;
 		this.updataState();
 		GameManager.getInstance().addEventListener(SetEvent.SET_MODLE, this.onModleChange, this);
-		this.mySlider.addEventListener(egret.Event.CHANGE,this.onSliderChange,this);
+		this.mySlider.addEventListener(egret.Event.CHANGE, this.onSliderChange, this);
 		core.LayerManager.getInstance().addEventListener(SetEvent.SET_OR_CHANGE, () => {
 			this.updataState();
 		}, this);
-		this.mySlider.maximum=10;
+		this.mySlider.maximum = 10;
 		this.mySlider.setValues(10);
 		this.onSliderChange();
 	}
 
-	public onSliderChange():void
-	{
-		if(SetConst.AUTO_COUNT_ARR[this.mySlider.value] == 9999){
+	public onSliderChange(): void {
+		if (SetConst.AUTO_COUNT_ARR[this.mySlider.value] == 9999) {
 			this.countLabel.text = "直到环节";
-		}else{
-			this.countLabel.text=SetConst.AUTO_COUNT_ARR[this.mySlider.value]+'次旋转';
+		} else {
+			this.countLabel.text = SetConst.AUTO_COUNT_ARR[this.mySlider.value] + '次旋转';
 		}
-		
+
 	}
 
 	public updataState(): void {
@@ -36,7 +35,7 @@ class AutoSetCompoment extends eui.Component {
 			this.currentState = 'hor' + SetConst.MODLE;
 		}
 		else {
-			this.currentState = 'ver'+SetConst.MODLE;
+			this.currentState = 'ver' + SetConst.MODLE;
 		}
 		this.onSliderChange();
 	}
@@ -54,7 +53,7 @@ class AutoSetCompoment extends eui.Component {
 					SetConst.AUTO_SHOW = false;
 				}
 				this.goUpdata();
-                this.dispatchEventWith(SetEvent.SET_STATE_CHANGE);
+				this.dispatchEventWith(SetEvent.SET_STATE_CHANGE);
 				break;
 		}
 	}
@@ -64,18 +63,18 @@ class AutoSetCompoment extends eui.Component {
 		let y: number;
 		if (SetConst.MODLE == 0) {
 			if (SetConst.AUTO_SHOW) {
-				x = this.currentState.indexOf('hor') != -1 ? GameConfig.WIDTH-this.width : GameConfig.WIDTH / 2 - this.width / 2;
-				y = this.currentState.indexOf('hor') != -1 ? GameConfig.HEIGHT / 2 - this.height / 2-10 : GameConfig.HEIGHT / 2 - this.height / 2-120;
+				x = this.currentState.indexOf('hor') != -1 ? GameConfig.WIDTH - this.width : GameConfig.WIDTH / 2 - this.width / 2;
+				y = this.currentState.indexOf('hor') != -1 ? GameConfig.HEIGHT / 2 - this.height / 2 - 10 : GameConfig.HEIGHT / 2 - this.height / 2 - 120;
 			}
 			else {
-				x = this.currentState.indexOf('hor') != -1 ? GameConfig.WIDTH  : GameConfig.WIDTH / 2 - this.width / 2;
+				x = this.currentState.indexOf('hor') != -1 ? GameConfig.WIDTH : GameConfig.WIDTH / 2 - this.width / 2;
 				y = this.currentState.indexOf('hor') != -1 ? GameConfig.HEIGHT / 2 - this.height / 2 : GameConfig.HEIGHT;
 			}
 		}
 		else {
 			if (SetConst.AUTO_SHOW) {
 				x = this.currentState.indexOf('hor') != -1 ? 0 : GameConfig.WIDTH / 2 - this.width / 2;
-				y = this.currentState.indexOf('hor') != -1 ? GameConfig.HEIGHT / 2 - this.height / 2-10 : GameConfig.HEIGHT / 2 - this.height / 2-120;
+				y = this.currentState.indexOf('hor') != -1 ? GameConfig.HEIGHT / 2 - this.height / 2 - 10 : GameConfig.HEIGHT / 2 - this.height / 2 - 120;
 			}
 			else {
 				x = this.currentState.indexOf('hor') != -1 ? -this.width : GameConfig.WIDTH / 2 - this.width / 2;
@@ -87,9 +86,9 @@ class AutoSetCompoment extends eui.Component {
 	}
 
 	public updata(): void {
-		if(!GameConfig.isFree){
+		if (!GameConfig.isFree) {
 			this.visible = true;
-		}else{
+		} else {
 			this.visible = false;
 		}
 		egret.Tween.removeTweens(this);
@@ -100,9 +99,9 @@ class AutoSetCompoment extends eui.Component {
 	}
 
 	public goUpdata(): void {
-		if(!GameConfig.isFree){
+		if (!GameConfig.isFree) {
 			this.visible = true;
-		}else{
+		} else {
 			this.visible = false;
 		}
 		egret.Tween.removeTweens(this);

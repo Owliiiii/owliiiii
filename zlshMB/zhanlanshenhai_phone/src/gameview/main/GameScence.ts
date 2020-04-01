@@ -31,7 +31,7 @@ class GameScence extends eui.Component {
 	public startReel(): void {
 		for (let i: number = 0; i < 5; i++) {
 			let reel: Reel = this['reel' + i];
-			//reel.targetReelData = vo.GameData.resultData.Value.SpinResult.Main.ReelSymbols[i];
+			// reel.targetReelData = vo.GameData.resultData.Value.SpinResult.Main.ReelSymbols[i];
 			reel.start();
 		}
 		if(!SoundManager.getInstance().effectOn) return;
@@ -74,7 +74,12 @@ class GameScence extends eui.Component {
 			reel.clearAllAnimation();
 		}
 	}
-
+	//还原
+	public huanyuanC1(arr:Array<any>):void{
+		for(let i = 0 ; i < arr.length;i++){
+			this.reelArr[arr[i].X].huanYuan(arr[i].Y);
+		}
+	}
 
 	public showLight(): void {
 		egret.Tween.removeTweens(this.lightBg);

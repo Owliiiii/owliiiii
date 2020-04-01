@@ -4,9 +4,37 @@ class MainScenceUI extends core.BaseUI {
 	public gameScence: GameScence;
 	public setUI: SetUI;
 	public index: number = 0;
-
+	public mainGroup: eui.Group;
 	public tipGroup: eui.Group;
 	public tipLabel: eui.Label;
+	public freeGroup: eui.Group;
+	public bg1: eui.Image;
+	public freeNumGroup: eui.Group;
+	public rotateNum: eui.Label;
+	public fanbeiNum: eui.Label;
+	public beiKe_0: eui.Image;
+	public beiKe_x0: eui.Image;
+	public beiKe_1: eui.Image;
+	public beiKe_x1: eui.Image;
+	public beiKe_2: eui.Image;
+	public beiKe_x2: eui.Image;
+	public beiKe_3: eui.Image;
+	public beiKe_x3: eui.Image;
+	public beiKe_4: eui.Image;
+	public beiKe_x4: eui.Image;
+
+	public tipsGroup: eui.Group;
+	public pickFree: eui.Group;
+	public pickFreeBtn: MouseButton;
+	public freeNum: eui.Label;
+	public beiNum: eui.Label;
+	public overFree: eui.Group;
+	public overFreeBtn: MouseButton;
+	public gameMoney: eui.BitmapLabel;
+	public gongNengMoney: eui.BitmapLabel;
+	public totalMoney: eui.BitmapLabel;
+
+
 
 	public mcGroup;
 	public rewardMc;
@@ -20,18 +48,23 @@ class MainScenceUI extends core.BaseUI {
 		this.gameScence.init();
 		this.gameScence.reset();
 		this.updataUI();
+		this.setUI.updataState();
 		this.registerEvent(this.gameScence, egret.TouchEvent.TOUCH_BEGIN, this.onBegin, this);
 		this.registerEvent(this, egret.TouchEvent.TOUCH_BEGIN, this.onBegin, this);
 		// this.registerEvent(this, egret.TouchEvent.TOUCH_END, this.onEnd, this);
 		egret.MainContext.instance.stage.addEventListener(egret.TouchEvent.TOUCH_END, this.onEnd, this);
 		this.registerEvent(this.setUI.autoButton, egret.TouchEvent.TOUCH_END, this.onEnd, this);
 		this.registerEvent(this.setUI.bonusBtn, egret.TouchEvent.TOUCH_END, this.onBonusEnd, this);
+		this.registerEvent(this.pickFreeBtn, egret.TouchEvent.TOUCH_TAP, this.closeFreeUi, this);
 		GameManager.getInstance().addEventListener(SetEvent.SET_HIDE_REWARD, this.hideWin, this);
 		this.alpha = 0;
 		egret.Tween.get(this).to({ alpha: 1 }, 1000).wait(5000).call(() => {
 			core.UIManager.closeUI(core.UIConst.AudioTips);
 		});
-
+		egret.MainContext.instance.stage.addEventListener(egret.StageOrientationEvent.ORIENTATION_CHANGE, () => {
+			this.setUI.updataState();
+		}, this);
+		this.registerEvent(this, eui.UIEvent.RESIZE, this.initSc, this);
 		let today: any = egret.localStorage.getItem('today');
 		if (today) {
 			let nowtime = new Date().getTime();
@@ -45,6 +78,12 @@ class MainScenceUI extends core.BaseUI {
 		}
 		egret.localStorage.setItem('today', new Date().getTime() + '');
 	}
+	public initSc(): void {
+		egret.setTimeout(() => {
+			this.setUI.updataState();
+		}, this, 800);
+	}
+
 
 	public isBegin: boolean = false;
 	public tx: number = 0;
@@ -93,6 +132,22 @@ class MainScenceUI extends core.BaseUI {
 			}
 		}
 	}
+	//选择贝壳结束按钮
+	public closeFreeUi(): void {
+		this.indexNum = 0;
+		// GameConfig.freeGame = false;
+		this.bg.visible = true;
+		this.mainGroup.visible = true;
+		this.setUI.visible = true;
+		this.freeGroup.visible = false;
+
+		for (var i = 0; i < 5; i++) {
+			this["beiKe_" + i].source = "with_pearl_01_png";
+			this["beiKe_x" + i].visible = false;
+		}
+		// GameManager.getInstance().startGame(true);
+
+	}
 	//Bonus
 	public onBonusEnd() {
 		console.log('点击免费游戏');
@@ -101,16 +156,151 @@ class MainScenceUI extends core.BaseUI {
 		this.gameScence.removeBonusMc();
 		// GameConfig.isFree = false;
 		this.setUI.bonusBtnState(false);
+		this.gameScence.huanyuanC1(this.bonusPos);
+		//
+		this.showFreeUi();
+
+	}
+
+	public showFreeUi(): void {
+
+		//音乐
+		this.hideWin();
+		this.bg.visible = false;
+		this.mainGroup.visible = false;
+		this.setUI.visible = false;
+		this.freeGroup.visible = true;
+
+		for (var i = 0; i < 5; i++) {
+			this["beiKe_" + i].pixelHitTest = true;
+			this["beiKe_" + i].addEventListener(egret.TouchEvent.TOUCH_TAP, this.changeBeiKe, this);
+		}
+	}
+
+	public indexNum: number = 0;
+	public changeBeiKe(evt: egret.TouchEvent): void {
+		//选择贝壳，播放动画
+		let index: number;
+		let Count: number;
+		this.indexNum++;
+
+		switch (evt.currentTarget) {
+			case this["beiKe_0"]:
+				index = 0;
+				Count = 5;
+				break;
+			case this["beiKe_1"]:
+				index = 1;
+				Count = 7;
+				break;
+			case this["beiKe_2"]:
+				index = 2;
+				Count = 15;
+				break;
+			case this["beiKe_3"]:
+				index = 3;
+				Count = 10;
+				break;
+			case this["beiKe_4"]:
+				index = 4;
+				Count = 8;
+				break;
+		}
+		// vo.GameData.TotalActionCount = vo.GameData.TotalActionCount + Count;
+		if (this.indexNum == 1) {
+			vo.GameData.TotalActionCount = Count + 8;
+		}
+		if (this.indexNum >= 2) {
+			if (Count < 8) {
+				Count = 0;
+			}
+			vo.GameData.TotalActionCount = (vo.GameData.TotalActionCount + Count);
+		}
+		this["beiKe_" + index].removeEventListener(egret.TouchEvent.TOUCH_TAP, this.changeBeiKe, this);
+		if (this.indexNum >= 2) {
+			for (var i = 0; i < 5; i++) {
+				this["beiKe_" + i].removeEventListener(egret.TouchEvent.TOUCH_TAP, this.changeBeiKe, this);
+			}
+		}
+		egret.Tween.get(this["beiKe_" + index]).call(() => { this["beiKe_" + index].source = "with_pearl_01_png" })
+			.wait(300)
+			.call(() => { this["beiKe_" + index].source = "with_pearl_02_png" })
+			.wait(500)
+			.call(() => {
+				this["beiKe_" + index].source = "with_pearl_03_png";
+				// this.rotateNum.text = "";
+				// this.fanbeiNum.text = "";
+				this.freeNum.text = "";
+				this.beiNum.text = "";
+				this.rotateNum.text = "" + vo.GameData.TotalActionCount;
+				this.fanbeiNum.text = "X2";
+				this.freeNumGroup.visible = true;
+
+				if (index <= 2) {
+					this["beiKe_x" + index].y = 327;
+				} else {
+					this["beiKe_x" + index].y = 525;
+				}
+				this["beiKe_x" + index].visible = true;
+				// 5 7 15 10 8
+				egret.setTimeout(() => {
+					if (this.indexNum >= 2) {
+						for (var i = 0; i < 5; i++) {
+							if (!this["beiKe_x" + i].visible) {
+								if (i <= 2) {
+									this["beiKe_x" + i].y = 433;
+								} else {
+									this["beiKe_x" + i].y = 630;
+								}
+								this["beiKe_x" + i].visible = true;
+							}
+						}
+						this.fanbeiNum.text = "X2";
+						this.rotateNum.text = "" + vo.GameData.TotalActionCount;
+
+						this.freeNum.text = "" + vo.GameData.TotalActionCount;
+						this.beiNum.text = "2";
+						// Commond.sendBonus(vo.GameData.TotalActionCount, 2);
+						this.tipsGroup.visible = true;
+						vo.GameData.TotalActionCount -= 1;
+					}
+				}, this, 200);
+			})
+
 	}
 
 	public curtime: number = 0;
-
+	public indexC1: number = 0;
 	public canStop(): void {
+		this.indexC1 = 0;
+		GameConfig.isTwo = false;
+		// GameConfig.isTest = false;
+		GameConfig.twoC1Index = -1;
+		// GameConfig.twoC1Index = 4;
+		// GameConfig.isData = true;
+
+
 		for (let i: number = 0; i < this.gameScence.reelArr.length; i++) {
 			let reel: Reel = this.gameScence.reelArr[i];
 			reel.curTime = egret.getTimer();
 			reel.curReelData = vo.GameData.resultData.Value.SpinResult.Main.ReelSymbols[i];
+			for (let j = 0; j < reel.curReelData.length; j++) {
+				if (reel.curReelData[j] == "C1") {
+					this.indexC1++;
+					if (this.indexC1 == 1) {
+						GameConfig.oneC1Index = i;
+					} else if (this.indexC1 == 2) {	//有2个贝壳
+						GameConfig.twoC1Index = i;
+						GameConfig.isTwo = true;
+					} else if (this.indexC1 >= 3) {	//有3个贝壳
+						GameConfig.threeC1Index = i;
+					} else {
+						GameConfig.threeC1Index = -1;
+					}
+				}
+			}
 		}
+
 	}
 
 	public updataHor(): void {
@@ -170,7 +360,7 @@ class MainScenceUI extends core.BaseUI {
 			});
 		}
 		//进入免费游戏抽奖
-		if (arr.length > 0 && arr[0].Type == "Bonus2" && arr[0].SymbolCount == 3) {
+		if (arr.length > 0 && arr[0].Type == "Bonus2" && arr[0].SymbolCount >= 3) {
 			//当有3个C1,C1不在中间一列移动到中间
 			GameConfig.isFree = true;
 			SetConst.AUTO_COUNT = 0;
