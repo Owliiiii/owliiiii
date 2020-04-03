@@ -16,7 +16,7 @@ class Utils {
     }
 
     /**
-     * 计算两点距离
+     * 计算两点距离1
      * @param p1
      * @param p2
      * @returns {number}
@@ -24,6 +24,20 @@ class Utils {
     public static distance(p1: egret.Point, p2: egret.Point): number {
         return Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
     }
+
+ 
+
+    /**
+   * 计算两点距离2
+   * @param p1
+   * @param p2
+   * @returns {number}
+   */
+    public static distance1(cx: number, cy: number, tx: number, ty: number): number {
+        return Math.sqrt(Math.pow(tx - cx, 2) + Math.pow(ty - cy, 2));
+    }
+
+
 
     /**
      * 判断直线A是否与线段B相交（线面相交）
@@ -504,6 +518,71 @@ class Utils {
         Utils.seed = (Utils.seed * 9301 + 49297) % 233280;
         var rnd = Utils.seed / 233280.0;
         return min + rnd * (max - min);
+    }
+
+     /**
+  * 获取当前的日期时间 格式“yyyy-MM-dd"
+  */
+public static getNowFormatDate1() {
+    var date = new Date();
+    var seperator1 = "-";
+    var seperator2 = ":";
+    var month:any = date.getMonth() + 1;
+    var strDate:any = date.getDate();
+    if (month >= 1 && month <= 9) {
+        month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+    }
+    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate;
+    return currentdate;
+}
+
+ /**
+  * 获取当前的日期时间 格式“yyyy-MM-dd HH:MM:SS”
+  */
+public static getNowFormatDate2() {
+    var date = new Date();
+    var seperator1 = "-";
+    var seperator2 = ":";
+    var month:any = date.getMonth() + 1;
+    var strDate:any = date.getDate();
+    if (month >= 1 && month <= 9) {
+        month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+    }
+    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+            + " " + date.getHours() + seperator2 + date.getMinutes()
+            + seperator2 + date.getSeconds();
+    return currentdate;
+}
+/**
+ * 获取当前日期前几天日期  格式“yyyy-MM-dd"
+ */
+public static getBeforeDate(n) {
+        var n = n;
+        var d = new Date();
+        var year = d.getFullYear();
+        var mon = d.getMonth() + 1;
+        var day = d.getDate();
+        if(day <= n) {
+            if(mon > 1) {
+                mon = mon - 1;
+            } else {
+                year = year - 1;
+                mon = 12;
+            }
+        }
+        d.setDate(d.getDate() - n);
+        year = d.getFullYear();
+        mon = d.getMonth() + 1;
+        day = d.getDate();
+        let s:string;
+        s = year + "-" + (mon < 10 ? ('0' + mon) : mon) + "-" + (day < 10 ? ('0' + day) : day);
+        return s;
     }
 }
 

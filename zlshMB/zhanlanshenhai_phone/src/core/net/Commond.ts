@@ -86,6 +86,29 @@ class Commond {
 		}
 	}
 
+	/**红利游戏 */
+	public static sendBonus(type: number = 1, idx: number = 0): void {
+		let sendType = null;
+		if (type == 1) {
+			sendType = GameType.GameType.treasure
+		} else if (type == 2) {
+			sendType = GameType.GameType.treasure2
+		}
+		let data = Commond.initData();
+		data.Action = 'Play',
+			data.Parameter = {
+				"Type": sendType,
+				// "McDebug": 1,
+				"BetSetup": {
+					"Bet": 1,
+					'Line': (vo.GameData.line + 1),
+					"Multiply": vo.GameData.betScoreArr[vo.GameData.betIndex] 
+				},
+
+			}
+		sockets.SocketMananger.getInstance().sendMessage(data);
+	}
+
 	public static initData(): any {
 		let data: any = {};
 		data.Link_auth = GameConfig.CasinoGame.Link_auth;

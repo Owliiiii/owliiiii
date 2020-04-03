@@ -51,7 +51,7 @@ class ServerManager extends egret.EventDispatcher {
 		// 	sybl.push(arr);
 		// }
 		//let r: number = Math.floor(Math.random() * serverData.playDataArr.length);
-		let r:number=3;
+		let r: number = 3;
 		let reelData: any = serverData.playDataArr[r];
 		//先得到盘面数据
 		let totalWin: number = 0;
@@ -173,7 +173,7 @@ class serverData {
 				"CurrentActionType": "slot",
 				"GameLevel": "1",
 				"GameLevel_UpCount": "0"
-				
+
 			},
 			"Actions": null,
 			"LastRound": {
@@ -220,7 +220,7 @@ class serverData {
 				"Balance": 70.2,
 				"Currency": "CNY",
 				"FrontEndDebug": 1,
-				"totalReward":98999690
+				"totalReward": 98999690
 			}
 		}
 	};

@@ -37,6 +37,7 @@ class SetUI extends eui.Component {
 	public musicCheck: eui.CheckBox;
 	public modleCheckButton: eui.CheckBox;
 	public exitBtn: eui.Button;
+	public FreeBtn: FreeBtn;
 
 	public controllGroup: eui.Group;
 	public startButton: StartButton;
@@ -106,7 +107,7 @@ class SetUI extends eui.Component {
 		GameManager.getInstance().addEventListener(SetEvent.SET_MUSIC_CHANGE, this.onDataChanged, this);
 		this.autoSetCompoment.addEventListener(SetEvent.SET_STATE_CHANGE, this.onStateChange, this);
 		this.betSetCompoment.addEventListener(SetEvent.SET_STATE_CHANGE, this.onStateChange, this);
-		
+
 		GameManager.getInstance().addEventListener(SetEvent.SET_MODLE, this.onModleChange, this);
 		core.MyUIUtils.addLongTouch(this.startButton, () => {
 			SoundManager.getInstance().playEffect(SoundConst.BUTTON);
@@ -148,10 +149,10 @@ class SetUI extends eui.Component {
 			this.t2.textColor = 0xFCCB44;
 			this.t3.textColor = 0xFCCB44;
 		}
-		
+
 	}
 
-	
+
 
 	public updataHor(): void {
 		this.updataSame();
@@ -256,17 +257,19 @@ class SetUI extends eui.Component {
 
 				break;
 			case this.stage:
-				if (SetConst.BETSET_SHOW || SetConst.AUTO_SHOW) {
-					SoundManager.getInstance().playEffect(SoundConst.BUTTON);
-				}
-				SetConst.BETSET_SHOW = false;
-				SetConst.AUTO_SHOW = false;
-				this.betSetCompoment.goUpdata();
-				this.autoSetCompoment.goUpdata();
-				this.betBtn.selected = SetConst.BETSET_SHOW;
-				this.updataBtnState();
-				if (GameManager.getInstance().gameState == GameType.GameState.STOP) {
-					this.betBtn.enabled = this.qukcheckBtn.enabled = !SetConst.BETSET_SHOW;
+				if (!GameConfig.isBonusBtn) {
+					if (SetConst.BETSET_SHOW || SetConst.AUTO_SHOW) {
+						SoundManager.getInstance().playEffect(SoundConst.BUTTON);
+					}
+					SetConst.BETSET_SHOW = false;
+					SetConst.AUTO_SHOW = false;
+					this.betSetCompoment.goUpdata();
+					this.autoSetCompoment.goUpdata();
+					this.betBtn.selected = SetConst.BETSET_SHOW;
+					this.updataBtnState();
+					if (GameManager.getInstance().gameState == GameType.GameState.STOP) {
+						this.betBtn.enabled = this.qukcheckBtn.enabled = !SetConst.BETSET_SHOW;
+					}
 				}
 				break;
 			case this.modleCheckButton:

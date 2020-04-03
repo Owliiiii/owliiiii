@@ -77,7 +77,7 @@ class GameManager extends egret.EventDispatcher {
 		// vo.GameData.payData = data.Value.Paytables.Main.PayData;
 	}
 	public chanel: egret.SoundChannel;
-	public curtime:number=egret.getTimer();
+	public curtime: number = egret.getTimer();
 	public stopMusic(): void {
 		if (this.chanel) {
 			this.chanel.stop();
@@ -89,16 +89,16 @@ class GameManager extends egret.EventDispatcher {
 		this.initAlaysPlayData(data);
 		let ui: MainScenceUI = core.UIManager.getUI(core.UIConst.MainScenceUI);
 		ui.balanceLabel.text = '￥' + GameManager.numberToCommonStr(vo.GameData.balance);
-		if (vo.GameData.resultData.ActionType != 'freeslot'&& (this.getFreeCount() <= 0) && !GameConfig.speedPlay && SoundManager.getInstance().effectOn && this.chanel == null && egret.getTimer()-this.curtime>400){
-				this.curtime = egret.getTimer();
-				SoundManager.getInstance().playMusic(SoundConst.REEL, 1).then((chanel) => {
-					this.chanel = chanel;
-				});
-			}
-		
+		if (vo.GameData.resultData.ActionType != 'freeslot' && (this.getFreeCount() <= 0) && !GameConfig.speedPlay && SoundManager.getInstance().effectOn && this.chanel == null && egret.getTimer() - this.curtime > 400) {
+			this.curtime = egret.getTimer();
+			SoundManager.getInstance().playMusic(SoundConst.REEL, 1).then((chanel) => {
+				this.chanel = chanel;
+			});
+		}
+
 		if (vo.GameData.resultData.ActionType == 'freeslot') {
 			let c: number = (vo.GameData.resultData.Value.TotalActionCount - this.getFreeCount()) > 0 ? (vo.GameData.resultData.Value.TotalActionCount) - this.getFreeCount() : vo.GameData.allFreeCount;
-			ui.free_Num.text = ""+ this.getFreeCount();
+			ui.free_Num.text = "" + this.getFreeCount();
 			// this.showTips('免费旋转第' + c + '次，' + '共' + vo.GameData.allFreeCount + '次');
 		}
 		egret.setTimeout(() => {
@@ -114,7 +114,7 @@ class GameManager extends egret.EventDispatcher {
 	private initAlaysPlayData(data: any): void {
 		vo.GameData.resultData = JSON.parse(JSON.stringify(data));
 		vo.GameData.initData.Value.Actions = data.Value.Actions;
-		
+
 	}
 	//10S改变  money
 	public onNetTouchToken(data: any): void {
@@ -132,7 +132,7 @@ class GameManager extends egret.EventDispatcher {
 		this.gameState = GameType.GameState.STOP;
 		vo.GameData.allFreeCount = vo.GameData.resultData.Value.TotalActionCount;
 		console.log("免费次数 === " + this.getFreeCount());
-		if(this.getFreeCount() == 0 && vo.GameData.resultData.ActionType == 'freeslot'){
+		if (this.getFreeCount() == 0 && vo.GameData.resultData.ActionType == 'freeslot') {
 			//免费游戏结束弹窗
 
 			GameConfig.autoPlay = false;
@@ -140,7 +140,7 @@ class GameManager extends egret.EventDispatcher {
 			ui.endFree();
 		}
 		this.isStart = true;
-		if(!GameConfig.autoPlay && this.getFreeCount() <= 0){		//this.getFreeCount() > 0
+		if (!GameConfig.autoPlay && this.getFreeCount() <= 0) {		//this.getFreeCount() > 0
 			ui.startBtn.visible = true;
 			ui.stopBtn.visible = false;
 			ui.infoBtn.enabled = true;
@@ -150,44 +150,44 @@ class GameManager extends egret.EventDispatcher {
 			ui.updataText(false);
 			ui.updataBtn();
 			ui.autoItem.autoBtn.enabled = true;
-			if(ui.autoItem.autoBtn.visible){
-						if (GameManager.getInstance().gameState == GameType.GameState.STOP){
-							ui.autoItem.autoText_an.visible = false;
-							ui.autoItem.autoText_mode.visible = true;
-						}else{
-							ui.autoItem.autoText_an.visible = true;
-							ui.autoItem.autoText_mode.visible = false;
-						}
-					}else{
-						ui.autoItem.autoText_an.visible = false;
-						ui.autoItem.autoText_mode.visible = false;
-					}
+			if (ui.autoItem.autoBtn.visible) {
+				if (GameManager.getInstance().gameState == GameType.GameState.STOP) {
+					ui.autoItem.autoText_an.visible = false;
+					ui.autoItem.autoText_mode.visible = true;
+				} else {
+					ui.autoItem.autoText_an.visible = true;
+					ui.autoItem.autoText_mode.visible = false;
+				}
+			} else {
+				ui.autoItem.autoText_an.visible = false;
+				ui.autoItem.autoText_mode.visible = false;
+			}
 			ui.speedOffBtn.enabled = true;
 			ui.speedOnBtn.enabled = true;
-			if(!GameConfig.speedPlay){	//没开快速
-				if(!ui.speedOffBtn.enabled){
+			if (!GameConfig.speedPlay) {	//没开快速
+				if (!ui.speedOffBtn.enabled) {
 					ui.speedOffTxt.visible = false;
-				}else{
+				} else {
 					ui.speedOffTxt.visible = true;
 				}
-			}else{		//开快速
-				if(!ui.speedOnBtn.enabled){
+			} else {		//开快速
+				if (!ui.speedOnBtn.enabled) {
 					ui.speedOnTxt.visible = false;
-				}else{
+				} else {
 					ui.speedOnTxt.visible = true;
 				}
 			}
 		}
-		
+
 		vo.GameData.initData.Value.TokenInfo.Balance = vo.GameData.resultData.Value.Balance;
 		vo.GameData.balance = vo.GameData.initData.Value.TokenInfo.Balance;
 		ui.balanceLabel.text = '￥' + GameManager.numberToCommonStr(vo.GameData.balance);
 		let resultData: any = vo.GameData.resultData;
 		let winarr: Array<any> = resultData.Value.SpinResult.Main.WinResults;
 		let fiveArr: Array<any> = [];
-		if(winarr){
+		if (winarr) {
 			fiveArr = this.getFiveArr(winarr);
-		}else{
+		} else {
 			fiveArr.length = 0;
 		}
 		fiveArr = this.getFiveArr(winarr);
@@ -196,19 +196,19 @@ class GameManager extends egret.EventDispatcher {
 
 		//五个一样
 		this.stopMusic();
-		if(fiveArr.length == 0){
+		if (fiveArr.length == 0) {
 
 			if (winarr.length > 0) {
 				let fourArr: Array<any> = [];
 				fourArr = this.getFishArr(winarr);
-				if(fourArr.length != 0){
-					ui.showFourFish(fourArr[0],()=>{
+				if (fourArr.length != 0) {
+					ui.showFourFish(fourArr[0], () => {
 						ui.showWin(winarr);
 						egret.setTimeout(() => {
 							this.doNext();
 						}, this, 1300 * winarr.length);
 					});
-				}else{
+				} else {
 					ui.showWin(winarr);
 					egret.setTimeout(() => {
 						this.doNext();
@@ -218,7 +218,7 @@ class GameManager extends egret.EventDispatcher {
 			else {
 				this.doNext();
 			}
-		}else{
+		} else {
 			ui.showFiveAimation(fiveArr[0], () => { //五同
 				ui.showWin(winarr);
 				egret.setTimeout(() => {
@@ -228,12 +228,12 @@ class GameManager extends egret.EventDispatcher {
 		}
 	}
 	public maoziMC5: egret.MovieClip;
-	public playMusic(music:string){
+	public playMusic(music: string) {
 		if (SoundManager.getInstance().effectOn && this.chanel == null) {
-					SoundManager.getInstance().playMusic(music, 1).then((chanel) => {
-					this.chanel = chanel;
-				});
-			}
+			SoundManager.getInstance().playMusic(music, 1).then((chanel) => {
+				this.chanel = chanel;
+			});
+		}
 	}
 
 	/**
@@ -272,17 +272,17 @@ class GameManager extends egret.EventDispatcher {
 		ui.updataUI();
 		//开启免费游戏那局的状态
 		if (vo.GameData.autoPlayCount > 0) {	//自动游戏开启
-			if(this.getFreeCount() <= 0){	//没有在免费模式
-				if(!GameConfig.freeGame){
+			if (this.getFreeCount() <= 0) {	//没有在免费模式
+				if (!GameConfig.freeGame) {
 					console.log("自动游戏无免费游戏");
 					ui.hideWin();
 					this.startGame();
-				}else{
+				} else {
 					console.log("自动游戏有免费游戏");
 				}
-			}else{
+			} else {
 				//免费游戏 + 自动游戏——> 弹窗
-				
+
 			}
 		}
 		else {	//手动游戏开启
@@ -290,26 +290,26 @@ class GameManager extends egret.EventDispatcher {
 			// ui.autoItem.autoBtn.visible = true;
 			// ui.autoItem.autoStopGroup.visible = false;
 			// ui.autoItem.sMainGroup.visible = true;
-			if (GameConfig.autoPlay){
+			if (GameConfig.autoPlay) {
 				console.log("自动游戏最后一把");
-				if(GameConfig.freeGame){
+				if (GameConfig.freeGame) {
 					console.log("自动游戏最后一把开出红利");
 					ui.autoItem.autoBtn.visible = false;
 					ui.autoItem.autoText_an.visible = false;
 					ui.autoItem.autoText_mode.visible = false;
 					ui.autoItem.autoStopGroup.visible = true;
 					ui.autoItem.sMainGroup.visible = true;
-				}else{
+				} else {
 					ui.autoItem.autoBtn.visible = true;
-					if(ui.autoItem.autoBtn.visible){
-						if (GameManager.getInstance().gameState == GameType.GameState.STOP){
+					if (ui.autoItem.autoBtn.visible) {
+						if (GameManager.getInstance().gameState == GameType.GameState.STOP) {
 							ui.autoItem.autoText_an.visible = false;
 							ui.autoItem.autoText_mode.visible = true;
-						}else{
+						} else {
 							ui.autoItem.autoText_an.visible = true;
 							ui.autoItem.autoText_mode.visible = false;
 						}
-					}else{
+					} else {
 						ui.autoItem.autoText_an.visible = false;
 						ui.autoItem.autoText_mode.visible = false;
 					}
@@ -331,49 +331,49 @@ class GameManager extends egret.EventDispatcher {
 					let ui: MainScenceUI = core.UIManager.getUI(core.UIConst.MainScenceUI);
 					GameConfig.alwaysGame = false;
 					//点了否按钮状态要亮
-					if(GameManager.getInstance().gameState == GameType.GameState.STOP){
-					
-					ui.startBtn.visible = true;
-					ui.stopBtn.visible = false;
-					ui.updataText(false);
-					if (vo.GameData.autoPlayCount <= 0) {
-						ui.updataBtn();
-						ui.infoBtn.enabled = true;
-						ui.autoItem.autoBtn.enabled = true;
-						if(ui.autoItem.autoBtn.visible){
-							ui.autoItem.autoText_mode.visible = true;
-							ui.autoItem.autoText_an.visible = false;
-						}else{
-							ui.autoItem.autoText_mode.visible = false;
-							ui.autoItem.autoText_an.visible = false;
-						}
-						
-						ui.speedOffBtn.enabled = true;
-						ui.speedOnBtn.enabled = true;
-						if(!GameConfig.speedPlay){	//没开快速
-							if(!ui.speedOffBtn.enabled){
-								ui.speedOffTxt.visible = false;
-							}else{
-								ui.speedOffTxt.visible = true;
+					if (GameManager.getInstance().gameState == GameType.GameState.STOP) {
+
+						ui.startBtn.visible = true;
+						ui.stopBtn.visible = false;
+						ui.updataText(false);
+						if (vo.GameData.autoPlayCount <= 0) {
+							ui.updataBtn();
+							ui.infoBtn.enabled = true;
+							ui.autoItem.autoBtn.enabled = true;
+							if (ui.autoItem.autoBtn.visible) {
+								ui.autoItem.autoText_mode.visible = true;
+								ui.autoItem.autoText_an.visible = false;
+							} else {
+								ui.autoItem.autoText_mode.visible = false;
+								ui.autoItem.autoText_an.visible = false;
 							}
-						}else{		//开快速
-							if(!ui.speedOnBtn.enabled){
-								ui.speedOnTxt.visible = false;
-							}else{
-								ui.speedOnTxt.visible = true;
+
+							ui.speedOffBtn.enabled = true;
+							ui.speedOnBtn.enabled = true;
+							if (!GameConfig.speedPlay) {	//没开快速
+								if (!ui.speedOffBtn.enabled) {
+									ui.speedOffTxt.visible = false;
+								} else {
+									ui.speedOffTxt.visible = true;
+								}
+							} else {		//开快速
+								if (!ui.speedOnBtn.enabled) {
+									ui.speedOnTxt.visible = false;
+								} else {
+									ui.speedOnTxt.visible = true;
+								}
 							}
+							ui.topMask.visible = false;
+							ui.setBar.enabled = true;
+							ui.bottomMask.visible = false;
 						}
-						ui.topMask.visible = false;
-						ui.setBar.enabled = true;
-						ui.bottomMask.visible = false;
 					}
-				}
 					GameConfig.emptyPlay = true;
 				});
-			}else{
+			} else {
 				//手动开出免费游戏
-				if(GameConfig.freeGame){
-					
+				if (GameConfig.freeGame) {
+
 					ui.startBtn.visible = true;
 					ui.startBtn.enabled = false;
 					ui.stopBtn.visible = false;
@@ -385,25 +385,25 @@ class GameManager extends egret.EventDispatcher {
 					ui.autoItem.autoText_an.visible = true;
 					ui.speedOffBtn.enabled = false;
 					ui.speedOnBtn.enabled = false;
-					if(!GameConfig.speedPlay){	//没开快速
-						if(!ui.speedOffBtn.enabled){
+					if (!GameConfig.speedPlay) {	//没开快速
+						if (!ui.speedOffBtn.enabled) {
 							ui.speedOffTxt.visible = false;
-						}else{
+						} else {
 							ui.speedOffTxt.visible = true;
 						}
-					}else{		//开快速
-						if(!ui.speedOnBtn.enabled){
+					} else {		//开快速
+						if (!ui.speedOnBtn.enabled) {
 							ui.speedOnTxt.visible = false;
-						}else{
+						} else {
 							ui.speedOnTxt.visible = true;
 						}
 					}
 					ui.topMask.visible = true;
 					ui.setBar.enabled = false;
 					ui.bottomMask.visible = true;
-				}else{
+				} else {
 					console.log("手动无红利")
-					if(GameConfig.alwaysGame){
+					if (GameConfig.alwaysGame) {
 						GameConfig.autoPlay = true;
 						vo.GameData.autoPlayCount = 9999;
 					}
@@ -412,21 +412,21 @@ class GameManager extends egret.EventDispatcher {
 
 
 		}
-		if(this.getFreeCount() > 0 && !GameConfig.freeGame){
-				ui.hideWin();
-				this.startGame();
+		if (this.getFreeCount() > 0 && !GameConfig.freeGame) {
+			ui.hideWin();
+			this.startGame();
 		}
-		if(this.getFreeCount() == 0 && vo.GameData.resultData.ActionType == 'freeslot'){
+		if (this.getFreeCount() == 0 && vo.GameData.resultData.ActionType == 'freeslot') {
 			//显示最后的金币动画
 			console.log("免费游戏结束");
 			GameManager.getInstance().gameState = GameType.GameState.STOP;
 			vo.GameData.allFreeCount = vo.GameData.TotalActionCount = vo.GameData.resultData.Value.TotalActionCount = 0;
-			
-			
+
+
 			//如果是自动游戏———>弹窗
-			if(vo.GameData.autoPlayCount > 0 && GameConfig.autoPlay){
+			if (vo.GameData.autoPlayCount > 0 && GameConfig.autoPlay) {
 				console.log("自动游戏弹窗 == " + vo.GameData.autoPlayCount);
-			}else{	//如果不是自动游戏———>按钮状态等
+			} else {	//如果不是自动游戏———>按钮状态等
 				console.log("不是自动游戏按钮状态等 == " + vo.GameData.autoPlayCount);
 			}
 
@@ -435,7 +435,7 @@ class GameManager extends egret.EventDispatcher {
 
 	/**
 	 * 没钱 
-	 */ 
+	 */
 	public noMoney(): void {
 		core.UIManager.openUI(core.UIConst.StipsUI, core.LayerManager.Layer_Top);
 		let ui: StipsUI = core.UIManager.getUI(core.UIConst.StipsUI);
@@ -445,47 +445,47 @@ class GameManager extends egret.EventDispatcher {
 		});
 	}
 
-	public isJIxuAuto():void{
+	public isJIxuAuto(): void {
 		let ui: MainScenceUI = core.UIManager.getUI(core.UIConst.MainScenceUI);
-			ui.autoItem.autoBtn.visible = true;
-			if(ui.autoItem.autoBtn.visible){
-				if (GameManager.getInstance().gameState == GameType.GameState.STOP){
-					ui.autoItem.autoText_an.visible = false;
-					ui.autoItem.autoText_mode.visible = true;
-				}else{
-					ui.autoItem.autoText_an.visible = true;
-					ui.autoItem.autoText_mode.visible = false;
-				}
-			}else{
+		ui.autoItem.autoBtn.visible = true;
+		if (ui.autoItem.autoBtn.visible) {
+			if (GameManager.getInstance().gameState == GameType.GameState.STOP) {
 				ui.autoItem.autoText_an.visible = false;
+				ui.autoItem.autoText_mode.visible = true;
+			} else {
+				ui.autoItem.autoText_an.visible = true;
 				ui.autoItem.autoText_mode.visible = false;
 			}
-			ui.autoItem.autoStopGroup.visible = false;
-			ui.autoItem.sMainGroup.visible = true;
-			ui.autoItem.sopAutoBtn.enabled = true;
-			if (GameConfig.autoPlay) {
-					vo.GameData.autoPlayCount = 0;
-					GameConfig.autoPlay = false;
-					if (!this.isStart) return;
-					core.UIManager.openUI(core.UIConst.StipsUI, core.LayerManager.Layer_Top);
-					GameConfig.emptyPlay = false;
-					let uis: StipsUI = core.UIManager.getUI(core.UIConst.StipsUI);
-					uis.showAutoBtn(0, '自动游戏已停止。\n您想重复自动游戏吗？', () => {
-						core.UIManager.closeUI(core.UIConst.StipsUI);
-						ui.autoItem.resetDo();
-					}, () => {
-						core.UIManager.closeUI(core.UIConst.StipsUI);
-						GameConfig.emptyPlay = true;
-					});
-				}
+		} else {
+			ui.autoItem.autoText_an.visible = false;
+			ui.autoItem.autoText_mode.visible = false;
+		}
+		ui.autoItem.autoStopGroup.visible = false;
+		ui.autoItem.sMainGroup.visible = true;
+		ui.autoItem.sopAutoBtn.enabled = true;
+		if (GameConfig.autoPlay) {
+			vo.GameData.autoPlayCount = 0;
+			GameConfig.autoPlay = false;
+			if (!this.isStart) return;
+			core.UIManager.openUI(core.UIConst.StipsUI, core.LayerManager.Layer_Top);
+			GameConfig.emptyPlay = false;
+			let uis: StipsUI = core.UIManager.getUI(core.UIConst.StipsUI);
+			uis.showAutoBtn(0, '自动游戏已停止。\n您想重复自动游戏吗？', () => {
+				core.UIManager.closeUI(core.UIConst.StipsUI);
+				ui.autoItem.resetDo();
+			}, () => {
+				core.UIManager.closeUI(core.UIConst.StipsUI);
+				GameConfig.emptyPlay = true;
+			});
+		}
 	}
 
 
 
-	public startGame(isUsolt:boolean = false): void {
+	public startGame(isUsolt: boolean = false): void {
 		//开始
 		let ui: MainScenceUI = core.UIManager.getUI(core.UIConst.MainScenceUI);
-		if(isUsolt){
+		if (isUsolt) {
 			Commond.sendPlay(1); //
 			ui.gameScence.startReel();
 			return;
@@ -495,7 +495,7 @@ class GameManager extends egret.EventDispatcher {
 		ui.hideWin();
 		if (this.getFreeCount() > 0) {
 			Commond.sendPlay(1);
-		}else{
+		} else {
 			if (vo.GameData.balance < vo.GameData.betScoreArr[vo.GameData.betIndex] * vo.GameData.line) {
 				GameConfig.autoPlay = false;
 				vo.GameData.autoPlayCount = 0;
@@ -504,13 +504,13 @@ class GameManager extends egret.EventDispatcher {
 			else {
 				if (GameManager.getInstance().gameState == GameType.GameState.STOP) {
 					GameManager.getInstance().gameState = GameType.GameState.PLAYING;
-					if (GameConfig.autoPlay ) {
-						if(GameConfig.alwaysGame){
+					if (GameConfig.autoPlay) {
+						if (GameConfig.alwaysGame) {
 							//是直到环节
 							vo.GameData.autoPlayCount = 9998;
 							ui.autoItem.autoCountLabel.text = "直到环节";
 							GameConfig.lastCount = vo.GameData.autoPlayCount;
-						}else{
+						} else {
 							vo.GameData.autoPlayCount -= 1;
 							ui.autoItem.autoCountLabel.text = vo.GameData.autoPlayCount + '';
 							GameConfig.lastCount = vo.GameData.autoPlayCount;
@@ -520,51 +520,51 @@ class GameManager extends egret.EventDispatcher {
 				}
 			}
 		}
-			let resultData: any = vo.GameData.resultData;
-			let winmoney: number = 0;
-			if (!resultData) {
-				winmoney = 0;
-			}
-			else {
-				winmoney = resultData.Value.TotalWinDollar;
-			}
-			ui.setReward(0);
-			this.isStart = false;
-			ui.startBtn.visible = true;
-			ui.startBtn.enabled = false;
-			ui.stopBtn.visible = false;
-			ui.infoBtn.enabled = false;
-			ui.betSubBtn.enabled = ui.betAddBtn.enabled = false;
-			ui.lineSubBtn.enabled = ui.lineAddBtn.enabled = false;
-			ui.autoItem.autoBtn.enabled = false;
-			if(GameConfig.autoPlay){
-				ui.autoItem.autoText_mode.visible = false;
-				ui.autoItem.autoText_an.visible = false;
-			}else{
-				ui.autoItem.autoText_mode.visible = false;
-				ui.autoItem.autoText_an.visible = true;
-			}
-			
-			ui.speedOffBtn.enabled = false;
-			ui.speedOnBtn.enabled = false;
-			if(!GameConfig.speedPlay){	//没开快速
-				if(!ui.speedOffBtn.enabled){
-					ui.speedOffTxt.visible = false;
-				}else{
-					ui.speedOffTxt.visible = true;
-				}
-			}else{		//开快速
-				if(!ui.speedOnBtn.enabled){
-					ui.speedOnTxt.visible = false;
-				}else{
-					ui.speedOnTxt.visible = true;
-				}
-			}
-			ui.topMask.visible = true;
-			ui.setBar.enabled = false;
-			ui.bottomMask.visible = true;
+		let resultData: any = vo.GameData.resultData;
+		let winmoney: number = 0;
+		if (!resultData) {
+			winmoney = 0;
+		}
+		else {
+			winmoney = resultData.Value.TotalWinDollar;
+		}
+		ui.setReward(0);
+		this.isStart = false;
+		ui.startBtn.visible = true;
+		ui.startBtn.enabled = false;
+		ui.stopBtn.visible = false;
+		ui.infoBtn.enabled = false;
+		ui.betSubBtn.enabled = ui.betAddBtn.enabled = false;
+		ui.lineSubBtn.enabled = ui.lineAddBtn.enabled = false;
+		ui.autoItem.autoBtn.enabled = false;
+		if (GameConfig.autoPlay) {
+			ui.autoItem.autoText_mode.visible = false;
+			ui.autoItem.autoText_an.visible = false;
+		} else {
+			ui.autoItem.autoText_mode.visible = false;
+			ui.autoItem.autoText_an.visible = true;
+		}
 
-			ui.gameScence.startReel();
+		ui.speedOffBtn.enabled = false;
+		ui.speedOnBtn.enabled = false;
+		if (!GameConfig.speedPlay) {	//没开快速
+			if (!ui.speedOffBtn.enabled) {
+				ui.speedOffTxt.visible = false;
+			} else {
+				ui.speedOffTxt.visible = true;
+			}
+		} else {		//开快速
+			if (!ui.speedOnBtn.enabled) {
+				ui.speedOnTxt.visible = false;
+			} else {
+				ui.speedOnTxt.visible = true;
+			}
+		}
+		ui.topMask.visible = true;
+		ui.setBar.enabled = false;
+		ui.bottomMask.visible = true;
+
+		ui.gameScence.startReel();
 	}
 
 	/**
@@ -595,7 +595,7 @@ class GameManager extends egret.EventDispatcher {
 
 	public stopGame(): void {
 		let ui: MainScenceUI = core.UIManager.getUI(core.UIConst.MainScenceUI);
-		if(GameConfig.isData){
+		if (GameConfig.isData) {
 			ui.gameScence.stopReel();
 			ui.stopBtn.visible = false;
 			ui.startBtn.visible = true;

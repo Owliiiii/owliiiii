@@ -187,17 +187,19 @@ var SetUI = (function (_super) {
                 }
                 break;
             case this.stage:
-                if (SetConst.BETSET_SHOW || SetConst.AUTO_SHOW) {
-                    SoundManager.getInstance().playEffect(SoundConst.BUTTON);
-                }
-                SetConst.BETSET_SHOW = false;
-                SetConst.AUTO_SHOW = false;
-                this.betSetCompoment.goUpdata();
-                this.autoSetCompoment.goUpdata();
-                this.betBtn.selected = SetConst.BETSET_SHOW;
-                this.updataBtnState();
-                if (GameManager.getInstance().gameState == GameType.GameState.STOP) {
-                    this.betBtn.enabled = this.qukcheckBtn.enabled = !SetConst.BETSET_SHOW;
+                if (!GameConfig.isBonusBtn) {
+                    if (SetConst.BETSET_SHOW || SetConst.AUTO_SHOW) {
+                        SoundManager.getInstance().playEffect(SoundConst.BUTTON);
+                    }
+                    SetConst.BETSET_SHOW = false;
+                    SetConst.AUTO_SHOW = false;
+                    this.betSetCompoment.goUpdata();
+                    this.autoSetCompoment.goUpdata();
+                    this.betBtn.selected = SetConst.BETSET_SHOW;
+                    this.updataBtnState();
+                    if (GameManager.getInstance().gameState == GameType.GameState.STOP) {
+                        this.betBtn.enabled = this.qukcheckBtn.enabled = !SetConst.BETSET_SHOW;
+                    }
                 }
                 break;
             case this.modleCheckButton:

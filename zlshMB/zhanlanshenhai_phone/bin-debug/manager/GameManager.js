@@ -118,12 +118,19 @@ var GameManager = (function (_super) {
         var ui = core.UIManager.getUI(core.UIConst.MainScenceUI);
         vo.GameData.initData.Value.TokenInfo.Balance = vo.GameData.resultData.Value.Balance;
         vo.GameData.balance = vo.GameData.initData.Value.TokenInfo.Balance;
+        vo.GameData.allFreeCount = vo.GameData.resultData.Value.TotalActionCount;
         this.dispatchEventWith(SetEvent.SET_BALANCE_CHANGE);
         var resultData = vo.GameData.resultData;
         var winarr = resultData.Value.SpinResult.Main.WinResults;
         var totalBet = resultData.Value.SpinResult.TotalBet;
         var totalWin = resultData.Value.SpinResult.TotalWin;
         var b = totalWin / totalBet;
+        if (this.getFreeCount() == 0 && vo.GameData.resultData.ActionType == 'freeslot') {
+            //免费游戏结束弹窗
+            // GameConfig.autoPlay = false;
+            vo.GameData.autoPlayCount = 0;
+            ui.endFree();
+        }
         //b=8;
         //测试5同类
         // winarr.push({
@@ -188,17 +195,25 @@ var GameManager = (function (_super) {
         var ui = core.UIManager.getUI(core.UIConst.MainScenceUI);
         var cAuto = SetConst.AUTO;
         SetConst.AUTO = SetConst.AUTO_COUNT > 0 ? true : false;
-        ui.setUI.updataEnable(1);
+        if (!GameConfig.isBonusBtn) {
+            ui.setUI.updataEnable(1);
+        }
         ui.setUI.updataBtnState();
-        if (SetConst.AUTO) {
+        if (this.getFreeCount() > 0) {
+            // ui.hideWin();
             GameManager.getInstance().dispatchEventWith(SetEvent.SET_START);
         }
         else {
-            if (cAuto) {
-                GameManager.getInstance().dispatchEventWith(SetEvent.SET_STOP, false, 1);
+            if (SetConst.AUTO) {
+                GameManager.getInstance().dispatchEventWith(SetEvent.SET_START);
             }
             else {
-                GameManager.getInstance().dispatchEventWith(SetEvent.SET_STOP);
+                if (cAuto) {
+                    GameManager.getInstance().dispatchEventWith(SetEvent.SET_STOP, false, 1);
+                }
+                else {
+                    GameManager.getInstance().dispatchEventWith(SetEvent.SET_STOP);
+                }
             }
         }
     };
@@ -207,56 +222,78 @@ var GameManager = (function (_super) {
         switch (e.type) {
             case SetEvent.SET_START:
                 if (this.getMoneyIsFull()) {
-                    if (!SetConst.AUTO && !SetConst.SPEED_PLAY) {
-                        if (egret.getTimer() - this.t < 2000 && !SetConst.QUIKTIP_SHOW) {
-                            core.UIManager.openUI(core.UIConst.QukTipsUI, core.LayerManager.Layer_Top);
-                            SetConst.QUIKTIP_SHOW = true;
-                            return;
+                    if (this.getFreeCount() > 0) {
+                        Commond.sendPlay(true);
+                        ui.hideWin();
+                        this.stopchannel();
+                        ui.gameScence.startReel();
+                        if (vo.GameData.resultData.ActionType == 'freeslot') {
+                            var c = (vo.GameData.resultData.Value.TotalActionCount - this.getFreeCount()) > 0 ? (vo.GameData.resultData.Value.TotalActionCount) - this.getFreeCount() : vo.GameData.allFreeCount;
+                            ui.free_Num.text = "" + this.getFreeCount();
+                            // this.showTips('免费旋转第' + c + '次，' + '共' + vo.GameData.allFreeCount + '次');
                         }
-                        this.t = egret.getTimer();
-                    }
-                    GameManager.getInstance().gameState = GameType.GameState.PLAYING;
-                    Commond.sendPlay();
-                    ui.hideWin();
-                    this.stopchannel();
-                    ui.gameScence.startReel();
-                    vo.GameData.balance -= vo.GameData.betScoreArr[vo.GameData.betIndex] * vo.GameData.line;
-                    this.dispatchEventWith(SetEvent.SET_BALANCE_CHANGE);
-                    if (SetConst.AUTO) {
-                        SetConst.AUTO_COUNT -= 1;
-                        ui.setUI.autoButton.isPlay = true;
-                        if (SetConst.AUTO_COUNT > 99) {
-                            ui.setUI.autoButton.countLabel.text = "";
-                        }
-                        else {
-                            ui.setUI.autoButton.countLabel.text = SetConst.AUTO_COUNT + '';
-                        }
-                        SetConst.AUTO_SHOW = false;
-                        ui.setUI.autoSetCompoment.goUpdata();
-                        ui.setUI.tipLabel.alpha = 1;
-                        if (e.data != 1) {
-                            if (SetConst.AUTO_COUNT > 99) {
-                                ui.setUI.tipLabel.text = "直到环节自动旋转";
+                        vo.GameData.balance -= vo.GameData.betScoreArr[vo.GameData.betIndex] * vo.GameData.line;
+                        this.dispatchEventWith(SetEvent.SET_BALANCE_CHANGE);
+                        if (!SetConst.AUTO) {
+                            if (e.data != 1) {
+                                ui.setUI.tipLabel.text = '触摸转轴来提前停止';
+                                ui.setUI.tipLabel.scaleX = ui.setUI.tipLabel.scaleY = 0.7;
+                                ui.setUI.tipLabel.alpha = 1;
                             }
-                            else {
-                                ui.setUI.tipLabel.text = '剩余' + SetConst.AUTO_COUNT + '剩余次数';
-                            }
-                            ui.setUI.tipLabel.scaleX = ui.setUI.tipLabel.scaleY = 0.7;
                         }
                     }
                     else {
-                        if (e.data != 1) {
-                            ui.setUI.tipLabel.text = '触摸转轴来提前停止';
-                            ui.setUI.tipLabel.scaleX = ui.setUI.tipLabel.scaleY = 0.7;
-                            ui.setUI.tipLabel.alpha = 1;
+                        if (!SetConst.AUTO && !SetConst.SPEED_PLAY) {
+                            if (egret.getTimer() - this.t < 2000 && !SetConst.QUIKTIP_SHOW) {
+                                core.UIManager.openUI(core.UIConst.QukTipsUI, core.LayerManager.Layer_Top);
+                                SetConst.QUIKTIP_SHOW = true;
+                                return;
+                            }
+                            this.t = egret.getTimer();
                         }
+                        GameManager.getInstance().gameState = GameType.GameState.PLAYING;
+                        Commond.sendPlay();
+                        ui.hideWin();
+                        this.stopchannel();
+                        ui.gameScence.startReel();
+                        vo.GameData.balance -= vo.GameData.betScoreArr[vo.GameData.betIndex] * vo.GameData.line;
+                        this.dispatchEventWith(SetEvent.SET_BALANCE_CHANGE);
+                        if (SetConst.AUTO) {
+                            SetConst.AUTO_COUNT -= 1;
+                            ui.setUI.autoButton.isPlay = true;
+                            if (SetConst.AUTO_COUNT > 99) {
+                                ui.setUI.autoButton.countLabel.text = "";
+                            }
+                            else {
+                                ui.setUI.autoButton.countLabel.text = SetConst.AUTO_COUNT + '';
+                            }
+                            SetConst.AUTO_SHOW = false;
+                            ui.setUI.autoSetCompoment.goUpdata();
+                            ui.setUI.tipLabel.alpha = 1;
+                            if (e.data != 1) {
+                                if (SetConst.AUTO_COUNT > 99) {
+                                    ui.setUI.tipLabel.text = "直到环节自动旋转";
+                                }
+                                else {
+                                    ui.setUI.tipLabel.text = '剩余' + SetConst.AUTO_COUNT + '剩余次数';
+                                }
+                                ui.setUI.tipLabel.scaleX = ui.setUI.tipLabel.scaleY = 0.7;
+                            }
+                        }
+                        else {
+                            if (e.data != 1) {
+                                ui.setUI.tipLabel.text = '触摸转轴来提前停止';
+                                ui.setUI.tipLabel.scaleX = ui.setUI.tipLabel.scaleY = 0.7;
+                                ui.setUI.tipLabel.alpha = 1;
+                            }
+                        }
+                        SetConst.BETSET_SHOW = false;
+                        ui.setUI.betSetCompoment.goUpdata();
+                        ui.setUI.updataEnable(0);
+                        ui.setUI.tipLabel.visible = true;
+                        ui.setUI.rewardGroup.visible = false;
+                        this.dispatchEventWith(SetEvent.SET_AUTO_CHANGED);
                     }
-                    SetConst.BETSET_SHOW = false;
-                    ui.setUI.betSetCompoment.goUpdata();
-                    ui.setUI.updataEnable(0);
-                    ui.setUI.tipLabel.visible = true;
-                    ui.setUI.rewardGroup.visible = false;
-                    this.dispatchEventWith(SetEvent.SET_AUTO_CHANGED);
                 }
                 else {
                     ui.setUI.autoButton.isPlay = false;
@@ -289,6 +326,32 @@ var GameManager = (function (_super) {
         var mui = core.UIManager.getUI(core.UIConst.MainScenceUI);
         ui.shows(0, '余额不足，是否要存款?', function () {
         });
+    };
+    /**
+     * 判断当前还有多少次免费旋转
+     */
+    GameManager.prototype.getFreeCount = function () {
+        var arr = vo.GameData.initData.Value.Actions;
+        if (!arr)
+            return 0;
+        var n = 0;
+        for (var i = 0; i < arr.length; i++) {
+            n += arr[i].remaining;
+        }
+        return n;
+    };
+    /**
+     * 判断当前一共获得多少次旋转
+     */
+    GameManager.prototype.getAllFreeCount = function () {
+        var arr = vo.GameData.initData.Value.Actions;
+        if (!arr)
+            return 0;
+        var n = 0;
+        for (var i = 0; i < arr.length; i++) {
+            n += arr[i].count;
+        }
+        return n;
     };
     /**
      * 设置托管状态

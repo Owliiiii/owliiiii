@@ -87,7 +87,7 @@ class BetSetCompoment extends eui.Component {
 			this.currentState = 'hor_' + SetConst.MODLE;
 		}
 		else {
-			this.currentState = SetConst.MODLE==0?'ver':'ver_1';
+			this.currentState = SetConst.MODLE == 0 ? 'ver' : 'ver_1';
 		}
 		this.sunBtn.enabled = vo.GameData.betIndex > 0;
 		this.addBtn.enabled = vo.GameData.betIndex < vo.GameData.betScoreArr.length - 1;
@@ -163,7 +163,7 @@ class BetSetCompoment extends eui.Component {
 		if (SetConst.MODLE == 0) {
 			if (SetConst.BETSET_SHOW) {
 				x = this.currentState.indexOf('hor') != -1 ? 0 : GameConfig.WIDTH / 2 - this.width / 2;
-				y = this.currentState.indexOf('hor') != -1 ? GameConfig.HEIGHT / 2 - this.height / 2-10 : GameConfig.HEIGHT / 2 - this.height / 2 - 118;
+				y = this.currentState.indexOf('hor') != -1 ? GameConfig.HEIGHT / 2 - this.height / 2 - 10 : GameConfig.HEIGHT / 2 - this.height / 2 - 118;
 			}
 			else {
 				x = this.currentState.indexOf('hor') != -1 ? -this.width + 100 : GameConfig.WIDTH / 2 - this.width / 2;
@@ -173,7 +173,7 @@ class BetSetCompoment extends eui.Component {
 		else {
 			if (SetConst.BETSET_SHOW) {
 				x = this.currentState.indexOf('hor') != -1 ? GameConfig.WIDTH - this.width : GameConfig.WIDTH / 2 - this.width / 2;
-				y = this.currentState.indexOf('hor') != -1 ? GameConfig.HEIGHT / 2 - this.height / 2-10 : GameConfig.HEIGHT / 2 - this.height / 2 - 118;
+				y = this.currentState.indexOf('hor') != -1 ? GameConfig.HEIGHT / 2 - this.height / 2 - 10 : GameConfig.HEIGHT / 2 - this.height / 2 - 118;
 			}
 			else {
 				x = this.currentState.indexOf('hor') != -1 ? GameConfig.WIDTH - 100 : GameConfig.WIDTH / 2 - this.width / 2;

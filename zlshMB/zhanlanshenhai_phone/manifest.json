@@ -108,6 +108,7 @@
 		"bin-debug/gameview/set/AutoStartBtn.js",
 		"bin-debug/gameview/set/BetSetCompoment.js",
 		"bin-debug/gameview/set/BonusBtn.js",
+		"bin-debug/gameview/set/FreeBtn.js",
 		"bin-debug/gameview/set/SetConst.js",
 		"bin-debug/gameview/set/SetEvent.js",
 		"bin-debug/gameview/set/SetUI.js",

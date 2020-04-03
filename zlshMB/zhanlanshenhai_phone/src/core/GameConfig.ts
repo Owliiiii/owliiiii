@@ -22,6 +22,14 @@ class GameConfig {
 	 */
 	public static isFree:boolean = false;
 
+	/**
+	 * 免费游戏
+	 */
+	public static freeGame:boolean = false;
+	/**
+	 * 免费游戏第一阶段
+	 */
+	public static isBonusBtn:boolean = false;
 	//第一次中C1的Index 
 	public static oneC1Index:number;
 	//第二次中C1的Index 

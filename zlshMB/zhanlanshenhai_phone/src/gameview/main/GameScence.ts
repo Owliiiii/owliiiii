@@ -4,6 +4,7 @@ class GameScence extends eui.Component {
 	public pent: GamePentCompoment;
 	public lightBg: eui.Rect;
 	public bonusMc:egret.MovieClip;
+	public freeBg:eui.Image;
 	
 	public constructor() {
 		super();

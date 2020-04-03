@@ -34,7 +34,7 @@ class GameManager extends egret.EventDispatcher {
 		//初始化监听
 		window.addEventListener("message", (receiveMessage) => {
 			console.log('r--->' + receiveMessage.data);
-			core.UIManager.openUI(core.UIConst.NetCloseUI,core.LayerManager.Layer_Tip);
+			core.UIManager.openUI(core.UIConst.NetCloseUI, core.LayerManager.Layer_Tip);
 			let ui: NetCloseUI = core.UIManager.getUI(core.UIConst.NetCloseUI);
 			ui.shows(0, '连接断开，正在重新连接.', () => {
 				window.location.href = window.location.href;
@@ -111,12 +111,20 @@ class GameManager extends egret.EventDispatcher {
 		let ui: MainScenceUI = core.UIManager.getUI(core.UIConst.MainScenceUI);
 		vo.GameData.initData.Value.TokenInfo.Balance = vo.GameData.resultData.Value.Balance;
 		vo.GameData.balance = vo.GameData.initData.Value.TokenInfo.Balance;
+		vo.GameData.allFreeCount = vo.GameData.resultData.Value.TotalActionCount;
 		this.dispatchEventWith(SetEvent.SET_BALANCE_CHANGE);
 		let resultData: any = vo.GameData.resultData;
 		let winarr: Array<any> = resultData.Value.SpinResult.Main.WinResults;
 		let totalBet: number = resultData.Value.SpinResult.TotalBet;
 		let totalWin: number = resultData.Value.SpinResult.TotalWin;
 		let b: number = totalWin / totalBet;
+		if (this.getFreeCount() == 0 && vo.GameData.resultData.ActionType == 'freeslot') {
+			//免费游戏结束弹窗
+
+			// GameConfig.autoPlay = false;
+			vo.GameData.autoPlayCount = 0;
+			ui.endFree();
+		}
 		//b=8;
 		//测试5同类
 		// winarr.push({
@@ -168,18 +176,15 @@ class GameManager extends egret.EventDispatcher {
 
 	}
 
-	public rewardChannel:egret.SoundChannel;
-	public startChannel:egret.SoundChannel;
+	public rewardChannel: egret.SoundChannel;
+	public startChannel: egret.SoundChannel;
 
-	public stopchannel():void
-	{
-		if(this.rewardChannel)
-		{
+	public stopchannel(): void {
+		if (this.rewardChannel) {
 			this.rewardChannel.stop();
 		}
 
-		if(this.startChannel)
-		{
+		if (this.startChannel) {
 			this.startChannel.stop();
 		}
 	}
@@ -190,17 +195,24 @@ class GameManager extends egret.EventDispatcher {
 		let ui: MainScenceUI = core.UIManager.getUI(core.UIConst.MainScenceUI);
 		let cAuto: boolean = SetConst.AUTO;
 		SetConst.AUTO = SetConst.AUTO_COUNT > 0 ? true : false;
-		ui.setUI.updataEnable(1);
-		ui.setUI.updataBtnState();
-		if (SetConst.AUTO) {
-			GameManager.getInstance().dispatchEventWith(SetEvent.SET_START);
+		if (!GameConfig.isBonusBtn) {
+			ui.setUI.updataEnable(1);
 		}
-		else {
-			if (cAuto) {
-				GameManager.getInstance().dispatchEventWith(SetEvent.SET_STOP, false, 1);
+		ui.setUI.updataBtnState();
+		if (this.getFreeCount() > 0) {
+			// ui.hideWin();
+			GameManager.getInstance().dispatchEventWith(SetEvent.SET_START);
+		} else {
+			if (SetConst.AUTO) {
+				GameManager.getInstance().dispatchEventWith(SetEvent.SET_START);
 			}
 			else {
-				GameManager.getInstance().dispatchEventWith(SetEvent.SET_STOP);
+				if (cAuto) {
+					GameManager.getInstance().dispatchEventWith(SetEvent.SET_STOP, false, 1);
+				}
+				else {
+					GameManager.getInstance().dispatchEventWith(SetEvent.SET_STOP);
+				}
 			}
 		}
 	}
@@ -211,57 +223,78 @@ class GameManager extends egret.EventDispatcher {
 		switch (e.type) {
 			case SetEvent.SET_START:
 				if (this.getMoneyIsFull()) {
-					if (!SetConst.AUTO && !SetConst.SPEED_PLAY) {
-						if (egret.getTimer() - this.t < 2000 && !SetConst.QUIKTIP_SHOW) {
-							core.UIManager.openUI(core.UIConst.QukTipsUI, core.LayerManager.Layer_Top);
-							SetConst.QUIKTIP_SHOW = true;
-							return;
+					if (this.getFreeCount() > 0) {
+						Commond.sendPlay(true);
+						ui.hideWin();
+						this.stopchannel();
+						ui.gameScence.startReel();
+						if (vo.GameData.resultData.ActionType == 'freeslot') {
+							let c: number = (vo.GameData.resultData.Value.TotalActionCount - this.getFreeCount()) > 0 ? (vo.GameData.resultData.Value.TotalActionCount) - this.getFreeCount() : vo.GameData.allFreeCount;
+							ui.free_Num.text = "" + this.getFreeCount();
+							// this.showTips('免费旋转第' + c + '次，' + '共' + vo.GameData.allFreeCount + '次');
 						}
-						this.t = egret.getTimer();
-					}
-					GameManager.getInstance().gameState = GameType.GameState.PLAYING;
-					Commond.sendPlay();
-					ui.hideWin();
-					this.stopchannel();
-					ui.gameScence.startReel();
-					
-					vo.GameData.balance -= vo.GameData.betScoreArr[vo.GameData.betIndex] * vo.GameData.line;
-					this.dispatchEventWith(SetEvent.SET_BALANCE_CHANGE);
-					if (SetConst.AUTO) {
-						SetConst.AUTO_COUNT -= 1;
-						ui.setUI.autoButton.isPlay = true;
-						
-						if(SetConst.AUTO_COUNT > 99){
-							ui.setUI.autoButton.countLabel.text = "";
-						}else{
-							ui.setUI.autoButton.countLabel.text = SetConst.AUTO_COUNT + '';
-						}
-						SetConst.AUTO_SHOW = false;
-						ui.setUI.autoSetCompoment.goUpdata();
-						ui.setUI.tipLabel.alpha = 1;
-						if (e.data != 1) {
-							if(SetConst.AUTO_COUNT > 99){
-								ui.setUI.tipLabel.text = "直到环节自动旋转";
-							}else{
-								ui.setUI.tipLabel.text = '剩余' + SetConst.AUTO_COUNT + '剩余次数';
+						vo.GameData.balance -= vo.GameData.betScoreArr[vo.GameData.betIndex] * vo.GameData.line;
+						this.dispatchEventWith(SetEvent.SET_BALANCE_CHANGE);
+						if (!SetConst.AUTO) {
+							if (e.data != 1) {
+								ui.setUI.tipLabel.text = '触摸转轴来提前停止';
+								ui.setUI.tipLabel.scaleX = ui.setUI.tipLabel.scaleY = 0.7;
+								ui.setUI.tipLabel.alpha = 1;
 							}
-							ui.setUI.tipLabel.scaleX = ui.setUI.tipLabel.scaleY = 0.7;
 						}
-					}
-					else {
-						if (e.data != 1) {
-							ui.setUI.tipLabel.text = '触摸转轴来提前停止';
-							ui.setUI.tipLabel.scaleX = ui.setUI.tipLabel.scaleY = 0.7;
-							ui.setUI.tipLabel.alpha = 1;
+					} else {
+						if (!SetConst.AUTO && !SetConst.SPEED_PLAY) {
+							if (egret.getTimer() - this.t < 2000 && !SetConst.QUIKTIP_SHOW) {
+								core.UIManager.openUI(core.UIConst.QukTipsUI, core.LayerManager.Layer_Top);
+								SetConst.QUIKTIP_SHOW = true;
+								return;
+							}
+							this.t = egret.getTimer();
 						}
+						GameManager.getInstance().gameState = GameType.GameState.PLAYING;
+						Commond.sendPlay();
+						ui.hideWin();
+						this.stopchannel();
+						ui.gameScence.startReel();
 
+						vo.GameData.balance -= vo.GameData.betScoreArr[vo.GameData.betIndex] * vo.GameData.line;
+						this.dispatchEventWith(SetEvent.SET_BALANCE_CHANGE);
+						if (SetConst.AUTO) {
+							SetConst.AUTO_COUNT -= 1;
+							ui.setUI.autoButton.isPlay = true;
+
+							if (SetConst.AUTO_COUNT > 99) {
+								ui.setUI.autoButton.countLabel.text = "";
+							} else {
+								ui.setUI.autoButton.countLabel.text = SetConst.AUTO_COUNT + '';
+							}
+							SetConst.AUTO_SHOW = false;
+							ui.setUI.autoSetCompoment.goUpdata();
+							ui.setUI.tipLabel.alpha = 1;
+							if (e.data != 1) {
+								if (SetConst.AUTO_COUNT > 99) {
+									ui.setUI.tipLabel.text = "直到环节自动旋转";
+								} else {
+									ui.setUI.tipLabel.text = '剩余' + SetConst.AUTO_COUNT + '剩余次数';
+								}
+								ui.setUI.tipLabel.scaleX = ui.setUI.tipLabel.scaleY = 0.7;
+							}
+						}
+						else {
+							if (e.data != 1) {
+								ui.setUI.tipLabel.text = '触摸转轴来提前停止';
+								ui.setUI.tipLabel.scaleX = ui.setUI.tipLabel.scaleY = 0.7;
+								ui.setUI.tipLabel.alpha = 1;
+							}
+
+						}
+						SetConst.BETSET_SHOW = false;
+						ui.setUI.betSetCompoment.goUpdata();
+						ui.setUI.updataEnable(0);
+						ui.setUI.tipLabel.visible = true;
+						ui.setUI.rewardGroup.visible = false;
+						this.dispatchEventWith(SetEvent.SET_AUTO_CHANGED);
 					}
-					SetConst.BETSET_SHOW = false;
-					ui.setUI.betSetCompoment.goUpdata();
-					ui.setUI.updataEnable(0);
-					ui.setUI.tipLabel.visible = true;
-					ui.setUI.rewardGroup.visible = false;
-					this.dispatchEventWith(SetEvent.SET_AUTO_CHANGED);
 				}
 				else {
 					ui.setUI.autoButton.isPlay = false;
@@ -297,6 +330,31 @@ class GameManager extends egret.EventDispatcher {
 		ui.shows(0, '余额不足，是否要存款?', () => {
 
 		});
+	}
+	/**
+	 * 判断当前还有多少次免费旋转
+	 */
+	public getFreeCount(): number {
+		let arr: Array<any> = vo.GameData.initData.Value.Actions;
+		if (!arr) return 0;
+		let n: number = 0;
+		for (let i: number = 0; i < arr.length; i++) {
+			n += arr[i].remaining;
+		}
+		return n;
+	}
+
+	/**
+	 * 判断当前一共获得多少次旋转
+	 */
+	public getAllFreeCount(): number {
+		let arr: Array<any> = vo.GameData.initData.Value.Actions;
+		if (!arr) return 0;
+		let n: number = 0;
+		for (let i: number = 0; i < arr.length; i++) {
+			n += arr[i].count;
+		}
+		return n;
 	}
 
 	/**

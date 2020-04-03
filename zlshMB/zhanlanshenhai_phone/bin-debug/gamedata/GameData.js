@@ -42,6 +42,10 @@ var vo;
          */
         GameData.betIndex = 0;
         /**
+         * 当前获得的最大免费次数
+         */
+        GameData.allFreeCount = 0;
+        /**
          * 线数
          */
         GameData.line = 25;

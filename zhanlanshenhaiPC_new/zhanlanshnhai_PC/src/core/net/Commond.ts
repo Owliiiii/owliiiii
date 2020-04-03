@@ -34,7 +34,7 @@ class Commond {
 	 */
 	public static sendInitGame(): void {
 		let data = Commond.initData();
-		data.Action='Initial';
+		data.Action = 'Initial';
 		data.Parameter = {
 			"Action": 'Initial',
 			"Type": null,
@@ -59,37 +59,35 @@ class Commond {
 		if (egret.getTimer() - this.playtime < 400) {
 			return;
 		}
-		let type:string;
-		if(isFree == 0){		//普通游戏
+		let type: string;
+		if (isFree == 0) {		//普通游戏
 			type = "slot";
 		}
-		if(isFree == 1){		//免费游戏
+		if (isFree == 1) {		//免费游戏
 			type = "freeslot";
 		}
 		this.playtime = egret.getTimer();
 		let data = Commond.initData();
-		data.Action='Play';
+		data.Action = 'Play';
 		data.Parameter = {
 			"Action": 'Play',
 			"Type": type,//isFree ? 'freeslot' : "slot",
 			"Line": vo.GameData.line,
-			"Bet":  1,
-			"Denom":   vo.GameData.line * vo.GameData.betScoreArr[vo.GameData.betIndex]*10000,
+			"Bet": 1,
+			"Denom": vo.GameData.line * vo.GameData.betScoreArr[vo.GameData.betIndex] * 10000,
 			"PlayerId": GameConfig.CasinoGame.PlayerId,
 			"SessionData": {
 				"Bet": 1,
 				"Multiply": 10
 			},
-			"DebugMode": "None" 
+			"DebugMode": "None"
 		};
 		// ServerManager.getInstance().acpetCommond(data);
-		if(GameConfig.gameModle==GameType.GameModule.falseModle)
-		{
-		    GameManager.getInstance().onNetGamePlay({});
+		if (GameConfig.gameModle == GameType.GameModule.falseModle) {
+			GameManager.getInstance().onNetGamePlay({});
 		}
-		else
-		{
-		   sockets.SocketMananger.getInstance().sendMessage(data);
+		else {
+			sockets.SocketMananger.getInstance().sendMessage(data);
 		}
 	}
 
@@ -109,7 +107,7 @@ class Commond {
 				"BetSetup": {
 					"Bet": 1,
 					'Line': (vo.GameData.line + 1),
-					"Multiply": vo.GameData.betScoreArr[vo.GameData.betIndex] 
+					"Multiply": vo.GameData.betScoreArr[vo.GameData.betIndex]
 				},
 
 			}

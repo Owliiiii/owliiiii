@@ -17,10 +17,12 @@ var MainScenceUI = (function (_super) {
         _this.tx = 0;
         _this.ty = 0;
         _this.indexNum = 0;
+        _this.isTipsGroup = false;
         _this.curtime = 0;
         _this.indexC1 = 0;
         _this.showReward = 0;
         _this.winIndex = 0;
+        _this.allReward = 0;
         _this._rewardNum = 0;
         _this._rewardMaxNum = 0;
         _this.skinName = MainScenceUISkin;
@@ -41,12 +43,14 @@ var MainScenceUI = (function (_super) {
         this.registerEvent(this.setUI.bonusBtn, egret.TouchEvent.TOUCH_END, this.onBonusEnd, this);
         this.registerEvent(this.pickFreeBtn, egret.TouchEvent.TOUCH_TAP, this.closeFreeUi, this);
         GameManager.getInstance().addEventListener(SetEvent.SET_HIDE_REWARD, this.hideWin, this);
+        this.registerEvent(this.overFreeBtn, egret.TouchEvent.TOUCH_TAP, this.endFreeUi, this);
         this.alpha = 0;
         egret.Tween.get(this).to({ alpha: 1 }, 1000).wait(5000).call(function () {
             core.UIManager.closeUI(core.UIConst.AudioTips);
         });
         egret.MainContext.instance.stage.addEventListener(egret.StageOrientationEvent.ORIENTATION_CHANGE, function () {
             _this.setUI.updataState();
+            _this.updataState();
         }, this);
         this.registerEvent(this, eui.UIEvent.RESIZE, this.initSc, this);
         var today = egret.localStorage.getItem('today');
@@ -85,21 +89,23 @@ var MainScenceUI = (function (_super) {
             return;
         }
         if (this.isBegin) {
-            this.isBegin = false;
-            if (SetConst.AUTO_SHOW || SetConst.BETSET_SHOW)
-                return;
-            if (GameManager.getInstance().gameState == GameType.GameState.PLAYING) {
-                return;
-            }
-            if (e.stageY - this.ty > 20) {
-                Reel.REEL_MODE = GameType.RellMode.DOWN;
-                GameManager.getInstance().dispatchEventWith(SetEvent.SET_START);
-            }
-            else if (e.stageY - this.ty < -20) {
-                Reel.REEL_MODE = GameType.RellMode.UP;
-                GameManager.getInstance().dispatchEventWith(SetEvent.SET_START);
-            }
-            else {
+            if (!GameConfig.isBonusBtn) {
+                this.isBegin = false;
+                if (SetConst.AUTO_SHOW || SetConst.BETSET_SHOW)
+                    return;
+                if (GameManager.getInstance().gameState == GameType.GameState.PLAYING) {
+                    return;
+                }
+                if (e.stageY - this.ty > 20) {
+                    Reel.REEL_MODE = GameType.RellMode.DOWN;
+                    GameManager.getInstance().dispatchEventWith(SetEvent.SET_START);
+                }
+                else if (e.stageY - this.ty < -20) {
+                    Reel.REEL_MODE = GameType.RellMode.UP;
+                    GameManager.getInstance().dispatchEventWith(SetEvent.SET_START);
+                }
+                else {
+                }
             }
         }
         else {
@@ -112,19 +118,90 @@ var MainScenceUI = (function (_super) {
             }
         }
     };
+    //切换了横竖
+    MainScenceUI.prototype.updataState = function () {
+        if (GameConfig.isBonusBtn) {
+            this.setUI.updataEnable(0);
+            this.setUI.bonusBtn.visible = true;
+            this.setUI.startButton.visible = false;
+            this.setUI.autoButton.visible = false;
+        }
+        if (GameConfig.freeGame) {
+            this.setUI.updataEnable(0);
+            this.bg.visible = false;
+            this.mainGroup.visible = false;
+            this.setUI.visible = false;
+            this.freeGroup.visible = true;
+            if (this.isTipsGroup) {
+                this.tipsGroup.visible = true;
+            }
+        }
+    };
     //选择贝壳结束按钮
     MainScenceUI.prototype.closeFreeUi = function () {
         this.indexNum = 0;
         // GameConfig.freeGame = false;
+        this.isTipsGroup = false;
+        this.logo1.visible = false;
+        this.logo2.visible = true;
+        this.free_group.visible = true;
+        this.gameScence.freeBg.visible = true;
+        this.free_fanbei.text = this.fanbeiNum.text;
+        this.free_Num.text = "" + vo.GameData.TotalActionCount;
         this.bg.visible = true;
         this.mainGroup.visible = true;
-        this.setUI.visible = true;
         this.freeGroup.visible = false;
+        GameConfig.freeGame = false;
+        this.tipsGroup.visible = false;
         for (var i = 0; i < 5; i++) {
             this["beiKe_" + i].source = "with_pearl_01_png";
             this["beiKe_x" + i].visible = false;
         }
         // GameManager.getInstance().startGame(true);
+        // GameManager.getInstance().dispatchEventWith(SetEvent.SET_START);
+    };
+    //免费游戏结束弹窗
+    MainScenceUI.prototype.endFree = function () {
+        this.tipsGroup.visible = true;
+        this.isTipsGroup = true;
+        this.pickFree.visible = false;
+        this.overFree.visible = true;
+        // this.stopMusic();
+    };
+    //免费游戏结束按钮
+    MainScenceUI.prototype.endFreeUi = function () {
+        //游戏页面ui 
+        this.setUI.visible = true;
+        this.logo1.visible = true;
+        this.logo2.visible = false;
+        this.free_group.visible = false;
+        this.gameScence.freeBg.visible = false;
+        this.isTipsGroup = false;
+        this.tipsGroup.visible = false;
+        this.pickFree.visible = true;
+        this.overFree.visible = false;
+        // this.autoItem.sopAutoBtn.enabled = true;
+        //还有自动次数，游戏停止，弹窗
+        //展示金币
+        var resultData = vo.GameData.resultData;
+        var totalBet = resultData.Value.SpinResult.TotalBet; //vo.GameData.betScoreArr[vo.GameData.betIndex];//
+        var totalWin = resultData.Value.SpinResult.TotalWin;
+        var denom = resultData.Value.SpinResult.Denom / 10000; //总赌注
+        var winmoney = resultData.Value.Dollar; //奖金
+        var b = winmoney / denom;
+        console.log(denom + " == 最后的分数 == " + winmoney);
+        if (b >= 30) {
+            this.setRewardMax(winmoney, true, 4);
+        }
+        if (b >= 8 && b < 30) {
+            this.setRewardMax(winmoney, true, 3);
+        }
+        if (b >= 1 && b < 8) {
+            this.setRewardMax(winmoney, true, 2);
+        }
+        if (b < 1) {
+            this.setRewardMax(winmoney, true, 1);
+        }
     };
     //Bonus
     MainScenceUI.prototype.onBonusEnd = function () {
@@ -141,6 +218,8 @@ var MainScenceUI = (function (_super) {
     MainScenceUI.prototype.showFreeUi = function () {
         //音乐
         this.hideWin();
+        GameConfig.freeGame = true;
+        GameConfig.isBonusBtn = false;
         this.bg.visible = false;
         this.mainGroup.visible = false;
         this.setUI.visible = false;
@@ -205,6 +284,7 @@ var MainScenceUI = (function (_super) {
             _this.freeNum.text = "";
             _this.beiNum.text = "";
             _this.rotateNum.text = "" + vo.GameData.TotalActionCount;
+            Commond.sendBonus(2, vo.GameData.TotalActionCount);
             _this.fanbeiNum.text = "X2";
             _this.freeNumGroup.visible = true;
             if (index <= 2) {
@@ -234,6 +314,7 @@ var MainScenceUI = (function (_super) {
                     _this.beiNum.text = "2";
                     // Commond.sendBonus(vo.GameData.TotalActionCount, 2);
                     _this.tipsGroup.visible = true;
+                    _this.isTipsGroup = true;
                     vo.GameData.TotalActionCount -= 1;
                 }
             }, _this, 200);
@@ -338,6 +419,8 @@ var MainScenceUI = (function (_super) {
             this.setUI.autoButton.visible = false;
             this.setUI.bonusBtnState(true);
             this.setUI.bonusBtn.visible = true;
+            GameConfig.isBonusBtn = true;
+            this.setUI.updataEnable(0);
             return;
         }
         //其他界面状态
@@ -499,9 +582,21 @@ var MainScenceUI = (function (_super) {
             return this._rewardNum;
         },
         set: function (v) {
+            if (GameManager.getInstance().getFreeCount() > 0) {
+                this.allReward += vo.GameData.resultData.Value.TotalWinDollar;
+                if (this.allReward > 0) {
+                    this.free_money.text = "￥" + GameManager.numberToCommonStr(this._rewardNum);
+                }
+                else {
+                    this.free_money.text = "--";
+                }
+            }
+            else {
+                this.allReward = 0;
+            }
             this._rewardNum = v;
             var s = GameManager.numberToCommonStr(this._rewardNum);
-            this.setUI.rewardLabel.text = '￥' + s;
+            this.setUI.rewardLabel.text = 'x' + s;
         },
         enumerable: true,
         configurable: true
@@ -587,14 +682,17 @@ var MainScenceUI = (function (_super) {
     MainScenceUI.prototype.showFiveAimation = function (data, callfun) {
         var _this = this;
         if (callfun === void 0) { callfun = null; }
-        SoundManager.getInstance().playEffect(SoundConst.FIVE_SOUND);
+        // SoundManager.getInstance().playEffect(SoundConst.FIVE_SOUND);
         this.tipGroup.visible = true;
-        this.tipLabel.text = '5个一样的';
-        this.tipLabel.size = 80;
+        this.rewardWin.source = 'five_png';
+        // this.tipLabel.size = 80;
         this.tipGroup.scaleX = 0.5;
         this.tipGroup.scaleY = 0.5;
         if (data.Data) {
+            var arrs = this.gameScence.pent.getLineArrForKuang(data.Data.Line, data.Positions);
+            this.gameScence.pent.showLine(data.Data.Line, arrs);
             this.gameScence.pent.showKuang(data.Data.Line, data.Positions);
+            this.gameScence.pent.showTipLine(data.Data.Line); //两边的数字
         }
         else {
             this.gameScence.pent.showkuang2(data.Positions);
@@ -624,8 +722,8 @@ var MainScenceUI = (function (_super) {
         var _this = this;
         if (callfun === void 0) { callfun = null; }
         this.tipGroup.visible = true;
-        this.tipLabel.text = '大奖';
-        this.tipLabel.size = 150;
+        this.rewardWin.source = 'big_png';
+        // this.tipLabel.size = 150;
         this.tipGroup.scaleX = 1;
         this.tipGroup.scaleY = 1;
         this.tipGroup.verticalCenter = -150;

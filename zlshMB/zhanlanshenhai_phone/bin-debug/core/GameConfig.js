@@ -45,6 +45,14 @@ var GameConfig = (function () {
      * 中了免费抽奖
      */
     GameConfig.isFree = false;
+    /**
+     * 免费游戏
+     */
+    GameConfig.freeGame = false;
+    /**
+     * 免费游戏第一阶段
+     */
+    GameConfig.isBonusBtn = false;
     //标记有2个贝壳
     GameConfig.isTwo = false;
     GameConfig.isTest = false;

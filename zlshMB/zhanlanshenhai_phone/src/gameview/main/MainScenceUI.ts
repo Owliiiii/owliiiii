@@ -6,7 +6,8 @@ class MainScenceUI extends core.BaseUI {
 	public index: number = 0;
 	public mainGroup: eui.Group;
 	public tipGroup: eui.Group;
-	public tipLabel: eui.Label;
+	// public tipLabel: eui.Label;
+	public rewardWin:eui.Image;
 	public freeGroup: eui.Group;
 	public bg1: eui.Image;
 	public freeNumGroup: eui.Group;
@@ -34,6 +35,15 @@ class MainScenceUI extends core.BaseUI {
 	public gongNengMoney: eui.BitmapLabel;
 	public totalMoney: eui.BitmapLabel;
 
+	public logo_group: eui.Group;
+	public logo1: eui.Image;
+	public logo2: eui.Image;
+	public free_group: eui.Group;
+	public free_fanbei: eui.Label;
+	public free_Num: eui.Label;
+	public free_money: eui.Label;
+
+
 
 
 	public mcGroup;
@@ -57,12 +67,14 @@ class MainScenceUI extends core.BaseUI {
 		this.registerEvent(this.setUI.bonusBtn, egret.TouchEvent.TOUCH_END, this.onBonusEnd, this);
 		this.registerEvent(this.pickFreeBtn, egret.TouchEvent.TOUCH_TAP, this.closeFreeUi, this);
 		GameManager.getInstance().addEventListener(SetEvent.SET_HIDE_REWARD, this.hideWin, this);
+		this.registerEvent(this.overFreeBtn, egret.TouchEvent.TOUCH_TAP, this.endFreeUi, this);
 		this.alpha = 0;
 		egret.Tween.get(this).to({ alpha: 1 }, 1000).wait(5000).call(() => {
 			core.UIManager.closeUI(core.UIConst.AudioTips);
 		});
 		egret.MainContext.instance.stage.addEventListener(egret.StageOrientationEvent.ORIENTATION_CHANGE, () => {
 			this.setUI.updataState();
+			this.updataState();
 		}, this);
 		this.registerEvent(this, eui.UIEvent.RESIZE, this.initSc, this);
 		let today: any = egret.localStorage.getItem('today');
@@ -107,19 +119,21 @@ class MainScenceUI extends core.BaseUI {
 		}
 
 		if (this.isBegin) {
-			this.isBegin = false;
-			if (SetConst.AUTO_SHOW || SetConst.BETSET_SHOW) return;
-			if (GameManager.getInstance().gameState == GameType.GameState.PLAYING) {
-				return;
-			}
-			if (e.stageY - this.ty > 20) {
-				Reel.REEL_MODE = GameType.RellMode.DOWN;
-				GameManager.getInstance().dispatchEventWith(SetEvent.SET_START);
-			} else if (e.stageY - this.ty < -20) {
-				Reel.REEL_MODE = GameType.RellMode.UP;
-				GameManager.getInstance().dispatchEventWith(SetEvent.SET_START);
-			}
-			else {
+			if (!GameConfig.isBonusBtn) {
+				this.isBegin = false;
+				if (SetConst.AUTO_SHOW || SetConst.BETSET_SHOW) return;
+				if (GameManager.getInstance().gameState == GameType.GameState.PLAYING) {
+					return;
+				}
+				if (e.stageY - this.ty > 20) {
+					Reel.REEL_MODE = GameType.RellMode.DOWN;
+					GameManager.getInstance().dispatchEventWith(SetEvent.SET_START);
+				} else if (e.stageY - this.ty < -20) {
+					Reel.REEL_MODE = GameType.RellMode.UP;
+					GameManager.getInstance().dispatchEventWith(SetEvent.SET_START);
+				}
+				else {
+				}
 			}
 		}
 		else {
@@ -132,21 +146,97 @@ class MainScenceUI extends core.BaseUI {
 			}
 		}
 	}
+
+	//切换了横竖
+	public updataState(): void {
+		if (GameConfig.isBonusBtn) {
+			this.setUI.updataEnable(0);
+			this.setUI.bonusBtn.visible = true;
+			this.setUI.startButton.visible = false;
+			this.setUI.autoButton.visible = false;
+		}
+		if (GameConfig.freeGame) {
+			this.setUI.updataEnable(0);
+			this.bg.visible = false;
+			this.mainGroup.visible = false;
+			this.setUI.visible = false;
+			this.freeGroup.visible = true;
+			if(this.isTipsGroup){
+				this.tipsGroup.visible = true;
+
+			}
+		}
+	}
 	//选择贝壳结束按钮
 	public closeFreeUi(): void {
 		this.indexNum = 0;
 		// GameConfig.freeGame = false;
+		this.isTipsGroup = false;
+		this.logo1.visible = false;
+		this.logo2.visible = true;
+		this.free_group.visible = true;
+		this.gameScence.freeBg.visible = true;
+		this.free_fanbei.text = this.fanbeiNum.text;
+		this.free_Num.text = "" + vo.GameData.TotalActionCount;
+
 		this.bg.visible = true;
 		this.mainGroup.visible = true;
-		this.setUI.visible = true;
+		
 		this.freeGroup.visible = false;
-
+		GameConfig.freeGame = false;
+		this.tipsGroup.visible = false;
 		for (var i = 0; i < 5; i++) {
 			this["beiKe_" + i].source = "with_pearl_01_png";
 			this["beiKe_x" + i].visible = false;
 		}
 		// GameManager.getInstance().startGame(true);
+		// GameManager.getInstance().dispatchEventWith(SetEvent.SET_START);
 
+	}
+	//免费游戏结束弹窗
+	public endFree(): void {
+		this.tipsGroup.visible = true;
+		this.isTipsGroup = true;
+		this.pickFree.visible = false;
+		this.overFree.visible = true;
+		// this.stopMusic();
+	}
+
+	//免费游戏结束按钮
+	public endFreeUi(): void {
+		//游戏页面ui 
+		this.setUI.visible = true;
+		this.logo1.visible = true;
+		this.logo2.visible = false;
+		this.free_group.visible = false;
+		this.gameScence.freeBg.visible = false;
+		this.isTipsGroup = false;
+		this.tipsGroup.visible = false;
+		this.pickFree.visible = true;
+		this.overFree.visible = false;
+		// this.autoItem.sopAutoBtn.enabled = true;
+		//还有自动次数，游戏停止，弹窗
+
+		//展示金币
+		let resultData: any = vo.GameData.resultData;
+		let totalBet: number = resultData.Value.SpinResult.TotalBet;//vo.GameData.betScoreArr[vo.GameData.betIndex];//
+		let totalWin: number = resultData.Value.SpinResult.TotalWin;
+		let denom: number = resultData.Value.SpinResult.Denom / 10000;	//总赌注
+		let winmoney: number = resultData.Value.Dollar;			//奖金
+		let b: number = winmoney / denom;
+		console.log(denom + " == 最后的分数 == " + winmoney);
+		if (b >= 30) {		//大奖 喷金币
+			this.setRewardMax(winmoney, true, 4);
+		}
+		if (b >= 8 && b < 30) {		//奖金栏放大
+			this.setRewardMax(winmoney, true, 3);
+		}
+		if (b >= 1 && b < 8) {		//＂奖金栏＂数字变动(音效长)
+			this.setRewardMax(winmoney, true, 2);
+		}
+		if (b < 1) {				//＂奖金栏＂数字变动(音效短)
+			this.setRewardMax(winmoney, true, 1);
+		}
 	}
 	//Bonus
 	public onBonusEnd() {
@@ -166,6 +256,8 @@ class MainScenceUI extends core.BaseUI {
 
 		//音乐
 		this.hideWin();
+		GameConfig.freeGame = true;
+		GameConfig.isBonusBtn = false;
 		this.bg.visible = false;
 		this.mainGroup.visible = false;
 		this.setUI.visible = false;
@@ -233,6 +325,7 @@ class MainScenceUI extends core.BaseUI {
 				this.freeNum.text = "";
 				this.beiNum.text = "";
 				this.rotateNum.text = "" + vo.GameData.TotalActionCount;
+				Commond.sendBonus(2,vo.GameData.TotalActionCount);
 				this.fanbeiNum.text = "X2";
 				this.freeNumGroup.visible = true;
 
@@ -262,13 +355,14 @@ class MainScenceUI extends core.BaseUI {
 						this.beiNum.text = "2";
 						// Commond.sendBonus(vo.GameData.TotalActionCount, 2);
 						this.tipsGroup.visible = true;
+						this.isTipsGroup = true;
 						vo.GameData.TotalActionCount -= 1;
 					}
 				}, this, 200);
 			})
 
 	}
-
+	public isTipsGroup:boolean = false;
 	public curtime: number = 0;
 	public indexC1: number = 0;
 	public canStop(): void {
@@ -351,7 +445,6 @@ class MainScenceUI extends core.BaseUI {
 	private showReward: number = 0;
 	//public curtime: number = 0;
 	public bonusPos: Array<any>;//保存3个中奖的位置
-
 	public showWin(arr: Array<any>): void {
 		SetConst.REWARD_SHOW = true;
 		if (SoundManager.getInstance().effectOn) {
@@ -365,7 +458,6 @@ class MainScenceUI extends core.BaseUI {
 			GameConfig.isFree = true;
 			SetConst.AUTO_COUNT = 0;
 			// SetConst.isCanStopGame = false;
-			// console.log('aaaaaaa111');
 			// this.gameScence.stopReel();
 
 			this.gameScence.displayBonus(arr[0].Positions);
@@ -383,6 +475,8 @@ class MainScenceUI extends core.BaseUI {
 			this.setUI.autoButton.visible = false;
 			this.setUI.bonusBtnState(true);
 			this.setUI.bonusBtn.visible = true;
+			GameConfig.isBonusBtn = true;
+			this.setUI.updataEnable(0);
 			return;
 		}
 		//其他界面状态
@@ -551,12 +645,22 @@ class MainScenceUI extends core.BaseUI {
 			this.reward = v;
 		}
 	}
-
+	private allReward: number = 0;
 	private _rewardNum: number = 0;
 	private set reward(v: number) {
+		if (GameManager.getInstance().getFreeCount() > 0) {
+			this.allReward += vo.GameData.resultData.Value.TotalWinDollar;
+			if (this.allReward > 0) {
+				this.free_money.text = "￥" + GameManager.numberToCommonStr(this._rewardNum);
+			} else {
+				this.free_money.text = "--";
+			}
+		} else {
+			this.allReward = 0;
+		}
 		this._rewardNum = v;
 		let s: string = GameManager.numberToCommonStr(this._rewardNum);
-		this.setUI.rewardLabel.text = '￥' + s;
+		this.setUI.rewardLabel.text = 'x' + s;
 	}
 
 	private get reward(): number {
@@ -643,14 +747,17 @@ class MainScenceUI extends core.BaseUI {
 	 * 显示5同类动画
 	 */
 	public showFiveAimation(data, callfun: any = null): void {
-		SoundManager.getInstance().playEffect(SoundConst.FIVE_SOUND);
+		// SoundManager.getInstance().playEffect(SoundConst.FIVE_SOUND);
 		this.tipGroup.visible = true;
-		this.tipLabel.text = '5个一样的';
-		this.tipLabel.size = 80;
+		this.rewardWin.source = 'five_png';
+		// this.tipLabel.size = 80;
 		this.tipGroup.scaleX = 0.5;
 		this.tipGroup.scaleY = 0.5;
 		if (data.Data) {
+			let arrs: Array<any> = this.gameScence.pent.getLineArrForKuang(data.Data.Line, data.Positions);
+			this.gameScence.pent.showLine(data.Data.Line, arrs);
 			this.gameScence.pent.showKuang(data.Data.Line, data.Positions);
+			this.gameScence.pent.showTipLine(data.Data.Line);		//两边的数字
 		}
 		else {
 			this.gameScence.pent.showkuang2(data.Positions);
@@ -681,8 +788,8 @@ class MainScenceUI extends core.BaseUI {
 	 */
 	public showBigReward(callfun: any = null): void {
 		this.tipGroup.visible = true;
-		this.tipLabel.text = '大奖';
-		this.tipLabel.size = 150;
+		this.rewardWin.source = 'big_png';
+		// this.tipLabel.size = 150;
 		this.tipGroup.scaleX = 1;
 		this.tipGroup.scaleY = 1;
 		this.tipGroup.verticalCenter = -150;

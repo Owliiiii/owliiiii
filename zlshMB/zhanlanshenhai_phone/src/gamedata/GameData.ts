@@ -45,6 +45,11 @@ module vo {
 		 */
 		public static betIndex: number = 0;
 
+		/**
+		 * 当前获得的最大免费次数
+		 */
+		public static allFreeCount:number=0;
+
    
 		/**
 		 * 线数

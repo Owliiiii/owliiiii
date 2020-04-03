@@ -14,7 +14,7 @@ class MosueRadioButton extends eui.RadioButton {
 		this.addEventListener(mouse.MouseEvent.MOUSE_OUT, this.onRollOut, this);
 		this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onRollOver, this);
 		this.addEventListener(egret.TouchEvent.TOUCH_RELEASE_OUTSIDE, this.onRollOut, this);
-		this.group.addEventListener(egret.Event.CHANGE,this.onChange,this);
+		this.group.addEventListener(egret.Event.CHANGE, this.onChange, this);
 		this.updataUI();
 	}
 	public onRemove(): void {
@@ -42,10 +42,8 @@ class MosueRadioButton extends eui.RadioButton {
 		this.dispatchEventWith(egret.Event.CHANGE);
 	}
 
-	public onChange():void
-	{
-		if(this.group.selectedValue!=this.value)
-		{
+	public onChange(): void {
+		if (this.group.selectedValue != this.value) {
 			this.onRollOut();
 		}
 	}
@@ -64,8 +62,8 @@ class MosueRadioButton extends eui.RadioButton {
 
 
 	public updataText(isliang: boolean): void {
-		(this.labelDisplay as eui.Label).textColor=isliang?0xffffff:0x787d83;
-		(this.labelDisplay as eui.Label).filters = isliang ? [this.colorFlilter, this.glowFilter] : [];	
+		(this.labelDisplay as eui.Label).textColor = isliang ? 0xffffff : 0x787d83;
+		(this.labelDisplay as eui.Label).filters = isliang ? [this.colorFlilter, this.glowFilter] : [];
 	}
 	public initFiter(): void {
 		//外发光 

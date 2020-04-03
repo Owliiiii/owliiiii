@@ -22,6 +22,8 @@ declare class CheckSkin extends eui.Skin{
 }
 declare class DesButtonSkin extends eui.Skin{
 }
+declare class FreeBtnSkin extends eui.Skin{
+}
 declare class MouseButton3Skin extends eui.Skin{
 }
 declare class MusicBtnSkin extends eui.Skin{

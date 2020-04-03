@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="FreeBtnSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"  width="280" height="280">
+	<e:Image id="lightIcon" source="rightbar_autoplay_selected_png" horizontalCenter="0" verticalCenter="0" alpha="0.5"/>
+	<e:Group horizontalCenter="0" verticalCenter="0">
+		<e:Image id="bg" horizontalCenter="0" verticalCenter="0" source="btn_autogame_selected_png"/>
+		<e:Image id="stateIcon" horizontalCenter="0" verticalCenter="0" source="btn_round_png"/>
+	</e:Group>
+	<e:Label id="countLabel" text="" textColor="0x000000" fontFamily="Microsoft JhengHei" horizontalCenter="0" verticalCenter="0"/>
+</e:Skin>

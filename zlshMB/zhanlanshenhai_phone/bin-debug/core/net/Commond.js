@@ -84,6 +84,30 @@ var Commond = (function () {
             sockets.SocketMananger.getInstance().sendMessage(data);
         }
     };
+    /**红利游戏 */
+    Commond.sendBonus = function (type, idx) {
+        if (type === void 0) { type = 1; }
+        if (idx === void 0) { idx = 0; }
+        var sendType = null;
+        if (type == 1) {
+            sendType = GameType.GameType.treasure;
+        }
+        else if (type == 2) {
+            sendType = GameType.GameType.treasure2;
+        }
+        var data = Commond.initData();
+        data.Action = 'Play',
+            data.Parameter = {
+                "Type": sendType,
+                // "McDebug": 1,
+                "BetSetup": {
+                    "Bet": 1,
+                    'Line': (vo.GameData.line + 1),
+                    "Multiply": vo.GameData.betScoreArr[vo.GameData.betIndex]
+                },
+            };
+        sockets.SocketMananger.getInstance().sendMessage(data);
+    };
     Commond.initData = function () {
         var data = {};
         data.Link_auth = GameConfig.CasinoGame.Link_auth;
