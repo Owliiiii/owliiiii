@@ -77,7 +77,6 @@ var GameManager = (function (_super) {
         core.LoadManger.getInstance().loadGroup(core.UIConst.NomalLoadingUI, 'main', function () {
             core.UIManager.openUI(core.UIConst.MainScenceUI);
         }, this);
-        // this.initAlysInitialData(d);
     };
     /**
      * 解析初始化数据
@@ -90,10 +89,13 @@ var GameManager = (function (_super) {
         vo.GameData.slotInfo.resultArr = data.Value.Geninit.Main.ReelSymbols;
         vo.GameData.initData = data;
         vo.GameData.payData = data.Value.Paytables.Main.PayData;
-        var ui = core.UIManager.getUI(core.UIConst.MainScenceUI);
-        if (Object.keys(data.Actions).length > 0 && ui) {
-            ui.judgeInit(JSON.parse(JSON.stringify(data)));
-        }
+        // egret.setTimeout(() => {
+        // 	if (Object.keys(data.Actions).length > 0) {
+        // 		//弹窗
+        // 		core.UIManager.openUI(core.UIConst.DuanxianShowUi, core.LayerManager.Layer_Tip);
+        // 		// ui.judgeInit(JSON.parse(JSON.stringify(data)));
+        // 	}
+        // }, this, 4000);
     };
     //开始游戏
     GameManager.prototype.onNetGamePlay = function (data) {

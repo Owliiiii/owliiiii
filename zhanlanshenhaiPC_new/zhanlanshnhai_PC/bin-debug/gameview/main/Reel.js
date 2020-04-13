@@ -110,7 +110,7 @@ var Reel = (function (_super) {
         if (this.isAction) {
             for (var i = 0; i < this.kGroup.numChildren; i++) {
                 var item = this.kGroup.getChildAt(i);
-                var stopTime = 600;
+                var stopTime = 400;
                 item.y += this.reelSpeed;
                 if (item.y >= this.height) {
                     var num3 = 4 - GameConfig.twoC1Index; //1,2,3
@@ -119,7 +119,7 @@ var Reel = (function (_super) {
                             stopTime = 1700;
                         }
                     }
-                    var t1 = GameConfig.speedPlay ? 250 : 700; //Reel.QUK_TIME : Reel.TIME;
+                    var t1 = GameConfig.speedPlay ? 250 : 400; //Reel.QUK_TIME : Reel.TIME;
                     var t2 = GameConfig.speedPlay ? 250 : stopTime; //Reel.QUK_STOPTIME : Reel.STOPTIME;
                     // let t3: Array<number> = GameConfig.speedPlay ? [300, 350, 500, 650, 800] : [0, 400, 730, 930, 1030];
                     for (var j = 1; j <= num3; j++) {
@@ -148,7 +148,7 @@ var Reel = (function (_super) {
                     // if(!GameConfig.isData){		//等待数据返回
                     // 	t2 = 99999;
                     // }
-                    var t3 = 900;
+                    var t3 = 400;
                     // if(!GameConfig.speedPlay){
                     // 	t3 = 500;
                     // }
@@ -413,8 +413,8 @@ var ReelItem = (function (_super) {
             this.maoziMC6.gotoAndPlay('c1', -1);
             this.maoziMC6.x = this.width / 2;
             this.maoziMC6.y = this.height / 2;
-            this.maoziMC6.scaleX = 1.4;
-            this.maoziMC6.scaleY = 1.4;
+            this.maoziMC6.scaleX = 1.3;
+            this.maoziMC6.scaleY = 1.3;
             this.icons.visible = false;
         }
         else {

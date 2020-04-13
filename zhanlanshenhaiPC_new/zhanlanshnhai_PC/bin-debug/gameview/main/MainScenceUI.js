@@ -17,11 +17,18 @@ var MainScenceUI = (function (_super) {
         _this.betState = 0;
         _this.longTouch = false;
         _this.index = -1;
+        _this.CountArr = [5, 7, 15, 10, 8];
         _this.indexNum = 0;
+        _this.fanbei = 2;
+        _this.roteNum = 8;
         _this.curtime = 0;
+        /**
+         * 定时器里面是否能执行 默认是可执行的
+         */
+        _this.isPlay = true;
         _this.winIndex = 0;
-        _this.allReward = 0;
         _this._rewardNum = 0;
+        _this._freeNum = 0;
         _this.skinName = MainScenceUISkin;
         return _this;
     }
@@ -372,6 +379,18 @@ var MainScenceUI = (function (_super) {
                 break;
         }
     };
+    MainScenceUI.prototype.initFree = function () {
+        this.logo1.visible = false;
+        this.logo2.visible = true;
+        this.free_group.visible = true;
+        // this.free_money.text = "--";
+        if (vo.GameData.initData.Actions.freeslot) {
+            // this.free_money.text = vo.GameData.initData.Actions.freeslot.TotalWin;
+        }
+        else {
+            // this.free_money.text = vo.GameData.resultData.Actions.freeslot.TotalWin;
+        }
+    };
     MainScenceUI.prototype.showFreeUi = function () {
         console.log("打开了免费界面");
         //音乐
@@ -381,6 +400,9 @@ var MainScenceUI = (function (_super) {
         this.bg1.visible = true;
         this.mainGroup.visible = false;
         this.freeGroup.visible = true;
+        this.fanbei = 2;
+        this.roteNum = 8;
+        this.CountArr = this.CountArr.sort(function () { return Math.random() - 0.5; }).slice(0, 5);
         for (var i = 0; i < 5; i++) {
             this["beiKe_" + i].pixelHitTest = true;
             this["beiKe_" + i].addEventListener(egret.TouchEvent.TOUCH_TAP, this.changeBeiKe, this);
@@ -392,37 +414,48 @@ var MainScenceUI = (function (_super) {
         var index;
         var Count;
         this.indexNum++;
+        // arr.splice();
         switch (evt.currentTarget) {
             case this["beiKe_0"]:
                 index = 0;
-                Count = 5;
+                Count = this.CountArr[index]; //倍数 beiKe_x0.source = pearl_text5_png
                 break;
             case this["beiKe_1"]:
                 index = 1;
-                Count = 7;
+                Count = this.CountArr[index];
                 break;
             case this["beiKe_2"]:
                 index = 2;
-                Count = 15;
+                Count = this.CountArr[index];
                 break;
             case this["beiKe_3"]:
                 index = 3;
-                Count = 10;
+                Count = this.CountArr[index];
                 break;
             case this["beiKe_4"]:
                 index = 4;
-                Count = 8;
+                Count = this.CountArr[index]; //倍数
                 break;
         }
+        // Count = CountArr[index];
         // vo.GameData.TotalActionCount = vo.GameData.TotalActionCount + Count;
         if (this.indexNum == 1) {
-            vo.GameData.TotalActionCount = Count + 8;
+            if (Count == 8 || Count == 5) {
+                this.fanbei += Count;
+            }
+            else {
+                this.roteNum += Count;
+            }
+            vo.GameData.TotalActionCount = this.roteNum;
         }
         if (this.indexNum >= 2) {
-            if (Count < 8) {
-                Count = 0;
+            if (Count == 8 || Count == 5) {
+                this.fanbei += Count;
             }
-            vo.GameData.TotalActionCount = (vo.GameData.TotalActionCount + Count);
+            else {
+                this.roteNum += Count;
+            }
+            vo.GameData.TotalActionCount = this.roteNum; //(vo.GameData.TotalActionCount + this.roteNum);
         }
         this["beiKe_" + index].removeEventListener(egret.TouchEvent.TOUCH_TAP, this.changeBeiKe, this);
         if (this.indexNum >= 2) {
@@ -441,7 +474,12 @@ var MainScenceUI = (function (_super) {
             _this.freeNum.text = "";
             _this.beiNum.text = "";
             _this.rotateNum.text = "" + vo.GameData.TotalActionCount;
-            _this.fanbeiNum.text = "X2";
+            // if (Count <= 8) {
+            // 	this.fanbeiNum.text = "X" + this.fanbei;
+            // } else {
+            // 	this.fanbeiNum.text = "X2";
+            // }
+            _this.fanbeiNum.text = "X" + _this.fanbei;
             _this.freeNumGroup.visible = true;
             if (index <= 2) {
                 _this["beiKe_x" + index].y = 327;
@@ -449,6 +487,7 @@ var MainScenceUI = (function (_super) {
             else {
                 _this["beiKe_x" + index].y = 525;
             }
+            _this["beiKe_x" + index].source = "pearl_text" + Count + "_png";
             _this["beiKe_x" + index].visible = true;
             // 5 7 15 10 8
             egret.setTimeout(function () {
@@ -461,14 +500,20 @@ var MainScenceUI = (function (_super) {
                             else {
                                 _this["beiKe_x" + i].y = 630;
                             }
+                            _this["beiKe_x" + index].source = "pearl_text" + Count + "_png";
                             _this["beiKe_x" + i].visible = true;
                         }
                     }
-                    _this.fanbeiNum.text = "X2";
+                    // if (Count == 5 || Count == 8) {
+                    // 	this.fanbeiNum.text = "X" + 2 + Count;
+                    // } else {
+                    // 	this.fanbeiNum.text = "X2";
+                    // }
+                    _this.fanbeiNum.text = "X" + _this.fanbei;
                     _this.rotateNum.text = "" + vo.GameData.TotalActionCount;
                     _this.freeNum.text = "" + vo.GameData.TotalActionCount;
-                    _this.beiNum.text = "2";
-                    Commond.sendBonus(vo.GameData.TotalActionCount, 2);
+                    _this.beiNum.text = "X" + _this.fanbei;
+                    console.log("vo.GameData.TotalActionCount === " + vo.GameData.TotalActionCount);
                     _this.tipsGroup.visible = true;
                     vo.GameData.TotalActionCount -= 1;
                 }
@@ -479,6 +524,7 @@ var MainScenceUI = (function (_super) {
     MainScenceUI.prototype.closeFreeUi = function () {
         this.indexNum = 0;
         //关闭了选择免费界面
+        vo.GameData.FreeMoney = 0;
         GameConfig.emptyPlay = true;
         GameConfig.freeGame = false;
         this.bg.visible = true;
@@ -497,10 +543,11 @@ var MainScenceUI = (function (_super) {
             this["beiKe_" + i].source = "with_pearl_01_png";
             this["beiKe_x" + i].visible = false;
         }
-        GameManager.getInstance().startGame(true);
+        Commond.sendBonus(1, vo.GameData.TotalActionCount);
     };
     //自动游戏结束弹窗
     MainScenceUI.prototype.endFree = function () {
+        this.logo_group.visible = false;
         this.tipsGroup.visible = true;
         this.pickFree.visible = false;
         this.overFree.visible = true;
@@ -509,6 +556,7 @@ var MainScenceUI = (function (_super) {
     //免费游戏结束按钮
     MainScenceUI.prototype.endFreeUi = function () {
         //游戏页面ui 
+        this.logo_group.visible = true;
         this.logo1.visible = true;
         this.logo2.visible = false;
         this.free_group.visible = false;
@@ -527,16 +575,16 @@ var MainScenceUI = (function (_super) {
         var b = winmoney / denom;
         console.log(denom + " == 最后的分数 == " + winmoney);
         if (b >= 30) {
-            this.setReward(winmoney, true, 4);
+            this.setReward(winmoney, true, 4, true);
         }
         if (b >= 8 && b < 30) {
-            this.setReward(winmoney, true, 3);
+            this.setReward(winmoney, true, 3, true);
         }
         if (b >= 1 && b < 8) {
-            this.setReward(winmoney, true, 2);
+            this.setReward(winmoney, true, 2, true);
         }
         if (b < 1) {
-            this.setReward(winmoney, true, 1);
+            this.setReward(winmoney, true, 1, true);
         }
     };
     MainScenceUI.prototype.onResize = function () {
@@ -816,10 +864,17 @@ var MainScenceUI = (function (_super) {
         }
     };
     MainScenceUI.prototype.showWin = function (arr) {
-        //点击按钮闪烁
         var _this = this;
+        //点击按钮闪烁
         //进入免费游戏抽奖
-        if (arr.length > 0 && arr[0].Type == "Bonus2" && arr[0].SymbolCount == 3) {
+        if (arr.length > 0 && arr[0].Type == "Bonus" && arr[0].SymbolCount >= 3) {
+            //免费中免费
+            if (vo.GameData.resultData.ActionType == "freeslot") {
+                //弹窗+15次
+                // alert("您获得15次免费");
+            }
+        }
+        if (arr.length > 0 && arr[0].Type == "Bonus2" && arr[0].SymbolCount >= 3) {
             console.log('免费游戏中奖');
             //GameManager.getInstance().getFreeCount() > 0 && 
             if (vo.GameData.resultData.ActionType == 'slot') {
@@ -896,6 +951,9 @@ var MainScenceUI = (function (_super) {
             }
             return;
         }
+        // if(GameManager.getInstance().getFreeCount() == 1 && vo.GameData.resultData.ActionType == "freeslot"){
+        // 	return;
+        // }
         //先显示一下全部线
         this.gameScence.pent.clearTip();
         this.gameScence.pent.cleaAllLine();
@@ -922,7 +980,7 @@ var MainScenceUI = (function (_super) {
             _this.gameScence.pent.clearTip();
             _this.gameScence.pent.cleaAllLine();
             var data = arr[_this.winIndex];
-            if (data.Type != "Bonus2") {
+            if (data.Type != "Bonus") {
                 var arrs = _this.gameScence.pent.getLineArrForKuang(data.Data.Line, data.Positions);
                 if (GameConfig.speedPlay && GameConfig.autoPlay) {
                     _this.gameScence.pent.showLines(data.Data.Line);
@@ -942,13 +1000,14 @@ var MainScenceUI = (function (_super) {
                 _this.winIndex = 0;
             }
             _this.clert = egret.setInterval(function () {
+                // if (!this.isPlay) return;
                 _this.gameScence.pent.clearTip();
                 _this.gameScence.pent.cleaAllLine();
                 var data = arr[_this.winIndex];
                 if (arr.length > 1) {
                     SoundManager.getInstance().playEffect(SoundConst.KA);
                 }
-                if (data.Type != "Bonus2") {
+                if (data.Type != "Bonus") {
                     var arrs = _this.gameScence.pent.getLineArrForKuang(data.Data.Line, data.Positions);
                     if (GameConfig.speedPlay && GameConfig.autoPlay) {
                         _this.gameScence.pent.showLines(data.Data.Line);
@@ -976,6 +1035,14 @@ var MainScenceUI = (function (_super) {
         var winmoney = resultData.Value.Dollar; //奖金
         var b = winmoney / denom;
         console.log(denom + " == 最后的分数 == " + winmoney);
+        if (GameManager.getInstance().getFreeCount() > 0) {
+            vo.GameData.FreeMoney = vo.GameData.FreeMoney + winmoney;
+            console.log("免费游戏奖金 === " + vo.GameData.FreeMoney);
+            // if(this.reward1 < vo.GameData.FreeMoney){
+            this.reward1 = vo.GameData.FreeMoney;
+            egret.Tween.get(this).to({ reward1: vo.GameData.FreeMoney }, 1000);
+            // }
+        }
         if (b >= 30) {
             this.setReward(winmoney, true, 4);
         }
@@ -988,17 +1055,6 @@ var MainScenceUI = (function (_super) {
         if (b < 1) {
             this.setReward(winmoney, true, 1);
         }
-        // if (b >= 50) {
-        // 	this.setReward(winmoney, true, 4);
-        // }
-        // else if (b >= 10) {
-        // 	this.setReward(winmoney, true, 3);
-        // }
-        // else if (b >= 1.8) {
-        // 	this.setReward(winmoney, true, 2);
-        // } else {
-        // 	this.setReward(winmoney, true, 1);
-        // }
     };
     MainScenceUI.prototype.hideWin = function () {
         egret.clearInterval(this.clert);
@@ -1033,7 +1089,7 @@ var MainScenceUI = (function (_super) {
                         _this.chanel = chanel;
                     });
                 }
-                egret.Tween.get(this).to({ reward: v }, 2000);
+                egret.Tween.get(this).to({ reward: v }, 1000);
             }
             if (rewardType == 2) {
                 // SoundManager.getInstance().playEffect(SoundConst.WWMUSIC);
@@ -1042,7 +1098,7 @@ var MainScenceUI = (function (_super) {
                         _this.chanel = chanel;
                     });
                 }
-                egret.Tween.get(this).to({ reward: v }, 2000);
+                egret.Tween.get(this).to({ reward: v }, 1000);
             }
             if (rewardType == 3) {
                 // SoundManager.getInstance().playEffect(SoundConst.WWMUSIC);
@@ -1052,10 +1108,10 @@ var MainScenceUI = (function (_super) {
                     });
                 }
                 if (GameConfig.speedPlay) {
-                    egret.Tween.get(this).to({ reward: v }, 2000);
+                    egret.Tween.get(this).to({ reward: v }, 1000);
                 }
                 else {
-                    egret.Tween.get(this).to({ reward: v }, 2000);
+                    egret.Tween.get(this).to({ reward: v }, 1000);
                     egret.Tween.get(this.rewardGroup).to({ scaleX: 1.2, scaleY: 1.2 }, 1000).wait(2000).to({ scaleX: 1, scaleY: 1 }, 1000);
                 }
             }
@@ -1068,7 +1124,7 @@ var MainScenceUI = (function (_super) {
                     });
                 }
                 if (GameConfig.speedPlay) {
-                    egret.Tween.get(this).to({ reward: v }, 2000);
+                    egret.Tween.get(this).to({ reward: v }, 1000);
                 }
                 else {
                     egret.Tween.get(this).to({ reward: v }, 8000);
@@ -1115,21 +1171,20 @@ var MainScenceUI = (function (_super) {
             return this._rewardNum;
         },
         set: function (v) {
-            // let s: string = GameManager.numberToCommonStr(this._rewardNum);
-            if (GameManager.getInstance().getFreeCount() > 0) {
-                this.allReward += vo.GameData.resultData.Value.TotalWinDollar;
-                if (this.allReward > 0) {
-                    this.free_money.text = "￥" + GameManager.numberToCommonStr(this._rewardNum);
-                }
-                else {
-                    this.free_money.text = "--";
-                }
-            }
-            else {
-                this.allReward = 0;
-            }
             this._rewardNum = v;
             this.rewardLabel.text = 'x' + GameManager.numberToCommonStr(this._rewardNum);
+            // this.free_money.text = '' + GameManager.numberToCommonStr(vo.GameData.FreeMoney);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MainScenceUI.prototype, "reward1", {
+        get: function () {
+            return this._freeNum;
+        },
+        set: function (v) {
+            this._freeNum = v;
+            this.free_money.text = '' + GameManager.numberToCommonStr(this._freeNum);
         },
         enumerable: true,
         configurable: true

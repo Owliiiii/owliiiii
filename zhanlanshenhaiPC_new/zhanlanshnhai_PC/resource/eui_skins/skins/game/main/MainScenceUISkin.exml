@@ -29,7 +29,13 @@
 
 
 		</e:Group>
-		<e:Group id="mcGroup" left="0" right="0" top="0" bottom="0" visible="false"/>
+		<e:Group id="aGroup" left="0" right="0" top="0" bottom="0" touchThrough="true" visible="false">
+			<e:Group id="mcGroup" left="0" right="0" top="0" bottom="0" x="0" y="0" scaleX="1" scaleY="1"/>
+			<e:Group id="bigRewardGroup" verticalCenter="0" horizontalCenter="0">
+			<e:Image id="bigRewardLabel" scaleX="1" scaleY="1" x="0" y="0" source="big_png"/>
+			</e:Group>
+		</e:Group>
+
 		<e:Group id="tool_group" y="769" height="137" scaleX="0.968" scaleY="0.968" horizontalCenter="0.5">
 			<e:Image source="btn_bottom_png" y="0" x="0" visible="false"/>
 			<e:Group x="130.65" y="20.67">
@@ -138,11 +144,7 @@
 
 
 
-		<e:Group id="aGroup" left="0" right="0" top="0" bottom="0" touchThrough="true" visible="false">
-			<e:Group id="bigRewardGroup" verticalCenter="0" horizontalCenter="0">
-			<e:Image id="bigRewardLabel" scaleX="1" scaleY="1" x="0" y="0" source="big_png"/>
-			</e:Group>
-		</e:Group>
+
 
 
 
@@ -172,8 +174,8 @@
 		<e:Image id="beiKe_x1" source="pearl_text7_png" y="434.34" horizontalCenter="0" visible="false"/>
 		<e:Image source="with_pearl_01_png" id="beiKe_2" horizontalCenter="424.5" verticalCenter="-70"/>
 		<e:Image id="beiKe_x2" source="pearl_text15_png" x="1091.01" y="433" visible="false"/>
-		<e:Image source="with_pearl_01_png" id="beiKe_3" horizontalCenter="-290.5" verticalCenter="137"/>
-		<e:Image id="beiKe_x3" source="pearl_text10_png" x="379.97" y="630.66" visible="false"/>
+		<e:Image id="beiKe_3" horizontalCenter="-290.5" verticalCenter="137" source="with_pearl_01_png"/>
+		<e:Image id="beiKe_x3" x="379.97" y="630.66" source="pearl_text10_png" visible="false"/>
 		<e:Image source="with_pearl_01_png" id="beiKe_4" horizontalCenter="217.5" verticalCenter="129"/>
 		<e:Image id="beiKe_x4" source="pearl_text8_png" x="892" y="527.01" visible="false"/>
 	</e:Group>
@@ -189,8 +191,8 @@
 			</ns1:skinName>
 		</ns1:MouseButton>
 		<e:Image source="freeTextTop_png" x="273.21" y="117.17" scaleX="1" scaleY="1"/>
-		<e:Label id="freeNum" text="8" x="252.63" y="213.55" scaleX="2" scaleY="2.4" bold="true" fontFamily="Arial" textColor="0xe4a6ea" textAlign="center" size="35" anchorOffsetX="0" width="43.57" anchorOffsetY="0" height="36.06"/>
-		<e:Label id="beiNum" text="2" x="183.8" y="412.95" scaleX="2" scaleY="2.4" fontFamily="Arial" width="43.57" height="36.06" textAlign="right" size="35" anchorOffsetX="0" anchorOffsetY="0" bold="true" textColor="0x35e4f4"/>
+		<e:Label id="freeNum" text="8" x="257.29" y="216.89" scaleX="2" scaleY="2.4" bold="true" fontFamily="Arial" textColor="0xe4a6ea" textAlign="center" size="35" anchorOffsetX="0" width="43.57" anchorOffsetY="0" height="36.06"/>
+		<e:Label id="beiNum" text="X15" x="125.13" y="421.61" scaleX="2" scaleY="2.4" fontFamily="Arial" width="80.91" height="36.06" textAlign="center" size="35" anchorOffsetX="0" anchorOffsetY="0" bold="true" textColor="0x35e4f4"/>
 		</e:Group>
 		<e:Group id="overFree" scaleX="1" scaleY="1" width="985" height="666" y="146" horizontalCenter="0" visible="false">
 		<ns1:MouseButton id="overFreeBtn" label="" scaleX="1" scaleY="1" y="511.51" horizontalCenter="0">

@@ -38,6 +38,10 @@ module core
 		 */
 		public static StipsUI='StipsUI';
 		/**
+		 * 断线框
+		 */
+		public static DuanxianShowUi = "DuanxianShowUi";
+		/**
 		 * 帮助界面
 		 */
 		public static HelpUI='HelpUI';

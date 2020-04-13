@@ -120,9 +120,9 @@ var GameScence = (function (_super) {
         this.addChild(this.bonusMc);
         this.bonusMc.gotoAndPlay('bonusMc', 1);
         this.bonusMc.x = this.width / 2;
-        this.bonusMc.y = this.height / 2;
+        this.bonusMc.y = this.height / 2 + 12;
         this.bonusMc.scaleX = 1.31;
-        this.bonusMc.scaleY = 1.3;
+        this.bonusMc.scaleY = 1.31;
     };
     //移除免费动画
     GameScence.prototype.removeBonusMc = function () {

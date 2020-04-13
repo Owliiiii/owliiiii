@@ -37,10 +37,8 @@ class ExtraBonusEntry extends eui.Component {
 		if (type == 0) {
 			this.optionUI.firstInit();
 		} else if (type == 1) {
-		
 			this.optionUI.secondInit();
 		} else if (type == 2) {
-	
 			this.optionUI.thirdInit();
 		}
 	}

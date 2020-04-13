@@ -59,9 +59,7 @@ var SetUI = (function (_super) {
             SetConst.LONG_TOUCH = true;
             SetConst.AUTO_SHOW = true;
             _this.startButton.visible = false;
-            if (!GameConfig.isFree) {
-                _this.autoButton.visible = true;
-            }
+            _this.autoButton.visible = true;
             _this.autoButton.isPlay = false;
             _this.autoSetCompoment.goUpdata();
             SetConst.BETSET_SHOW = false;
@@ -332,6 +330,9 @@ var SetUI = (function (_super) {
             if (!GameConfig.isFree) {
                 this.autoButton.visible = true;
             }
+            else if (!GameConfig.isBonusBtn) {
+                this.FreeBtn.visible = true;
+            }
             this.autoButton.scaleX = 1;
             this.autoButton.scaleY = 1;
         }
@@ -339,12 +340,16 @@ var SetUI = (function (_super) {
             if (!GameConfig.isFree) {
                 this.startButton.visible = true;
             }
+            else if (!GameConfig.isBonusBtn) {
+                this.FreeBtn.visible = true;
+            }
             this.startButton.scaleX = 1;
             this.startButton.scaleY = 1;
             this.autoButton.visible = false;
         }
         if (GameManager.getInstance().gameState == GameType.GameState.PLAYING && SetConst.AUTO == false) {
             this.startButton.visible = false;
+            this.FreeBtn.visible = false;
         }
         this.startButton.setlected = SetConst.SPEED_PLAY;
     };

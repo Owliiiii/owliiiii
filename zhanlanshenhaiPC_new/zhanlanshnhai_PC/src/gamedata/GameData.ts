@@ -84,6 +84,10 @@ module vo {
 		 */
 		public static TotalActionCount:number = 0;
 		/**
+		 * 奖金
+		 */
+		public static FreeMoney:number = 0;
+		/**
 		 * 固定结果
 		 */
 		public static ReelSymbols:any = [

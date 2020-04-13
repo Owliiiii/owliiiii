@@ -78,6 +78,10 @@ var vo;
          */
         GameData.TotalActionCount = 0;
         /**
+         * 奖金
+         */
+        GameData.FreeMoney = 0;
+        /**
          * 固定结果
          */
         GameData.ReelSymbols = [

@@ -67,6 +67,7 @@ var BonusAnimation = (function (_super) {
         ui.gameOver.visible = true;
         ui.bonusMask.visible = true;
         ui.overCup.winScore.text = 'x' + GameManager.numberToCommonStr(vo.GameData.resultData.Value.Dollar);
+        ui.balanceLabel.text = '￥' + GameManager.numberToCommonStr(vo.GameData.resultData.Value.Balance);
         egret.Tween.get(ui.overCup.keepOn, { loop: true }).to({ scaleX: 0.95, scaleY: 0.95 }, 500).to({ scaleX: 1, scaleY: 1 }, 500);
         ui.overCup.keepOn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.BtnTouch, this);
     };

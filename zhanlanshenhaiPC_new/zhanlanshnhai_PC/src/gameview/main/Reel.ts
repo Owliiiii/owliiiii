@@ -134,7 +134,7 @@ class Reel extends eui.Component {
 		if (this.isAction) {
 			for (let i: number = 0; i < this.kGroup.numChildren; i++) {
 				let item: ReelItem = this.kGroup.getChildAt(i) as ReelItem;
-				let stopTime: number = 600;
+				let stopTime: number = 400;
 				item.y += this.reelSpeed;
 				if (item.y >= this.height) {
 					let num3: number = 4 - GameConfig.twoC1Index;	//1,2,3
@@ -144,7 +144,7 @@ class Reel extends eui.Component {
 						}
 					}
 
-					let t1: number = GameConfig.speedPlay ? 250 : 700;//Reel.QUK_TIME : Reel.TIME;
+					let t1: number = GameConfig.speedPlay ? 250 : 400;//Reel.QUK_TIME : Reel.TIME;
 					let t2: number = GameConfig.speedPlay ? 250 : stopTime;//Reel.QUK_STOPTIME : Reel.STOPTIME;
 					// let t3: Array<number> = GameConfig.speedPlay ? [300, 350, 500, 650, 800] : [0, 400, 730, 930, 1030];
 
@@ -173,7 +173,7 @@ class Reel extends eui.Component {
 					// if(!GameConfig.isData){		//等待数据返回
 					// 	t2 = 99999;
 					// }
-					let t3: number = 900;
+					let t3: number = 400;
 					// if(!GameConfig.speedPlay){
 					// 	t3 = 500;
 					// }
@@ -430,8 +430,8 @@ class ReelItem extends eui.Component {
 			this.maoziMC6.gotoAndPlay('c1', -1);
 			this.maoziMC6.x = this.width / 2;
 			this.maoziMC6.y = this.height / 2;
-			this.maoziMC6.scaleX = 1.4;
-			this.maoziMC6.scaleY = 1.4;
+			this.maoziMC6.scaleX = 1.3;
+			this.maoziMC6.scaleY = 1.3;
 			this.icons.visible = false;
 		}
 		else {

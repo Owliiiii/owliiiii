@@ -114,10 +114,7 @@ class SetUI extends eui.Component {
 			SetConst.LONG_TOUCH = true;
 			SetConst.AUTO_SHOW = true;
 			this.startButton.visible = false;
-			if (!GameConfig.isFree) {
-				this.autoButton.visible = true;
-			}
-
+			this.autoButton.visible = true;
 			this.autoButton.isPlay = false;
 			this.autoSetCompoment.goUpdata();
 			SetConst.BETSET_SHOW = false;
@@ -408,6 +405,8 @@ class SetUI extends eui.Component {
 			this.startButton.visible = false;
 			if (!GameConfig.isFree) {
 				this.autoButton.visible = true;
+			} else if (!GameConfig.isBonusBtn) {
+				this.FreeBtn.visible = true;
 			}
 			this.autoButton.scaleX = 1;
 			this.autoButton.scaleY = 1;
@@ -415,14 +414,17 @@ class SetUI extends eui.Component {
 		else {
 			if (!GameConfig.isFree) {
 				this.startButton.visible = true;
+			} else if (!GameConfig.isBonusBtn) {
+				this.FreeBtn.visible = true;
 			}
 			this.startButton.scaleX = 1;
 			this.startButton.scaleY = 1;
 			this.autoButton.visible = false;
 		}
-
+		
 		if (GameManager.getInstance().gameState == GameType.GameState.PLAYING && SetConst.AUTO == false) {
 			this.startButton.visible = false;
+			this.FreeBtn.visible = false;
 		}
 		this.startButton.setlected = SetConst.SPEED_PLAY;
 	}
@@ -559,7 +561,6 @@ class SetUI extends eui.Component {
 	}
 
 	public bonusBtnState(b: boolean) {
-
 		if (b) {
 			egret.Tween.get(this.bonusBtn, { loop: true }).to({ scaleX: 0.85, scaleY: 0.85 }, 700).to({ scaleX: 1, scaleY: 1 }, 700);
 		} else {

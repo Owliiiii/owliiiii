@@ -38,6 +38,8 @@ declare class TogleButtonSkin extends eui.Skin{
 }
 declare class CheckListSkin extends eui.Skin{
 }
+declare class DuanxianSkin extends eui.Skin{
+}
 declare class GamePentSkin extends eui.Skin{
 }
 declare class GameScenceSkin extends eui.Skin{

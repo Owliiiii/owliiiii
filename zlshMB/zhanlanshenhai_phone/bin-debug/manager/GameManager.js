@@ -83,6 +83,13 @@ var GameManager = (function (_super) {
         vo.GameData.slotInfo.resultArr = data.Value.Geninit.Main.ReelSymbols;
         vo.GameData.initData = data;
         vo.GameData.payData = data.Value.Paytables.Main.PayData;
+        if (vo.GameData.initData.Actions.freeslot) {
+            vo.GameData.TotalActionCount = vo.GameData.initData.Actions.freeslot.count;
+            vo.GameData.allFreeCount = vo.GameData.initData.Actions.freeslot.total;
+            egret.setTimeout(function () {
+                // core.UIManager.openUI(core.UIConst.DuanxianShowUi, core.LayerManager.Layer_Top);
+            }, this, 2000);
+        }
         this.dispatchEventWith(SetEvent.SET_BALANCE_CHANGE);
     };
     //开始游戏
@@ -92,10 +99,18 @@ var GameManager = (function (_super) {
         var d = vo.GameData.balance - vo.GameData.betScoreArr[vo.GameData.betIndex] * vo.GameData.line;
         // ui.balanceLabel.text = '￥' + GameManager.numberToCommonStr(d);
         //ui.gameScence.startReel();
-        ui.canStop();
         egret.setTimeout(function () {
             SetConst.isCanStopGame = true;
         }, this, 250);
+        if (vo.GameData.resultData.ActionType != "treasure") {
+            // ui.gameScence.startReel();
+            ui.canStop();
+        }
+        else {
+            GameManager.getInstance().dispatchEventWith(SetEvent.SET_START);
+            vo.GameData.TotalActionCount = vo.GameData.resultData.Actions.freeslot.count;
+            vo.GameData.allFreeCount = vo.GameData.resultData.Actions.freeslot.total;
+        }
     };
     GameManager.prototype.initAlaysPlayData = function (data) {
         vo.GameData.resultData = JSON.parse(JSON.stringify(data));
@@ -116,9 +131,21 @@ var GameManager = (function (_super) {
         this.gameState = GameType.GameState.STOP;
         SetConst.isCanStopGame = false;
         var ui = core.UIManager.getUI(core.UIConst.MainScenceUI);
+        if (vo.GameData.resultData.ActionType == 'freeslot') {
+            if (vo.GameData.resultData.Actions.freeslot) {
+                vo.GameData.TotalActionCount = vo.GameData.resultData.Actions.freeslot.count;
+                vo.GameData.allFreeCount = vo.GameData.resultData.Actions.freeslot.total;
+                ui.totalMoney.text = vo.GameData.resultData.Actions.freeslot.TotalWin;
+                ui.gongNengMoney.text = vo.GameData.resultData.Actions.freeslot.ActionWin;
+                ui.gameMoney.text = "" + (vo.GameData.resultData.Actions.freeslot.TotalWin - vo.GameData.resultData.Actions.freeslot.ActionWin);
+            }
+            else {
+                vo.GameData.TotalActionCount = 0;
+                vo.GameData.allFreeCount = 0;
+            }
+        }
         vo.GameData.initData.Value.TokenInfo.Balance = vo.GameData.resultData.Value.Balance;
         vo.GameData.balance = vo.GameData.initData.Value.TokenInfo.Balance;
-        vo.GameData.allFreeCount = vo.GameData.resultData.Value.TotalActionCount;
         this.dispatchEventWith(SetEvent.SET_BALANCE_CHANGE);
         var resultData = vo.GameData.resultData;
         var winarr = resultData.Value.SpinResult.Main.WinResults;
@@ -128,6 +155,7 @@ var GameManager = (function (_super) {
         if (this.getFreeCount() == 0 && vo.GameData.resultData.ActionType == 'freeslot') {
             //免费游戏结束弹窗
             // GameConfig.autoPlay = false;
+            vo.GameData.allFreeCount = vo.GameData.TotalActionCount = vo.GameData.resultData.Value.TotalActionCount = 0;
             vo.GameData.autoPlayCount = 0;
             ui.endFree();
         }
@@ -200,7 +228,7 @@ var GameManager = (function (_super) {
         }
         ui.setUI.updataBtnState();
         if (this.getFreeCount() > 0) {
-            // ui.hideWin();
+            ui.hideWin();
             GameManager.getInstance().dispatchEventWith(SetEvent.SET_START);
         }
         else {
@@ -223,17 +251,22 @@ var GameManager = (function (_super) {
             case SetEvent.SET_START:
                 if (this.getMoneyIsFull()) {
                     if (this.getFreeCount() > 0) {
+                        GameManager.getInstance().gameState = GameType.GameState.PLAYING;
                         Commond.sendPlay(true);
                         ui.hideWin();
                         this.stopchannel();
                         ui.gameScence.startReel();
-                        if (vo.GameData.resultData.ActionType == 'freeslot') {
-                            var c = (vo.GameData.resultData.Value.TotalActionCount - this.getFreeCount()) > 0 ? (vo.GameData.resultData.Value.TotalActionCount) - this.getFreeCount() : vo.GameData.allFreeCount;
-                            ui.free_Num.text = "" + this.getFreeCount();
-                            // this.showTips('免费旋转第' + c + '次，' + '共' + vo.GameData.allFreeCount + '次');
+                        if (vo.GameData.resultData && vo.GameData.resultData.ActionType == 'freeslot') {
+                            if (vo.GameData.resultData.Actions.freeslot) {
+                                ui.free_Num.text = "" + vo.GameData.resultData.Actions.freeslot.count;
+                            }
+                            else {
+                                ui.free_Num.text = "0";
+                            }
                         }
                         vo.GameData.balance -= vo.GameData.betScoreArr[vo.GameData.betIndex] * vo.GameData.line;
                         this.dispatchEventWith(SetEvent.SET_BALANCE_CHANGE);
+                        this.dispatchEventWith(SetEvent.SET_AUTO_CHANGED);
                         if (!SetConst.AUTO) {
                             if (e.data != 1) {
                                 ui.setUI.tipLabel.text = '触摸转轴来提前停止';
@@ -331,12 +364,9 @@ var GameManager = (function (_super) {
      * 判断当前还有多少次免费旋转
      */
     GameManager.prototype.getFreeCount = function () {
-        var arr = vo.GameData.initData.Value.Actions;
-        if (!arr)
-            return 0;
         var n = 0;
-        for (var i = 0; i < arr.length; i++) {
-            n += arr[i].remaining;
+        if (vo.GameData.TotalActionCount > 0) {
+            n = vo.GameData.TotalActionCount;
         }
         return n;
     };

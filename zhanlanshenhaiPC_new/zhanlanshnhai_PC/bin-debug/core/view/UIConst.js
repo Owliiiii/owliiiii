@@ -46,6 +46,10 @@ var core;
          * 帮助说明界面
          */
         UIConst.HelpDesUI = 'HelpDesUI';
+        /**
+ * 断线框
+ */
+        UIConst.DuanxianShowUi = "DuanxianShowUi";
         return UIConst;
     }());
     core.UIConst = UIConst;

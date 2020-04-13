@@ -101,6 +101,12 @@ var MainScenceUI = (function (_super) {
         this.tGameBtn.label0.text = '游戏';
         this.tGameBtn.label1.text = '游戏';
         this.onResize();
+        if (Object.keys(vo.GameData.initData.Actions).length > 0) {
+            GameConfig.emptyPlay = false;
+            setTimeout(function () {
+                core.UIManager.openUI(core.UIConst.DuanxianShowUi, core.LayerManager.Layer_Tip);
+            }, this, 1000);
+        }
         var today = egret.localStorage.getItem('today');
         if (today) {
             var nowtime = new Date().getTime();
@@ -381,8 +387,10 @@ var MainScenceUI = (function (_super) {
     };
     MainScenceUI.prototype.closeHongli = function () {
         console.log("关闭红利");
-        GameConfig.emptyPlay = true; //空格开启
+        GameConfig.emptyPlay = true; //空格开启szv
         var ui = core.UIManager.getUI(core.UIConst.MainScenceUI);
+        // this.balanceLabel.text = '￥' + GameManager.numberToCommonStr(vo.GameData.balance);
+        this.balanceLabel.text = '￥' + GameManager.numberToCommonStr(vo.GameData.resultData.Value.Balance);
         GameConfig.hongli = false;
         this.removeEventListener(egret.Event.ENTER_FRAME, this.taouchBonus, this);
         this.autoItem.sopAutoBtn.enabled = true;
@@ -432,6 +440,11 @@ var MainScenceUI = (function (_super) {
     MainScenceUI.prototype.judgeInit = function (data) {
         SetConst.isWin = true;
         var _val = data.Actions;
+        GameConfig.emptyPlay = false;
+        this.bg.visible = false;
+        this.bg1.visible = true;
+        this.mainGroup.visible = false;
+        this.leftGroup.visible = true;
         this.bonusGroup.visible = true;
         SoundManager.getInstance().stopBg();
         if (Object.keys(data.Actions)[0] == GameType.GameType.treasure) {

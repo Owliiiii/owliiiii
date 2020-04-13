@@ -62,18 +62,27 @@ class GameManager extends egret.EventDispatcher {
 		core.LoadManger.getInstance().loadGroup(core.UIConst.NomalLoadingUI, 'main', () => {
 			core.UIManager.openUI(core.UIConst.MainScenceUI);
 		}, this);
+
 	}
 	/**
 	 * 解析初始化数据
 	 * @param data 数据
 	 */
 	private initAlysInitialData(data: any): void {
+		let ui: MainScenceUI = core.UIManager.getUI(core.UIConst.MainScenceUI);
 		vo.GameData.initData = JSON.parse(JSON.stringify(data));
 		vo.GameData.balance = parseFloat(data.Value.TokenInfo.Balance + '');
 		vo.GameData.reelArr.length = 0;
 		vo.GameData.slotInfo.resultArr = data.Value.Geninit.Main.ReelSymbols;
 		vo.GameData.initData = data;
 		GameConfig.isData = true;
+		if (vo.GameData.initData.Actions.freeslot) {
+			vo.GameData.TotalActionCount = vo.GameData.initData.Actions.freeslot.count;
+			vo.GameData.allFreeCount = vo.GameData.initData.Actions.freeslot.total;
+			egret.setTimeout(()=>{
+				// core.UIManager.openUI(core.UIConst.DuanxianShowUi, core.LayerManager.Layer_Top);
+			},this,2000);
+		}
 		// vo.GameData.payData = data.Value.Paytables.Main.PayData;
 	}
 	public chanel: egret.SoundChannel;
@@ -97,16 +106,25 @@ class GameManager extends egret.EventDispatcher {
 		}
 
 		if (vo.GameData.resultData.ActionType == 'freeslot') {
-			let c: number = (vo.GameData.resultData.Value.TotalActionCount - this.getFreeCount()) > 0 ? (vo.GameData.resultData.Value.TotalActionCount) - this.getFreeCount() : vo.GameData.allFreeCount;
-			ui.free_Num.text = "" + this.getFreeCount();
-			// this.showTips('免费旋转第' + c + '次，' + '共' + vo.GameData.allFreeCount + '次');
+			// let c: number = (vo.GameData.resultData.Value.TotalActionCount - this.getFreeCount()) > 0 ? (vo.GameData.resultData.Value.TotalActionCount) - this.getFreeCount() : vo.GameData.allFreeCount;
+			if( vo.GameData.resultData.Actions.freeslot){
+				ui.free_Num.text = "" + vo.GameData.resultData.Actions.freeslot.count;
+			}else{
+				ui.free_Num.text = "0";
+			}
 		}
 		egret.setTimeout(() => {
 			ui.startBtn.visible = false;
 			ui.startBtn.enabled = true;
 			ui.stopBtn.visible = true;
 		}, this, 210);
-		ui.gameScence.startResult();
+		if (vo.GameData.resultData.ActionType != "treasure") {
+			ui.gameScence.startResult();
+		} else {
+			this.startGame();
+			vo.GameData.TotalActionCount = vo.GameData.resultData.Actions.freeslot.count;
+			vo.GameData.allFreeCount = vo.GameData.resultData.Actions.freeslot.total;
+		}
 	}
 
 	public loopChanel: egret.SoundChannel;
@@ -121,7 +139,7 @@ class GameManager extends egret.EventDispatcher {
 		// vo.GameData.matchInfo.money = data.Value.Balance - vo.GameData.matchInfo.allScore / vo.GameData.matchInfo.bili;
 		// core.NotifyManager.getInstance().sendNotify(core.NotifyConst.LOGIC_BALANCE);
 	}
-
+	
 	/**
 	 * 游戏正式结束通知
 	 */
@@ -130,17 +148,28 @@ class GameManager extends egret.EventDispatcher {
 		GameConfig.isData = false;
 		let ui: MainScenceUI = core.UIManager.getUI(core.UIConst.MainScenceUI);
 		this.gameState = GameType.GameState.STOP;
-		vo.GameData.allFreeCount = vo.GameData.resultData.Value.TotalActionCount;
+		if (vo.GameData.resultData.ActionType == 'freeslot') {
+			if (vo.GameData.resultData.Actions.freeslot) {
+				vo.GameData.TotalActionCount = vo.GameData.resultData.Actions.freeslot.count;
+				vo.GameData.allFreeCount = vo.GameData.resultData.Actions.freeslot.total;
+				
+				ui.totalMoney.text = vo.GameData.resultData.Actions.freeslot.TotalWin;
+				ui.gongNengMoney.text = vo.GameData.resultData.Actions.freeslot.ActionWin;
+				ui.gameMoney.text = "" + (vo.GameData.resultData.Actions.freeslot.TotalWin - vo.GameData.resultData.Actions.freeslot.ActionWin);
+			} else {
+				vo.GameData.TotalActionCount = 0;
+				vo.GameData.allFreeCount = 0;
+			}
+		}
 		console.log("免费次数 === " + this.getFreeCount());
-		if (this.getFreeCount() == 0 && vo.GameData.resultData.ActionType == 'freeslot') {
+		if (this.getFreeCount() == 0 && vo.GameData.resultData.ActionType == 'freeslot') {	// 
 			//免费游戏结束弹窗
-
 			GameConfig.autoPlay = false;
 			vo.GameData.autoPlayCount = 0;
 			ui.endFree();
 		}
 		this.isStart = true;
-		if (!GameConfig.autoPlay && this.getFreeCount() <= 0) {		//this.getFreeCount() > 0
+		if (!GameConfig.autoPlay) {		//this.getFreeCount() > 0
 			ui.startBtn.visible = true;
 			ui.stopBtn.visible = false;
 			ui.infoBtn.enabled = true;
@@ -409,8 +438,6 @@ class GameManager extends egret.EventDispatcher {
 					}
 				}
 			}
-
-
 		}
 		if (this.getFreeCount() > 0 && !GameConfig.freeGame) {
 			ui.hideWin();
@@ -426,10 +453,10 @@ class GameManager extends egret.EventDispatcher {
 			//如果是自动游戏———>弹窗
 			if (vo.GameData.autoPlayCount > 0 && GameConfig.autoPlay) {
 				console.log("自动游戏弹窗 == " + vo.GameData.autoPlayCount);
+
 			} else {	//如果不是自动游戏———>按钮状态等
 				console.log("不是自动游戏按钮状态等 == " + vo.GameData.autoPlayCount);
 			}
-
 		}
 	}
 
@@ -485,17 +512,19 @@ class GameManager extends egret.EventDispatcher {
 	public startGame(isUsolt: boolean = false): void {
 		//开始
 		let ui: MainScenceUI = core.UIManager.getUI(core.UIConst.MainScenceUI);
-		if (isUsolt) {
-			Commond.sendPlay(1); //
-			ui.gameScence.startReel();
-			return;
-		}
+		// if (isUsolt) {
+		// 	Commond.sendPlay(1); //
+		// 	ui.gameScence.startReel();
+		// 	return;
+		// }
 		if (!this.isStart) return;
 		// let ui: MainScenceUI = core.UIManager.getUI(core.UIConst.MainScenceUI);
 		ui.hideWin();
 		if (this.getFreeCount() > 0) {
+			ui.initFree();
 			Commond.sendPlay(1);
 		} else {
+			vo.GameData.FreeMoney = 0;
 			if (vo.GameData.balance < vo.GameData.betScoreArr[vo.GameData.betIndex] * vo.GameData.line) {
 				GameConfig.autoPlay = false;
 				vo.GameData.autoPlayCount = 0;
@@ -571,11 +600,10 @@ class GameManager extends egret.EventDispatcher {
 	 * 判断当前还有多少次免费旋转
 	 */
 	public getFreeCount(): number {
-		let arr: Array<any> = vo.GameData.initData.Value.Actions;
-		if (!arr) return 0;
+
 		let n: number = 0;
-		for (let i: number = 0; i < arr.length; i++) {
-			n += arr[i].remaining;
+		if (vo.GameData.TotalActionCount > 0) {
+			n = vo.GameData.TotalActionCount;
 		}
 		return n;
 	}
@@ -584,7 +612,8 @@ class GameManager extends egret.EventDispatcher {
 	 * 判断当前一共获得多少次旋转
 	 */
 	public getAllFreeCount(): number {
-		let arr: Array<any> = vo.GameData.initData.Value.Actions;
+		let arr: any = vo.GameData.initData.Value.Actions;
+		arr.freeslot.total;
 		if (!arr) return 0;
 		let n: number = 0;
 		for (let i: number = 0; i < arr.length; i++) {

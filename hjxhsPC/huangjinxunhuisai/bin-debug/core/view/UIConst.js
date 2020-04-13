@@ -39,6 +39,10 @@ var core;
          */
         UIConst.StipsUI = 'StipsUI';
         /**
+         * 断线框
+         */
+        UIConst.DuanxianShowUi = "DuanxianShowUi";
+        /**
          * 帮助界面
          */
         UIConst.HelpUI = 'HelpUI';

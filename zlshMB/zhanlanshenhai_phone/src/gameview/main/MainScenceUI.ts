@@ -7,7 +7,7 @@ class MainScenceUI extends core.BaseUI {
 	public mainGroup: eui.Group;
 	public tipGroup: eui.Group;
 	// public tipLabel: eui.Label;
-	public rewardWin:eui.Image;
+	public rewardWin: eui.Image;
 	public freeGroup: eui.Group;
 	public bg1: eui.Image;
 	public freeNumGroup: eui.Group;
@@ -161,7 +161,7 @@ class MainScenceUI extends core.BaseUI {
 			this.mainGroup.visible = false;
 			this.setUI.visible = false;
 			this.freeGroup.visible = true;
-			if(this.isTipsGroup){
+			if (this.isTipsGroup) {
 				this.tipsGroup.visible = true;
 
 			}
@@ -170,6 +170,12 @@ class MainScenceUI extends core.BaseUI {
 	//选择贝壳结束按钮
 	public closeFreeUi(): void {
 		this.indexNum = 0;
+		GameConfig.isBonusBtn = false;
+		this.setUI.setBtn.visible = false;
+		this.setUI.qukGroup.visible = false;
+		this.setUI.betBtn.visible = false;
+
+		this.setUI.bottomGroup.visible = true;
 		// GameConfig.freeGame = false;
 		this.isTipsGroup = false;
 		this.logo1.visible = false;
@@ -181,7 +187,7 @@ class MainScenceUI extends core.BaseUI {
 
 		this.bg.visible = true;
 		this.mainGroup.visible = true;
-		
+
 		this.freeGroup.visible = false;
 		GameConfig.freeGame = false;
 		this.tipsGroup.visible = false;
@@ -189,9 +195,7 @@ class MainScenceUI extends core.BaseUI {
 			this["beiKe_" + i].source = "with_pearl_01_png";
 			this["beiKe_x" + i].visible = false;
 		}
-		// GameManager.getInstance().startGame(true);
-		// GameManager.getInstance().dispatchEventWith(SetEvent.SET_START);
-
+		Commond.sendBonus(1, vo.GameData.TotalActionCount);
 	}
 	//免费游戏结束弹窗
 	public endFree(): void {
@@ -205,6 +209,7 @@ class MainScenceUI extends core.BaseUI {
 	//免费游戏结束按钮
 	public endFreeUi(): void {
 		//游戏页面ui 
+		this.setUI.FreeBtn.visible = false;
 		this.setUI.visible = true;
 		this.logo1.visible = true;
 		this.logo2.visible = false;
@@ -214,6 +219,8 @@ class MainScenceUI extends core.BaseUI {
 		this.tipsGroup.visible = false;
 		this.pickFree.visible = true;
 		this.overFree.visible = false;
+
+		GameConfig.isFree = false;
 		// this.autoItem.sopAutoBtn.enabled = true;
 		//还有自动次数，游戏停止，弹窗
 
@@ -242,6 +249,7 @@ class MainScenceUI extends core.BaseUI {
 	public onBonusEnd() {
 		console.log('点击免费游戏');
 		//隐藏动画，跳转界面,替换按钮
+		
 		this.setUI.bonusBtn.visible = false;
 		this.gameScence.removeBonusMc();
 		// GameConfig.isFree = false;
@@ -253,22 +261,30 @@ class MainScenceUI extends core.BaseUI {
 	}
 
 	public showFreeUi(): void {
-
+		console.log("打开了免费界面");
 		//音乐
 		this.hideWin();
-		GameConfig.freeGame = true;
-		GameConfig.isBonusBtn = false;
-		this.bg.visible = false;
-		this.mainGroup.visible = false;
-		this.setUI.visible = false;
-		this.freeGroup.visible = true;
 
+		this.setUI.setBtn.visible = false;
+		this.setUI.qukGroup.visible = false;
+		this.setUI.betBtn.visible = false;
+		this.setUI.bottomGroup.visible = false;
+
+		this.bg.visible = false;
+		this.bg1.visible = true;
+		this.mainGroup.visible = false;
+		this.freeGroup.visible = true;
+		this.fanbei = 2;
+		this.roteNum = 8;
+		this.CountArr = this.CountArr.sort(() => Math.random() - 0.5).slice(0, 5);
 		for (var i = 0; i < 5; i++) {
 			this["beiKe_" + i].pixelHitTest = true;
 			this["beiKe_" + i].addEventListener(egret.TouchEvent.TOUCH_TAP, this.changeBeiKe, this);
 		}
 	}
-
+	public CountArr: Array<any> = [5, 7, 15, 10, 8];
+	private fanbei: number = 2;
+	private roteNum: number = 8;
 	public indexNum: number = 0;
 	public changeBeiKe(evt: egret.TouchEvent): void {
 		//选择贝壳，播放动画
@@ -276,37 +292,46 @@ class MainScenceUI extends core.BaseUI {
 		let Count: number;
 		this.indexNum++;
 
+		// arr.splice();
 		switch (evt.currentTarget) {
 			case this["beiKe_0"]:
 				index = 0;
-				Count = 5;
+				Count = this.CountArr[index];	//倍数 beiKe_x0.source = pearl_text5_png
 				break;
 			case this["beiKe_1"]:
 				index = 1;
-				Count = 7;
+				Count = this.CountArr[index];
 				break;
 			case this["beiKe_2"]:
 				index = 2;
-				Count = 15;
+				Count = this.CountArr[index];
 				break;
 			case this["beiKe_3"]:
 				index = 3;
-				Count = 10;
+				Count = this.CountArr[index];
 				break;
 			case this["beiKe_4"]:
 				index = 4;
-				Count = 8;
+				Count = this.CountArr[index];	//倍数
 				break;
 		}
+		// Count = CountArr[index];
 		// vo.GameData.TotalActionCount = vo.GameData.TotalActionCount + Count;
 		if (this.indexNum == 1) {
-			vo.GameData.TotalActionCount = Count + 8;
+			if (Count == 8 || Count == 5) {
+				this.fanbei += Count;
+			} else {
+				this.roteNum += Count;
+			}
+			vo.GameData.TotalActionCount = this.roteNum;
 		}
 		if (this.indexNum >= 2) {
-			if (Count < 8) {
-				Count = 0;
+			if (Count == 8 || Count == 5) {
+				this.fanbei += Count;
+			} else {
+				this.roteNum += Count;
 			}
-			vo.GameData.TotalActionCount = (vo.GameData.TotalActionCount + Count);
+			vo.GameData.TotalActionCount = this.roteNum;//(vo.GameData.TotalActionCount + this.roteNum);
 		}
 		this["beiKe_" + index].removeEventListener(egret.TouchEvent.TOUCH_TAP, this.changeBeiKe, this);
 		if (this.indexNum >= 2) {
@@ -325,15 +350,21 @@ class MainScenceUI extends core.BaseUI {
 				this.freeNum.text = "";
 				this.beiNum.text = "";
 				this.rotateNum.text = "" + vo.GameData.TotalActionCount;
-				Commond.sendBonus(2,vo.GameData.TotalActionCount);
-				this.fanbeiNum.text = "X2";
+				// if (Count <= 8) {
+				// 	this.fanbeiNum.text = "X" + this.fanbei;
+				// } else {
+				// 	this.fanbeiNum.text = "X2";
+				// }
+				this.fanbeiNum.text = "X" + this.fanbei;
+
 				this.freeNumGroup.visible = true;
 
 				if (index <= 2) {
-					this["beiKe_x" + index].y = 327;
+					// this["beiKe_x" + index].y = 327;
 				} else {
-					this["beiKe_x" + index].y = 525;
+					// this["beiKe_x" + index].y = 525;
 				}
+				this["beiKe_x" + index].source = "pearl_text" + Count + "_png";
 				this["beiKe_x" + index].visible = true;
 				// 5 7 15 10 8
 				egret.setTimeout(() => {
@@ -341,28 +372,33 @@ class MainScenceUI extends core.BaseUI {
 						for (var i = 0; i < 5; i++) {
 							if (!this["beiKe_x" + i].visible) {
 								if (i <= 2) {
-									this["beiKe_x" + i].y = 433;
+									// this["beiKe_x" + i].y = 433;
 								} else {
-									this["beiKe_x" + i].y = 630;
+									// this["beiKe_x" + i].y = 630;
 								}
+								this["beiKe_x" + index].source = "pearl_text" + Count + "_png";
 								this["beiKe_x" + i].visible = true;
 							}
 						}
-						this.fanbeiNum.text = "X2";
+						// if (Count == 5 || Count == 8) {
+						// 	this.fanbeiNum.text = "X" + 2 + Count;
+						// } else {
+						// 	this.fanbeiNum.text = "X2";
+						// }
+						this.fanbeiNum.text = "X" + this.fanbei;
 						this.rotateNum.text = "" + vo.GameData.TotalActionCount;
 
 						this.freeNum.text = "" + vo.GameData.TotalActionCount;
-						this.beiNum.text = "2";
-						// Commond.sendBonus(vo.GameData.TotalActionCount, 2);
+						this.beiNum.text = "X" + this.fanbei;
+						console.log("vo.GameData.TotalActionCount === " + vo.GameData.TotalActionCount);
 						this.tipsGroup.visible = true;
-						this.isTipsGroup = true;
 						vo.GameData.TotalActionCount -= 1;
 					}
 				}, this, 200);
 			})
 
 	}
-	public isTipsGroup:boolean = false;
+	public isTipsGroup: boolean = false;
 	public curtime: number = 0;
 	public indexC1: number = 0;
 	public canStop(): void {
@@ -648,16 +684,6 @@ class MainScenceUI extends core.BaseUI {
 	private allReward: number = 0;
 	private _rewardNum: number = 0;
 	private set reward(v: number) {
-		if (GameManager.getInstance().getFreeCount() > 0) {
-			this.allReward += vo.GameData.resultData.Value.TotalWinDollar;
-			if (this.allReward > 0) {
-				this.free_money.text = "￥" + GameManager.numberToCommonStr(this._rewardNum);
-			} else {
-				this.free_money.text = "--";
-			}
-		} else {
-			this.allReward = 0;
-		}
 		this._rewardNum = v;
 		let s: string = GameManager.numberToCommonStr(this._rewardNum);
 		this.setUI.rewardLabel.text = 'x' + s;

@@ -60,11 +60,10 @@ class GameManager extends egret.EventDispatcher {
 	public onNetgGmeInit(data: any): void {
 		let d: any = data;
 		this.initAlysInitialData(d);
-
 		core.LoadManger.getInstance().loadGroup(core.UIConst.NomalLoadingUI, 'main', () => {
 			core.UIManager.openUI(core.UIConst.MainScenceUI);
 		}, this);
-		// this.initAlysInitialData(d);
+		
 	}
 	/**
 	 * 解析初始化数据
@@ -77,11 +76,13 @@ class GameManager extends egret.EventDispatcher {
 		vo.GameData.slotInfo.resultArr = data.Value.Geninit.Main.ReelSymbols;
 		vo.GameData.initData = data;
 		vo.GameData.payData = data.Value.Paytables.Main.PayData;
-		let ui: MainScenceUI = core.UIManager.getUI(core.UIConst.MainScenceUI);
-
-		if (Object.keys(data.Actions).length > 0 && ui) {
-			ui.judgeInit(JSON.parse(JSON.stringify(data)));
-		}
+		// egret.setTimeout(() => {
+		// 	if (Object.keys(data.Actions).length > 0) {
+		// 		//弹窗
+		// 		core.UIManager.openUI(core.UIConst.DuanxianShowUi, core.LayerManager.Layer_Tip);
+		// 		// ui.judgeInit(JSON.parse(JSON.stringify(data)));
+		// 	}
+		// }, this, 4000);
 	}
 
 	//开始游戏
@@ -120,7 +121,7 @@ class GameManager extends egret.EventDispatcher {
 	}
 
 	public loopChanel: egret.SoundChannel;
-	public isupdataMoney:boolean = true;
+	public isupdataMoney: boolean = true;
 	private initAlaysPlayData(data: any): void {
 		vo.GameData.resultData = JSON.parse(JSON.stringify(data));
 	}
@@ -142,8 +143,8 @@ class GameManager extends egret.EventDispatcher {
 	/**
 	 * 游戏正式结束通知
 	 */
-	public onLogicGameOver(): void { 
-		console.log('游戏结束'); 
+	public onLogicGameOver(): void {
+		console.log('游戏结束');
 
 		this.gameState = GameType.GameState.STOP;
 		this.isStart = true;
