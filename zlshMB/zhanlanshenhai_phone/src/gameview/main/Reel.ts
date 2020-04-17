@@ -110,11 +110,11 @@ class Reel extends eui.Component {
 					for (let j = 1; j <= num3; j++) {
 						if (this.index == (GameConfig.twoC1Index + j) && GameConfig.isTest) {
 							// console.log("第" + this.index + "列停止");
-							// if(SoundManager.getInstance().effectOn && this.chanel == null){
-							// 	SoundManager.getInstance().playMusic(SoundConst.C1TWO, 1).then((chanel) => {
-							// 		this.chanel = chanel; 
-							// 	});
-							// };
+							if(SoundManager.getInstance().effectOn && this.chanel == null){
+								SoundManager.getInstance().playMusic(SoundConst.C1TWO, 1).then((chanel) => {
+									this.chanel = chanel; 
+								});
+							};
 							if (!this.c1MC) {
 								this.c1MC = game.MCUtils.getMc('c1mc');
 							}
@@ -128,12 +128,12 @@ class Reel extends eui.Component {
 							// t1 = t1+1000;
 							t2 = t2 + 500;
 							;
-							if(this.index > GameConfig.threeC1Index){
-								 this.c1MC.visible = false;
-								 t2 = t2 -800;
-							}else{
-								this.c1MC.visible = true;
-							}
+							// if(this.index > GameConfig.threeC1Index){
+							// 	 this.c1MC.visible = false;
+							// 	 t2 = t2 -800;
+							// }else{
+							// 	this.c1MC.visible = true;
+							// }
 						}
 					}
 					// if(!GameConfig.isData){		//等待数据返回
@@ -190,7 +190,7 @@ class Reel extends eui.Component {
 	private overReel(): void {
 		egret.Tween.removeTweens(this);
 		if (!this.stopState) {
-			// SoundManager.getInstance().playEffect(SoundConst.REEL_STOP);
+			SoundManager.getInstance().playEffect(SoundConst.REEL_STOP);
 		}
 		for (let i: number = 0; i < this.kGroup.numChildren; i++) {
 			let item: ReelItem = this.kGroup.getChildAt(i) as ReelItem;
@@ -201,15 +201,15 @@ class Reel extends eui.Component {
 			item.value = i > 0 && i < 4 ? this.curReelData[i - 1] : 'M' + Math.ceil(Math.random() * 5);
 			// item.setVir(false);
 			//item.value ='M'+Math.ceil(Math.random()*5);
-			// if((i > 0 && i < 4 ? this.curReelData[i - 1] : 'M' + Math.ceil(Math.random() * 5)) == "C1" && this.index <= 2 && !this.stopState){
-			// 	SoundManager.getInstance().playEffect(SoundConst.DENG);
-			// }
+			if ((i > 0 && i < 4 ? this.curReelData[i - 1] : 'M' + Math.ceil(Math.random() * 5)) == "C1" && this.index <= 2 && !this.stopState) {
+				SoundManager.getInstance().playEffect(SoundConst.DENG);
+			}
 			let t: number = this.stopState ? 0 : 300;
 			egret.setTimeout(() => {
 				if (this.c1MC && this.c1MC.parent) {
 					this.c1MC.parent.removeChild(this.c1MC);
 					this.c1MC.stop();
-					// this.stopMusic();
+					this.stopMusic();
 				}
 			}, this, 300);
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ReelSkin" width="300" height="555" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group id="containerGroup" left="0" right="0" top="0" bottom="0" scrollEnabled="true">
+		<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" top="0"/>
+		<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" x="10" verticalCenter="0"/>
+		<ns1:ReelItem skinName="ReelItemSkin" horizontalCenter="0" x="20" bottom="0"/>
+	</e:Group>
+	<e:Group id="kuangGroup" left="0" right="0" top="0" bottom="0" visible="false">
+		<e:Image id="img0" source="C14_png" y="-31" horizontalCenter="0"/>
+		<e:Image id="img1" source="C14_png" y="122" horizontalCenter="0"/>
+		<e:Image id="img2" source="C14_png" y="275" horizontalCenter="0"/>
+	</e:Group>
+</e:Skin>

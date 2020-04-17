@@ -21,6 +21,10 @@ class GameConfig {
 	 * 中了免费抽奖
 	 */
 	public static isFree:boolean = false;
+	/**
+	 * 最后的弹窗
+	 */
+	public static overTips:boolean = false;
 
 	/**
 	 * 免费游戏

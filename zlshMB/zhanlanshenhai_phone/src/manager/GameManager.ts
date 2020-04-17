@@ -71,12 +71,17 @@ class GameManager extends egret.EventDispatcher {
 		vo.GameData.slotInfo.resultArr = data.Value.Geninit.Main.ReelSymbols;
 		vo.GameData.initData = data;
 		vo.GameData.payData = data.Value.Paytables.Main.PayData;
+		let ui: MainScenceUI = core.UIManager.getUI(core.UIConst.MainScenceUI);
 		if (vo.GameData.initData.Actions.freeslot) {
 			vo.GameData.TotalActionCount = vo.GameData.initData.Actions.freeslot.count;
 			vo.GameData.allFreeCount = vo.GameData.initData.Actions.freeslot.total;
-			egret.setTimeout(()=>{
+			egret.setTimeout(() => {
 				// core.UIManager.openUI(core.UIConst.DuanxianShowUi, core.LayerManager.Layer_Top);
-			},this,2000);
+				if (vo.GameData.initData.Actions.freeslot && ui) {
+					ui.freeBtnState(true);
+					ui.Duanxian();
+				}
+			}, this, 5000);
 		}
 		this.dispatchEventWith(SetEvent.SET_BALANCE_CHANGE);
 	}
@@ -88,7 +93,7 @@ class GameManager extends egret.EventDispatcher {
 		let d: number = vo.GameData.balance - vo.GameData.betScoreArr[vo.GameData.betIndex] * vo.GameData.line;
 		// ui.balanceLabel.text = '￥' + GameManager.numberToCommonStr(d);
 		//ui.gameScence.startReel();
-		
+
 		egret.setTimeout(() => {
 			SetConst.isCanStopGame = true;
 		}, this, 250);
@@ -128,11 +133,13 @@ class GameManager extends egret.EventDispatcher {
 			if (vo.GameData.resultData.Actions.freeslot) {
 				vo.GameData.TotalActionCount = vo.GameData.resultData.Actions.freeslot.count;
 				vo.GameData.allFreeCount = vo.GameData.resultData.Actions.freeslot.total;
-				
-				ui.totalMoney.text = vo.GameData.resultData.Actions.freeslot.TotalWin;
-				ui.gongNengMoney.text = vo.GameData.resultData.Actions.freeslot.ActionWin;
-				ui.gameMoney.text = "" + (vo.GameData.resultData.Actions.freeslot.TotalWin - vo.GameData.resultData.Actions.freeslot.ActionWin);
+				ui.freeBtnState(true);
+				ui.totalMoney.text = GameManager.numberToCommonStr(vo.GameData.resultData.Actions.freeslot.TotalWin);
+				ui.gongNengMoney.text = GameManager.numberToCommonStr(vo.GameData.resultData.Actions.freeslot.ActionWin);
+				ui.gameMoney.text = "" + GameManager.numberToCommonStr(vo.GameData.resultData.Actions.freeslot.TotalWin - vo.GameData.resultData.Actions.freeslot.ActionWin);
 			} else {
+				ui.freeBtnState(false);
+
 				vo.GameData.TotalActionCount = 0;
 				vo.GameData.allFreeCount = 0;
 			}
@@ -145,7 +152,7 @@ class GameManager extends egret.EventDispatcher {
 		let totalBet: number = resultData.Value.SpinResult.TotalBet;
 		let totalWin: number = resultData.Value.SpinResult.TotalWin;
 		let b: number = totalWin / totalBet;
-		
+
 		if (this.getFreeCount() == 0 && vo.GameData.resultData.ActionType == 'freeslot') {
 			//免费游戏结束弹窗
 
@@ -181,10 +188,21 @@ class GameManager extends egret.EventDispatcher {
 		}
 		if (fiveArr.length == 0) {
 			if (winarr.length > 0) {
-				ui.showWin(winarr);
-				egret.setTimeout(() => {
-					this.doNext();
-				}, this, t);
+				let fourArr: Array<any> = [];
+				fourArr = this.getFishArr(winarr);
+				if (fourArr.length != 0) {
+					ui.showFourFish(fourArr[0], () => {
+						ui.showWin(winarr);
+						egret.setTimeout(() => {
+							this.doNext();
+						}, this, t);
+					});
+				} else {
+					ui.showWin(winarr);
+					egret.setTimeout(() => {
+						this.doNext();
+					}, this, t);
+				}
 			}
 			else {
 				egret.setTimeout(() => {
@@ -201,8 +219,6 @@ class GameManager extends egret.EventDispatcher {
 				}, this, t);
 			});
 		}
-
-
 	}
 
 	public rewardChannel: egret.SoundChannel;
@@ -246,6 +262,15 @@ class GameManager extends egret.EventDispatcher {
 		}
 	}
 
+	public chanel: egret.SoundChannel;
+
+	public stopMusic(): void {
+		if (this.chanel) {
+			this.chanel.stop();
+			this.chanel = null;
+		}
+	}
+
 	private t: number = 0;
 	public onSet(e: SetEvent): void {
 		let ui: MainScenceUI = core.UIManager.getUI(core.UIConst.MainScenceUI);
@@ -255,12 +280,18 @@ class GameManager extends egret.EventDispatcher {
 					if (this.getFreeCount() > 0) {
 						GameManager.getInstance().gameState = GameType.GameState.PLAYING;
 						Commond.sendPlay(true);
+						ui.freeBtnState(false);
 						ui.hideWin();
 						this.stopchannel();
 						ui.gameScence.startReel();
-						if (vo.GameData.resultData && vo.GameData.resultData.ActionType == 'freeslot') {
+
+						if (vo.GameData.resultData.ActionType == 'freeslot') {
 							if (vo.GameData.resultData.Actions.freeslot) {
-								ui.free_Num.text = "" + vo.GameData.resultData.Actions.freeslot.count;
+								if ((vo.GameData.resultData.Actions.freeslot.count - 1) >= 0) {
+									ui.free_Num.text = "" + (vo.GameData.resultData.Actions.freeslot.count - 1);
+								} else {
+									ui.free_Num.text = "0";
+								}
 							} else {
 								ui.free_Num.text = "0";
 							}
@@ -276,6 +307,7 @@ class GameManager extends egret.EventDispatcher {
 							}
 						}
 					} else {
+						ui.freeBtnState(false);
 						if (!SetConst.AUTO && !SetConst.SPEED_PLAY) {
 							if (egret.getTimer() - this.t < 2000 && !SetConst.QUIKTIP_SHOW) {
 								core.UIManager.openUI(core.UIConst.QukTipsUI, core.LayerManager.Layer_Top);
@@ -284,12 +316,12 @@ class GameManager extends egret.EventDispatcher {
 							}
 							this.t = egret.getTimer();
 						}
+						vo.GameData.FreeMoney = 0;
 						GameManager.getInstance().gameState = GameType.GameState.PLAYING;
 						Commond.sendPlay();
 						ui.hideWin();
 						this.stopchannel();
 						ui.gameScence.startReel();
-
 						vo.GameData.balance -= vo.GameData.betScoreArr[vo.GameData.betIndex] * vo.GameData.line;
 						this.dispatchEventWith(SetEvent.SET_BALANCE_CHANGE);
 						if (SetConst.AUTO) {
@@ -465,6 +497,21 @@ class GameManager extends egret.EventDispatcher {
 		}
 
 		return false;
+	}
+
+	/**
+	 * 判断有无4条鱼
+	 */
+	public getFishArr(winarr: Array<any>): Array<any> {
+		let reslutArr: Array<any> = [];
+		for (let i: number = 0; i < winarr.length; i++) {
+			let data = winarr[i];
+			if (data.Symbol == "M4" && data.SymbolCount == 4) {
+				reslutArr.push(data);
+				// return true;
+			}
+		}
+		return reslutArr;
 	}
 
 	/**

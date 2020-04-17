@@ -12,10 +12,10 @@
     <meta name="360-fullscreen" content="true" />
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="./js/vconsole.min.js"></script>
-<script>
+    <script>
         // var vConsole = new VConsole();
         // console.log('hhhh');
-    </script>
+</script>
 <style>
         html, body {
             -ms-touch-action: none;
@@ -47,36 +47,36 @@ data-content-width="1334" data-content-height="750" data-multi-fingered="2" data
     };
     window['dataUrl'] = dataUrl;
 
-     /**
-     * 弹窗  str  要弹的内容
-     */
-     function popstr(str)
-     {
-         window.postMessage(str);
-     }
+    /**
+    * 弹窗  str  要弹的内容
+    */
+    function popstr(str) {
+        window.postMessage(str);
+    }
     var CasinoGame = {
-        "Game_id":  "T5005302001",
-            "GameCode":  "blue",
-            "Skin":  "normal",
-            "Link_auth":  "262a4f724fc9604394144e45f0706a41",
-            "UrlBase":  "ws://172.104.44.114:8088",
-            'PartnerId':  't50',
-            "PlayerId":  "user-007",
-            "Token":  "9A9282997C8D3182EBBA0D6841A6302D",
-            "IP":  "",
-            "Language":  "chs",
-            "GameCanvas":  "game_block",
-            "vtoken_interval":  "10",
-            "Denom": "32767",
-            "guest": "0",
-            "crnex":  '',
-            "udf1":  "None",//None bonus
-            "udf2":  '1581999506',
-            "udf3":  '',
-            "udf4":  'pc',
-            "udf5":  '',
-            "UrlRes": "",
-            "NjsHost": "172.104.44.114"
+        "Game_id": "T5005302001",
+        "Game_id": "T5005302001",
+        "GameCode": "blue",
+        "Skin": "normal",
+        "Link_auth": "9ebec03acb72c2a24b169185fe10e2e1",//Link_auth": "7f1b064303893c046916bd9c8ce2c43a
+        "UrlBase": "ws://172.104.44.114:8088",
+        'PartnerId': 't50',
+        "PlayerId": "user-007",
+        "Token": "9A9282997C8D3182EBBA0D6841A6302D",
+        "IP": "",
+        "Language": "chs",
+        "GameCanvas": "game_block",
+        "vtoken_interval": "10",
+        "Denom": "32767",
+        "guest": "0",
+        "crnex": '',
+        "udf1": "None",//None bonus
+        "udf2": '1581999506',
+        "udf3": '',
+        "udf4": 'pc',
+        "udf5": '',
+        "UrlRes": "",
+        "NjsHost": "172.104.44.114"
     };
     window['CasinoGame'] = CasinoGame;
     var loadScript = function (list, callback) {
@@ -132,7 +132,7 @@ data-content-width="1334" data-content-height="750" data-multi-fingered="2" data
                     return (window.devicePixelRatio || 1) / backingStore;
                 }
             });
- });
+        });
     });
     xhr.send(null);
 </script>

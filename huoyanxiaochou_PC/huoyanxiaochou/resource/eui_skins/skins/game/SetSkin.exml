@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SetSkin" width="1120" height="912" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.6"/>
+	<e:Group id="setGroup" horizontalCenter="0" verticalCenter="0">
+		<e:Image source="videoslot_popup_texture0_level1_03-04_png" anchorOffsetY="0" height="450" anchorOffsetX="0" width="550" scale9Grid="140,95,53,17" x="0" y="0"/>
+		<e:Label text="设置" y="63.6" fontFamily="Microsoft YaHei" size="24" horizontalCenter="0" textColor="0xe5ad22"/>
+		<ns1:STogleButton id="musicBtn" label="" x="56.72" y="263.94" skinName="MyTogleButtonSkin" scaleX="1.2" scaleY="1.2"/>
+		<e:Label text="声音" x="96.76" y="269.98" size="18" fontFamily="Microsoft YaHei" height="22" verticalAlign="middle"/>
+		<ns1:STogleButton id="autoBtn" label="" x="285.23" y="263.94" skinName="MyTogleButtonSkin" scaleX="1.2" scaleY="1.2"/>
+		<e:Label text="自动调整投注" x="324.31" y="269.98" size="18" fontFamily="Microsoft YaHei" height="22" verticalAlign="middle"/>
+		<ns1:STogleButton id="speedBtn" label="" x="56.72" y="311.94" skinName="MyTogleButtonSkin" scaleX="1.2" scaleY="1.2"/>
+		<e:Label text="快速进行" x="96.76" y="316.98" size="18" fontFamily="Microsoft YaHei" height="22" verticalAlign="middle"/>
+		<ns1:STogleButton id="emptyketBtn" label="" x="285.23" y="311.94" skinName="MyTogleButtonSkin" scaleX="1.2" scaleY="1.2"/>
+		<e:Label text="空格键启动旋转" x="324.31" y="316.98" size="18" fontFamily="Microsoft YaHei" height="22" verticalAlign="middle"/>
+		<ns1:MouseButton id="exitBtn" label="确认" y="373.76" horizontalCenter="0" scaleX="1.2" scaleY="1.2">
+			<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="grn_0_png" source.down="grn_2_png" source.disabled="grn_0_png" source.rollOver="grn_1_png"/>
+				<e:Label id="labelDisplay" verticalCenter="0" size="16" fontFamily="Microsoft YaHei" verticalCenter.down="4.5" horizontalCenter.down="0.5" verticalCenter.up="2.5" horizontalCenter.up="0" verticalCenter.disabled="5.5" horizontalCenter.disabled="0" verticalCenter.rollOver="2.5" horizontalCenter.rollOver="0"/>
+			</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+	</e:Group>
+</e:Skin>

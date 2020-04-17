@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MainScenceUISkin" width="1266" height="990" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" xmlns:tween="egret.tween.*" >
+	<w:Declarations>
+
+
+
+	</w:Declarations>
+
+	<e:Image id="bg0" source="background_texture0_level1_png" horizontalCenter="0" verticalCenter="2" scaleX="0.95"/>
+
+
+
+
+
+	<e:Group id="mgroup0" scrollEnabled="false" width="1266" height="990" horizontalCenter="0" verticalCenter="0">
+
+
+
+
+
+
+
+
+
+
+
+		<ns1:GameScence id="gameScence" skinName="GameScenceSkin" scaleY="0.98" scaleX="0.95" horizontalCenter="0.5" verticalCenter="-31"/>
+		<e:Rect id="shan" width="239.09" height="468.48" x="182.12" y="217.15" anchorOffsetX="0" anchorOffsetY="0" strokeColor="0xffffff" fillAlpha="0.25" fillColor="0xfcfcfc" visible="false"/>
+		<e:Rect id="shan0" width="235.09" height="468.48" x="477.12" y="219.15" anchorOffsetX="0" anchorOffsetY="0" fillColor="0xFCFCFC" strokeColor="0xFFFFFF" fillAlpha="0.25" visible="false"/>
+		<e:Rect id="shan1" width="235.09" height="468.48" x="770.12" y="217.15" anchorOffsetX="0" anchorOffsetY="0" fillColor="0xFCFCFC" strokeColor="0xFFFFFF" fillAlpha="0.25" visible="false"/>
+		<e:Group left="0" right="0" bottom="58">
+
+
+			<ns1:MouseButton id="ruleBtn" label="赔付表" x="24.94" y="-16.68">
+				<ns1:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+					<e:Image width="100%" height="100%" source="menu_texture0_level1_36-44_png" source.up="peifu_n_png" source.down="peifu_h_png" source.disabled="peifu_dis_png" source.rollOver="peifu_n_png"/>
+					<e:Label id="labelDisplay" fontFamily="Microsoft YaHei" textColor="0x000000" size="26" verticalCenter="2.5" horizontalCenter="0" visible="false"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MouseButton>
+			<ns1:MouseButton id="autoBtn" label="自动游戏" x="21.15" y="66.47">
+				<ns1:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+					<e:Image width="100%" height="100%" source="menu_texture0_level1_36-44_png" source.disabled="menu_texture0_level1_36-22_png" source.rollOver="menu_texture0_level1_36-45_png"  source.down="menu_texture0_level1_36-22_png"/>
+					<e:Label id="labelDisplay" fontFamily="Microsoft YaHei" textColor="0x000000" size="26" verticalCenter="2.5" horizontalCenter="0" visible="false"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MouseButton>
+			<ns1:MouseButton id="playBtn" label="旋转" y="-16.8" right="15">
+				<ns1:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="menu_texture0_level1_1_png" source.down="menu_texture0_level1_3_png" source.disabled="menu_texture0_level1_3_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="2" verticalCenter="-2.5" fontFamily="Microsoft YaHei" textColor="0x000000" size="46" verticalAlign="middle" textAlign="center" height="56" text.disabled="" visible="false"/>
+					</e:Skin>
+				</ns1:skinName>
+
+
+
+			</ns1:MouseButton>
+			<e:Group id="autoPlayGroup" x="983.92" y="12.96" visible="false">
+				<e:Image source="menu_texture0_level1_42_png" y="0"/>
+				<e:Label id="autoPlayTitleLabel" text="自动游戏" y="34" fontFamily="Microsoft YaHei" size="16" horizontalCenter="0.5" visible="false"/>
+				<e:BitmapLabel id="autoPlayNumLabel" text="75" font="f3_fnt" verticalCenter="22" scaleX="1.5" scaleY="1.5" horizontalCenter="0"/>
+			</e:Group>
+
+			<e:Group y="-20.69" height="90" horizontalCenter="0">
+				<e:Image source="Wintext_bg_png" horizontalCenter="0" verticalCenter="0"/>
+				<e:Label text="恭喜您！" fontFamily="Microsoft YaHei" size="38" scaleX="1" scaleY="1" textColor="0xf2df35" verticalCenter="2" horizontalCenter="0"/>
+
+
+
+			</e:Group>
+
+			<ns1:CheckBanner id="baner" y="71.6" skinName="CheckBanerSkin" horizontalCenter="0"/>
+
+
+
+
+
+
+
+
+		</e:Group>
+
+
+	</e:Group>
+	<e:Group id="mgroup1" left="0" right="0" bottom="-2" height="39">
+		<e:Image source="statusbar_texture0_level1_03_png" left="0" right="0" top="0" bottom="0"/>
+		<e:Group left="6" verticalCenter="0">
+			<ns1:MouseButton id="historyBtn" label="" x="152.48" y="2">
+				<ns1:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+					<e:Image width="100%" height="100%" source="his_an_png" source.down="his_down_png" source.disabled="statusbar_texture0_level1_12-13_png" source.rollOver="his_liang_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MouseButton>
+			<ns1:MouseButton id="setBtn" label="" x="0" y="2">
+				<ns1:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+					<e:Image width="100%" height="100%" source="set_an_png" source.down="set_down_png" source.disabled="set_an_png" source.rollOver="set_liang_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MouseButton>
+			<ns1:MosueCheckBox id="musicBtn" label="" x="46" y="2">
+				<ns1:skinName>
+				<e:Skin states="up,down,disabled,upAndSelected,downAndSelected,rollOver,rollOverAndSelected">
+					<e:Image width="100%" height="100%" source="musicx_an_png" source.down="musicx_down_png" source.rollOver="musicx_liang_png" source.upAndSelected="music_an_png" source.downAndSelected="music_down_png" source.rollOverAndSelected="music_liang_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MosueCheckBox>
+			<ns1:MosueCheckBox id="shanBtn" label="" x="82" y="0">
+				<ns1:skinName>
+				<e:Skin states="up,down,disabled,upAndSelected,downAndSelected,rollOver,rollOverAndSelected">
+					<e:Image width="100%" height="100%" source="speed2_an_png" source.down="speed2_down_png" source.rollOver="speed2_liang_png" source.upAndSelected="speed1_an_png" source.downAndSelected="speed1_down_png" source.rollOverAndSelected="speed1_liang_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MosueCheckBox>
+			<ns1:MouseButton id="qusBtn" label="" x="112" y="2">
+				<ns1:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+					<e:Image width="100%" height="100%" source="qus_an_png" source.down="qus_down_png" source.disabled="statusbar_texture0_level1_12-10_png" source.rollOver="qus_liang_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MouseButton>
+		</e:Group>
+		<e:Group width="513" horizontalCenter="-14.5" verticalCenter="0">
+			<e:Label id="bananceLabel" text="余额:  CNY 65.25" x="-1.52" size="18" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" verticalCenter="0"/>
+			<e:Label id="betbanaceLabel" text="投注: CNY 65.25" x="211.26" size="18" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" verticalCenter="0"/>
+			<e:Label id="rewardLabel" text="奖金:  " x="458.96" size="18" verticalAlign="middle" textAlign="center" fontFamily="Microsoft YaHei" verticalCenter="0"/>
+		</e:Group>
+		<e:Group y="4" right="8" width="132" height="31">
+			<ns1:MouseButton id="exitBtn" label="" scaleX="0.5" scaleY="0.5" x="105.55" verticalCenter="0">
+				<ns1:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+					<e:Image width="100%" height="100%" source="exitx_an_png" source.down="exitx_down_png" source.disabled="statusbar_texture0_level1_01_png" source.rollOver="exitx_liang_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</ns1:skinName>
+			</ns1:MouseButton>
+			<e:Image source="statusbar_texture0_level1_12-05_png" x="-93.97" verticalCenter="0"/>
+		</e:Group>
+	</e:Group>
+	<e:Image id="logo" source="LOGO_png" y="16.89" scaleX="1.2499999999999998" scaleY="1.2195121951219512" horizontalCenter="0.5"/>
+
+
+
+	<e:Image id="logoImg" source="loadingbg2_png" horizontalCenter="0" bottom="15" visible="false"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</e:Skin>

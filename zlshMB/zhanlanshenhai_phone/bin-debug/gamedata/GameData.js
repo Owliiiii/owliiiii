@@ -17,6 +17,10 @@ var vo;
         function GameData() {
         }
         /**
+         * 奖金
+         */
+        GameData.FreeMoney = 0;
+        /**
          * 玩家余额
          */
         GameData.balance = 549.88;

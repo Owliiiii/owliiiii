@@ -14,7 +14,7 @@ class GameManager extends egret.EventDispatcher {
 		return this._instance;
 	}
 	public init(): void {
-		GameController.getInstance().clearRedis();
+		// GameController.getInstance().clearRedis();
 		GameConfig.gameModle = GameType.GameModule.falseModle;
 		core.NotifyManager.getInstance().registerNotify(core.NotifyConst.NET_INIT, this.onNetgGmeInit, this);
 		core.NotifyManager.getInstance().registerNotify(core.NotifyConst.NET_PLAY, this.onNetGamePlay, this);

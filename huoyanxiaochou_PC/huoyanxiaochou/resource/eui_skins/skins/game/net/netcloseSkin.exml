@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="netcloseSkin" width="1120" height="912" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0.6"/>
+	<e:Group horizontalCenter="0" verticalCenter="0">
+		<e:Image scale9Grid="50,95,300,17" left="0" right="0" top="0" bottom="0" source="videoslot_popup_texture0_level1_03-02_png"/>
+		<e:Label id="desLabel1" text="如果您本来正在进行游戏，您的当前进程将会保存，且游戏将在您重新登录后继续" fontFamily="Microsoft YaHei" textAlign="center" verticalAlign="middle" size="18" anchorOffsetY="0" y="204.29" horizontalCenter="0" textColor="0xFFFFFF" width="380" lineSpacing="5"/>
+		<e:Label id="desLabel0" text="您的游戏登陆状态已过期。请重新登录已继续游戏" fontFamily="Microsoft YaHei" textAlign="center" verticalAlign="middle" size="18" anchorOffsetY="0" y="124.01" horizontalCenter="0" textColor="0xffffff" width="380" lineSpacing="5"/>
+		<e:Label id="desLabel" text="您的游戏登陆状态已过期。" fontFamily="Microsoft YaHei" textAlign="center" verticalAlign="middle" size="24" anchorOffsetY="0" y="54.28" horizontalCenter="0" textColor="0xf48902"/>
+		<ns1:MouseButton id="closeBtn" label="退出" x="172" y="286.6">
+			<ns1:skinName>
+				<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="red_0_png" source.down="red_2_png" source.disabled="red_0_png" source.rollOver="red_1_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="16" fontFamily="Microsoft YaHei"/>
+				</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+	</e:Group>
+</e:Skin>

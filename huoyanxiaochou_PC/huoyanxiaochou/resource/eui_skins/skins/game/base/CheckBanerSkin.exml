@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="CheckBanerSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="808">
+	<e:Group bottom="0" horizontalCenter="0" width="808">
+		<ns1:MouseButton id="leftBtn" xmlns:ns1="*" label="" verticalCenter="0.5" left="0">
+			<ns1:skinName xmlns:ns1="*">
+				<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="betSub_nor_png" source.down="betSub_down_png" source.disabled="betSub_dis_png" source.rollOver="betSub_hover_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="2" verticalCenter="-2.5" fontFamily="Microsoft YaHei" textColor="0x000000" xmlns:tween="egret.tween.*"/>
+				</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+		<ns1:MosueRadioButton id="btn0" xmlns:ns1="*" label="1.00" x="68" verticalCenter="0" anchorOffsetX="0">
+			<ns1:skinName xmlns:ns1="*">
+				<e:Skin states="up,down,disabled,rollOver,upAndSelected,downAndSelected,rollOverAndSelected,disabledAndSelected">
+				<e:Image width="100%" height="100%" source="xianzhu_disable_png" source.down="xianzhu_down_png" source.disabled="xianzhu_disable_png" source.rollOver="xianzhu_hover_png" source.upAndSelected="xianzhu_hover_png" source.downAndSelected="xianzhu_hover_png" source.rollOverAndSelected="xianzhu_hover_png" source.disabledAndSelected="xianzhu_hover_png"/>
+	<e:BitmapLabel id="labelDisplay" text="1.00" font="bet_up_font_fnt" horizontalCenter="0" verticalCenter="0" horizontalCenter.downAndSelected="0" verticalCenter.downAndSelected="0"/>
+				</e:Skin>
+			</ns1:skinName>
+		</ns1:MosueRadioButton>
+		<ns1:MosueRadioButton id="btn1" xmlns:ns1="*" label="2.00" x="206" verticalCenter="0" anchorOffsetX="0">
+		<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver,upAndSelected,downAndSelected,rollOverAndSelected,disabledAndSelected" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*">
+			<e:Image width="100%" height="100%" source="menu_texture0_level1_51_png" source.up="xianzhu_disable_png" source.down="xianzhu_down_png" source.disabled="xianzhu_disable_png" source.rollOver="xianzhu_hover_png" source.upAndSelected="xianzhu_hover_png" source.downAndSelected="xianzhu_hover_png" source.rollOverAndSelected="xianzhu_hover_png" source.disabledAndSelected="xianzhu_hover_png"/>
+			<e:BitmapLabel id="labelDisplay" horizontalCenter.rollOver="0" horizontalCenter.disabled="0" text="2.00" scaleX="1" scaleY="1" verticalCenter.rollOver="0" verticalCenter.disabled="0" horizontalCenter.up="0" verticalCenter.up="0" horizontalCenter.down="0" verticalCenter.down="0" font="bet_up_font_fnt"/>
+			</e:Skin>
+		</ns1:skinName>
+		</ns1:MosueRadioButton>
+		<ns1:MosueRadioButton id="btn2" xmlns:ns1="*" label="3.00" x="345" verticalCenter="0" anchorOffsetX="0">
+		<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver,upAndSelected,downAndSelected,rollOverAndSelected,disabledAndSelected" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*">
+			<e:Image width="100%" height="100%" source="menu_texture0_level1_51_png" source.up="xianzhu_disable_png" source.down="xianzhu_down_png" source.disabled="xianzhu_disable_png" source.rollOver="xianzhu_hover_png" source.upAndSelected="xianzhu_hover_png" source.downAndSelected="xianzhu_hover_png" source.rollOverAndSelected="xianzhu_hover_png" source.disabledAndSelected="xianzhu_hover_png"/>
+			<e:BitmapLabel id="labelDisplay" text="3.00" scaleX="1" scaleY="1" horizontalCenter.disabled="0" verticalCenter.up="0" horizontalCenter.up="0" verticalCenter.down="0" horizontalCenter.down="0" verticalCenter.disabled="0" verticalCenter.rollOver="0" horizontalCenter.rollOver="0" font="bet_up_font_fnt"/>
+			</e:Skin>
+		</ns1:skinName>
+		</ns1:MosueRadioButton>
+		<ns1:MosueRadioButton id="btn3" xmlns:ns1="*" label="4.00" x="482" verticalCenter="0" anchorOffsetX="0">
+		<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver,upAndSelected,downAndSelected,rollOverAndSelected,disabledAndSelected" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*">
+			<e:Image width="100%" height="100%" source="menu_texture0_level1_51_png" source.up="xianzhu_disable_png" source.down="xianzhu_down_png" source.disabled="xianzhu_disable_png" source.rollOver="xianzhu_hover_png" source.upAndSelected="xianzhu_hover_png" source.downAndSelected="xianzhu_hover_png" source.rollOverAndSelected="xianzhu_hover_png" source.disabledAndSelected="xianzhu_hover_png"/>
+			<e:BitmapLabel id="labelDisplay" horizontalCenter.up="0" text="4.00" scaleX="1" scaleY="1" verticalCenter.up="0" horizontalCenter.down="0" verticalCenter.down="0" verticalCenter.disabled="0" horizontalCenter.disabled="0" horizontalCenter.rollOver="0" verticalCenter.rollOver="0" font="bet_up_font_fnt"/>
+			</e:Skin>
+		</ns1:skinName>
+		</ns1:MosueRadioButton>
+		<ns1:MosueRadioButton id="btn4" xmlns:ns1="*" label="5.00" x="617" verticalCenter="0" anchorOffsetX="0">
+		<ns1:skinName>
+			<e:Skin states="up,down,disabled,rollOver,upAndSelected,downAndSelected,rollOverAndSelected,disabledAndSelected" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*">
+			<e:Image width="100%" height="100%" source="menu_texture0_level1_51_png" source.up="xianzhu_disable_png" source.down="xianzhu_down_png" source.disabled="xianzhu_disable_png" source.rollOver="xianzhu_hover_png" source.upAndSelected="xianzhu_hover_png" source.downAndSelected="xianzhu_hover_png" source.rollOverAndSelected="xianzhu_hover_png" source.disabledAndSelected="xianzhu_hover_png"/>
+			<e:BitmapLabel id="labelDisplay" horizontalCenter.rollOver="0" horizontalCenter.disabled="0" horizontalCenter.up="0" text="5.00" scaleX="1" scaleY="1" verticalCenter.up="0" verticalCenter.down="0" horizontalCenter.down="0" verticalCenter.disabled="0" verticalCenter.rollOver="0" font="bet_up_font_fnt"/>
+			</e:Skin>
+		</ns1:skinName>
+		</ns1:MosueRadioButton>
+		<ns1:MouseButton id="rightBtn" xmlns:ns1="*" label="" verticalCenter="0.5" right="0">
+			<ns1:skinName xmlns:ns1="*">
+				<e:Skin states="up,down,disabled,rollOver">
+				<e:Image width="100%" height="100%" source="betAdd_nor_png" source.down="betAdd_down_png" source.disabled="betAdd_dis_png" source.rollOver="betAdd_hover_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="2" verticalCenter="-2.5" fontFamily="Microsoft YaHei" textColor="0x000000" xmlns:tween="egret.tween.*"/>
+				</e:Skin>
+			</ns1:skinName>
+		</ns1:MouseButton>
+	</e:Group>
+</e:Skin>

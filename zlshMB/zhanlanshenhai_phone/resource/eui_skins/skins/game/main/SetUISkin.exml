@@ -12,9 +12,15 @@
 		<e:Label id="t1" text="线" y="0" textColor="0xFCCB44" size="22" horizontalCenter="0" textColor.ver="0xfccb44" textColor.hor="0x0ed9f7"/>
 		<e:Label id="lineLabel" text="1" y="23.33" size="30" horizontalCenter="0"/>
 		</e:Group>
-		<e:Group id="rewardGroup" width="80" horizontalCenter.hor="0" horizontalCenter.ver="0" top.ver="12" verticalCenter.hor="2.5" visible.hor="false" visible.ver="false">
+		<e:Group id="rewardGroup" width="80" horizontalCenter.hor="0" horizontalCenter.ver="0" top.ver="12" verticalCenter.hor="2.5" visible.ver="false" visible.hor="false">
 		<e:Label id="t4" text="奖金" y="0" textColor="0xFCCB44" size="26" horizontalCenter="0" fontFamily="Arial" size.ver="27" size.hor="27"/>
 		<e:Label id="rewardLabel" text="1" y="30" size="40" fontFamily="Arial" textAlign="center" verticalAlign="middle" y.hor="24.2" y.ver="31.46" size.ver="44" size.hor="44"  horizontalCenter.ver="-7" horizontalCenter.hor="0.5"/>
+		</e:Group>
+		<e:Group id="freeGroup" width="80" width.hor="186" y.ver="26" width.ver="190" x.ver="280" y="2" horizontalCenter.hor="0" visible.ver="false" visible.hor="false">
+			<e:Label id="t5" text="奖金" y="0" textColor="0xFCCB44" size="27" horizontalCenter="0" fontFamily="Arial" text.hor="您赢得了奖励！" textColor.hor="0xffffff" horizontalCenter.hor="0.5" y.hor="21.44" text.ver="您赢得了奖励！" textColor.ver="0xffffff"/>
+			<e:Label id="rewardLabel0" text="1" y="24.2" size="44" fontFamily="Arial" textAlign="center" verticalAlign="middle" horizontalCenter="0.5" textColor.hor="0xffffff" size.hor="27" text.hor="启动请按" horizontalCenter.hor="-26" y.hor="50.2" size.ver="27" text.ver="启动请按" horizontalCenter.ver="-27" y.ver="30.36"/>
+			<e:Image source="rightbar_autoplay_selected_png" x="117" y="36" scaleX="0.2" scaleY="0.2" alpha="0.5" x.ver="117.05" y.ver="16.32" x.hor="114.34"/>
+			<e:Image source="auto_play_png" x="103" y="23" scaleX="0.3" scaleY="0.3" x.ver="103.02" y.ver="2.32" x.hor="100.34"/>
 		</e:Group>
 		<e:Label id="tipLabel" text="滑动转轴或按旋转" y="25.82" textAlign="center" size="40" horizontalCenter="0" horizontalCenter.ver="0" top.ver="23" fontFamily.ver="Microsoft JhengHei" verticalCenter.hor="0" fontFamily="Microsoft JhengHei" size.ver="48" fontFamily.hor="Microsoft JhengHei"/>
 		<e:Group y="21.06" width="84" height="52" right.hor="343" horizontalCenter.ver="0" y.ver="101.8" x.ver="329" verticalCenter.hor="0">
@@ -32,11 +38,11 @@
 
 
 	<ns1:AutoSetCompoment id="autoSetCompoment" skinName="AutoSetCompomentSkin" y="249" y.ver="1336.75" x.hor="1338" horizontalCenter.ver="0" y.hor="257"/>
-	<e:Group id="controllGroup" x="1085.97" y.ver="251.28" horizontalCenter.ver="0" verticalCenter.ver="283" verticalCenter.hor="-5">
+	<e:Group id="controllGroup" x="1085.97" y.ver="251.28" horizontalCenter.ver="0" verticalCenter.ver="258" verticalCenter.hor="-5">
 		<ns1:StartButton id="startButton" x.ver="1085.97" skinName="StartButtonSkin" horizontalCenter.ver="0" y.ver="833.46" scaleX.hor="1" scaleY.hor="1" horizontalCenter.hor="0" verticalCenter.hor="0" horizontalCenter="0" verticalCenter="0"/>
 		<ns1:AutoStartBtn id="autoButton" x.ver="1088" skinName="AutoStartBtnSkin" horizontalCenter.ver="0" y.ver="834.18" scaleX.hor="1" scaleY.hor="1" horizontalCenter.hor="0" verticalCenter.hor="0" horizontalCenter="0" verticalCenter="0" skinName.hor="AutoStartBtnSkin" visible.hor="false" visible.ver="false"/>
-		<ns1:BonusBtn id="bonusBtn" scaleX="1" scaleY="1" skinName="BonusBtnSkin" horizontalCenter="0" verticalCenter="0" visible.hor="false" visible.ver="false"/>
-		<ns1:FreeBtn id="FreeBtn" scaleX="1" scaleY="1" skinName="FreeBtnSkin" horizontalCenter="0" verticalCenter="0" visible.hor="false" visible.ver="false"/>
+		<ns1:BonusBtn id="bonusBtn" scaleX="1" scaleY="1" skinName="BonusBtnSkin" horizontalCenter="0" verticalCenter="0" visible.ver="false" visible.hor="false"/>
+		<ns1:FreeBtn id="FreeBtn" scaleX="1" scaleY="1" skinName="FreeBtnSkin" horizontalCenter="0" verticalCenter="0" visible.ver="false" visible.hor="false"/>
 
 	</e:Group>
 	<e:Group id="mcGroup" left="0" right="0" top="0" bottom="0" touchChildren="false" touchEnabled="false" touchThrough="true">
@@ -67,7 +73,7 @@
 			</e:Skin>
 		</e:skinName>
 	</e:Button>
-	<e:ToggleButton id="betBtn" label="" x="96" y="510" y.ver="893.67" left.ver="88">
+	<e:ToggleButton id="betBtn" label="" x="96" y="510" y.ver="870.92" left.ver="88">
 		<e:skinName>
 		<e:Skin states="up,down,disabled,upAndSelected,downAndSelected">
 			<e:Image width="100%" height="100%" source="btn_upper_normal@2x_png" source.down="btn_upper_selected@2x_png" source.disabled="btn_upper_disabled @2x_png" source.upAndSelected="btn_upper_selected@2x_png" source.downAndSelected="btn_upper_selected@2x_png"/>
@@ -75,7 +81,7 @@
 		</e:Skin>
 		</e:skinName>
 	</e:ToggleButton>
-	<e:Group id="qukGroup" x="1085" y="512" y.ver="927.84" right.ver="106">
+	<e:Group id="qukGroup" x="1085" y="512" y.ver="905.09" right.ver="106">
 		<e:Label text="快速" x="29" y="85" size="20" textColor="0xDDAC37" fontFamily.ver="Microsoft JhengHei" y.ver="74.39" size.ver="22"/>
 		<ns1:CheckButton id="qukcheckBtn" x="0" y="0" skinName="CheckSkin"/>
 	</e:Group>

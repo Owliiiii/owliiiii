@@ -1,11 +1,11 @@
 {
 	"groups": [
 		{
-			"keys": "loadingbg2_png,loading0_png,loading1_png,loading2_png,loadingBar_png,loadingbg1_jpg,loading3_png,BG@2x_png,sound_icon@2x_png,check_disable_png,check_nomal_png,check_s_disable_png,check_s_nomal_png,BG@2x1_png,top_menu_icon_more_normal@2x_png,top_menu_icon_more_selected@2x_png,help2_png,helpBg2_png,freeBG_png,with_pearl_03_png,with_pearl_01_png,with_pearl_02_png,pearl_text15_png,pearl_text5_png,pearl_text7_png,pearl_text8_png,pearl_text10_png,freeTextTop_png,freeTxt_png,rotation_png,fanbei_png,freeKuang_png,freeBtn_png,freeBtn_H_png,allmoney_png,gongnengMoney_png,gameMoney_png,freeslogo2_png,free_dajiang_png,free_fanbei_png,free_xuanzhuan_png,five_png,big_png",
+			"keys": "loadingbg2_png,loading0_png,loading1_png,loading2_png,loadingBar_png,loadingbg1_jpg,loading3_png,BG@2x_png,sound_icon@2x_png,check_disable_png,check_nomal_png,check_s_disable_png,check_s_nomal_png,BG@2x1_png,top_menu_icon_more_normal@2x_png,top_menu_icon_more_selected@2x_png,reel_mp3,reelStop_mp3,WWMusic_mp3,bigMusic_mp3,c1Deng_mp3,c1Two_mp3,dejiang_mp3,duang_mp3,fourFish_mp3,freeBg_mp3,kaka_mp3",
 			"name": "preload"
 		},
 		{
-			"keys": "button_mp3,checkstart_mp3,win_tickup_mp3,win_tickuptale_mp3,quickstart_bg_png,neterror_png,add_disable_png,auto_bg_png,auto_play_png,back_selected@2x_png,back_selected@2x(1)_png,bottom_bg@2x_png,btn_autogame_normal_yellow_png,btn_autogame_normal_png,btn_autogame_selected_yellow_png,btn_autogame_selected_png,btn_round_yellow_png,btn_round_png,btn_stop_normal_png,btn_stop_selected_png,btn_upper_disabled @2x_png,btn_upper_normal@2x_png,btn_upper_selected@2x_png,btn_xianzhu_bg@2x_png,di_png,di1_png,diandian_right_btn@2x_png,icon_back_normal@2x_png,icon_moreganme_normal_png,icon_moreganme_selected_png,icon_moreganme_selected@2x_png,jia_png,jia1_png,jian_png,jian1_png,leftbar_velocity_close@2x_png,leftbar_velocity_open@2x_png,leftbar_velocity@2x_png,lefthand_normal@2x_png,lefthand_selected@2x_png,quickstart_close_png,rightbar_autoplay_normal_png,rightbar_autoplay_selected_png,righthand_normal@2x_png,righthand_selected@2x_png,rigth_tanchu_png,stop_diamonds_png,sub_disable_png,switch_quick_bg@2x_png,switch_quick_bgcolor@2x_png,switch_quick_slider@2x_png,tool-bg@2x_png,tool-btn@2x_png,top_list_menu_normal@2x_png,top_list_menu_pressed@2x_png,top_list_menu_selected@2x_png,top_list_more_normal@2x_png,top_list_more_pressed@2x_png,top_list_more_selected@2x_png,top_menu_bg@2x_png,top_menu_icon_bonus_normal@2x_png,top_menu_icon_bonus_selected@2x_png,top_menu_icon_help_normal@2x_png,top_menu_icon_help_selected@2x_png,top_menu_icon_hone_normal@2x_png,top_menu_icon_hone_selected@2x_png,top_menu_icon_money_normal@2x_png,top_menu_icon_money_selected@2x_png,top_menu_icon_save_normal@2x_png,top_menu_icon_save_selected@2x_png,top_menu_icon_support_normal@2x_png,top_menu_icon_support_selected@2x_png,top_menu_icon_voiceclose_normal@2x_png,top_menu_icon_voiceclose_selected@2x_png,top_menu_icon_voiceopen_normal@2x_png,top_menu_icon_voiceopen_selected@2x_png,top_right_menu_bg@2x_png,BG_png,bottom_png,BG1_png,config_json,back_disable_png,back_down_png,back_up_png,maskbg_png,reward_btnbg_png,bg_mp3,reelend_mp3,reward_mp3,singlereward_mp3,start_mp3,stop_mp3,borders_png,C1_icon_png,M1_icon_png,M2_icon_png,M3_icon_png,M4_icon_png,M5_icon_png,WW_icon_png,blur0_png,blur1_png,blur10_png,blur11_png,blur2_png,blur3_png,blur4_png,blur5_png,blur6_png,blur7_png,blur8_png,blur9_png,f1_png,f1_fnt,bigreward_png,bigreward2_mp3,bigreward_mp3,rewards_png,rewards_json,add_mp3,autostart_mp3,autostart1_mp3,autostop_mp3,autostop1_mp3,speedoff_mp3,speedon_mp3,sub_mp3,BG2_png,f3_fnt,f3_png,reward_png,help_png,help1_png,line01_png,line02_png,line03_png,line04_png,line05_png,line06_png,line07_png,line08_png,line09_png,line10_png,line11_png,line12_png,line13_png,line14_png,line15_png,line16_png,line17_png,line18_png,line19_png,line20_png,line21_png,line22_png,line23_png,line24_png,line25_png,over_01_png,over_02_png,over_03_png,over_04_png,over_05_png,over_06_png,over_07_png,over_08_png,over_09_png,over_10_png,over_11_png,over_12_png,over_13_png,over_14_png,over_15_png,over_16_png,over_17_png,over_18_png,over_19_png,over_20_png,over_21_png,over_22_png,over_23_png,over_24_png,over_25_png,anBg_png,blueBg_png,box01_png,box02_png,box03_png,box04_png,box05_png,box06_png,box07_png,box08_png,box09_png,f02_fnt,f02_png,f12_fnt,f12_png,free_f0_fnt,free_f0_png,scence_f0_fnt,scence_f0_png,scence_f1_fnt,scence_f1_png,scence_f2_fnt,scence_f2_png,reel2_png,free_games_glow_png,logo1_png,freeslogo_png,help_s_bg_png,win_bg25@2x_png,win_bg01@2x_png,win_bg02@2x_png,win_bg03@2x_png,win_bg04@2x_png,win_bg05@2x_png,win_bg06@2x_png,win_bg07@2x_png,win_bg08@2x_png,win_bg09@2x_png,win_bg10@2x_png,win_bg11@2x_png,win_bg12@2x_png,win_bg13@2x_png,win_bg14@2x_png,win_bg15@2x_png,win_bg16@2x_png,win_bg17@2x_png,win_bg18@2x_png,win_bg19@2x_png,win_bg20@2x_png,win_bg21@2x_png,win_bg22@2x_png,win_bg23@2x_png,win_bg24@2x_png,bonusMc_json,bonusMc_png,c1_json,c1_png,c1mc_json,c1mc_png,m1_json,m1_png,m2_json,m2_png,m3_json,m3_png,m4_json,m4_png,m5_json,m5_png,reward_json,reward2_png,ww_json,ww_png,AA_icon_png,JJ_icon_png,KK_icon_png,NI_icon_png,QQ_icon_png,TN_icon_png,box10_png,box11_png,box12_png,box13_png,box14_png,box15_png,box16_png,box17_png,box18_png,box19_png,box20_png,box21_png,box22_png,box23_png,box24_png,box25_png,help_s_png",
+			"keys": "button_mp3,checkstart_mp3,win_tickup_mp3,win_tickuptale_mp3,quickstart_bg_png,neterror_png,add_disable_png,auto_bg_png,auto_play_png,back_selected@2x_png,back_selected@2x(1)_png,bottom_bg@2x_png,btn_autogame_normal_yellow_png,btn_autogame_normal_png,btn_autogame_selected_yellow_png,btn_autogame_selected_png,btn_round_yellow_png,btn_round_png,btn_stop_normal_png,btn_stop_selected_png,btn_upper_disabled @2x_png,btn_upper_normal@2x_png,btn_upper_selected@2x_png,btn_xianzhu_bg@2x_png,di_png,di1_png,diandian_right_btn@2x_png,icon_back_normal@2x_png,icon_moreganme_normal_png,icon_moreganme_selected_png,icon_moreganme_selected@2x_png,jia_png,jia1_png,jian_png,jian1_png,leftbar_velocity_close@2x_png,leftbar_velocity_open@2x_png,leftbar_velocity@2x_png,lefthand_normal@2x_png,lefthand_selected@2x_png,quickstart_close_png,rightbar_autoplay_normal_png,rightbar_autoplay_selected_png,righthand_normal@2x_png,righthand_selected@2x_png,rigth_tanchu_png,stop_diamonds_png,sub_disable_png,switch_quick_bg@2x_png,switch_quick_bgcolor@2x_png,switch_quick_slider@2x_png,tool-bg@2x_png,tool-btn@2x_png,top_list_menu_normal@2x_png,top_list_menu_pressed@2x_png,top_list_menu_selected@2x_png,top_list_more_normal@2x_png,top_list_more_pressed@2x_png,top_list_more_selected@2x_png,top_menu_bg@2x_png,top_menu_icon_bonus_normal@2x_png,top_menu_icon_bonus_selected@2x_png,top_menu_icon_help_normal@2x_png,top_menu_icon_help_selected@2x_png,top_menu_icon_hone_normal@2x_png,top_menu_icon_hone_selected@2x_png,top_menu_icon_money_normal@2x_png,top_menu_icon_money_selected@2x_png,top_menu_icon_save_normal@2x_png,top_menu_icon_save_selected@2x_png,top_menu_icon_support_normal@2x_png,top_menu_icon_support_selected@2x_png,top_menu_icon_voiceclose_normal@2x_png,top_menu_icon_voiceclose_selected@2x_png,top_menu_icon_voiceopen_normal@2x_png,top_menu_icon_voiceopen_selected@2x_png,top_right_menu_bg@2x_png,BG_png,bottom_png,BG1_png,config_json,back_disable_png,back_down_png,back_up_png,maskbg_png,reward_btnbg_png,bg_mp3,reelend_mp3,reward_mp3,singlereward_mp3,start_mp3,stop_mp3,borders_png,C1_icon_png,M1_icon_png,M2_icon_png,M3_icon_png,M4_icon_png,M5_icon_png,WW_icon_png,blur0_png,blur1_png,blur10_png,blur11_png,blur2_png,blur3_png,blur4_png,blur5_png,blur6_png,blur7_png,blur8_png,blur9_png,f1_png,f1_fnt,bigreward_png,bigreward2_mp3,bigreward_mp3,rewards_png,rewards_json,add_mp3,autostart_mp3,autostart1_mp3,autostop_mp3,autostop1_mp3,speedoff_mp3,speedon_mp3,sub_mp3,BG2_png,f3_fnt,f3_png,reward_png,help_png,help1_png,line01_png,line02_png,line03_png,line04_png,line05_png,line06_png,line07_png,line08_png,line09_png,line10_png,line11_png,line12_png,line13_png,line14_png,line15_png,line16_png,line17_png,line18_png,line19_png,line20_png,line21_png,line22_png,line23_png,line24_png,line25_png,over_01_png,over_02_png,over_03_png,over_04_png,over_05_png,over_06_png,over_07_png,over_08_png,over_09_png,over_10_png,over_11_png,over_12_png,over_13_png,over_14_png,over_15_png,over_16_png,over_17_png,over_18_png,over_19_png,over_20_png,over_21_png,over_22_png,over_23_png,over_24_png,over_25_png,anBg_png,blueBg_png,box01_png,box02_png,box03_png,box04_png,box05_png,box06_png,box07_png,box08_png,box09_png,f02_fnt,f02_png,f12_fnt,f12_png,free_f0_fnt,free_f0_png,scence_f0_fnt,scence_f0_png,scence_f1_fnt,scence_f1_png,scence_f2_fnt,scence_f2_png,reel2_png,free_games_glow_png,logo1_png,freeslogo_png,help_s_bg_png,win_bg25@2x_png,win_bg01@2x_png,win_bg02@2x_png,win_bg03@2x_png,win_bg04@2x_png,win_bg05@2x_png,win_bg06@2x_png,win_bg07@2x_png,win_bg08@2x_png,win_bg09@2x_png,win_bg10@2x_png,win_bg11@2x_png,win_bg12@2x_png,win_bg13@2x_png,win_bg14@2x_png,win_bg15@2x_png,win_bg16@2x_png,win_bg17@2x_png,win_bg18@2x_png,win_bg19@2x_png,win_bg20@2x_png,win_bg21@2x_png,win_bg22@2x_png,win_bg23@2x_png,win_bg24@2x_png,bonusMc_json,bonusMc_png,c1_json,c1_png,c1mc_json,c1mc_png,m1_json,m1_png,m2_json,m2_png,m3_json,m3_png,m4_json,m4_png,m5_json,m5_png,reward_json,reward2_png,ww_json,ww_png,AA_icon_png,JJ_icon_png,KK_icon_png,NI_icon_png,QQ_icon_png,TN_icon_png,box10_png,box11_png,box12_png,box13_png,box14_png,box15_png,box16_png,box17_png,box18_png,box19_png,box20_png,box21_png,box22_png,box23_png,box24_png,box25_png,help_s_png,help2_png,helpBg2_png,freeBG_png,with_pearl_03_png,with_pearl_01_png,with_pearl_02_png,pearl_text15_png,pearl_text5_png,pearl_text7_png,pearl_text8_png,pearl_text10_png,freeTextTop_png,freeTxt_png,rotation_png,fanbei_png,freeKuang_png,freeBtn_png,freeBtn_H_png,allmoney_png,gongnengMoney_png,gameMoney_png,freeslogo2_png,free_dajiang_png,free_fanbei_png,free_xuanzhuan_png,five_png,big_png",
 			"name": "main"
 		}
 	],
@@ -1596,139 +1596,194 @@
 			"name": "ww_png"
 		},
 		{
-			"name": "help2_png",
+			"url": "assets/help/help2.png",
 			"type": "image",
-			"url": "assets/help/help2.png"
+			"name": "help2_png"
 		},
 		{
-			"name": "helpBg2_png",
+			"url": "assets/help/helpBg2.png",
 			"type": "image",
-			"url": "assets/help/helpBg2.png"
+			"name": "helpBg2_png"
 		},
 		{
-			"name": "freeBG_png",
+			"url": "assets/bg/freeBG.png",
 			"type": "image",
-			"url": "assets/bg/freeBG.png"
+			"name": "freeBG_png"
 		},
 		{
-			"name": "with_pearl_03_png",
+			"url": "assets/bg/with_pearl_03.png",
 			"type": "image",
-			"url": "assets/bg/with_pearl_03.png"
+			"name": "with_pearl_03_png"
 		},
 		{
-			"name": "with_pearl_01_png",
+			"url": "assets/bg/with_pearl_01.png",
 			"type": "image",
-			"url": "assets/bg/with_pearl_01.png"
+			"name": "with_pearl_01_png"
 		},
 		{
-			"name": "with_pearl_02_png",
+			"url": "assets/bg/with_pearl_02.png",
 			"type": "image",
-			"url": "assets/bg/with_pearl_02.png"
+			"name": "with_pearl_02_png"
 		},
 		{
-			"name": "pearl_text15_png",
+			"url": "assets/bg/pearl_text15.png",
 			"type": "image",
-			"url": "assets/bg/pearl_text15.png"
+			"name": "pearl_text15_png"
 		},
 		{
-			"name": "pearl_text5_png",
+			"url": "assets/bg/pearl_text5.png",
 			"type": "image",
-			"url": "assets/bg/pearl_text5.png"
+			"name": "pearl_text5_png"
 		},
 		{
-			"name": "pearl_text7_png",
+			"url": "assets/bg/pearl_text7.png",
 			"type": "image",
-			"url": "assets/bg/pearl_text7.png"
+			"name": "pearl_text7_png"
 		},
 		{
-			"name": "pearl_text8_png",
+			"url": "assets/bg/pearl_text8.png",
 			"type": "image",
-			"url": "assets/bg/pearl_text8.png"
+			"name": "pearl_text8_png"
 		},
 		{
-			"name": "pearl_text10_png",
+			"url": "assets/bg/pearl_text10.png",
 			"type": "image",
-			"url": "assets/bg/pearl_text10.png"
+			"name": "pearl_text10_png"
 		},
 		{
-			"name": "freeTextTop_png",
+			"url": "assets/bg/freeTextTop.png",
 			"type": "image",
-			"url": "assets/bg/freeTextTop.png"
+			"name": "freeTextTop_png"
 		},
 		{
-			"name": "freeTxt_png",
+			"url": "assets/bg/freeTxt.png",
 			"type": "image",
-			"url": "assets/bg/freeTxt.png"
+			"name": "freeTxt_png"
 		},
 		{
-			"name": "rotation_png",
+			"url": "assets/bg/rotation.png",
 			"type": "image",
-			"url": "assets/bg/rotation.png"
+			"name": "rotation_png"
 		},
 		{
-			"name": "fanbei_png",
+			"url": "assets/bg/fanbei.png",
 			"type": "image",
-			"url": "assets/bg/fanbei.png"
+			"name": "fanbei_png"
 		},
 		{
-			"name": "freeKuang_png",
+			"url": "assets/bg/freeKuang.png",
 			"type": "image",
-			"url": "assets/bg/freeKuang.png"
+			"name": "freeKuang_png"
 		},
 		{
-			"name": "freeBtn_png",
+			"url": "assets/bg/freeBtn.png",
 			"type": "image",
-			"url": "assets/bg/freeBtn.png"
+			"name": "freeBtn_png"
 		},
 		{
-			"name": "freeBtn_H_png",
+			"url": "assets/bg/freeBtn_H.png",
 			"type": "image",
-			"url": "assets/bg/freeBtn_H.png"
+			"name": "freeBtn_H_png"
 		},
 		{
-			"name": "allmoney_png",
+			"url": "assets/bg/allmoney.png",
 			"type": "image",
-			"url": "assets/bg/allmoney.png"
+			"name": "allmoney_png"
 		},
 		{
-			"name": "gongnengMoney_png",
+			"url": "assets/bg/gongnengMoney.png",
 			"type": "image",
-			"url": "assets/bg/gongnengMoney.png"
+			"name": "gongnengMoney_png"
 		},
 		{
-			"name": "gameMoney_png",
+			"url": "assets/bg/gameMoney.png",
 			"type": "image",
-			"url": "assets/bg/gameMoney.png"
+			"name": "gameMoney_png"
 		},
 		{
-			"name": "freeslogo2_png",
+			"url": "assets/bg/freeslogo.png",
 			"type": "image",
-			"url": "assets/bg/freeslogo.png"
+			"name": "freeslogo2_png"
 		},
 		{
-			"name": "free_dajiang_png",
+			"url": "assets/bg/free_dajiang.png",
 			"type": "image",
-			"url": "assets/bg/free_dajiang.png"
+			"name": "free_dajiang_png"
 		},
 		{
-			"name": "free_fanbei_png",
+			"url": "assets/bg/free_fanbei.png",
 			"type": "image",
-			"url": "assets/bg/free_fanbei.png"
+			"name": "free_fanbei_png"
 		},
 		{
-			"name": "free_xuanzhuan_png",
+			"url": "assets/bg/free_xuanzhuan.png",
 			"type": "image",
-			"url": "assets/bg/free_xuanzhuan.png"
+			"name": "free_xuanzhuan_png"
 		},
 		{
-			"name": "five_png",
+			"url": "assets/bg/five.png",
 			"type": "image",
-			"url": "assets/bg/five.png"
+			"name": "five_png"
 		},
 		{
-			"name": "big_png",
+			"url": "assets/bg/big.png",
 			"type": "image",
-			"url": "assets/bg/big.png"
+			"name": "big_png"
+		},
+		{
+			"name": "reel_mp3",
+			"type": "sound",
+			"url": "assets/sound/reel.mp3"
+		},
+		{
+			"name": "reelStop_mp3",
+			"type": "sound",
+			"url": "assets/sound/reelStop.mp3"
+		},
+		{
+			"name": "WWMusic_mp3",
+			"type": "sound",
+			"url": "assets/sound/WWMusic.mp3"
+		},
+		{
+			"name": "bigMusic_mp3",
+			"type": "sound",
+			"url": "assets/sound/bigMusic.mp3"
+		},
+		{
+			"name": "c1Deng_mp3",
+			"type": "sound",
+			"url": "assets/sound/c1Deng.mp3"
+		},
+		{
+			"name": "c1Two_mp3",
+			"type": "sound",
+			"url": "assets/sound/c1Two.mp3"
+		},
+		{
+			"name": "dejiang_mp3",
+			"type": "sound",
+			"url": "assets/sound/dejiang.mp3"
+		},
+		{
+			"name": "duang_mp3",
+			"type": "sound",
+			"url": "assets/sound/duang.mp3"
+		},
+		{
+			"name": "fourFish_mp3",
+			"type": "sound",
+			"url": "assets/sound/fourFish.mp3"
+		},
+		{
+			"name": "freeBg_mp3",
+			"type": "sound",
+			"url": "assets/sound/freeBg.mp3"
+		},
+		{
+			"name": "kaka_mp3",
+			"type": "sound",
+			"url": "assets/sound/kaka.mp3"
 		}
 	]
 }

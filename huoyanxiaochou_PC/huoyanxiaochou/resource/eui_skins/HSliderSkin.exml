@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="skins.HSliderSkin" minWidth="20" minHeight="8" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="322">
+	<w:Config id="16d1ac5fe87"/>
+    <e:Image
+ id="testBtn"             source="videoslot_popup_texture0_level1_67_png" scale9Grid="105,2,30,1" anchorOffsetX="0" anchorOffsetY="0" verticalCenter="1" width="297" horizontalCenter="-0.5" height="5.6"/>
+	<e:Image id="track" source="videoslot_popup_texture0_level1_67_png" scale9Grid="105,2,30,1" anchorOffsetX="0" anchorOffsetY="0" verticalCenter="-0.5" height="3" left="0" right="0" visible="false"/>
+	<e:Image id="tsbar" source="videoslot_popup_texture0_level1_71_png" scale9Grid="10,2,62,1" width="0" verticalCenter="0" anchorOffsetX="0" anchorOffsetY="0" height="6.2" x="13"/>
+    <e:Image id="thumb" verticalCenter="-1" source="videoslot_popup_texture0_level1_25-18_png" scale9Grid="12,12,2,2" scaleX="1.35" scaleY="1.35"/>
+</e:Skin>

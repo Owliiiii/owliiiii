@@ -41,7 +41,7 @@ var GameScence = (function (_super) {
         }
         if (!SoundManager.getInstance().effectOn)
             return;
-        SoundManager.getInstance().playMusic(SoundConst.START, 1).then(function (channel) {
+        SoundManager.getInstance().playMusic(SoundConst.REEL, 1).then(function (channel) {
             GameManager.getInstance().startChannel = channel;
         });
     };
@@ -50,7 +50,7 @@ var GameScence = (function (_super) {
             var reel = this.reelArr[i];
             reel.stop();
         }
-        SoundManager.getInstance().playEffect(SoundConst.STOP);
+        SoundManager.getInstance().playEffect(SoundConst.REEL_STOP);
         this.showLight();
     };
     GameScence.prototype.showAnimation = function (position) {

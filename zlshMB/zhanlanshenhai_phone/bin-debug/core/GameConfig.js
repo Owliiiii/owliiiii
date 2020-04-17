@@ -46,6 +46,10 @@ var GameConfig = (function () {
      */
     GameConfig.isFree = false;
     /**
+     * 最后的弹窗
+     */
+    GameConfig.overTips = false;
+    /**
      * 免费游戏
      */
     GameConfig.freeGame = false;

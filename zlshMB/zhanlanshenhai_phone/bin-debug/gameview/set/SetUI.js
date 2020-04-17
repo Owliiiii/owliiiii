@@ -44,6 +44,7 @@ var SetUI = (function (_super) {
         this.btnBg.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTab, this);
         core.TimerManager.instance.addTick(1000, -1, this.onFrame, this);
         this.startButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTab, this);
+        this.FreeBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTab, this);
         this.autoButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTab, this);
         GameManager.getInstance().addEventListener(SetEvent.SET_AUTO_CHANGED, this.onDataChanged, this);
         GameManager.getInstance().addEventListener(SetEvent.SET_SPEED_CHANGED, this.onDataChanged, this);
@@ -75,12 +76,14 @@ var SetUI = (function (_super) {
         this.rewradMaxGroup.visible = false;
     };
     SetUI.prototype.updataState = function () {
+        var ui = core.UIManager.getUI(core.UIConst.MainScenceUI);
         if (window.innerWidth >= window.innerHeight) {
             //蓝色字体
             this.t0.textColor = 0x0ED9F7;
             this.t1.textColor = 0x0ED9F7;
             this.t2.textColor = 0x0ED9F7;
             this.t3.textColor = 0x0ED9F7;
+            this.t4.textColor = 0x0ED9F7;
         }
         else {
             // this.currentState = 'ver'+SetConst.MODLE;
@@ -88,6 +91,7 @@ var SetUI = (function (_super) {
             this.t1.textColor = 0xFCCB44;
             this.t2.textColor = 0xFCCB44;
             this.t3.textColor = 0xFCCB44;
+            this.t4.textColor = 0xFCCB44;
         }
     };
     SetUI.prototype.updataHor = function () {
@@ -187,7 +191,7 @@ var SetUI = (function (_super) {
             case this.stage:
                 if (!GameConfig.isBonusBtn) {
                     if (SetConst.BETSET_SHOW || SetConst.AUTO_SHOW) {
-                        SoundManager.getInstance().playEffect(SoundConst.BUTTON);
+                        SoundManager.getInstance().playEffect(SoundConst.SUB);
                     }
                     SetConst.BETSET_SHOW = false;
                     SetConst.AUTO_SHOW = false;
@@ -207,10 +211,11 @@ var SetUI = (function (_super) {
                 GameManager.getInstance().dispatchEventWith(SetEvent.SET_MODLE);
                 break;
             case this.startButton:
+            case this.FreeBtn:
                 e.stopPropagation();
                 e.stopImmediatePropagation();
                 this.betBtn.selected = false;
-                SoundManager.getInstance().playEffect(SoundConst.BUTTON);
+                SoundManager.getInstance().playEffect(SoundConst.STARTBTN);
                 egret.Tween.removeTweens(this.tipLabel);
                 if (SetConst.LONG_TOUCH)
                     return;
@@ -331,7 +336,7 @@ var SetUI = (function (_super) {
                 this.autoButton.visible = true;
             }
             else if (!GameConfig.isBonusBtn) {
-                this.FreeBtn.visible = true;
+                // this.FreeBtn.visible = true;
             }
             this.autoButton.scaleX = 1;
             this.autoButton.scaleY = 1;
@@ -341,15 +346,19 @@ var SetUI = (function (_super) {
                 this.startButton.visible = true;
             }
             else if (!GameConfig.isBonusBtn) {
-                this.FreeBtn.visible = true;
+                // this.FreeBtn.visible = true;
             }
             this.startButton.scaleX = 1;
             this.startButton.scaleY = 1;
             this.autoButton.visible = false;
         }
+        if (GameManager.getInstance().getFreeCount() > 0 && GameManager.getInstance().gameState == GameType.GameState.STOP) {
+            this.startButton.visible = false;
+            this.FreeBtn.visible = true;
+        }
         if (GameManager.getInstance().gameState == GameType.GameState.PLAYING && SetConst.AUTO == false) {
             this.startButton.visible = false;
-            this.FreeBtn.visible = false;
+            // this.FreeBtn.visible = false;
         }
         this.startButton.setlected = SetConst.SPEED_PLAY;
     };

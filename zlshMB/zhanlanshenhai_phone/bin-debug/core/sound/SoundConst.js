@@ -4,29 +4,26 @@ var __reflect = (this && this.__reflect) || function (p, c, t) {
 var SoundConst = (function () {
     function SoundConst() {
     }
-    /**
-     * 按钮
-     */
-    SoundConst.BUTTON = 'button_mp3';
-    SoundConst.WIN_TICKUP = 'win_tickup_mp3';
-    SoundConst.WIN_TICKUPTALE = 'win_tickuptale_mp3';
-    SoundConst.CHECKSTART = 'checkstart_mp3';
-    SoundConst.BG = 'bg_mp3';
-    SoundConst.SINGLEREWARD = 'singlereward_mp3';
-    SoundConst.REWARD = 'reward_mp3';
-    SoundConst.REELEND = 'reelend_mp3';
-    SoundConst.START = 'start_mp3';
-    SoundConst.STOP = 'stop_mp3';
-    SoundConst.BIG_REWARD = 'bigreward_mp3';
-    SoundConst.FIVE_SOUND = 'bigreward2_mp3';
-    SoundConst.AUTOSTART1 = 'autostart1_mp3';
-    SoundConst.AUTOSTOP1 = 'autostop1_mp3';
-    SoundConst.AUTOSTART = 'autostart_mp3';
-    SoundConst.AUTOSTOP = 'autostop_mp3';
-    SoundConst.ADD = 'add_mp3';
-    SoundConst.SUB = 'sub_mp3';
-    SoundConst.SPEED_ON = 'speedon_mp3';
-    SoundConst.SPEED_OFF = 'speedoff_mp3';
+    SoundConst.ADD = 'Add_mp3';
+    SoundConst.SUB = 'Sub_mp3';
+    SoundConst.STARTBTN = 'start_mp3';
+    SoundConst.SPEED_ON = 'Add_mp3';
+    SoundConst.SPEED_OFF = 'Sub_mp3';
+    SoundConst.AUTO_ON = "autoStart_mp3";
+    SoundConst.AUTO_OFF = "autoStop_mp3";
+    SoundConst.REEL = "reel_mp3";
+    SoundConst.REEL_STOP = "reelStop_mp3";
+    SoundConst.STOPBTN = "stop_mp3";
+    SoundConst.KA = "kaka_mp3";
+    SoundConst.DENG = "c1Deng_mp3";
+    SoundConst.FREEBG = "freeBg_mp3";
+    SoundConst.C1TWO = "c1Two_mp3";
+    SoundConst.DEJIANG = "dejiang_mp3";
+    SoundConst.WWMUSIC = "WWMusic_mp3";
+    SoundConst.BIGMUSIC = "bigMusic_mp3";
+    SoundConst.FOURFISH = "fourFish_mp3";
+    SoundConst.BUTTON = "button_mp3";
+    SoundConst.CHECKSTART = "checkstart";
     return SoundConst;
 }());
 __reflect(SoundConst.prototype, "SoundConst");

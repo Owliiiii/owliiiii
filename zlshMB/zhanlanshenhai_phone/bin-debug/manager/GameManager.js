@@ -83,12 +83,17 @@ var GameManager = (function (_super) {
         vo.GameData.slotInfo.resultArr = data.Value.Geninit.Main.ReelSymbols;
         vo.GameData.initData = data;
         vo.GameData.payData = data.Value.Paytables.Main.PayData;
+        var ui = core.UIManager.getUI(core.UIConst.MainScenceUI);
         if (vo.GameData.initData.Actions.freeslot) {
             vo.GameData.TotalActionCount = vo.GameData.initData.Actions.freeslot.count;
             vo.GameData.allFreeCount = vo.GameData.initData.Actions.freeslot.total;
             egret.setTimeout(function () {
                 // core.UIManager.openUI(core.UIConst.DuanxianShowUi, core.LayerManager.Layer_Top);
-            }, this, 2000);
+                if (vo.GameData.initData.Actions.freeslot && ui) {
+                    ui.freeBtnState(true);
+                    ui.Duanxian();
+                }
+            }, this, 5000);
         }
         this.dispatchEventWith(SetEvent.SET_BALANCE_CHANGE);
     };
@@ -135,11 +140,13 @@ var GameManager = (function (_super) {
             if (vo.GameData.resultData.Actions.freeslot) {
                 vo.GameData.TotalActionCount = vo.GameData.resultData.Actions.freeslot.count;
                 vo.GameData.allFreeCount = vo.GameData.resultData.Actions.freeslot.total;
-                ui.totalMoney.text = vo.GameData.resultData.Actions.freeslot.TotalWin;
-                ui.gongNengMoney.text = vo.GameData.resultData.Actions.freeslot.ActionWin;
-                ui.gameMoney.text = "" + (vo.GameData.resultData.Actions.freeslot.TotalWin - vo.GameData.resultData.Actions.freeslot.ActionWin);
+                ui.freeBtnState(true);
+                ui.totalMoney.text = GameManager.numberToCommonStr(vo.GameData.resultData.Actions.freeslot.TotalWin);
+                ui.gongNengMoney.text = GameManager.numberToCommonStr(vo.GameData.resultData.Actions.freeslot.ActionWin);
+                ui.gameMoney.text = "" + GameManager.numberToCommonStr(vo.GameData.resultData.Actions.freeslot.TotalWin - vo.GameData.resultData.Actions.freeslot.ActionWin);
             }
             else {
+                ui.freeBtnState(false);
                 vo.GameData.TotalActionCount = 0;
                 vo.GameData.allFreeCount = 0;
             }
@@ -187,10 +194,22 @@ var GameManager = (function (_super) {
         }
         if (fiveArr.length == 0) {
             if (winarr.length > 0) {
-                ui.showWin(winarr);
-                egret.setTimeout(function () {
-                    _this.doNext();
-                }, this, t);
+                var fourArr = [];
+                fourArr = this.getFishArr(winarr);
+                if (fourArr.length != 0) {
+                    ui.showFourFish(fourArr[0], function () {
+                        ui.showWin(winarr);
+                        egret.setTimeout(function () {
+                            _this.doNext();
+                        }, _this, t);
+                    });
+                }
+                else {
+                    ui.showWin(winarr);
+                    egret.setTimeout(function () {
+                        _this.doNext();
+                    }, this, t);
+                }
             }
             else {
                 egret.setTimeout(function () {
@@ -245,6 +264,12 @@ var GameManager = (function (_super) {
             }
         }
     };
+    GameManager.prototype.stopMusic = function () {
+        if (this.chanel) {
+            this.chanel.stop();
+            this.chanel = null;
+        }
+    };
     GameManager.prototype.onSet = function (e) {
         var ui = core.UIManager.getUI(core.UIConst.MainScenceUI);
         switch (e.type) {
@@ -253,12 +278,18 @@ var GameManager = (function (_super) {
                     if (this.getFreeCount() > 0) {
                         GameManager.getInstance().gameState = GameType.GameState.PLAYING;
                         Commond.sendPlay(true);
+                        ui.freeBtnState(false);
                         ui.hideWin();
                         this.stopchannel();
                         ui.gameScence.startReel();
-                        if (vo.GameData.resultData && vo.GameData.resultData.ActionType == 'freeslot') {
+                        if (vo.GameData.resultData.ActionType == 'freeslot') {
                             if (vo.GameData.resultData.Actions.freeslot) {
-                                ui.free_Num.text = "" + vo.GameData.resultData.Actions.freeslot.count;
+                                if ((vo.GameData.resultData.Actions.freeslot.count - 1) >= 0) {
+                                    ui.free_Num.text = "" + (vo.GameData.resultData.Actions.freeslot.count - 1);
+                                }
+                                else {
+                                    ui.free_Num.text = "0";
+                                }
                             }
                             else {
                                 ui.free_Num.text = "0";
@@ -276,6 +307,7 @@ var GameManager = (function (_super) {
                         }
                     }
                     else {
+                        ui.freeBtnState(false);
                         if (!SetConst.AUTO && !SetConst.SPEED_PLAY) {
                             if (egret.getTimer() - this.t < 2000 && !SetConst.QUIKTIP_SHOW) {
                                 core.UIManager.openUI(core.UIConst.QukTipsUI, core.LayerManager.Layer_Top);
@@ -284,6 +316,7 @@ var GameManager = (function (_super) {
                             }
                             this.t = egret.getTimer();
                         }
+                        vo.GameData.FreeMoney = 0;
                         GameManager.getInstance().gameState = GameType.GameState.PLAYING;
                         Commond.sendPlay();
                         ui.hideWin();
@@ -454,6 +487,20 @@ var GameManager = (function (_super) {
             return true;
         }
         return false;
+    };
+    /**
+     * 判断有无4条鱼
+     */
+    GameManager.prototype.getFishArr = function (winarr) {
+        var reslutArr = [];
+        for (var i = 0; i < winarr.length; i++) {
+            var data = winarr[i];
+            if (data.Symbol == "M4" && data.SymbolCount == 4) {
+                reslutArr.push(data);
+                // return true;
+            }
+        }
+        return reslutArr;
     };
     /**
      * 判断有无5同类

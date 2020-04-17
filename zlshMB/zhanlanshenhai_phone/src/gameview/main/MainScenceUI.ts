@@ -23,6 +23,7 @@ class MainScenceUI extends core.BaseUI {
 	public beiKe_x3: eui.Image;
 	public beiKe_4: eui.Image;
 	public beiKe_x4: eui.Image;
+	public freeLoge: eui.Image;
 
 	public tipsGroup: eui.Group;
 	public pickFree: eui.Group;
@@ -146,6 +147,26 @@ class MainScenceUI extends core.BaseUI {
 			}
 		}
 	}
+	public freeBtnState(is: boolean): void {
+		this.setUI.FreeBtn.visible = is;
+	}
+	public Duanxian(): void {
+		this.logo1.visible = false;
+		this.logo2.visible = true;
+		this.free_group.visible = true;
+		this.gameScence.freeBg.visible = true;
+		this.free_fanbei.text = "X" + this.fanbei;
+		this.free_Num.text = "" + vo.GameData.TotalActionCount;
+		this.free_money.text = "" + vo.GameData.FreeMoney;
+		this.setUI.setBtn.visible = false;
+		this.setUI.qukGroup.visible = false;
+		this.setUI.betBtn.visible = false;
+		if (this.currentState == 'hor') {		//横
+			this.setUI.betSetCompoment.visible = false;
+		} else {
+
+		}
+	}
 
 	//切换了横竖
 	public updataState(): void {
@@ -154,16 +175,184 @@ class MainScenceUI extends core.BaseUI {
 			this.setUI.bonusBtn.visible = true;
 			this.setUI.startButton.visible = false;
 			this.setUI.autoButton.visible = false;
+			this.setUI.freeGroup.visible = true;
+			this.setUI.tipLabel.visible = false;
+		}
+		if (GameConfig.overTips) {
+			this.tipsGroup.visible = true;
+			this.isTipsGroup = true;
+			this.pickFree.visible = false;
+			this.overFree.visible = true;
+			this.gameScence.visible = false;
+			this.logo_group.visible = false;
+			this.setUI.visible = false;
+			if (vo.GameData.resultData.Actions.freeslot) {
+				this.totalMoney.text = GameManager.numberToCommonStr(vo.GameData.resultData.Actions.freeslot.TotalWin);
+				this.gongNengMoney.text = GameManager.numberToCommonStr(vo.GameData.resultData.Actions.freeslot.ActionWin);
+				this.gameMoney.text = "" + GameManager.numberToCommonStr(vo.GameData.resultData.Actions.freeslot.TotalWin - vo.GameData.resultData.Actions.freeslot.ActionWin);
+			}
 		}
 		if (GameConfig.freeGame) {
 			this.setUI.updataEnable(0);
 			this.bg.visible = false;
 			this.mainGroup.visible = false;
-			this.setUI.visible = false;
+			// this.setUI.visible = false;
+
 			this.freeGroup.visible = true;
 			if (this.isTipsGroup) {
 				this.tipsGroup.visible = true;
+			}
+		} else if (GameManager.getInstance().getFreeCount() > 0) {
+			this.logo1.visible = false;
+			this.logo2.visible = true;
+			this.free_group.visible = true;
+			this.gameScence.freeBg.visible = true;
+			this.free_fanbei.text = "X" + this.fanbei;
+			this.free_Num.text = "" + vo.GameData.resultData.Actions.freeslot.count;
+			this.free_money.text = "" + vo.GameData.FreeMoney;
+			this.setUI.setBtn.visible = false;
+			this.setUI.qukGroup.visible = false;
+			this.setUI.betBtn.visible = false;
+			if (this.currentState == 'hor') {		//横
+				this.setUI.betSetCompoment.visible = false;
+			} else {
 
+			}
+		}
+		if (GameConfig.isFree && GameConfig.isBonusBtn && GameConfig.freeGame) {
+			this.freeGroup.visible = true;
+			this.setUI.visible = false;
+			if (this.indexNum >= 1) {
+				this.freeNumGroup.visible = true;
+			} else {
+				this.freeNumGroup.visible = false;
+			}
+			this.freeNum.text = "" + vo.GameData.TotalActionCount;
+			this.beiNum.text = "X" + this.fanbei;
+			this.fanbeiNum.text = "X" + this.fanbei;
+			this.rotateNum.text = "" + vo.GameData.TotalActionCount;
+			if (this.ArrIndex) {
+				for (let j = 0; j < this.ArrIndex.length; j++) {
+					this["beiKe_" + this.ArrIndex[j]].source = "with_pearl_03_png";
+					this["beiKe_x" + this.ArrIndex[j]].source = "pearl_text" + this.CountArr[this.ArrIndex[j]] + "_png";
+					this["beiKe_x" + this.ArrIndex[j]].visible = true;
+					if (this.currentState == 'hor') {		//横
+						if (this.ArrIndex[j] == 0) {
+							//y = 310;正常
+							this["beiKe_x" + this.ArrIndex[j]].y = 185;
+							if (this.CountArr[this.ArrIndex[j]] == 7) {
+								this["beiKe_x" + this.ArrIndex[j]].x = 290;
+							} else {
+								this["beiKe_x" + this.ArrIndex[j]].x = 245;
+							}
+						}
+						if (this.ArrIndex[j] == 1) {
+							//y = 310;正常
+							this["beiKe_x" + this.ArrIndex[j]].y = 185;
+							if (this.CountArr[this.ArrIndex[j]] == 7) {
+								this["beiKe_x" + this.ArrIndex[j]].x = 635;
+							} else {
+								this["beiKe_x" + this.ArrIndex[j]].x = 600;
+							}
+						}
+						if (this.ArrIndex[j] == 2) {
+							//y = 310;正常
+							this["beiKe_x" + this.ArrIndex[j]].y = 185;
+							if (this.CountArr[this.ArrIndex[j]] == 7) {
+								this["beiKe_x" + this.ArrIndex[j]].x = 964;
+							} else {
+								this["beiKe_x" + this.ArrIndex[j]].x = 1005;
+							}
+						}
+						if (this.ArrIndex[j] == 3) {
+							//y = 460;正常
+							this["beiKe_x" + this.ArrIndex[j]].y = 345;
+							if (this.CountArr[this.ArrIndex[j]] == 7) {
+								this["beiKe_x" + this.ArrIndex[j]].x = 400;
+							} else {
+								this["beiKe_x" + this.ArrIndex[j]].x = 360;
+							}
+						}
+						if (this.ArrIndex[j] == 4) {
+							//y = 460;正常
+							this["beiKe_x" + this.ArrIndex[j]].y = 345;
+							if (this.CountArr[this.ArrIndex[j]] == 7) {
+								this["beiKe_x" + this.ArrIndex[j]].x = 810;
+							} else {
+								this["beiKe_x" + this.ArrIndex[j]].x = 770;
+							}
+						}
+					}
+					else {		//竖
+						if (this.ArrIndex[j] == 0) {
+							//y = 310;正常
+							this["beiKe_x" + this.ArrIndex[j]].y = 217;
+							if (this.CountArr[this.ArrIndex[j]] == 7) {
+								this["beiKe_x" + this.ArrIndex[j]].x = 270;
+							} else {
+								this["beiKe_x" + this.ArrIndex[j]].x = 225;
+							}
+						}
+						if (this.ArrIndex[j] == 1) {
+							//y = 310;正常
+							this["beiKe_x" + this.ArrIndex[j]].y = 217;
+							if (this.CountArr[this.ArrIndex[j]] == 7) {
+								this["beiKe_x" + this.ArrIndex[j]].x = 622;
+							} else {
+								this["beiKe_x" + this.ArrIndex[j]].x = 580;
+							}
+						}
+						if (this.ArrIndex[j] == 2) {
+							//y = 310;正常
+							this["beiKe_x" + this.ArrIndex[j]].y = 217;
+							if (this.CountArr[this.ArrIndex[j]] == 7) {
+								this["beiKe_x" + this.ArrIndex[j]].x = 964;
+							} else {
+								this["beiKe_x" + this.ArrIndex[j]].x = 919;
+							}
+						}
+						if (this.ArrIndex[j] == 3) {
+							//y = 460;正常
+							this["beiKe_x" + this.ArrIndex[j]].y = 380;
+							if (this.CountArr[this.ArrIndex[j]] == 7) {
+								this["beiKe_x" + this.ArrIndex[j]].x = 400;
+							} else {
+								this["beiKe_x" + this.ArrIndex[j]].x = 360;
+							}
+						}
+						if (this.ArrIndex[j] == 4) {
+							//y = 460;正常
+							this["beiKe_x" + this.ArrIndex[j]].y = 380;
+							if (this.CountArr[this.ArrIndex[j]] == 7) {
+								this["beiKe_x" + this.ArrIndex[j]].x = 780;
+							} else {
+								this["beiKe_x" + this.ArrIndex[j]].x = 743;
+							}
+						}
+					}
+				}
+				for (var i = 0; i < this.CountArr.length; i++) {
+					if (!this["beiKe_x" + i].visible && this.indexNum >= 2) {
+						this["beiKe_x" + i].source = "pearl_text" + this.CountArr[i] + "_png";
+						this["beiKe_x" + i].visible = true;
+
+					}
+				}
+			}
+			if (this.isTips) {
+				this.tipsGroup.visible = true;
+				this.freeNum.text = "" + vo.GameData.TotalActionCount;
+				this.beiNum.text = "X" + this.fanbei;
+				this.fanbeiNum.text = "X" + this.fanbei;
+				this.rotateNum.text = "" + vo.GameData.TotalActionCount;
+			} else {
+
+				this.tipsGroup.visible = false;
+			}
+		} else {
+			this.freeGroup.visible = false;
+			if (!this.overFree.visible) {
+				this.setUI.visible = true;
 			}
 		}
 	}
@@ -174,6 +363,11 @@ class MainScenceUI extends core.BaseUI {
 		this.setUI.setBtn.visible = false;
 		this.setUI.qukGroup.visible = false;
 		this.setUI.betBtn.visible = false;
+		if (this.currentState == 'hor') {		//横
+			this.setUI.betSetCompoment.visible = false;
+		} else {
+
+		}
 
 		this.setUI.bottomGroup.visible = true;
 		// GameConfig.freeGame = false;
@@ -182,15 +376,16 @@ class MainScenceUI extends core.BaseUI {
 		this.logo2.visible = true;
 		this.free_group.visible = true;
 		this.gameScence.freeBg.visible = true;
-		this.free_fanbei.text = this.fanbeiNum.text;
+		this.free_fanbei.text = "X" + this.fanbeiNum.text;
 		this.free_Num.text = "" + vo.GameData.TotalActionCount;
 
 		this.bg.visible = true;
 		this.mainGroup.visible = true;
-
+		this.ArrIndex = [];
 		this.freeGroup.visible = false;
 		GameConfig.freeGame = false;
 		this.tipsGroup.visible = false;
+		this.isTips = false;
 		for (var i = 0; i < 5; i++) {
 			this["beiKe_" + i].source = "with_pearl_01_png";
 			this["beiKe_x" + i].visible = false;
@@ -199,16 +394,23 @@ class MainScenceUI extends core.BaseUI {
 	}
 	//免费游戏结束弹窗
 	public endFree(): void {
+		GameConfig.overTips = true;
 		this.tipsGroup.visible = true;
 		this.isTipsGroup = true;
 		this.pickFree.visible = false;
 		this.overFree.visible = true;
+		this.gameScence.visible = false;
+		this.logo_group.visible = false;
+		this.setUI.visible = false;
 		// this.stopMusic();
 	}
 
 	//免费游戏结束按钮
 	public endFreeUi(): void {
 		//游戏页面ui 
+		GameConfig.overTips = false;
+		this.gameScence.visible = true;
+		this.logo_group.visible = true;
 		this.setUI.FreeBtn.visible = false;
 		this.setUI.visible = true;
 		this.logo1.visible = true;
@@ -217,8 +419,14 @@ class MainScenceUI extends core.BaseUI {
 		this.gameScence.freeBg.visible = false;
 		this.isTipsGroup = false;
 		this.tipsGroup.visible = false;
+		this.isTips = false;
 		this.pickFree.visible = true;
 		this.overFree.visible = false;
+		if (this.currentState == 'hor') {		//横
+			this.setUI.betSetCompoment.visible = true;
+		} else {
+
+		}
 
 		GameConfig.isFree = false;
 		// this.autoItem.sopAutoBtn.enabled = true;
@@ -249,9 +457,12 @@ class MainScenceUI extends core.BaseUI {
 	public onBonusEnd() {
 		console.log('点击免费游戏');
 		//隐藏动画，跳转界面,替换按钮
-		
+		this.freeLoge.visible = true;
 		this.setUI.bonusBtn.visible = false;
 		this.gameScence.removeBonusMc();
+		GameConfig.freeGame = true;
+		this.setUI.freeGroup.visible = false;
+		this.setUI.tipLabel.visible = true;
 		// GameConfig.isFree = false;
 		this.setUI.bonusBtnState(false);
 		this.gameScence.huanyuanC1(this.bonusPos);
@@ -286,118 +497,196 @@ class MainScenceUI extends core.BaseUI {
 	private fanbei: number = 2;
 	private roteNum: number = 8;
 	public indexNum: number = 0;
+
+	private indexBk: number;
+	private countBk: number;
+	private ArrIndex: Array<any> = [];
+
 	public changeBeiKe(evt: egret.TouchEvent): void {
 		//选择贝壳，播放动画
-		let index: number;
-		let Count: number;
 		this.indexNum++;
 
 		// arr.splice();
 		switch (evt.currentTarget) {
 			case this["beiKe_0"]:
-				index = 0;
-				Count = this.CountArr[index];	//倍数 beiKe_x0.source = pearl_text5_png
+				this.indexBk = 0;
+				this.countBk = this.CountArr[this.indexBk];	//倍数 beiKe_x0.source = pearl_text5_png
 				break;
 			case this["beiKe_1"]:
-				index = 1;
-				Count = this.CountArr[index];
+				this.indexBk = 1;
+				this.countBk = this.CountArr[this.indexBk];
 				break;
 			case this["beiKe_2"]:
-				index = 2;
-				Count = this.CountArr[index];
+				this.indexBk = 2;
+				this.countBk = this.CountArr[this.indexBk];
 				break;
 			case this["beiKe_3"]:
-				index = 3;
-				Count = this.CountArr[index];
+				this.indexBk = 3;
+				this.countBk = this.CountArr[this.indexBk];
 				break;
 			case this["beiKe_4"]:
-				index = 4;
-				Count = this.CountArr[index];	//倍数
+				this.indexBk = 4;
+				this.countBk = this.CountArr[this.indexBk];	//倍数
 				break;
 		}
+		this.ArrIndex.push(this.indexBk);
 		// Count = CountArr[index];
 		// vo.GameData.TotalActionCount = vo.GameData.TotalActionCount + Count;
 		if (this.indexNum == 1) {
-			if (Count == 8 || Count == 5) {
-				this.fanbei += Count;
+			if (this.countBk == 8 || this.countBk == 5) {
+				this.fanbei += this.countBk;
 			} else {
-				this.roteNum += Count;
+				this.roteNum += this.countBk;
 			}
 			vo.GameData.TotalActionCount = this.roteNum;
 		}
 		if (this.indexNum >= 2) {
-			if (Count == 8 || Count == 5) {
-				this.fanbei += Count;
+			if (this.countBk == 8 || this.countBk == 5) {
+				this.fanbei += this.countBk;
 			} else {
-				this.roteNum += Count;
+				this.roteNum += this.countBk;
 			}
 			vo.GameData.TotalActionCount = this.roteNum;//(vo.GameData.TotalActionCount + this.roteNum);
 		}
-		this["beiKe_" + index].removeEventListener(egret.TouchEvent.TOUCH_TAP, this.changeBeiKe, this);
+		this["beiKe_" + this.indexBk].removeEventListener(egret.TouchEvent.TOUCH_TAP, this.changeBeiKe, this);
 		if (this.indexNum >= 2) {
 			for (var i = 0; i < 5; i++) {
 				this["beiKe_" + i].removeEventListener(egret.TouchEvent.TOUCH_TAP, this.changeBeiKe, this);
 			}
 		}
-		egret.Tween.get(this["beiKe_" + index]).call(() => { this["beiKe_" + index].source = "with_pearl_01_png" })
+		egret.Tween.get(this["beiKe_" + this.indexBk]).call(() => { this["beiKe_" + this.indexBk].source = "with_pearl_01_png" })
 			.wait(300)
-			.call(() => { this["beiKe_" + index].source = "with_pearl_02_png" })
+			.call(() => { this["beiKe_" + this.indexBk].source = "with_pearl_02_png" })
 			.wait(500)
 			.call(() => {
-				this["beiKe_" + index].source = "with_pearl_03_png";
+				this["beiKe_" + this.indexBk].source = "with_pearl_03_png";
+				this.freeLoge.visible = false;
 				// this.rotateNum.text = "";
 				// this.fanbeiNum.text = "";
 				this.freeNum.text = "";
 				this.beiNum.text = "";
 				this.rotateNum.text = "" + vo.GameData.TotalActionCount;
-				// if (Count <= 8) {
-				// 	this.fanbeiNum.text = "X" + this.fanbei;
-				// } else {
-				// 	this.fanbeiNum.text = "X2";
-				// }
 				this.fanbeiNum.text = "X" + this.fanbei;
-
 				this.freeNumGroup.visible = true;
-
-				if (index <= 2) {
-					// this["beiKe_x" + index].y = 327;
-				} else {
-					// this["beiKe_x" + index].y = 525;
+				if (this.currentState == 'hor') {		//横
+					if (this.indexBk == 0) {
+						//y = 310;正常
+						this["beiKe_x" + this.indexBk].y = 185;
+						if (this.countBk == 7) {
+							this["beiKe_x" + this.indexBk].x = 290;
+						} else {
+							this["beiKe_x" + this.indexBk].x = 245;
+						}
+					}
+					if (this.indexBk == 1) {
+						//y = 310;正常
+						this["beiKe_x" + this.indexBk].y = 185;
+						if (this.countBk == 7) {
+							this["beiKe_x" + this.indexBk].x = 635;
+						} else {
+							this["beiKe_x" + this.indexBk].x = 600;
+						}
+					}
+					if (this.indexBk == 2) {
+						//y = 310;正常
+						this["beiKe_x" + this.indexBk].y = 185;
+						if (this.countBk == 7) {
+							this["beiKe_x" + this.indexBk].x = 964;
+						} else {
+							this["beiKe_x" + this.indexBk].x = 1005;
+						}
+					}
+					if (this.indexBk == 3) {
+						//y = 460;正常
+						this["beiKe_x" + this.indexBk].y = 345;
+						if (this.countBk == 7) {
+							this["beiKe_x" + this.indexBk].x = 400;
+						} else {
+							this["beiKe_x" + this.indexBk].x = 360;
+						}
+					}
+					if (this.indexBk == 4) {
+						//y = 460;正常
+						this["beiKe_x" + this.indexBk].y = 345;
+						if (this.countBk == 7) {
+							this["beiKe_x" + this.indexBk].x = 810;
+						} else {
+							this["beiKe_x" + this.indexBk].x = 770;
+						}
+					}
 				}
-				this["beiKe_x" + index].source = "pearl_text" + Count + "_png";
-				this["beiKe_x" + index].visible = true;
+				else {		//竖
+					if (this.indexBk == 0) {
+						//y = 310;正常
+						this["beiKe_x" + this.indexBk].y = 217;
+						if (this.countBk == 7) {
+							this["beiKe_x" + this.indexBk].x = 270;
+						} else {
+							this["beiKe_x" + this.indexBk].x = 225;
+						}
+					}
+					if (this.indexBk == 1) {
+						//y = 310;正常
+						this["beiKe_x" + this.indexBk].y = 217;
+						if (this.countBk == 7) {
+							this["beiKe_x" + this.indexBk].x = 622;
+						} else {
+							this["beiKe_x" + this.indexBk].x = 580;
+						}
+					}
+					if (this.indexBk == 2) {
+						//y = 310;正常
+						this["beiKe_x" + this.indexBk].y = 217;
+						if (this.countBk == 7) {
+							this["beiKe_x" + this.indexBk].x = 964;
+						} else {
+							this["beiKe_x" + this.indexBk].x = 919;
+						}
+					}
+					if (this.indexBk == 3) {
+						//y = 460;正常
+						this["beiKe_x" + this.indexBk].y = 380;
+						if (this.countBk == 7) {
+							this["beiKe_x" + this.indexBk].x = 400;
+						} else {
+							this["beiKe_x" + this.indexBk].x = 360;
+						}
+					}
+					if (this.indexBk == 4) {
+						//y = 460;正常
+						this["beiKe_x" + this.indexBk].y = 380;
+						if (this.countBk == 7) {
+							this["beiKe_x" + this.indexBk].x = 780;
+						} else {
+							this["beiKe_x" + this.indexBk].x = 743;
+						}
+					}
+				}
+				this["beiKe_x" + this.indexBk].source = "pearl_text" + this.countBk + "_png";
+				this["beiKe_x" + this.indexBk].visible = true;
 				// 5 7 15 10 8
 				egret.setTimeout(() => {
 					if (this.indexNum >= 2) {
 						for (var i = 0; i < 5; i++) {
 							if (!this["beiKe_x" + i].visible) {
-								if (i <= 2) {
-									// this["beiKe_x" + i].y = 433;
-								} else {
-									// this["beiKe_x" + i].y = 630;
-								}
-								this["beiKe_x" + index].source = "pearl_text" + Count + "_png";
+								// this["beiKe_x" + this.indexBk].source = "pearl_text" + this.countBk + "_png";
 								this["beiKe_x" + i].visible = true;
 							}
 						}
-						// if (Count == 5 || Count == 8) {
-						// 	this.fanbeiNum.text = "X" + 2 + Count;
-						// } else {
-						// 	this.fanbeiNum.text = "X2";
-						// }
 						this.fanbeiNum.text = "X" + this.fanbei;
 						this.rotateNum.text = "" + vo.GameData.TotalActionCount;
 
 						this.freeNum.text = "" + vo.GameData.TotalActionCount;
 						this.beiNum.text = "X" + this.fanbei;
-						console.log("vo.GameData.TotalActionCount === " + vo.GameData.TotalActionCount);
+						// console.log("vo.GameData.TotalActionCount === " + vo.GameData.TotalActionCount);
 						this.tipsGroup.visible = true;
+						this.isTips = true;
 						vo.GameData.TotalActionCount -= 1;
 					}
 				}, this, 200);
 			})
-
 	}
+	public isTips: boolean = false;
 	public isTipsGroup: boolean = false;
 	public curtime: number = 0;
 	public indexC1: number = 0;
@@ -408,7 +697,6 @@ class MainScenceUI extends core.BaseUI {
 		GameConfig.twoC1Index = -1;
 		// GameConfig.twoC1Index = 4;
 		// GameConfig.isData = true;
-
 
 		for (let i: number = 0; i < this.gameScence.reelArr.length; i++) {
 			let reel: Reel = this.gameScence.reelArr[i];
@@ -477,20 +765,30 @@ class MainScenceUI extends core.BaseUI {
 	public onTab(e: egret.TouchEvent): void {
 		this.updataUI();
 	}
+	public chanel: egret.SoundChannel;
+	public stopMusic(): void {
+		if (this.chanel) {
+			this.chanel.stop();
+			this.chanel = null;
+		}
+	}
+
 
 	private showReward: number = 0;
 	//public curtime: number = 0;
 	public bonusPos: Array<any>;//保存3个中奖的位置
 	public showWin(arr: Array<any>): void {
 		SetConst.REWARD_SHOW = true;
-		if (SoundManager.getInstance().effectOn) {
-			SoundManager.getInstance().playMusic(SoundConst.REWARD, 1).then((channel) => {
-				GameManager.getInstance().rewardChannel = channel;
-			});
-		}
+
 		//进入免费游戏抽奖
 		if (arr.length > 0 && arr[0].Type == "Bonus2" && arr[0].SymbolCount >= 3) {
 			//当有3个C1,C1不在中间一列移动到中间
+			if (SoundManager.getInstance().effectOn && this.chanel == null) {
+				SoundManager.getInstance().playMusic(SoundConst.FREEBG, -1).then((chanel) => {
+					this.chanel = chanel;
+				});
+			}
+
 			GameConfig.isFree = true;
 			SetConst.AUTO_COUNT = 0;
 			// SetConst.isCanStopGame = false;
@@ -507,6 +805,8 @@ class MainScenceUI extends core.BaseUI {
 				this.gameScence.showAnimation(p);	//免费旋转3个的动画
 			}
 			//按钮状态
+			this.setUI.freeGroup.visible = true;
+			this.setUI.tipLabel.visible = false;
 			this.setUI.startButton.visible = false;
 			this.setUI.autoButton.visible = false;
 			this.setUI.bonusBtnState(true);
@@ -575,8 +875,8 @@ class MainScenceUI extends core.BaseUI {
 				this.gameScence.pent.clearTip();
 				this.gameScence.pent.cleaAllLine();
 				this.gameScence.pent.clearReward();
-				if (arr.length > 1 && iscanPlay) {
-					SoundManager.getInstance().playEffect(SoundConst.SINGLEREWARD);
+				if (arr.length > 1) {
+					SoundManager.getInstance().playEffect(SoundConst.KA);
 				}
 				let data: any = arr[this.winIndex];
 				if (data.Data) {
@@ -607,6 +907,13 @@ class MainScenceUI extends core.BaseUI {
 		let totalWin: number = resultData.Value.SpinResult.TotalWin;
 		let winmoney: number = resultData.Value.Dollar;
 		let b: number = totalWin / totalBet;
+		if (GameManager.getInstance().getFreeCount() > 0) {
+			vo.GameData.FreeMoney = vo.GameData.FreeMoney + winmoney;
+			// if(this.reward1 < vo.GameData.FreeMoney){
+			this.reward1 = vo.GameData.FreeMoney;
+			egret.Tween.get(this).to({ reward1: vo.GameData.FreeMoney }, 1000);
+			// }
+		}
 		this.setRewardMax(0, false);
 		if (b >= 50) {
 			this.setUI.rewradMaxGroup.visible = true;
@@ -692,6 +999,11 @@ class MainScenceUI extends core.BaseUI {
 	private get reward(): number {
 		return this._rewardNum;
 	}
+	private _freeNum: number = 0;
+	private set reward1(v: number) {
+		this._freeNum = v;
+		this.free_money.text = '' + GameManager.numberToCommonStr(this._freeNum);
+	}
 
 
 	public setRewardMax(v: number, isA: boolean = true, t: number = 1): void {
@@ -701,13 +1013,26 @@ class MainScenceUI extends core.BaseUI {
 		let ish: boolean = window.innerWidth > window.innerHeight;
 		let ty: number = 0;
 		if (isA) {
+			if (GameConfig.speedPlay) {
+				SoundManager.getInstance().playEffect(SoundConst.DEJIANG);
+			}
 			egret.Tween.get(this).to({ rewardMax: v }, tArr[t]);
 			ty = ish ? 46 : 41;
 			egret.Tween.get(this.setUI.rewradMaxGroup).to({ y: ty }, 500).wait(1000).call(() => {
 				this.index = 1;
 				if (t > 1) {
+					if (SoundManager.getInstance().effectOn && this.chanel == null) {
+						SoundManager.getInstance().playMusic(SoundConst.DEJIANG, 1).then((chanel) => {
+							this.chanel = chanel;
+						});
+					}
 					egret.Tween.get(this.setUI.rewradMaxGroup).to({ scaleX: 1.1, scaleY: 1.1 }, 1000, egret.Ease.backOut).wait(1000).call(() => {
 						if (t > 2) {
+							if (!GameConfig.speedPlay && SoundManager.getInstance().effectOn && this.chanel == null) {
+								SoundManager.getInstance().playMusic(SoundConst.WWMUSIC, 1).then((chanel) => {
+									this.chanel = chanel;
+								});
+							}
 							ish = window.innerWidth > window.innerHeight;
 							ty = ish ? -GameConfig.HEIGHT / 2 + this.setUI.bottomGroup.height : -GameConfig.HEIGHT / 2 + this.setUI.bottomGroup.height;
 							egret.Tween.get(this.setUI.rewradMaxGroup).to({ y: ty, scaleX: 1.4, scaleY: 1.4 }, 300).call(() => {
@@ -808,6 +1133,28 @@ class MainScenceUI extends core.BaseUI {
 		this.tipGroup.visible = false;
 		this.gameScence.pent.clearAll();
 	}
+	/**
+	 * 显示4条鱼音效
+	 */
+	public fourFishAni: number;
+	public showFourFish(data, callfun: any = null): void {
+		if (SoundManager.getInstance().effectOn && this.chanel == null) {
+			SoundManager.getInstance().playMusic(SoundConst.FOURFISH, 1).then((chanel) => {
+				this.chanel = chanel;
+			});
+		}
+		//显示动画
+		for (let j: number = 0; j < data.Positions.length; j++) {
+			let p: any = data.Positions[j];
+			this.gameScence.showAnimation(p);
+		}
+		this.fourFishAni = egret.setTimeout(() => {
+			// this.gameScence.hideAllAnimation();
+			this.stopMusic();
+			callfun && callfun();
+		}, this, 3800);
+
+	}
 
 	/**
 	 * 显示大奖
@@ -839,6 +1186,9 @@ class MainScenceUI extends core.BaseUI {
 		}
 		this.mcGroup.visible = true;
 		this.rewardMc.gotoAndPlay('a0', -1);
+	}
+	private get reward1(): number {
+		return this._freeNum;
 	}
 
 	/**

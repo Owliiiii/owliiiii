@@ -66,6 +66,7 @@ var Reel = (function (_super) {
         }
     };
     Reel.prototype.onFrame = function () {
+        var _this = this;
         if (this.isAction) {
             for (var i = 0; i < this.kGroup.numChildren; i++) {
                 var item = this.kGroup.getChildAt(i);
@@ -84,11 +85,12 @@ var Reel = (function (_super) {
                     for (var j = 1; j <= num3; j++) {
                         if (this.index == (GameConfig.twoC1Index + j) && GameConfig.isTest) {
                             // console.log("第" + this.index + "列停止");
-                            // if(SoundManager.getInstance().effectOn && this.chanel == null){
-                            // 	SoundManager.getInstance().playMusic(SoundConst.C1TWO, 1).then((chanel) => {
-                            // 		this.chanel = chanel; 
-                            // 	});
-                            // };
+                            if (SoundManager.getInstance().effectOn && this.chanel == null) {
+                                SoundManager.getInstance().playMusic(SoundConst.C1TWO, 1).then(function (chanel) {
+                                    _this.chanel = chanel;
+                                });
+                            }
+                            ;
                             if (!this.c1MC) {
                                 this.c1MC = game.MCUtils.getMc('c1mc');
                             }
@@ -102,13 +104,12 @@ var Reel = (function (_super) {
                             // t1 = t1+1000;
                             t2 = t2 + 500;
                             ;
-                            if (this.index > GameConfig.threeC1Index) {
-                                this.c1MC.visible = false;
-                                t2 = t2 - 800;
-                            }
-                            else {
-                                this.c1MC.visible = true;
-                            }
+                            // if(this.index > GameConfig.threeC1Index){
+                            // 	 this.c1MC.visible = false;
+                            // 	 t2 = t2 -800;
+                            // }else{
+                            // 	this.c1MC.visible = true;
+                            // }
                         }
                     }
                     // if(!GameConfig.isData){		//等待数据返回
@@ -161,7 +162,7 @@ var Reel = (function (_super) {
         var _this = this;
         egret.Tween.removeTweens(this);
         if (!this.stopState) {
-            // SoundManager.getInstance().playEffect(SoundConst.REEL_STOP);
+            SoundManager.getInstance().playEffect(SoundConst.REEL_STOP);
         }
         var _loop_1 = function (i) {
             var item = this_1.kGroup.getChildAt(i);
@@ -172,15 +173,15 @@ var Reel = (function (_super) {
             item.value = i > 0 && i < 4 ? this_1.curReelData[i - 1] : 'M' + Math.ceil(Math.random() * 5);
             // item.setVir(false);
             //item.value ='M'+Math.ceil(Math.random()*5);
-            // if((i > 0 && i < 4 ? this.curReelData[i - 1] : 'M' + Math.ceil(Math.random() * 5)) == "C1" && this.index <= 2 && !this.stopState){
-            // 	SoundManager.getInstance().playEffect(SoundConst.DENG);
-            // }
+            if ((i > 0 && i < 4 ? this_1.curReelData[i - 1] : 'M' + Math.ceil(Math.random() * 5)) == "C1" && this_1.index <= 2 && !this_1.stopState) {
+                SoundManager.getInstance().playEffect(SoundConst.DENG);
+            }
             var t = this_1.stopState ? 0 : 300;
             egret.setTimeout(function () {
                 if (_this.c1MC && _this.c1MC.parent) {
                     _this.c1MC.parent.removeChild(_this.c1MC);
                     _this.c1MC.stop();
-                    // this.stopMusic();
+                    _this.stopMusic();
                 }
             }, this_1, 300);
             egret.Tween.get(item).to({ y: ty }, t, egret.Ease.cubicOut).call(function () {

@@ -13,6 +13,10 @@ module vo {
 		 */
 		public static resultData: any;
 		/**
+		 * 奖金
+		 */
+		public static FreeMoney:number = 0;
+		/**
 		 * 玩家余额
 		 */
 		public static balance: number = 549.88;

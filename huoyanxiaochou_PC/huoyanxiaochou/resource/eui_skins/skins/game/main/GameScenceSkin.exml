@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GameScenceSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" xmlns:tween="egret.tween.*" width="1100" height="600">
+	<w:Declarations>
+	</w:Declarations>
+	<e:Image source="skin_texture1_level1_02_png" horizontalCenter="0" verticalCenter="0"/>
+	<ns1:Reel id="reel0" verticalCenter="0.5" anchorOffsetY="0" anchorOffsetX="0" skinName="ReelSkin" left="84"/>
+	<ns1:Reel id="reel1" verticalCenter="0" horizontalCenter="1" skinName="ReelSkin"/>
+	<ns1:Reel id="reel2" verticalCenter="0" right="84" skinName="ReelSkin"/>
+
+	<e:Group id="scoreGroup" y="298.34" width="300" height="80" anchorOffsetX="150" anchorOffsetY="40" x="550">
+		<e:Image left="0" right="0" top="0" bottom="0" source="sorceBg_png"/>
+		<e:BitmapLabel id="scoreLabel" text="0.20" horizontalCenter="0" letterSpacing="-8" font="win1_font_fnt" verticalCenter="4"/>
+		<e:BitmapLabel id="scoreLabel0" text="x9" letterSpacing="-8" font="win2_font_fnt" verticalCenter="3" right="0" visible="false"/>
+	</e:Group>
+	<e:Rect id="maskRect" fillAlpha="0.6" left="-900" right="-1050" top="-500" bottom="-483" anchorOffsetX="0" anchorOffsetY="0" visible="false"/>
+	<e:Rect id="dianji" width="941.21" height="562.41" x="79.71" y="22.58" anchorOffsetX="-1.61" anchorOffsetY="0" fillColor="0xFCFCFC" strokeColor="0xFFFFFF" fillAlpha="0.01" visible="false"/>
+
+</e:Skin>

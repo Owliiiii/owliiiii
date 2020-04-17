@@ -36,7 +36,7 @@ class GameScence extends eui.Component {
 			reel.start();
 		}
 		if(!SoundManager.getInstance().effectOn) return;
-		SoundManager.getInstance().playMusic(SoundConst.START,1).then((channel)=>{
+		SoundManager.getInstance().playMusic(SoundConst.REEL,1).then((channel)=>{
 			GameManager.getInstance().startChannel=channel;
 		});
 	}
@@ -46,7 +46,7 @@ class GameScence extends eui.Component {
 			let reel: Reel = this.reelArr[i];
 			reel.stop();
 		}
-		SoundManager.getInstance().playEffect(SoundConst.STOP);
+		SoundManager.getInstance().playEffect(SoundConst.REEL_STOP);
 		this.showLight();
 	}
 
